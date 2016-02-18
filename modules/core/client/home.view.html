@@ -1,27 +1,33 @@
-<div class="dashboard-product-banner" ng-init="" style="background-image: url('http://p8zgg2f7rj5bcqa7kcchypab.wpengine.netdna-cdn.com/wp-content/uploads/momentlens/frontpage/iphone6-case-large.jpg');">
-  <div class="row dashboard-product-info-wrapper">
-    <div class="col-sm-12">
-      <div class="dashboard-main-tagline">Collaborate with an amazing community of <strong>product influencers</strong> and <strong>enthusiasts</strong> to grow your <strong><i>brand</i></strong> and <strong><i>products</i></strong>!!</div>
-      <div class="dashboard-secondary-tagline"><a href="http://momentlens.co/" target="_blank">Moment</a>, who makes the world’s best mobile photography lenses, uses SproutUp to empower their <strong>people marketing campaigns</strong>.</div>
-      <div class="dashboard-cta">
-        <form name="form" class="form-inline" novalidate autocomplete="off">
-          <div class="form-group">
-            <div class="input-group">
-              <input name="email" type="email" class="form-control dashboard-signup-input" placeholder="Your email account" ng-model="vm.email" ng-model-options="{ debounce: 250 }" unique-email required>
-           </div>
-            <button type="submit" ng-disabled="form.$invalid" class="btn btn-lg sproutup-btn-lg-main orange" ng-click="vm.getStarted()">
-              <span ng-hide="vm.company">Get Started</span>
-              <span ng-show="vm.company">Join {{vm.company.name}}</span>
-            </button>
-          </div>
-          <div ng-show="form.email.$error.uniqueemail" class="dashboard-signup-error">
-            <p>&#x1F613; This email is already taken!</p>
-          </div>
-        </form>
-        <div class="dashboard-signup-message">
-          <p>SproutUp is absolutely free to jump start. See <a href="">what we have to offer</a>.</p>
-        </div>
-      </div>
+<div class="row marketing-container">
+    <div class="marketing-header">
+        <h1>Together, we help products grow</h1>
+        <h2>A platform for influencers to discover, try out, and champion the best innovative products</h2>
     </div>
-  </div>
+
+    <div class="row marketing-blurb">
+        <div class="col-md-4">
+            <p class="marketing-title-seq">1</p>
+            <h2 class="marketing-title">Join SproutUp community</h2>
+            <p class="marketing-content">Sign up and connect your social channels. Share your passion and meet other like-minded influencers.</p>
+        </div>
+        <div class="col-md-4">
+            <p class="marketing-title-seq">2</p>
+            <h2 class="marketing-title">Try out rad products</h2>
+            <p class="marketing-content">Get early access to innovative emerging products. Pick the ones you genuinely like, and request to try them out.</p>
+        </div>
+        <div class="col-md-4">
+            <p class="marketing-title-seq">3</p>
+            <h2 class="marketing-title">Champion products, earn perks</h2>
+            <p class="marketing-content">Write blogs, make YouTube videos, or demo live on Periscope or Meerkat. Earn perks for championing the products.</p>
+        </div>
+    </div>
+
+    <div class="marketing-cta">
+        <button analytics-on="click" analytics-event="GET STARTED" ui-sref="user.signup" class="btn btn-lg sproutup-btn-lg-main">GET STARTED</button>
+    </div>
+
+    <div class="marketing-cta creator">
+        <a analytics-on="click" analytics-event="View Creators page" ui-sref="user.creator">Are you a product creator? Check out here.</a>
+    </div>
+
 </div>
