@@ -1,0 +1,43 @@
+<h1 class="dashboard-section-title" ng-init="vm.find()"><i class="fa fa-cubes"></i>Products</h1>
+<div class="row" ng-if="vm.products.length < 1">
+  <div class="col-sm-12">
+    <div class="empty-state-wrapper">
+      <img class="img-center" src="modules/core/client/img/icon-product.png">
+      <h2>Your Products</h2>
+      <p>Launching a new product? Engage your customers? Running a campaign today.</p>
+      <a ui-sref="company.navbar.product.create" class="btn btn-lg sproutup-btn-md-main orange">Add New Product</a>
+    </div>
+  </div>
+</div>
+<div ng-if="vm.products.length > 0">
+  <div class="row">
+    <div class="col-sm-12 dashboard-call-for-action">
+      <button ui-sref="company.navbar.product.create" class="btn btn-lg sproutup-btn-md-main orange"><i class="fa fa-plus-circle"></i>Add New Product</button>
+    </div>
+  </div>
+  <div class="sproutup-table table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Tagline</th>
+					<th>Category</th>
+          <th>Campaign</th>
+					<th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="product in vm.products">
+          <td><a ui-sref="company.navbar.product.edit({ productId: product.id })">{{ product.name }}</a></td>
+          <td>{{ product.tagline }}</td>
+          <td>Category</td>
+          <td class="start-new-campaign"><a ui-sref="company.navbar.campaign.create" ng-click="vm.startCampaign(product)"><i class="fa fa-plus-circle"></i>START CAMPAIGN</a></td>
+          <td>
+            <button class="btn sproutup-btn-xs" ui-sref="company.navbar.product.edit({ productId: product.id })">Edit</button>
+          </td>
+          <!-- <td class="product-table-edit"><a ui-sref="company.navbar.product.edit({ productId: product.id })"><i class="fa fa-pencil"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

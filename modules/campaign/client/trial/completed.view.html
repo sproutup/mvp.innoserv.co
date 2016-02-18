@@ -1,0 +1,46 @@
+<div class="dashboard-body-header">
+  <div ng-if="vm.completed.length > 0">
+    <div class="dashboard-body-title" ng-if="vm.completed.length > 1">Below are {{ vm.completed.length }} product trials requests that've been recieved.
+        <div class="dashboard-body-subtitle">Woo hoo, these users have completed trials!</div>
+    </div>
+    <div class="dashboard-body-title" ng-if="vm.completed.length === 1">Below is your first completed trial.
+      <div class="dashboard-body-subtitle">Click on 'details' to see more info and approve the request.</div>
+    </div>
+    <div class="sproutup-table table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th><a href="#">Total Reach</a><sup><i class="fa fa-question-circle"></i></sup></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="request in vm.completed">
+            <td class="request-avatar"><a href="#">
+              <img ng-if="request.user.avatarUrl" class="img-center" ng-src="{{ request.user.avatarUrl }}">
+              <canvas ng-if="!request.user.avatarUrl" width="60" height="60" fontsize="28" name="{{ request.user.name }}" up-avatar></canvas>
+            </a></td>
+            <td class="request-name-pitch">
+              <div class="name"><a href="#">{{ request.user.name || 'User' }}</a></div>
+              <div>{{ request.comment || 'No reason specified' }}<a href="#"></a></div>
+            </td>
+            <td class="request-reach">{{ request.user.reach || '?' }}</td>
+            <td class="request-detail-link"><a href="#" ng-click="vm.viewDetails(request)">Details</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row" ng-if="vm.completed.length < 1">
+    <div class="col-sm-12">
+      <div class="empty-state-wrapper">
+        <img class="img-center" src="modules/core/client/img/icon-campaign.png">
+        <h2>0 completed trials</h2>
+        <p>Let's find some peeps try your product!</p>
+<!--         <a ui-sref="company.navbar.product.create" class="btn btn-lg sproutup-btn-md-main orange">Add New Product</a> -->
+      </div>
+    </div>
+  </div>
+</div>
