@@ -1,0 +1,783 @@
+@import "global";
+
+.top-banner {
+  padding: 80px 20px 30px;
+  background-color: @sproutup-green;
+  opacity: 0.75;
+  color: white;
+}
+
+.top-banner h1 {
+  font-weight: 700;
+  font-size: 16pt;
+}
+
+.top-banner h2 {
+  font-weight: 300;
+  font-size: 13.5pt;
+}
+
+.marketing-container {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  min-height: 700px;
+  background: url(../images/hero.jpg) no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  margin: 0px;
+}
+
+.wrapper-social-media-connection {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  min-height: 700px;
+  background-color: @sproutup-superlightgrey;
+  color: @main-text;
+  margin: 0px;
+}
+
+.welcome-message {
+	font-family: "lato", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin-top: 100px;
+    font-size: 18pt;
+}
+
+.marketing {
+  margin: 0 5%;
+}
+
+.marketing-header {
+    max-width: 900px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.marketing-header > h1 {
+  text-align: center;
+  line-height: 1.4;
+  margin: 35px auto 15px;
+  padding: 0px 10px;
+  font-size: 36pt;
+  font-family: "lato",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  color: #fff;
+}
+
+.marketing-header > h2 {
+  text-align: center;
+  line-height: 1.4;
+  margin: 0px auto 40px;
+  padding: 0px 10px;
+  font-size: 16pt;
+  font-family: "lato",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  color: #fff;
+}
+
+.marketing-blurb {
+  padding: 0 10px;
+  max-width: 1080px;
+  margin: 0 auto 30px;
+}
+
+.marketing-img {
+  margin: 0 auto;
+  width: 200px;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+.marketing-title {
+  font-size: 13.5pt;
+  font-family: "lato",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+
+.marketing-title-seq {
+    text-align: center;
+  border-radius: 500px;
+  width: 85px;
+  height: 85px;
+  margin: 10px auto 25px;
+  font-size: 32pt;
+  font-weight: 100;
+  padding-top: 10px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.marketing-content {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  font-size: 11.5pt;
+  font-weight: 300;
+  color: @main-text-white;
+}
+
+.marketing-cta {
+    text-align: center;
+    margin: 20px auto 40px;
+}
+
+.marketing-cta.creator {
+    border-top: 1px dashed @sproutup-grey;
+    max-width: 640px;
+    padding-top: 40px;
+}
+
+.marketing-cta.creator a {
+    color: @sproutup-lightgrey;
+    font-weight: 400;
+    font-size: 13pt;
+    margin: 0px auto 80px;
+    text-decoration: none !important;
+}
+
+.marketing-cta.creator a:hover {
+    color: @sproutup-blue-bright;
+    text-decoration: none !important;
+}
+
+.up-slideable {
+  background-color: #fafafa;
+  margin: 0px;
+  -webkit-box-shadow: 0px 0px 10px @sproutup-grey inset;
+  -moz-box-shadow: 0px 0px 10px @sproutup-grey inset;
+  box-shadow: 0px 0px 10px @sproutup-grey inset;
+}
+
+.suggest-product-header {
+  text-align: center;
+  font-family: "lato", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 28pt;
+  color: #5f5f5f;
+  margin: 30px auto 10px;
+  padding: 0px 10px;
+  line-height: 1.5;
+}
+
+.suggest-product-header-2 {
+  text-align: center;
+  font-family: "lato", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14pt;
+  color: @main-text-verylight;
+  line-height: 1.5;
+  margin: 0px auto 30px;
+  padding: 0 10px;
+}
+
+.suggest-product {
+  max-width: 500px;
+  margin: 20px auto 40px;
+  padding: 0px 10px;
+}
+
+.suggest-product-form {
+    padding: 0px 0px 15px;
+    text-align: center;
+    margin: 0px;
+}
+
+.form-input {
+  border: 1px solid @form-border;
+  border-radius: 0px;
+  color: @main-text;
+  -moz-transition: all .2s;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.form-input.large {
+  font-size: 13pt;
+  font-weight: 400;
+  height: 50px;
+}
+
+.form-input.medium {
+  height: 45px;
+  font-size: 11pt;
+  font-weight: 400;
+}
+
+.form-input.small {
+  width: 150px;
+  height: 45px;
+  font-size: 11pt;
+  font-weight: 400;
+}
+
+.form-inline .form-input.small {
+  margin-bottom: 0px;
+}
+
+.form-input + .fa {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  padding: 0;
+  color: @input-placeholder-text;
+}
+
+.form-input:focus + .fa {
+  color: @sproutup-blue;
+}
+
+.form-input +  .url-prefix {
+  position: relative;
+  top: -47px;
+  left: 16px;
+  padding: 0;
+  color: @sproutup-blue;
+  font-size: 13pt;
+  font-weight: 400;
+}
+
+.form-input.left-feedback {
+  padding-left: 48px;
+}
+
+.signup-wizard .form-input.left-feedback {
+    padding-left: 110px;
+}
+
+.form-input-textarea {
+  resize: vertical;
+  border: 1px solid @form-border;
+  min-height: 80px;
+  border-radius: 0px;
+  font-size: 12pt;
+  font-weight: 400;
+  color: @main-text;
+  -moz-transition: all .2s;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.form-input-textarea.sm {
+  min-height: 50px;
+}
+
+.form-input-textarea.no-resize {
+  resize: none;
+}
+
+.form--error-message {
+  color: @sproutup-error-message;
+  text-align: left;
+  font-weight: 400;
+  font-size: 10pt;
+  padding: 0px 0px 15px;
+}
+
+.form--error-message i {
+  padding-right: 5px;
+}
+
+.btn-suggest-product {
+  width: 60%;
+  height: 50px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  font-size: 13pt;
+  background-color: @sproutup-blue;
+  color: white;
+  border-radius: 2px;
+  padding-top: 12px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.btn-suggest-product:hover {
+  background-color: @sproutup-blue-hover;
+  color: white;
+}
+
+.influencer-profiles {
+    margin: 50px auto 40px;
+    padding: 0px 15px;
+    max-width: 960px;
+}
+
+.influencer-profiles h1 {
+    font-size: 24pt;
+    font-weight: 300;
+    color: @main-text-light;
+    text-align: center;
+}
+
+.influencer-profiles h2 {
+    font-size: 17pt;
+    font-weight: 400;
+    text-align: center;
+}
+
+.influencer-profiles h2 a {
+    color: @sproutup-blue;
+    text-decoration: none !important;
+}
+
+.influencer-profile-list {
+    margin: 0px;
+    padding: 10px 10px 0px;
+}
+
+.influencer-profile-blurb {
+    margin: 20px 0px 10px;
+    padding: 0px 0px 10px;
+    background-color: rgba(0, 0, 0, 0.07);
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+}
+
+.influencer-profile-summary {
+    margin: 0px 10px 5px;
+}
+
+.influencer-profile-logo {
+    padding: 10px;
+    margin: 0px
+}
+
+.influencer-profile-logo img {
+    max-width: 80px;
+    width: auto;
+    height: auto;
+    margin: 10px auto;
+    border: solid 2px @sproutup-grey;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.influencer-profile-detail {
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
+}
+
+.influencer-profile-detail h1 {
+    text-align: left;
+    font-size: 12pt;
+    font-weight: 700;
+    color: @main-text;
+    margin: 10px 0px 5px;
+    padding: 0px;
+    line-height: 1.6;
+}
+
+.influencer-profile-detail h1 a {
+    color: @sproutup-blue;
+    text-decoration: none !important;
+    font-weight: 400;
+}
+
+.influencer-profile-detail h1 a:hover {
+    color: @sproutup-blue-hover;
+}
+
+.influencer-profile-detail h2 {
+    text-align: left;
+    font-size: 11pt;
+    font-weight: 400;
+    color: @main-text;
+    margin: 0px 0px 5px;
+    padding: 0px;
+    line-height: 1.6;
+}
+
+.influencer-profile-detail h2 i {
+    padding-right: 10px;
+    color: @sproutup-blue;
+}
+
+.influencer-profile-detail h2 span {
+    font-size: 14pt;
+    font-weight: 700;
+    color: @sproutup-blue;
+    padding-right: 3px;
+}
+
+.influencer-profile-detail p {
+    font-size: 11pt;
+    font-weight: 400;
+    color: @main-text;
+    margin: 5px 0px;
+    padding: 0px;
+    line-height: 1.5;
+}
+
+.influencer-profile-detail p a {
+    color: @sproutup-blue;
+    text-decoration: none !important;
+}
+
+.influencer-profile-detail p a:hover {
+    color: @sproutup-blue-hover;
+}
+
+.influencer-profile-detail p a i {
+    padding-right: 10px;
+}
+
+.influencer-profile-quote {
+    border-top: 1px dashed @form-border;
+    margin: 0px 10px;
+    padding: 15px 10px 10px;
+    font-weight: 400;
+    font-size: 12.5pt;
+}
+
+.influencer-profile-quote.blue {
+    color: @sproutup-blue;
+}
+.influencer-profile-quote.blue a {
+    color: @sproutup-blue;
+}
+.influencer-profile-quote.orange {
+    color: @sproutup-orange;
+}
+.influencer-profile-quote.orange a {
+    color: @sproutup-orange;
+}
+.influencer-profile-quote.green {
+    color: @sproutup-green;
+}
+.influencer-profile-quote.green a {
+    color: @sproutup-green;
+}
+.influencer-profile-quote.purple {
+    color: @sproutup-purple;
+}
+.influencer-profile-quote.purple a{
+    color: @sproutup-purple;
+}
+
+.influencer-profile-quote-block {
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 0px 15px;
+}
+
+.influencer-profile-quote-block.blue {
+    border-left: solid 6px @sproutup-blue;
+}
+.influencer-profile-quote-block.green {
+    border-left: solid 6px @sproutup-green;
+}
+.influencer-profile-quote-block.orange {
+    border-left: solid 6px @sproutup-orange;
+}
+.influencer-profile-quote-block.purple {
+    border-left: solid 6px @sproutup-purple;
+}
+
+.influencer-profile-quote-content {
+    font-weight: 400;
+    color: @main-text;
+    font-size: 11pt;
+    padding: 0px;
+    line-height: 1.6;
+}
+
+.navbar-skinny {
+  display: none !important;
+  background: transparent !important;
+}
+
+.navbar-heightBoost {
+  max-height: 500px !important;
+}
+
+.user-card-wrapper {
+  position: absolute;
+  bottom: 65px;
+  left: -71px;
+  display: inline-block;
+  width: 180px;
+  height: auto;
+  background-color: #EFEFEF;
+  z-index: 100;
+  border-radius: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.product-trial-user-card.big .user-card-wrapper {
+  bottom: 118px;
+  left: -42px;
+}
+
+.product-trial-user-card .user-card-hover-box {
+  width: 80px;
+}
+
+.product-trial-user-card.big .user-card-hover-box {
+  bottom: 36px;
+  left: 8px;
+}
+
+.product-trial-user-card.small .user-card-hover-box {
+  position: absolute;
+  bottom: -13px;
+  left: -61px;
+}
+
+.product-trial-user-card.small {
+  position: absolute;
+}
+
+.product-trial-user-card.small .user-card-wrapper {
+  position: absolute;
+  left: -115px;
+  bottom: 18px;
+}
+
+.product-trial-user-card .user-card-wrapper .user-card-avatar-link {
+  margin-left: 0px;
+}
+
+.left-user-card .user-card-wrapper {
+  left: -17px;
+}
+
+.left-user-card .user-card-wrapper .user-card-arrow {
+  left: 21px;
+}
+
+.right-user-card .user-card-wrapper {
+  left: auto;
+  right: -17px;
+}
+
+.right-user-card .user-card-wrapper .user-card-arrow {
+  left: auto;
+  right: 25px;
+}
+
+.user-card-arrow {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #EFEFEF;
+  position: absolute;
+  bottom: -15px;
+  left: 75px;
+}
+
+.user-card-arrow.up {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #EFEFEF;
+  position: absolute;
+  display: none;
+  top: -15.5px;
+}
+
+.user-card-hover-box {
+  position: absolute;
+  bottom: 36px;
+  left: -3px;
+  height: 100px;
+  width: 44px;
+}
+
+.user-card-avatar {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inherit;
+}
+
+.user-card-name {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: 700;
+  color: @sproutup-dark-grey;
+}
+
+.user-card-nickname {
+  margin-top: 5px;
+  text-align: center;
+  color: @sproutup-blue;
+  font-size: 10pt;
+  font-weight: 400;
+}
+
+.user-card-nickname.with-twitter-button {
+  margin-top: 13px;
+  display: inline-block;
+}
+
+.send-tweet-button {
+  width: 24px;
+  margin-left: 5px;
+  position: relative;
+  bottom: 5px;
+}
+
+.user-card-points {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 9.6pt;
+  color: @sproutup-darkgold;
+}
+
+.user-card-avatar-link {
+  margin-left: 38px;
+}
+
+.user-card-twitter-link:hover {
+  text-decoration: underline !important;
+  color: @sproutup-blue !important;
+}
+
+.user-card-name-link:hover {
+  text-decoration: underline !important;
+  color: @sproutup-dark-grey !important;
+}
+
+.upvote-wrapper {
+  display: inline-block;
+}
+
+.upvote-link {
+  display: inline-block;
+}
+
+.upvote-list {
+  position: absolute;
+  bottom: 33px;
+  width: auto;
+  height: auto;
+  background-color: #4C4C4C;
+  z-index: 10;
+  border-radius: 10px;
+  padding: 11px;
+  padding-bottom: 0px;
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+.upvote-user-avatar {
+  width: 30px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.upvote-user {
+  margin-bottom: 11px;
+}
+
+.upvote-hover-box {
+  position: absolute;
+  left: 1px;
+  top: -4px;
+  width: 84px;
+  height: 20px;
+}
+
+.user-card-arrow.upvotes {
+  border-top: 15px solid #4C4C4C;
+  left: 17px;
+  top: -4px;
+}
+
+.social-media-connection-item {
+  margin: 10px 0px;
+}
+
+.social-media-connection-item p {
+  color: @main-text;
+  font-weight: 400;
+  font-size: 11pt;
+}
+
+@media (min-width: 767px) {
+  .navbar-toggleMenu {
+    display: none !important;
+  }
+}
+
+@media (min-width:767px) and (max-width:992px) {
+  .suggest-product-form-input {
+    width: 80%;
+  }
+
+  .btn-suggest-product {
+    width: 30%;
+  }
+
+  .suggest-product-header {
+    font-weight: 300;
+    font-size: 20pt;
+  }
+
+  .suggest-product-header-2 {
+    font-weight: 300;
+    font-size: 14pt;
+  }
+}
+
+@media (max-width:767px) {
+  .navbar-skinny {
+    display: block !important;
+    color: white !important;
+  }
+  .navbar-wide {
+    display: none !important;
+  }
+  .navbar-influencer {
+    background-color: #3b4546;
+  }
+  .influencer-profile-detail {
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    bottom: 8px;
+  }
+
+  .influencer-profile-detail h1 {
+    text-align: center;
+  }
+
+  .influencer-profile-detail h2 {
+    text-align: center;
+  }
+
+  .suggest-product-form-input {
+    width: 100%;
+  }
+
+  .btn-suggest-product {
+    width: 100%;
+  }
+
+  .suggest-product-header {
+    font-weight: 300;
+    font-size: 14pt;
+  }
+
+  .suggest-product-header-2 {
+    font-weight: 300;
+    font-size: 10pt;
+  }
+}

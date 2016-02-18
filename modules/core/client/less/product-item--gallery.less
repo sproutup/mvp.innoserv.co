@@ -1,0 +1,423 @@
+@import "global";
+
+.product-gallery-page {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-tabs {
+  background-color: #fff;
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 0px;
+}
+
+.gallery-tabs--content {
+  float: left;
+  padding: 15px 45px 0px;
+}
+
+.btn-gallery-tab {
+  height: 40px;
+  margin-right: 5px;
+  border: dashed 1px @sproutup-purple;
+  font-weight: 400;
+  font-size: 11pt;
+  color: @sproutup-purple;
+  background-color: #fff;
+  border-radius: 0px;
+  padding-top: 9px;
+  padding-left: 24px;
+  padding-right: 24px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.btn-gallery-tab i {
+  padding-right: 8px;
+}
+
+.btn-gallery-tab.active {
+  color: white;
+  background-color: @sproutup-purple;
+}
+
+.btn-gallery-tab:hover,
+.btn-gallery-tab:focus {
+  color: white;
+  background-color: @sproutup-purple;
+}
+
+.gallery-header {
+  color: @sproutup-purple;
+  padding: 20px 45px;
+  width: 100%;
+  font-size: 17pt;
+  font-weight: 300;
+}
+
+.gallery-header span {
+  font-size: 12pt;
+  color: @main-text;
+  font-weight: 400;
+}
+
+.gallery-header span i {
+  padding-right: 12px;
+}
+
+.gallery-header span a {
+  font-weight: 700;
+  color: @sproutup-purple;
+}
+
+.gallery-header a:hover,
+.gallery-header a:focus {
+  color: @sproutup-purple - #111;
+  text-decoration: none !important;
+}
+
+.media {
+  overflow: hidden;
+  padding: 0px;
+  margin: 5px auto 5px;
+}
+
+.media-photo-background {
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color:#fff;
+  margin-bottom: 4px;
+}
+
+.media-photo-overlay {
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0));
+  background: -o-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0));
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0));
+  background: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0));
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.media-photo-overlay.active {
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+  background: -o-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+  background: linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.media-photo-info {
+  padding: 12px;
+  z-index: 3;
+  color: @main-text-white;
+  overflow: hidden;
+}
+
+.media-video-info {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    padding: 12px;
+    z-index: 3;
+    width: 85%;
+    color: @main-text-white;
+}
+
+.media-video-info.active {
+  width: 100%;
+  height: 100%;
+}
+
+.media-video-info.active:before {
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+  background: -o-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+  background: linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    content: "";
+}
+
+.media-video-info:before {
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+  background: -o-linear-gradient(top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+  background: linear-gradient(top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  content: "";
+}
+
+.media-user {
+  font-weight: 400;
+  font-size: 11pt;
+  padding-bottom: 8px;
+}
+
+.media-user a {
+  padding-left: 12px;
+  color: @main-text-white;
+}
+
+.media-user a:hover {
+  color: @sproutup-blue-bright;
+}
+
+.media-photo-overlay.active .media-user a {
+  color: @sproutup-blue-bright;
+}
+
+.media-video-info.active .media-user a {
+  color: @sproutup-blue-bright;
+}
+
+.media-story {
+  font-weight: 400;
+  font-size: 10pt;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  line-height: 1.6;
+}
+
+.media-actions {
+  float: left;
+  font-size: 9pt;
+  font-weight: 700;
+}
+
+.media-actions a {
+  padding-right: 20px;
+  text-decoration: none !important;
+  color: @main-text-white;
+}
+
+.media-actions a:hover {
+  color: @sproutup-blue-bright;
+}
+
+.btn-post-media {
+  font-size: 10pt;
+  font-weight: 700;
+  color: #fff;
+  background-color: @sproutup-purple;
+  height: 36px;
+  border-radius: 0px;
+  padding-top: 6px;
+  margin-right: 4px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.btn-post-media:hover {
+  color: #fff;
+  background-color: @sproutup-purple-hover;
+}
+
+.post-new-media-blurb {
+    margin: 10px 45px 30px;
+}
+
+.post-new-media-form {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.post-new-media-file {
+  float:left;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: solid 1px @form-border;
+  height: 128px;
+  width: 128px;
+}
+
+.post-new-media-comment {
+  float:left;
+  overflow: hidden;
+  width: 50%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn-media-upload {
+  text-align: center;
+  height: 45px;
+  font-weight: 700;
+  font-size: 10pt;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid @sproutup-grey;
+  border-radius: 6px;
+  padding: 12px 15px 0px;
+  margin: 95px auto 0px;
+  box-shadow: none;
+}
+
+.btn-media-upload:hover,
+.btn-media-upload:focus,
+.btn-media-upload:active {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: none;
+}
+
+.btn-media-upload i {
+  padding-top: 68px;
+}
+
+.product-gallery-page .btn-media-upload {
+    text-align: center;
+    height: 128px;
+    width: 128px;
+    font-size: 20pt;
+    color: @form-border;
+    background: 0 0;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px auto;
+    box-shadow: none;
+}
+
+.product-gallery-page .btn-media-upload:hover {
+    color: @sproutup-purple;
+    box-shadow: none;
+    border: none;
+}
+
+.product-gallery-page .btn-media-upload i {
+    padding-top: 50px;
+}
+
+.post-media-comment-textarea {
+  min-height: 128px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: solid 1px @form-border;
+  color: @main-text;
+  line-height: 1.5;
+  font-size: 11pt;
+  font-weight: 400;
+  resize: vertical;
+  border-radius: 0px;
+  box-shadow: none !important;
+}
+
+.post-media-comment-textarea[disabled="disabled"] {
+  resize: none;
+  background-color: white;
+  color: @main-text-verylight;
+}
+
+.progress {
+  background-color: white;
+  border: 1px solid @main-text-white;
+  border-radius: 20px;
+  box-shadow: none;
+  height: 12px;
+  margin: 90px 10px 0px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  box-shadow: none;
+  background-color: @sproutup-blue;
+  float: left;
+  height: 100%;
+  transition: width 0.6s ease 0s;
+  width: 0;
+}
+
+.btn-media-remove {
+  overflow: hidden;
+  text-align: center;
+  padding: 4px 0px 0px;
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 28px;
+  width: 28px;
+  background-color: @main-text-white;
+  color: @main-text;
+  font-size: 10pt;
+  border-radius: 2px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.btn-media-remove:hover {
+  background-color: @sproutup-red;
+  color: white;
+}
+
+// Masonry
+.masonry .masonry-media-item.photo {
+  width: 310px;
+  height: auto;
+  float: left;
+}
+
+.masonry .masonry-media-item.video {
+  width: 310px;
+  height: auto;
+  float: left;
+}
+
+.masonry .masonry-media-item.video.in-processing {
+  width: 310px;
+  height: 310px;
+  float: left;
+  color: @sproutup-purple;
+  border: 2px dashed @sproutup-purple;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.masonry {
+  margin: 0 auto;
+}
+
+.media-photo {
+  width: 310px;
+  height: auto;
+  margin-bottom: 4px;
+}
+
+.video-processing-placeholder {
+  padding-top: 130px;
+}
+
+.video-processing-placeholder p {
+  padding: 20px 10px;
+  font-weight: 400;
+  font-size: 11pt;
+}

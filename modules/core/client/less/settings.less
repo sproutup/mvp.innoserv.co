@@ -1,0 +1,1077 @@
+@import "global";
+
+.user-settings-wrapper {
+    margin: 30px auto;
+    padding: 0px 10px;
+    max-width: 1024px;
+}
+
+.save-settings-btn {
+    width: 80%;
+    height: 50px;
+    font-weight: 400;
+    font-size: 12pt;
+    margin: 15px 10% 30px;
+    background-color: @sproutup-orange;
+    color: white;
+    border-radius: 2px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.save-settings-btn:hover,
+.save-settings-btn:focus {
+    color: white;
+    background-color: @sproutup-orange-hover;
+}
+
+.list-group {
+    border-radius: 0px;
+    font-weight: 700;
+    font-size: 11pt;
+}
+
+.list-group-item {
+    background-color: #fafafa;
+    height: 56px;
+    padding-top: 17px;
+}
+
+a.list-group-item {
+    color: @sproutup-blue;
+}
+
+a.list-group-item:hover {
+    color: @sproutup-blue;
+}
+
+.list-group-item.active {
+    background-color: @sproutup-blue;
+}
+
+.list-group-item.active:hover {
+    background-color: @sproutup-blue;
+}
+
+.list-group-item span {
+    font-weight: 400;
+    font-size: 10pt;
+    background-color: @sproutup-blue;
+    float: right;
+    color: white;
+}
+
+.list-group-item.active span {
+    color: #fff;
+}
+
+.list-group-item .new-feature-label {
+    font-weight: 700;
+    font-size: 7pt;
+    color: white;
+    background-color: @sproutup-orange;
+    float: right;
+    padding: 5px 10px;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-bottom: 0;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-bottom: 0;
+}
+
+.panel {
+    border-radius: 0px;
+}
+
+.panel-default > .panel-heading {
+    background-color: #fafafa;
+    color: @main-text-verylight;
+    height: 50px;
+    font-weight: 300;
+    font-size: 20pt;
+    padding-top: 15px;
+}
+
+.control-label {
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 10pt;
+    color: @main-text;
+}
+
+.user-settings-input {
+    border: 1px solid @form-border;
+    height: 40px;
+    border-radius: 0px;
+    font-size: 11pt;
+    font-weight: 400;
+    color: @main-text;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+.product-trial-header {
+    margin: 15px 0px;
+    font-weight: 300;
+    font-size: 16pt;
+    color: @main-text;
+}
+
+.product-trial-header.small {
+    margin: 15px 0px;
+    font-weight: 400;
+    font-size: 13pt;
+}
+
+.product-trial-header a {
+    color: @sproutup-blue;
+    font-weight: 400;
+    text-decoration: none !important;
+}
+
+.product-trial-header a:hover {
+    color: @sproutup-blue-hover;
+}
+
+.product-trial-header a i {
+    padding-right: 15px;
+}
+
+.product-trial-item {
+    margin: 15px 0px;
+    padding: 0px 25px;
+    background-color: @sproutup-verylightgrey;
+    border: 1px solid @sproutup-lightgrey;
+}
+
+.about-campaign-column .product-trial-item {
+  margin: 0px 0px 10px;
+}
+
+.about-campaign-column .product-trial-item h3 {
+  font-weight: 300;
+  font-size: 14pt;
+  margin: 0px;
+  padding: 0px;
+}
+
+.my-content-item {
+    margin: 0px;
+    padding: 0px 0px 15px;
+}
+
+.my-content-body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.my-content-body a:hover,
+.my-content-body a:focus {
+    text-decoration: none !important;
+}
+
+.my-content-related-product {
+    float: right;
+    margin: 0px 0px 10px;
+    padding: 8px 12px;
+    background-color: @sproutup-green;
+    color: white;
+    font-weight: 700;
+    font-size: 10pt;
+    border-radius: 2px;
+}
+
+.my-content-related-product i {
+    padding-right: 10px;
+}
+
+.product-post-tag {
+    padding-right: 8px;
+}
+
+.my-content-related-product:hover {
+    color: white;
+    background-color: @sproutup-green-hover;
+}
+
+.my-content-related-product.new-product {
+    background-color: @sproutup-purple;
+}
+
+.my-content-related-product.new-product:hover {
+    color: white;
+    background-color: @sproutup-purple-hover;
+}
+
+.my-content-item--summary {
+    margin: 0px;
+    padding: 15px 25px;
+    background-color: #fff;
+    border: 1px solid @sproutup-lightgrey;
+}
+
+.my-content-headsup {
+    margin: 0px 0px 15px;
+    background-color: white;
+    border: 1px solid @sproutup-lightgrey;
+    text-align: center;
+}
+
+.suggest-page .my-content-headsup {
+    padding: 0px 0px 15px;
+}
+
+.my-content-headsup-text {
+    font-weight: 400;
+    font-size: 11.5pt;
+    line-height: 1.6;
+    color: @main-text-lighter;
+    margin: 0px;
+    padding: 15px 25px;
+}
+
+.wrapper-suggest .my-content-headsup-text {
+    padding: 15px 25px 20px;
+}
+
+.my-content-headsup-text a {
+    color: @sproutup-blue;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.my-content-headsup-text a:hover {
+    color: @sproutup-blue;
+}
+
+@media (max-width:767px){
+    .my-content-item-summary {
+        padding: 15px 20px;
+    }
+
+    .my-content-related-product {
+        float: left;
+    }
+}
+
+.my-content-user-avatar.post-content-user {
+  padding: 0px 5px;
+}
+
+.my-content-user-avatar.comment-user-avatar {
+  padding: 0px;
+}
+
+.my-content-user-avatar img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.my-content-user-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 500px;
+    border: 1px solid @sproutup-grey;
+}
+
+.my-content-user-img-sm {
+    width: 56px;
+    height: 56px;
+    border-radius: 500px;
+    border: 1px solid @sproutup-grey;
+}
+
+.my-content-user .my-content-user-span a:hover {
+  text-decoration: underline !important;
+  color: black !important;
+}
+
+.my-content-item-stat {
+    padding: 0px 25px;
+    margin: 15px 0px;
+}
+
+.my-content-image {
+    margin: 0px;
+    border-radius: 4px;
+}
+
+.my-content-tags {
+    padding: 0px 0px 10px;
+    border-bottom: 1px dashed @main-text-verylight;
+}
+
+.my-content-tags a {
+    font-weight: 700;
+    font-size: 9pt;
+    color: @main-text-verylight;
+    text-decoration: none !important;
+    padding-right: 10px;
+}
+
+.my-content-tags a span {
+    color: @sproutup-blue;
+}
+
+.my-content-tags a span:hover {
+    color: @sproutup-blue-hover;
+}
+
+.my-content-tags a:hover {
+    color: @main-text;
+}
+
+.my-content-actions {
+    border-top: 1px dashed @sproutup-grey;
+    padding-top: 10px;
+    position: relative;
+}
+
+.my-content-actions a {
+    padding-right: 15px;
+    font-size: 9pt;
+    font-weight: 700;
+    color: @main-text-verylight;
+}
+
+.my-content-actions a .upvote-user-name {
+    color: #E8E7E8;
+}
+
+.my-content-actions a .upvoted {
+    color: @sproutup-blue;
+}
+
+.my-content-actions a:hover {
+    color: @sproutup-blue;
+}
+
+.my-content-actions.hangout a:hover {
+  color: @sproutup-purple;
+}
+
+.my-content-actions.hangout a .upvoted {
+  color: @sproutup-purple;
+}
+
+.wrapper-suggest .my-content-actions a:hover {
+    color: @sproutup-suggest;
+}
+
+.wrapper-suggest .my-content-actions a .upvoted {
+    color: @sproutup-suggest;
+}
+
+.sproutup-btn-tags {
+    font-weight: 700;
+    font-size: 9pt;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    height: 30px;
+    border-radius: 0px;
+    padding-top: 5px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    color: white;
+    background-color: @sproutup-blue;
+}
+
+.sproutup-btn-tags:hover {
+    color: white;
+    background-color: @sproutup-blue-hover;
+}
+
+.sproutup-btn-tags i {
+    padding-right: 5px;
+}
+
+.my-content-user {
+    padding: 0px 0px 3px;
+    margin: 0px;
+    font-weight: 400;
+    font-size: 11pt;
+}
+
+.my-content-user a {
+    font-size: 11pt;
+    font-weight: 700;
+    color: @sproutup-blue;
+}
+
+.my-content-user .activity {
+  margin: 0px 3px;
+  color: @secondary-text;
+}
+
+.my-content-user i {
+  color: @main-text-verylight;
+  margin: 0px 10px;
+}
+
+.my-content-user sup {
+  margin: 0px 6px;
+  top: -2px;
+}
+
+.my-content-user.hangout a {
+  color: @sproutup-purple;
+}
+
+.my-content-user a:hover {
+    color: @sproutup-blue;
+    text-decoration: underline !important;
+}
+
+.my-content-user.hangout a:hover {
+  color: @sproutup-purple-hover;
+}
+
+.my-content-user.comment span {
+  margin-left: 8px;
+}
+
+.my-content-user.comment a {
+    font-size: 10pt;
+    color: @sproutup-blue;
+}
+
+.my-content-user.hangout.comment a {
+  color: @sproutup-purple;
+}
+
+.my-content-user.comment a:hover {
+    text-decoration: underline !important;
+}
+
+.wrapper-suggest .my-content-user a {
+    color: @sproutup-suggest;
+}
+
+.wrapper-suggest .my-content-user.comment a {
+    color: @sproutup-suggest;
+}
+
+.wrapper-suggest .my-content-user .my-content-user-name a:hover {
+    color: @sproutup-suggest-hover;
+}
+
+.my-content-timestamp {
+    padding: 0px;
+    margin: 0px;
+}
+
+.my-content-timestamp a {
+    font-weight: 400;
+    font-size: 10pt;
+    color: @secondary-text;
+}
+
+.my-content-timestamp a:hover {
+    color: @secondary-text;
+    text-decoration: underline !important;
+}
+
+.my-content-timestamp.comment {
+    font-weight: 400;
+    font-size: 9pt;
+    color: @secondary-text;
+}
+
+.my-content-item-main {
+    margin: 10px 0px 10px;
+}
+
+.my-content-item-main.suggest {
+    margin: 10px 0px 15px;
+}
+
+.my-content-og-headline {
+    font-size: 12pt;
+    font-weight: 700;
+    color: @main-text;
+    line-height: 1.6;
+    padding: 10px 0px 5px;
+    margin: 0px;
+}
+
+.my-content-og-headline.suggest {
+    font-size: 12pt;
+    font-weight: 700;
+    color: @main-text;
+    line-height: 1.6;
+    padding: 0px 0px 5px;
+    margin: 0px;
+}
+
+.my-content-text {
+    font-size: 11.5pt;
+    font-weight: 400;
+    color: @main-text;
+    line-height: 1.6;
+    padding: 0px;
+    margin: 0px;
+    white-space: pre-wrap;
+    padding-bottom: 10px;
+}
+
+.my-content-text a {
+    color: @sproutup-blue;
+    text-decoration: none !important;
+}
+
+.my-content-text a:hover {
+    color: @sproutup-blue-hover;
+    text-decoration: underline !important;
+}
+
+.my-content-og-text {
+    font-size: 10pt;
+    font-weight: 400;
+    color: @main-text-light;
+    line-height: 1.6;
+    padding: 0px;
+    margin: 0px;
+    white-space: pre-wrap;
+    padding-bottom: 5px;
+}
+
+.my-content-text.comment {
+  line-height: 1.5;
+    font-size: 11pt;
+    padding: 3px 0px 0px;
+}
+
+.my-content-video {
+    margin: 10px 0px;
+    background-color: #333;
+    height: 100%;
+    width: 100%;
+    color: @main-text-white;
+}
+
+.my-content-video.embedded {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+}
+
+.my-content-video.embedded iframe,
+.my-content-video.embedded object,
+.my-content-video.embedded embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+}
+
+.my-content-add-item {
+    margin: 0px;
+    padding: 0px;
+}
+
+.product-trial-item-banner {
+    min-height: 80px;
+    margin: 0px 0px 15px;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+
+.product-trial-item-banner::after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.product-trial-item-banner p {
+    margin: 20px 10px;
+    z-index: 10;
+    position: absolute;
+    font-weight: 300;
+    font-size: 20pt;
+    color: @main-text-white;
+}
+
+.product-trial-item-banner p span a {
+    padding-left: 30px;
+    font-weight: 400;
+    font-size: 9pt;
+    color: @main-text-white;
+}
+
+.product-trial-item--photo {
+    padding: 10px 0px;
+    margin: 0px;
+}
+
+.product-trial-item--detail {
+    padding: 10px 0px;
+    margin: 0px;
+}
+
+.product-trial-item--detail h1 {
+    font-size: 11pt;
+    font-weight: 400;
+    color: @main-text;
+    padding: 0px;
+    margin: 0px 0px 15px;
+}
+
+.product-trial-item--status {
+    font-size: 12pt;
+    font-weight: 400;
+    padding: 8px 0px 4px;
+    margin: 0px;
+    color: @main-text-lighter;
+    line-height: 1.7;
+}
+
+.product-trial-item--status .fa {
+    width: 30px;
+}
+
+.product-trial-item--status-desc span {
+    color: @sproutup-blue;
+    font-weight: 700;
+    font-size: 12.5pt;
+    display: block;
+    padding-bottom: 8px;
+}
+
+.product-trial-item--status-desc a {
+  color: @sproutup-blue;
+}
+
+.product-trial-item--actions {
+  padding: 0px 30px 20px;
+}
+
+.product-trial-item--status.current {
+    color: @sproutup-green;
+    font-weight: 400;
+}
+
+.product-trial-item--status.future {
+    color: @sproutup-green;
+    opacity: 0.75;
+}
+
+.product-trial-item--status.reminder {
+    color: @sproutup-orange;
+}
+
+.product-trial-item--status.reject {
+    color: @sproutup-red;
+}
+
+.product-trial-item--status i {
+    padding-right: 10px;
+}
+
+.product-trial-item--status-desc {
+  font-size: 11pt;
+  font-weight: 400;
+  padding: 0px 20px 10px 30px;
+  margin: 0px;
+  color: @main-text-verylight;
+  line-height: 1.5;
+}
+
+.my-content-page {
+	max-width: 1100px;
+	margin: 90px auto 30px;
+  padding: 0px;
+}
+
+.profile-header .my-content-page
+{
+    margin: 30px auto;
+}
+
+.my-content-page.single-post {
+	max-width: 720px;
+}
+
+.my-content-left-rail {
+    padding: 0px 10px;
+    margin: 0px;
+    //border-right: 1px dashed @form-border;
+  width: 65%;
+}
+
+.my-content-right-rail {
+    padding: 0px 10px;
+    margin: 0px;
+    width: 35%;
+}
+
+.product-trial-item--input {
+    margin: 20px 0px;
+}
+
+.product-trial-item--input p {
+    font-weight: 400;
+    color: @main-text-verylight;
+    font-size: 12pt;
+    margin: 10px 0px 15px;
+    line-height: 1.5;
+}
+
+.product-trial-item--input button {
+    margin-top: 15px;
+}
+
+.product-trial-item--input a {
+    margin-top: 15px;
+}
+
+.product-trial-item--result {
+    margin: 0px;
+    padding: 10px 25px 5px;
+}
+
+.product-trial-item--result i {
+    color: @sproutup-red;
+}
+
+.product-trial-item--result a {
+    font-weight: 400;
+    color: @sproutup-blue;
+    font-size: 12.5pt;
+    margin: 15px 5px;
+    line-height: 1.5;
+}
+
+.product-trial-content-wrapper {
+    margin: 0px;
+    padding: 0px;
+}
+
+.product-trial-content-item {
+    margin: 3px;
+    border-radius: 2px;
+    border: 1px solid @sproutup-grey;
+    background-color: white;
+}
+
+.product-trial-content-new-item {
+    margin: 3px;
+    border-radius: 2px;
+    border: 1px dashed @sproutup-grey;
+    background-color: white;
+}
+
+.product-trial-content-item h1 {
+    font-weight: 400;
+    font-size: 12pt;
+    color: @main-text;
+    padding: 20px 15px 10px;
+    margin: 0px;
+    height: 40px;
+}
+
+.product-trial-content-item p {
+    font-weight: 400;
+    font-size: 10pt;
+    color: @main-text-verylight;
+    padding: 10px 15px 20px;
+    margin: 0px;
+    height: 240px;
+}
+
+.btn-content-upload {
+    text-align: center;
+    font-size: 20pt;
+    width: 100%;
+    height: 280px;
+    color: @sproutup-grey;
+    background: 0 0;
+    padding: 0px;
+    margin: 0px auto;
+    box-shadow: none;
+}
+
+.btn-content-upload:hover,
+.btn-content-upload:focus,
+.btn-content-upload:active {
+    color: @sproutup-blue;
+    box-shadow: none;
+}
+
+.btn-content-upload i {
+    padding-top: 135px;
+}
+
+.my-content-comments {
+    margin: 0px;
+    padding: 0px;
+}
+
+.my-content-comment-row {
+    background-color: @sproutup-veryverylightgrey;
+    border: 1px solid @sproutup-lightgrey;
+    margin: 1px 0px;
+    padding: 15px 25px;
+}
+
+.my-content-comment-more {
+    margin: 0px 0px 1px;
+    padding: 15px 0px;
+    background-color: @sproutup-lightergrey;
+}
+
+.my-content-comment-more a {
+    margin: 0px;
+    padding: 0px;
+    color: @sproutup-blue;
+    font-weight: 700;
+    font-size: 10.5pt;
+    text-decoration: none !important;
+}
+
+.my-content-comment-more a:hover {
+    color: @sproutup-blue-hover;
+}
+
+.my-content-comment-blurb {
+    padding: 0px 0px 0px 20px;
+}
+
+.my-content-new {
+    margin: 15px 0px 10px;
+}
+
+.my-content-new input {
+  margin-bottom: 5px;
+}
+
+.my-content-new hr {
+    margin: 10px 5px;
+}
+
+.btn-my-content-add-media {
+    width: 100%;
+  height: 120px;
+  font-weight: 400;
+  font-size: 11pt;
+  color: @input-placeholder-text;
+  background-color: white;
+  border: none;
+  padding: 23px 0px 0px;
+  margin: 0px;
+  box-shadow: none;
+}
+
+.btn-my-content-add-media i {
+    font-size: 30pt;
+    display: block;
+    padding: 5px 0px;
+}
+
+.btn-my-content-add-media:hover,
+.btn-my-content-add-media:focus,
+.btn-my-content-add-media:active {
+    color: @sproutup-blue;
+    background-color: white;
+    box-shadow: none;
+}
+
+.my-content-info-header {
+    background-color: @sproutup-blue-muted;
+    color: white;
+    margin: 15px 0px 10px;
+}
+
+.suggest-page .my-content-info-header {
+    background-color: @sproutup-suggested-muted;
+}
+
+.my-content-info-header.leaderboard {
+    background-color: @sproutup-green;
+    color: white;
+    margin: 15px 0px 10px;
+}
+
+.my-content-info-header p {
+    padding: 12px 15px;
+    font-weight: 700;
+    font-size: 11pt;
+}
+
+.my-content-info-header p a {
+    color: white;
+}
+
+.my-content-info-body {
+    color: @main-text;
+    margin: 0px;
+}
+
+.my-content-info-body h3 {
+    padding: 10px 15px;
+    margin: 0px;
+    font-weight: 700;
+    font-size: 11.5pt;
+    color: @sproutup-blue-muted;
+    line-height: 1.7;
+}
+
+.suggest-page .my-content-info-body h3 {
+    color: @sproutup-suggest;
+}
+
+.my-content-info-body h3 i {
+    padding-right: 10px;
+}
+
+.my-content-info-body p {
+    padding: 5px 15px;
+    font-weight: 400;
+    font-size: 11pt;
+    line-height: 1.7;
+}
+
+.leaderboard-profile-avatar {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.leaderboard-profile-avatar img {
+    border-radius: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid @sproutup-lightergrey;
+}
+
+.leaderboard-profile-info {
+    margin: 10px 0px;
+    padding: 0px;
+}
+
+.leaderboard-profile-info h1 {
+    font-weight: 400;
+    font-size: 12pt;
+    color: @main-text;
+    margin: 0px;
+    padding: 5px 0px;
+}
+
+.leaderboard-profile-info h2 {
+    font-weight: 400;
+    font-size: 20pt;
+    color: @main-text-verylight;
+    margin: 0px;
+    padding: 10px 0px 5px;
+}
+
+.leaderboard-profile-info h2 span {
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+@media (max-width:767px) {
+    .comment-user-avatar {
+        padding: 0px;
+        float: left;
+    }
+
+    .post-user-avatar {
+        position: absolute;
+        top: 0px;
+        z-index: 2;
+        padding-left: 27px;
+        border: none;
+    }
+
+    .my-content-timestamp, .my-content-user {
+        padding-left: 70px;
+    }
+
+    .my-comment-timestamp, .my-comment-user {
+        padding-left: 57px;
+    }
+
+    .my-content-user-img {
+        border: none;
+        width: 50px;
+        height: 50px;
+    }
+
+    .my-content-user .my-content-user-twitter {
+        display: none;
+    }
+
+    .up-content-product {
+        display: block;
+        margin: 18px 0px;
+        float: none;
+        position: inherit;
+    }
+
+    .my-content-comment-row {
+        padding: 15px 25px;
+    }
+
+    .my-content-text.comment {
+        padding-top: 10px;
+    }
+
+    .post-comment-user-img-circle {
+        width: 40px;
+        position: relative;
+        top: 1px;
+    }
+
+    .my-content-item--summary {
+        padding: 17px 25px;
+    }
+
+    .my-content-comment-blurb {
+        padding: 0px;
+    }
+
+    .post-content-user {
+        display: none;
+    }
+
+    .my-content-page {
+        margin: 60px auto 30px;
+    }
+
+    .new-comment-avatar {
+        display: none;
+    }
+
+    .my-content-left-rail {
+        border-right: none;
+        width: auto;
+    }
+
+    .my-content-right-rail {
+        display: none;
+        width: auto;
+    }
+
+}

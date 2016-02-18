@@ -1,0 +1,541 @@
+@import "global";
+
+.influencer-how-page {
+    margin: 0px 0px 40px;
+}
+
+.influencer-how-header {
+  width: 100%;
+  min-height: 480px;
+  margin-bottom: 20px;
+  background: url(../images/community.jpg) no-repeat center center;
+  background-size: cover;
+  color: @main-text-white;
+}
+
+.influencer-how-header--message {
+  padding: 80px 20px 40px;
+  max-width: 750px;
+  margin: 0px auto;
+}
+
+.influencer-how-header--message > h1 {
+  font-weight: 300;
+  font-size: 24pt;
+  text-align: center;
+}
+
+.influencer-how-header--message > p {
+  font-weight: 300;
+  padding-top: 20px;
+  font-size: 13pt;
+  line-height: 1.8;
+}
+
+.intro-header {
+  width: 100%;
+  height: 480px;
+  text-align: center;
+  background: url(../images/creator/creator_banner.jpg) no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+
+.perk .intro-header {
+    width: 100%;
+    height: 480px;
+    text-align: center;
+    background: url(../images/perk/hero-perk.jpg) no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+.intro-message {
+  padding: 160px 15px 0px;
+  max-width: 900px;
+  margin: 0px auto;
+}
+
+.perk .intro-message {
+    padding: 100px 15px 0px;
+}
+
+.intro-message > h1 {
+  font-weight: 300;
+  margin: 0px 0px 40px;
+  font-size: 40pt;
+}
+
+.intro-message > h3 {
+  font-weight: 300;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  font-size: 20pt;
+  line-height: 1.5;
+  color: @main-text-white;
+}
+
+.intro-message > p {
+  font-weight: 300;
+  margin: 0;
+  padding-top: 50px;
+  font-size: 13.5pt;
+  line-height: 1.6;
+  color: @main-text-white;
+}
+
+.perk .intro-message p {
+  max-width: 780px;
+  padding: 15px 10px 0px;
+  margin: 0px auto;
+}
+
+.intro-message p span {
+  font-weight: 700;
+}
+
+.btn-lg-outline {
+  height: 46px;
+  border: solid 1px white;
+  font-weight: 300;
+  font-size: 13pt;
+  color: white;
+  background: 0 0;
+  border-radius: 2px;
+  padding-left: 30px;
+  padding-right: 30px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.btn-lg-outline:hover {
+  border: solid 1px @sproutup-blue;
+  background-color: @sproutup-blue;
+  color: white;
+}
+
+.btn-lg-outline:focus {
+  border: solid 1px white;
+  background: 0 0;
+  color: white;
+}
+
+@media(max-width:767px) {
+  .intro-message > h1 {
+    font-size: 27pt;
+    line-height: 1.3;
+  }
+
+  .intro-message > h3 {
+    font-size: 12pt;
+    font-weight: 300;
+    padding-bottom: 40px;
+    line-height: 1.5;
+  }
+}
+
+.overview-title {
+  text-align: center;
+  padding: 50px 10px 0px;
+  margin: 0px;
+  font-size: 24pt;
+  font-family: "lato",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  color: @sproutup-blue;
+}
+
+.overview-subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  padding: 20px 10px 20px;
+  line-height: 1.7;
+  font-size: 15pt;
+  font-weight: 400;
+  color: @main-text;
+}
+
+.su-solution {
+  margin: 20px 20px 30px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.su-solution-wrapper {
+  padding: 0px 8px 10px;
+  overflow: hidden;
+}
+
+.su-solution-body {
+  border-radius: 4px;
+  margin: 0px;
+}
+
+.su-solution-body.collaboration {
+  border: 1px solid @sproutup-green;
+}
+
+.su-solution-body.marketing {
+  border: 1px solid @sproutup-orange;
+}
+
+.su-solution-body.analytics {
+  border: 1px solid @sproutup-blue;
+}
+
+.collaboration .su-solution-header {
+  background-color: @sproutup-green;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.marketing .su-solution-header {
+  background-color: @sproutup-orange;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.analytics .su-solution-header {
+  background-color: @sproutup-blue;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.su-solution-icon {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.su-solution-title {
+  font-weight: 400;
+  font-size: 15pt;
+}
+
+.su-solution-subtitle {
+  font-size: 11pt;
+  padding-bottom: 25px;
+}
+
+.su-solution-details {
+  text-align: left;
+  color: @main-text;
+  padding: 0 20px 20px;
+}
+
+@media(max-width:767px) {
+  .su-solution {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .su-solution-details {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.su-solution-details--blurb {
+  padding-bottom: 5px;
+}
+
+.su-solution-details--blurb h1 {
+  font-size: 14pt;
+  font-weight: 700;
+}
+
+.collaboration .su-solution-details--blurb h1 {
+  color: @sproutup-green;
+}
+
+.marketing .su-solution-details--blurb h1 {
+  color: @sproutup-orange;
+}
+
+.analytics .su-solution-details--blurb h1 {
+  color: @sproutup-blue;
+}
+
+.su-solution-details--blurb p {
+  padding: 0px;
+  font-size: 12pt;
+  font-weight: 400;
+  color: @main-text;
+  line-height: 1.5;
+}
+
+.early-access-signup {
+  max-width: 640px;
+  margin: 0px auto 50px;
+  padding: 0px 10px;
+}
+
+.early-access-signup-header {
+  margin: 0px auto;
+  max-width: 800px;
+  padding: 0px 10px 20px;
+  font-weight: 300;
+  font-size: 14pt;
+  color: @main-text;
+}
+
+.early-access-signup-form {
+  margin: 0px;
+  padding: 0px 20px 10px;
+}
+
+.btn-early-access-signup {
+  width: 50%;
+  height: 50px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  font-size: 13pt;
+  background-color: @sproutup-blue;
+  color: white;
+  border-radius: 2px;
+  padding-top: 12px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.btn-early-access-signup:hover {
+  background-color: @sproutup-blue-hover;
+  color: white;
+}
+
+.how-it-works--header {
+  padding: 30px 10px 30px;
+  margin: 0px;
+  font-size: 36pt;
+  font-weight: 300;
+  color: @sproutup-blue;
+}
+
+.how-it-works--blurb-a {
+  padding: 20px 20px 40px;
+  margin: 0px auto;
+  background-color: #f7f7f7;
+}
+
+.how-it-works--blurb-b {
+    padding: 20px 20px 40px;
+    margin: 0px auto;
+    background-color: #efefef;
+}
+
+.how-it-works--title {
+  font-size: 18pt;
+  font-weight: 400;
+  color: @sproutup-blue;
+  padding: 10px 10px 0px;
+}
+
+.perk .how-it-works--title {
+    color: @sproutup-darkgold;
+}
+
+.how-it-works--title span {
+    font-size: 14pt;
+    font-weight: 400;
+    display: block;
+    color: @sproutup-blue-muted;
+}
+
+.how-it-works--title-seq {
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  margin-top: -58px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30pt;
+  font-weight: 300;
+  padding-top: 6px;
+  color: white;
+  background-color: @sproutup-blue;
+}
+
+.perk .how-it-works--title-seq {
+    background-color: @sproutup-darkgreen;
+}
+
+.how-it-works--title-separator {
+  border-top: dashed 1px @sproutup-blue;
+  padding: 0px 10px;
+  max-width: 800px;
+}
+
+.perk .how-it-works--title-separator {
+    border-top: dashed 1px @sproutup-darkgreen;
+}
+
+.how-it-works--subtitle {
+  max-width: 700px;
+    font-size: 13pt;
+    font-weight: 400;
+    line-height: 1.6;
+    color: @main-text-lighter;
+    padding: 0px 0px 10px;
+    margin: 0px auto;
+}
+
+.how-it-works--subtitle a {
+  text-decoration: none !important;
+  font-weight: 700;
+  color: @sproutup-darkgold;
+}
+
+.how-it-works--subtitle a:hover {
+  color: @sproutup-darkgold - #111;
+}
+
+.how-it-works--main {
+    max-width: 800px;
+  padding: 10px;
+  margin: 0px auto;
+}
+
+.perk .how-it-works--main {
+    max-width: 1024px;
+    padding: 30px 10px 10px;
+    margin: 0px auto;
+}
+
+.perk .how-it-works--main.promote {
+    max-width: 700px;
+    padding: 30px 10px 10px;
+    margin: 0px auto;
+}
+
+.how-it-works--content {
+  text-align: center;
+  font-size: 13.5pt;
+  font-weight: 400;
+  color: @main-text;
+  margin: 0px;
+  padding: 0px 15px;
+  line-height: 1.7;
+}
+
+.how-it-works--content p {
+  padding: 0px;
+}
+
+.influencer-how-page .how-it-works--content p {
+    text-align: left;
+    font-size: 13pt;
+    line-height: 1.7;
+}
+
+.influencer-how-page .how-it-works--content p span {
+    font-weight: 700;
+    color: @main-text;
+}
+
+.how-it-works--content img {
+  max-width: 230px;
+  margin: 0px auto 20px;
+}
+
+.perk .how-it-works--content {
+    margin: 0px;
+}
+
+.perk .how-it-works--content h1 {
+    font-size: 13.5pt;
+    font-weight: 400;
+    color: @main-text-lighter;
+    margin: 0px;
+    line-height: 1.5;
+    padding: 0px 10px;
+}
+
+.perk .how-it-works--content p {
+    font-size: 12pt;
+    font-weight: 400;
+    color: @main-text-lighter;
+    margin: 0px;
+    line-height: 1.5;
+    padding: 5px 10px;
+}
+
+.how-it-works--screenshot {
+  margin: 0px;
+  padding: 20px;
+}
+
+.perk-details {
+    margin: 0px;
+}
+
+@media(max-width:767px) {
+  .early-access-signup-header {
+    padding: 0 5% 20px;
+    font-weight: 300;
+    font-size: 11pt;
+  }
+
+  .early-access-signup-form-input {
+    width: 100%;
+  }
+
+  .early-access-signup-form--error-message {
+    color: @sproutup-error-message;
+    width: 100%;
+  }
+
+  .btn-early-access-signup {
+    width: 100%;
+  }
+
+  .how-it-works--main {
+    padding: 20px 10px 0px;
+    margin: 0px;
+  }
+
+  .how-it-works--content {
+    font-size: 11pt;
+    font-weight: 400;
+  }
+
+  .how-it-works--content img {
+    max-width: 360px;
+    margin: 0px auto 20px;
+  }
+
+}
+
+@media(min-width:767px) and (max-width:992px) {
+  .how-it-works--main {
+    padding: 20px 30px 0px;
+    margin: 0px;
+  }
+
+  .how-it-works--content {
+    font-size: 12pt;
+    font-weight: 400;
+  }
+
+  .early-access-signup-form-input {
+    width: 70%;
+  }
+
+  .early-access-signup-form--error-message {
+    color: @sproutup-error-message;
+    width: 70%;
+  }
+
+  .btn-early-access-signup {
+    width: 70%;
+  }
+
+  .how-it-works--content img {
+    width: auto;
+    margin: 0px auto 20px;
+  }
+}

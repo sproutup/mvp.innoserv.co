@@ -1,0 +1,351 @@
+@import "global";
+
+.product-about-page {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 30px;
+}
+
+.about-left-rail {
+  margin: 2px 0px;
+  padding: 0;
+}
+
+.about-right-rail {
+  margin: 2px 0px;
+  padding: 0;
+  border-left: dashed 1px #ccc;
+}
+
+.about-product-row {
+  margin: 3px 5px 0px;
+}
+
+.about-product-column {
+  margin: 0px;
+  padding: 0px;
+}
+
+.about-product--video {
+  background-color: #333;
+  height: 100%;
+  width: 100%;
+  color: @main-text-white;
+}
+
+.about-product--video.embedded {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.about-product--video.embedded iframe,
+.about-product--video.embedded object,
+.about-product--video.embedded embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.about-product-tile {
+  padding: 2px 2px 0px;
+}
+
+.about-product-tile--in-column {
+  padding: 4px 2px 0px;
+}
+
+.about-product--header {
+  font-weight: 300;
+  font-size: 24pt;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-bottom: 0px;
+}
+
+.about-product--content {
+  font-weight: 400;
+  font-size: 12pt;
+  padding: 20px 20px 30px;
+  margin-bottom: 0px;
+  white-space: pre-wrap;
+  line-height: 1.8;
+}
+
+.about-product--story-content {
+  font-weight: 400;
+  font-size: 12pt;
+  padding: 20px;
+  margin: 0px;
+}
+
+.about-product--story-content p {
+  line-height: 1.5;
+  white-space: pre-wrap;
+  padding: 0px 0px 20px;
+}
+
+.about-product--story-image {
+  padding: 10px 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-product--content i {
+  padding-right: 10px;
+}
+
+.about-product--mission {
+  background-color: @sproutup-green;
+  width: 100%;
+  color: @main-text-white;
+}
+
+.about-product--mission-creator {
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  position: relative;
+  min-height: 280px;
+  width: 100%;
+}
+
+.about-product--mission-creator:after {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 80%;
+  height: 29%;
+  z-index: 1;
+  content: "";
+  padding: 5px;
+}
+
+.meet-creator-overlay-info {
+  bottom: 0;
+  right: 0;
+  padding: 0px 15px 8px;
+  position: absolute;
+  z-index: 3;
+  color: @main-text-white;
+  text-align: right;
+}
+
+.meet-creator-overlay-info h1 {
+  font-weight: 400;
+  font-size: 11pt;
+  padding-bottom: 8px;
+  margin: 0;
+}
+
+.meet-creator-overlay-info h2 {
+  font-weight: 300;
+  font-size: 15pt;
+  margin: 0;
+  padding-bottom: 8px;
+}
+
+.about-product--story {
+  background-color: @sproutup-paperwhite;
+  color: @main-text;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.about-product--team {
+  background-color: #f2f2f2;
+  color: @main-text;
+  width: 100%;
+}
+
+.about-product--team-content {
+  overflow: hidden;
+  padding: 20px;
+}
+
+.about-product--team-member {
+  padding: 8px;
+}
+
+.about-product--team-member-photo {
+  height: 260px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-product--team-member-photo:after {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 80%;
+  height: 25%;
+  z-index: 1;
+  content: "";
+  padding: 5px;
+}
+
+.about-product--team-member-photo > .meet-creator-overlay-info {
+  bottom: 8px;
+  right: 8px;
+  padding: 0px 10px 5px;
+  position: absolute;
+  z-index: 3;
+  color: @main-text-white;
+  text-align: right;
+}
+
+.about-product--team-member-photo > .meet-creator-overlay-info h1 {
+  font-weight: 400;
+  font-size: 10pt;
+  margin: 0;
+}
+
+.about-product--team-member-photo > .meet-creator-overlay-info h2 {
+  font-weight: 300;
+  font-size: 13pt;
+  margin: 0;
+}
+
+.about-product--update {
+  background-color: #F39019;
+  color: #ffffff;
+  width: 100%;
+}
+
+.about-product--header-right {
+  font-weight: 400;
+  font-size: 12pt;
+  padding: 20px;
+}
+
+.about-product--header-right i {
+  padding-right: 15px;
+}
+
+.about-product--twitter {
+  background-color: @twitter-blue;
+  color: @main-text-white;
+  width: 100%;
+}
+
+.about-product--facebook {
+  background-color: @facebook-blue;
+  color: @main-text-white;
+  width: 100%;
+}
+
+.triangle-border {
+  position:relative;
+  padding: 5px 0px 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* css3 */
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+}
+
+.about-product--quote {
+    margin: 25px 0px 75px;
+}
+
+.about-product--quote-block {
+  border-left: solid 5px @sproutup-lightgrey;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 0px 15px;
+}
+
+.about-product--quote-logo {
+  width: 56px;
+  height: 56px;
+  margin-top: -36px;
+  margin-bottom: -10px;
+  margin-left: -25px;
+  margin-right: 0px;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  border-radius: 500px;
+}
+
+.about-product--quote-content {
+  font-weight: 400;
+  color: #fff;
+  font-size: 11.5pt;
+  padding: 0px;
+  line-height: 1.6;
+}
+
+.about-product--quote-user {
+  padding-left: 40px;
+  padding-right: 10px;
+  margin: 0px;
+  font-weight: 400;
+  font-size: 10.5pt;
+  color: #fff;
+}
+
+.about-product--quote-user span {
+  font-weight: 700;
+  color: white;
+}
+
+.about-product--trendy {
+  background-color: #fff;
+  color: @sproutup-purple;
+  width: 100%;
+}
+
+.about-product--header-no-padding {
+  font-weight: 400;
+  font-size: 13pt;
+  padding-top: 20px;
+  margin-bottom: 0px;
+}
+
+.about-product--header-no-padding i {
+  padding-right: 10px;
+}
+
+.about-product-photo {
+    margin: 0px;
+    padding: 2px 2px 0px;
+}
+
+.about-product--footer-no-padding {
+  padding-left: 0px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 11pt;
+  color: @secondary-text;
+}
+
+.about-product--footer-no-padding-em {
+  color: @sproutup-purple;
+  font-weight: 700;
+}
+
+.fb-post {
+  margin-bottom: 5px;
+}
+
+@media(max-width:767px) {
+    .about-product-photo {
+        margin: 0px;
+        padding: 2px;
+    }
+
+    .about-product--quote {
+        margin: 30px 15px 100px;
+        text-align: left;
+    }
+}
