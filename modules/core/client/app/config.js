@@ -13,7 +13,8 @@ var ApplicationConfiguration = (function () {
     'chart.js',
     'angularMoment',
     'ngCookies',
-    'ngFileUpload'
+    'ngFileUpload',
+    'angularSpinner'
   ];
 
   // Add a new vertical module
