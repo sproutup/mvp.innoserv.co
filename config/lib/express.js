@@ -67,7 +67,7 @@ module.exports.initMiddleware = function (app) {
   }));
 
   // Initialize favicon middleware
-  app.use(favicon('./modules/core/client/img/brand/favicon-96x96.png'));
+  app.use(favicon('./modules/core/client/img/logo-square.png'));
 
   // Environment dependent middleware
   if (process.env.NODE_ENV === 'development') {
@@ -278,4 +278,3 @@ module.exports.init = function (db) {
 
   return app;
 };
-

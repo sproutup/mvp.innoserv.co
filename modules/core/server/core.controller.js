@@ -8,7 +8,7 @@ var config = require('config/config'),
  */
 exports.renderIndex = function (req, res) {
   res.render('modules/core/server/index', {
-    user: req.user || null, title: 'SproutUp Dashboard for Brands'
+    user: req.user || null, title: 'SproutUp - A Community for Product Influencers and Enthusiasts'
   });
 };
 
