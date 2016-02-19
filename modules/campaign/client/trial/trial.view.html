@@ -1,8 +1,0 @@
-<h1 class="dashboard-section-title" ng-init="vm.findContributors()">
-  <a ui-sref="company.navbar.campaign.list"><i class="fa fa-angle-left"></i></a>{{vm.item.name}}
-  <div class="dashboard-menu-top">
-    <a ng-repeat="item in vm.trialmenu.items" ng-bind="item.title" class="dashboard-menu-top-item" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" ui-sref="{{item.state}}"></a>
-  </div>
-</h1>
-<!-- Tab panel -->
-<div ui-view></div>
