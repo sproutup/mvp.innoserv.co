@@ -1941,18 +1941,23 @@ p[class="hangout-countdown-unit"] {
   padding: 30px 0px 15px;
 }
 
-.browse-campaign-sidenav {
+ul.browse-campaign-sidenav {
   margin: 0px;
 }
 
-.browse-campaign-sidenav li a {
+ul.browse-campaign-sidenav li {
+  background-color: transparent;
+}
+
+ul.browse-campaign-sidenav li a {
   padding: 10px 25px;
   font-size: 11pt;
   font-weight: 700;
   color:@main-text-lighter;
+  text-decoration: none !important;
 }
 
-.browse-campaign-sidenav li a sup {
+ul.browse-campaign-sidenav li a sup {
   margin-left: 10px;
   font-size: 8.5pt;
   font-weight: 400;
@@ -1961,14 +1966,18 @@ p[class="hangout-countdown-unit"] {
   padding: 4px 8px;
 }
 
-.browse-campaign-sidenav li a:hover {
+ul.browse-campaign-sidenav li a:focus {
+  background-color: transparent;
+}
+
+ul.browse-campaign-sidenav li a:hover {
   color: @sproutup-blue;
   background-color: transparent;
   border-left: 4px solid @sproutup-blue;
   padding-left: 21px;
 }
 
-.browse-campaign-sidenav li a[class="active"] {
+ul.browse-campaign-sidenav li a.active {
   color: @sproutup-blue;
   background-color: transparent;
   border-left: 4px solid @sproutup-blue;
@@ -2513,6 +2522,13 @@ p[class="hangout-countdown-unit"] {
 
 .campaign-info-wrapper ul {
   margin: 50px 0px;
+}
+
+.company-profile-info-wrapper ul.company-profile-social-buttons {
+  z-index: 10;
+  position: relative;
+  padding: 20px 0px;
+  margin: 0px;
 }
 
 ul.company-profile-social-buttons li a {
@@ -3818,6 +3834,51 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
 
 .message-blurb .sender .spacer {
   padding: 0px 5px;
+}
+
+.company-profile-banner {
+  min-height: 300px;
+  margin: 0px;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  color: @main-text-white;
+  position: relative;
+}
+
+.company-profile-banner::after{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)); /* Standard syntax */
+}
+
+.company-profile-info-wrapper {
+  max-width: 1250px;
+  text-align: left;
+  color: @main-text-white;
+  margin: 0px auto;
+  padding: 100px 15px 40px;
+}
+
+.company-profile-info-wrapper h1
+{
+  z-index: 10;
+  position: relative;
+  font-weight: 100;
+  font-size: 32pt;
+  margin: 0px;
+  padding: 20px 0px;
+  line-height: 1.6;
+}
+
+.company-profile-info-wrapper h1 span {
+  font-size: 12pt;
+  font-weight: 400;
+  margin-left: 15px;
 }
 
 // media queries
