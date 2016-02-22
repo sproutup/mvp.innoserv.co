@@ -21,10 +21,22 @@
   padding-top: 70px;
   padding-bottom: 30px;
   min-height: 560px;
-  background: url('../img/hero.jpg') no-repeat center center;
+  background-position:center;
+  background-repeat:no-repeat;
   background-size: cover;
   color: #fff;
   margin: 0px;
+  position: relative;
+}
+
+.marketing-container::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.4));
 }
 
 .wrapper-social-media-connection {
@@ -51,11 +63,13 @@
   max-width: 800px;
   padding: 0px 10px;
   margin: 0px auto;
+  z-index: 10;
+  position: relative;
 }
 
 .marketing-header h1 {
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.6;
   margin: 35px auto 15px;
   padding: 0px 10px;
   font-size: 36pt;
@@ -73,6 +87,23 @@
   font-family: "lato",Helvetica,Arial,sans-serif;
   font-weight: 300;
   color: #fff;
+}
+
+.marketing-footer {
+  z-index: 10;
+  position: relative;
+  text-align: center;
+  line-height: 1.6;
+  padding: 80px 10px 30px;
+  font-size: 13pt;
+  font-weight: 300;
+  color: #fff;
+}
+
+.marketing-footer a {
+  color: white;
+  font-weight: 400;
+  text-decoration: underline;
 }
 
 .marketing-blurb {
@@ -119,8 +150,10 @@
 }
 
 .marketing-cta {
-    text-align: center;
-    margin: 20px auto 40px;
+  text-align: center;
+  margin: 20px auto 40px;
+  z-index: 10;
+  position: relative;
 }
 
 .marketing-cta.creator {
