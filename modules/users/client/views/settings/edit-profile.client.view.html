@@ -1,10 +1,6 @@
 <!-- Content -->
 <div class="col-sm-9" data-ng-controller="EditProfileController">
   <form name="vm.basicinfoform" data-ng-submit="updateUserProfile(userForm.$valid)" class="" novalidate>
-    <!-- Basic Information -->
-    <div class="profile-edit--header">
-      <h1>Basic Information<h1>
-    </div>
     <!-- full name -->
     <div class="row profile-input-row">
       <div class="col-sm-12 profile-input-cell">
@@ -12,22 +8,28 @@
       </div>
     </div>
 
-    <!-- email and username -->
+    <!-- email -->
     <div class="row profile-input-row">
-      <div class="col-sm-6 profile-input-cell">
-        <input popover="Your email" popover-trigger="focus" type="email" disabled class="form-control form-validate form-input medium" placeholder="Email" ng-model="user.email">
+      <div class="col-sm-12 profile-input-cell">
+        <input popover="Your email" popover-trigger="focus" type="email" class="form-control form-validate form-input medium" placeholder="Email" ng-model="user.email">
+        <div class="message error">Email not verified <a href="#">Resend a link</a></div>
       </div>
-      <div class="col-sm-6 profile-input-cell">
-        <input popover="Your SproutUp @username" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Pick a SproutUp username" ng-model="user.username" name="username" ng-model-options="{ debounce: 400 }" username required>
-      </div>
-      <span ng-show="checking && vm.basicinfoform.username.$pending.username" class="username-message">Checking if this name is available...</span>
-      <span ng-show="vm.basicinfoform.username.$valid" class="username-message success">Cool, this username is available!</span>
-      <span ng-show="vm.basicinfoform.username.$error.username" class="username-message error">This username is already taken!</span>
     </div>
+
+    <!-- user name -->
+    <div class="row profile-input-row">
+      <div class="col-sm-12 profile-input-cell">
+        <input popover="Your SproutUp @username" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Pick a SproutUp username" ng-model="user.username" name="username" ng-model-options="{ debounce: 400 }" username required>
+        <div ng-show="checking && vm.basicinfoform.username.$pending.username" class="message">Checking if this name is available...</div>
+        <div ng-show="vm.basicinfoform.username.$valid" class="message success">Cool, this username is available!</div>
+        <div ng-show="vm.basicinfoform.username.$error.username" class="message error">This username is already taken!</div>
+      </div>
+    </div>
+
     <!-- short description -->
     <div class="row profile-input-row">
       <div class="col-sm-12 profile-input-cell">
-        <textarea popover="Short description about yourself" popover-trigger="focus" class="form-control form-input-textarea no-resize" placeholder="Short description about yourself" rows="2" ng-model="user.description"></textarea>
+        <textarea popover="Short description about yourself" popover-trigger="focus" class="form-control form-input-textarea no-resize" placeholder="Short bio of yourself" rows="2" ng-model="user.description"></textarea>
       </div>
     </div>
 
@@ -66,4 +68,3 @@
     </div>
   </form>
 </div>
-
