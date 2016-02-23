@@ -11,13 +11,11 @@
         <div class="col-sm-8 user-profile-info--title">
           <h1>Tao Ni<span>@tao.ni</span></h1>
           <ul class="list-inline profile-user-social-buttons">
-            <li ng-repeat="network in vm.network">
-              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'tw'"><i class="fa fa-twitter"></i></a>
-              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'ga'"><i class="fa fa-rss"></i></a>
-              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'yt'"><i class="fa fa-youtube"></i></a>
-              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'ig'"><i class="fa fa-instagram"></i></a>
-              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'fb'"><i class="fa fa-facebook"></i></a>
-              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'pi'"><i class="fa fa-pinterest"></i></a>
+            <li>
+              <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
             </li>
           </ul>
         </div>
