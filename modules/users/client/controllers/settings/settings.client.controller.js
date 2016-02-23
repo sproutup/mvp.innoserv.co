@@ -7,8 +7,6 @@ angular.module('users').controller('SettingsController', ['$scope', 'Authenticat
     vm.user = Authentication.user;
 
     // Get the topbar menu
-    vm.menu = Menus.getMenu('company.user.settings.menu');
-
-
+    vm.menu = Menus.getMenu('settings');
   }
 ]);
