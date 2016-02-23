@@ -25,6 +25,10 @@ angular
           url: '/signin',
           templateUrl: 'modules/theme/client/mocks/signin.html'
         })
+        .state('theme.mocks.ask-email', {
+          url: '/ask-email',
+          templateUrl: 'modules/theme/client/mocks/ask-email.html'
+        })
         .state('theme.mocks.hangout', {
           url: '/hangout',
           templateUrl: 'modules/theme/client/mocks/hangout.html'
