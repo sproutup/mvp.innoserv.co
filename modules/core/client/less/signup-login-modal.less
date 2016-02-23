@@ -39,6 +39,7 @@
     background-color: white;
     margin: 20px auto;
     padding: 20px 0px;
+    border: 1px solid @sproutup-lightgrey;
 }
 
 @media (max-width:767px) {
@@ -50,9 +51,9 @@
 .signup-login-header {
     text-align: center;
     padding: 40px 10px 0px;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 15pt;
-    color: @main-text-white;
+    color: @main-text-light;
 }
 
 .signup-login-form {
@@ -117,6 +118,14 @@
   color: @sproutup-blue;
 }
 
+.signup-login-footer {
+  text-align: center;
+  font-size: 10pt;
+  font-weight: 400;
+  padding: 10px 15px 15px;
+  color: @main-text-veryverylight;
+}
+
 .signup-login-form-separator {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -147,11 +156,11 @@
   margin-right: 5%;
   margin-bottom: 8px;
   font-weight: 400;
-  font-size: 12pt;
+  font-size: 11pt;
   background-color: @facebook-blue;
   color: white;
   border-radius: 2px;
-  padding-top: 9px;
+  padding-top: 10px;
   padding-left: 15px;
   padding-right: 15px;
   -webkit-transition: all .2s ease-in-out;
@@ -176,11 +185,11 @@
   margin-right: 5%;
   margin-bottom: 8px;
   font-weight: 400;
-  font-size: 12pt;
+  font-size: 11pt;
   background-color: @twitter-blue;
   color: white;
   border-radius: 2px;
-  padding-top: 9px;
+  padding-top: 10px;
   padding-left: 15px;
   padding-right: 15px;
   -webkit-transition: all .2s ease-in-out;
@@ -198,6 +207,35 @@
   background-color: @twitter-blue-hover;
 }
 
+.btn-google {
+  width: 90%;
+  height: 45px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 11pt;
+  background-color: @google-blue;
+  color: white;
+  border-radius: 2px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.btn-google i {
+  padding-right: 10px;
+}
+
+.btn-google:hover,
+.btn-google:focus {
+  color: white;
+  background-color: @google-blue-hover;
+}
+
 .signup-login-btn {
   width: 90%;
   height: 45px;
@@ -206,11 +244,11 @@
   margin-top: 0px;
   margin-bottom: 0px;
   font-weight: 400;
-  font-size: 12pt;
+  font-size: 10pt;
   background-color: @sproutup-blue;
   color: white;
   border-radius: 2px;
-  padding-top: 8px;
+  padding-top: 11px;
   padding-left: 15px;
   padding-right: 15px;
   -webkit-transition: all .2s ease-in-out;
