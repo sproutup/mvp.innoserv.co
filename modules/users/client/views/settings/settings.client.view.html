@@ -1,9 +1,9 @@
 <div class="settings-page">
   <div class="row settings-wrapper">
-    <div class="dashboard-banner" up-background-image="/modules/core/client/img/user-profile-banner.jpg" up-background-attr="?w=1600">
+    <div class="dashboard-banner" up-background-image="modules/core/client/img/user-profile-banner.jpg" up-background-attr="?w=1600">
       <div class="row user-profile-info">
         <div class="col-sm-4 user-profile-info--avartar">
-          <div class="col-sm-3 col-profile-picture" data-ng-controller="ChangeProfilePictureController as profile">
+          <div data-ng-controller="ChangeProfilePictureController as profile">
             <div up-file-upload ng-model="user.avatar.file" on-change="profile.saveProfilePicture(user.avatar.file.id)"></div>
           </div>
         </div>

@@ -1,10 +1,12 @@
 <!-- Banner -->
 <div class="settings-page">
   <div class="row settings-wrapper">
-    <div class="dashboard-banner" up-background-image="../img/user-profile-banner.jpg" up-background-attr="?w=1600">
+    <div class="dashboard-banner" up-background-image="modules/core/client/img/user-profile-banner.jpg" up-background-attr="?w=1600">
       <div class="row user-profile-info">
         <div class="col-sm-4 user-profile-info--avartar">
-          <up-avatar-upload user="vm.user"></up-avatar-upload>
+          <div class="upload-file-widget" style="background-image: url('modules/core/client/img/default-avatar.png');">
+            <a class="btn btn-lg upload-file-button">Change Photo</a>
+          </div>
         </div>
         <div class="col-sm-8 user-profile-info--title">
           <h1>Tao Ni<span>@tao.ni</span></h1>
