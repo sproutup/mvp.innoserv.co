@@ -35,11 +35,19 @@
     <!-- Content -->
     <div class="col-sm-9">
       <form name="vm.basicinfoform" class="" novalidate>
-        <!-- email and username -->
+        <!-- email -->
         <div class="row profile-input-row">
           <div class="col-sm-12 profile-input-cell">
             <input popover="Your email" popover-trigger="focus" type="email" class="form-control form-validate form-input medium" placeholder="Email" ng-model="vm.user.email">
             <div class="message error">Email not verified <a href="#">Resend a link</a></div>
+          </div>
+        </div>
+
+        <!-- email with verified badge -->
+        <div class="row profile-input-row">
+          <div class="col-sm-12 profile-input-cell">
+            <input popover="Your email" popover-trigger="focus" type="email" class="form-control form-validate form-input medium" placeholder="Email" ng-model="vm.user.email">
+            <span class="input-feedback-right success"><i class="fa fa-check-circle"></i>Verified</span>
           </div>
         </div>
 
