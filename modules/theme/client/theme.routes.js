@@ -21,6 +21,10 @@ angular
           abstract: true,
           template: '<ui-view/>'
         })
+        .state('theme.mocks.signin', {
+          url: '/signin',
+          templateUrl: 'modules/theme/client/mocks/signin.html'
+        })
         .state('theme.mocks.hangout', {
           url: '/hangout',
           templateUrl: 'modules/theme/client/mocks/hangout.html'
