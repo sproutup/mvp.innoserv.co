@@ -2,12 +2,12 @@
 
 angular.module('buzz').run(['Menus',
   function (Menus) {
-//    Menus.addMenuItem('navbar', {
-//      title: 'BUZZ',
-//      state: 'navbar.buzz',
-//      class: 'buzz',
-//      roles: ['guest', 'user', 'admin'],
-//      position: 10
-//    });
+    Menus.addMenuItem('navbar', {
+      title: 'HOME',
+      state: 'navbar.home',
+      class: 'buzz',
+      roles: ['guest', 'user', 'admin'],
+      position: 10
+    });
   }
 ]);
