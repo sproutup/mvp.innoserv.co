@@ -9,23 +9,18 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 
     // Home state routing
     $stateProvider
-      .state('home', {
-        url: '/',
-        controller: 'HomeController',
-        controllerAs: 'vm',
-        templateUrl: 'modules/core/client/home.view.html'
-      })
-      .state('company.navbar.home', {
-        url: '/home',
-        controller: 'HomeController',
-        templateUrl: 'modules/core/client/home.view.html'
-      })
-      .state('company.navbar' , {
+      .state('navbar' , {
         url: '',
         abstract: true,
         templateUrl: 'modules/core/client/header.view.html',
         controller: 'HeaderController',
         controllerAs: 'vm'
+      })
+      .state('navbar.home', {
+        url: '/',
+        controller: 'HomeController',
+        controllerAs: 'vm',
+        templateUrl: 'modules/core/client/home.view.html'
       })
       .state('not-found', {
         url: '/not-found',
