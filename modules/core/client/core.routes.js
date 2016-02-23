@@ -16,12 +16,6 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         controller: 'HeaderController',
         controllerAs: 'navbar'
       })
-      .state('navbar.home', {
-        url: '/',
-        controller: 'HomeController',
-        controllerAs: 'vm',
-        templateUrl: 'modules/core/client/home.view.html'
-      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: 'modules/core/client/404.view.html'
