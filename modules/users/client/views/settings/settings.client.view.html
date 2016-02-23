@@ -1,36 +1,38 @@
-<div class="row dashboard-page">
-  <div class="dashboard-banner" up-background-image="/modules/core/client/img/default-profile-banner.jpg" up-background-attr="?w=1600">
-    <div class="row user-profile-info">
-      <div class="col-sm-4 user-profile-info--avartar">
-        <div class="col-sm-3 col-profile-picture" data-ng-controller="ChangeProfilePictureController as profile">
-          <div up-file-upload ng-model="user.avatar.file" on-change="profile.saveProfilePicture(user.avatar.file.id)"></div>
+<div class="settings-page">
+  <div class="row settings-wrapper">
+    <div class="dashboard-banner" up-background-image="/modules/core/client/img/user-profile-banner.jpg" up-background-attr="?w=1600">
+      <div class="row user-profile-info">
+        <div class="col-sm-4 user-profile-info--avartar">
+          <div class="col-sm-3 col-profile-picture" data-ng-controller="ChangeProfilePictureController as profile">
+            <div up-file-upload ng-model="user.avatar.file" on-change="profile.saveProfilePicture(user.avatar.file.id)"></div>
+          </div>
+        </div>
+        <div class="col-sm-8 user-profile-info--title">
+          <h1>{{vm.user.name}}<span>@{{vm.user.nickname}}</span></h1>
+          <ul class="list-inline profile-user-social-buttons">
+            <li ng-repeat="network in vm.network">
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'tw'"><i class="fa fa-twitter"></i></a>
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'ga'"><i class="fa fa-rss"></i></a>
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'yt'"><i class="fa fa-youtube"></i></a>
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'ig'"><i class="fa fa-instagram"></i></a>
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'fb'"><i class="fa fa-facebook"></i></a>
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'pi'"><i class="fa fa-pinterest"></i></a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="col-sm-8 user-profile-info--title">
-        <h1>{{vm.user.name}}<span>@{{vm.user.nickname}}</span></h1>
-        <ul class="list-inline profile-user-social-buttons">
-          <li ng-repeat="network in vm.network">
-            <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'tw'"><i class="fa fa-twitter"></i></a>
-            <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'ga'"><i class="fa fa-rss"></i></a>
-            <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'yt'"><i class="fa fa-youtube"></i></a>
-            <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'ig'"><i class="fa fa-instagram"></i></a>
-            <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'fb'"><i class="fa fa-facebook"></i></a>
-            <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'pi'"><i class="fa fa-pinterest"></i></a>
-          </li>
-        </ul>
+    </div>
+
+    <!-- TOC -->
+    <div class="col-sm-3">
+      <div class="list-group">
+        <a class="list-group-item" ng-repeat="item in vm.menu.items | orderBy: 'position'" ui-sref="{{item.state}}" ng-if="item.shouldRender(navbar.authentication.user);" ng-switch="item.type" ng-class="{ active: navbar.state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}} nav-item-wrapper nav-item-main" dropdown="item.type === 'dropdown'">
+          {{item.title}}
+        </a>
       </div>
     </div>
-  </div>
 
-  <!-- TOC -->
-  <div class="col-sm-3">
-    <div class="list-group">
-      <a class="list-group-item" ng-repeat="item in vm.menu.items | orderBy: 'position'" ui-sref="{{item.state}}" ng-if="item.shouldRender(navbar.authentication.user);" ng-switch="item.type" ng-class="{ active: navbar.state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}} nav-item-wrapper nav-item-main" dropdown="item.type === 'dropdown'">
-        {{item.title}}
-      </a>
-    </div>
+    <!-- menu item content goes here -->
+    <div ui-view></div>
   </div>
-
-  <!-- menu item content goes here -->
-  <div ui-view></div>
 </div>

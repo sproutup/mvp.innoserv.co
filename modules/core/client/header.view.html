@@ -12,9 +12,9 @@
         <li ng-repeat="item in navbar.menu.items | orderBy: 'position'"
           ng-if="item.shouldRender(navbar.authentication.user);"
           ng-switch="item.type"
-          ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" nav-item-wrapper nav-item-main"
+          ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" nav-item-wrapper nav-item-main
           dropdown="item.type === 'dropdown'">
-          <a ui-sref="{{item.state}}"><i ng-class="item.class"></i>{{item.title}}</a>
+          <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>
         <li ng-if="!navbar.authentication.user"><a ui-sref="user.login">LOG IN</a></li>
         <li ng-if="!navbar.authentication.user"><a ui-sref="user.signup">SIGN UP</a></li>
