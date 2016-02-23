@@ -9,6 +9,7 @@
     <!-- Two different nav bars. First for desktop, second one shows under 767px and collapses on an item click. -->
     <div class="collapse navbar-collapse" id="sproutup-collapse-navbar">
       <ul class="nav navbar-nav navbar-item navbar-right navbar-wide">
+        <li><a ui-sref="navbar.home"><i class="fa fa-home"></i>HOME</a></li>
         <li ng-repeat="item in navbar.menu.items | orderBy: 'position'"
           ng-if="item.shouldRender(navbar.authentication.user);"
           ng-switch="item.type"
