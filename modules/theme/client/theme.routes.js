@@ -5,116 +5,116 @@ angular
   .config(['$stateProvider',
     function config($stateProvider) {
       $stateProvider
-        .state('theme', {
+        .state('navbar.theme', {
           url: '/theme',
           abstract: true,
           template: '<ui-view/>',
           controller: '',
           controllerAs: ''
         })
-        .state('theme.index' ,{
+        .state('navbar.theme.index' ,{
             url: '',
             templateUrl: 'modules/theme/client/theme.view.html'
         })
-        .state('theme.mocks', {
+        .state('navbar.theme.mocks', {
           url: '/mocks',
           abstract: true,
           template: '<ui-view/>'
         })
-        .state('theme.mocks.signin', {
+        .state('navbar.theme.mocks.signin', {
           url: '/signin',
           templateUrl: 'modules/theme/client/mocks/signin.html'
         })
-        .state('theme.mocks.ask-email', {
+        .state('navbar.theme.mocks.ask-email', {
           url: '/ask-email',
           templateUrl: 'modules/theme/client/mocks/ask-email.html'
         })
-        .state('theme.mocks.hangout', {
+        .state('navbar.theme.mocks.hangout', {
           url: '/hangout',
           templateUrl: 'modules/theme/client/mocks/hangout.html'
         })
-        .state('theme.mocks.browse-campaigns', {
+        .state('navbar.theme.mocks.browse-campaigns', {
           url: '/browse-campaigns',
           templateUrl: 'modules/theme/client/mocks/browse-campaigns.html'
         })
-        .state('theme.mocks.my-campaigns', {
+        .state('navbar.theme.mocks.my-campaigns', {
           url: '/my-campaigns',
           templateUrl: 'modules/theme/client/mocks/my-campaigns.html'
         })
-        .state('theme.mocks.search', {
+        .state('navbar.theme.mocks.search', {
           url: '/search',
           templateUrl: 'modules/theme/client/mocks/search.html'
         })
-        .state('theme.mocks.view-trial-campaign', {
+        .state('navbar.theme.mocks.view-trial-campaign', {
           url: '/view-trial-campaign',
           templateUrl: 'modules/theme/client/mocks/view-trial-campaign.html'
         })
-        .state('theme.mocks.join-trial-campaign', {
+        .state('navbar.theme.mocks.join-trial-campaign', {
           url: '/join-trial-campaign',
           templateUrl: 'modules/theme/client/mocks/join-trial-campaign.html'
         })
-        .state('theme.mocks.after-join-trial-campaign', {
+        .state('navbar.theme.mocks.after-join-trial-campaign', {
           url: '/after-join-trial-campaign',
           templateUrl: 'modules/theme/client/mocks/after-join-trial-campaign.html'
         })
-        .state('theme.mocks.trial-campaign-buzz', {
+        .state('navbar.theme.mocks.trial-campaign-buzz', {
           url: '/trial-campaign-buzz',
           templateUrl: 'modules/theme/client/mocks/trial-campaign-buzz.html'
         })
-        .state('theme.mocks.view-contest-campaign', {
+        .state('navbar.theme.mocks.view-contest-campaign', {
           url: '/view-contest-campaign',
           templateUrl: 'modules/theme/client/mocks/view-contest-campaign.html'
         })
-        .state('theme.mocks.enter-contest-campaign', {
+        .state('navbar.theme.mocks.enter-contest-campaign', {
           url: '/enter-contest-campaign',
           templateUrl: 'modules/theme/client/mocks/enter-contest-campaign.html'
         })
-        .state('theme.mocks.finished-contest-campaign', {
+        .state('navbar.theme.mocks.finished-contest-campaign', {
           url: '/finished-contest-campaign',
           templateUrl: 'modules/theme/client/mocks/finished-contest-campaign.html'
         })
-        .state('theme.mocks.join-contest-campaign', {
+        .state('navbar.theme.mocks.join-contest-campaign', {
           url: '/join-contest-campaign',
           templateUrl: 'modules/theme/client/mocks/join-contest-campaign.html'
         })
-        .state('theme.mocks.my-activities', {
+        .state('navbar.theme.mocks.my-activities', {
           url: '/my-campaigns',
           templateUrl: 'modules/theme/client/mocks/my-activities.html'
         })
-        .state('theme.mocks.company-profile', {
+        .state('navbar.theme.mocks.company-profile', {
           url: '/company-profile',
           templateUrl: 'modules/theme/client/mocks/company-profile.html'
         })
-        .state('theme.mocks.notification', {
+        .state('navbar.theme.mocks.notification', {
           url: '/notification',
           templateUrl: 'modules/theme/client/mocks/notification.html'
         })
-        .state('theme.mocks.buzz', {
+        .state('navbar.theme.mocks.buzz', {
           url: '/buzz',
           templateUrl: 'modules/theme/client/mocks/buzz.html'
         })
-        .state('theme.mocks.suggest', {
+        .state('navbar.theme.mocks.suggest', {
           url: '/suggest',
           templateUrl: 'modules/theme/client/mocks/suggest.html'
         })
-        .state('theme.mocks.my-profile-buzz', {
+        .state('navbar.theme.mocks.my-profile-buzz', {
           url: '/my-profile-buzz',
           templateUrl: 'modules/theme/client/mocks/my-profile-buzz.html'
         })
-        .state('theme.mocks.my-profile-activities', {
+        .state('navbar.theme.mocks.my-profile-activities', {
           url: '/my-profile-activities',
           templateUrl: 'modules/theme/client/mocks/my-profile-activities.html'
         })
-        .state('theme.mocks.my-profile-suggested-products', {
+        .state('navbar.theme.mocks.my-profile-suggested-products', {
           url: '/my-profile-suggested-products',
           templateUrl: 'modules/theme/client/mocks/my-profile-suggested-products.html'
         })
         // messages
-        .state('theme.mocks.list-conversation', {
+        .state('navbar.theme.mocks.list-conversation', {
           url: '/list-conversation',
           templateUrl: 'modules/theme/client/mocks/list-conversation.html'
         })
-        .state('theme.mocks.view-a-conversation', {
+        .state('navbar.theme.mocks.view-a-conversation', {
           url: '/view-a-conversation',
           templateUrl: 'modules/theme/client/mocks/view-a-conversation.html'
         });
