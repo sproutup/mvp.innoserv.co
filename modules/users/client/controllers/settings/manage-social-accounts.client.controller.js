@@ -2,7 +2,17 @@
 
 angular.module('users').controller('SocialAccountsController', ['$scope', '$http', 'Authentication',
   function ($scope, $http, Authentication) {
-    $scope.user = Authentication.user;
+    var vm = this;
+
+    vm.user = Authentication.user;
+    vm.networks = [
+      { provider: 'yt', status: 0, message: '', icon: 'modules/core/client/img/settings/youtube.png', title: 'Youtube', popover: 'If you have Google Analytics for your websites, please authorize us to read stats from your Google Analytics account. Reach is measured by the average page visits per month.' },
+      { provider: 'ga', status: 0, message: '', icon: 'modules/core/client/img/settings/google-analytics.png', title: 'Google Analytics', popover: 'If you have Google Analytics for your websites, please authorize us to read stats from your Google Analytics account. Reach is measured by the average page visits per month.' },
+      { provider: 'tw', status: 0, message: '', icon: 'modules/core/client/img/settings/twitter.png', title: 'Twitter', popover: '' },
+      { provider: 'ig', status: 0, message: '', icon: 'modules/core/client/img/settings/instagram.png', title: 'Instagram', popover: ''  },
+      { provider: 'fb', status: 0, message: '', icon: 'modules/core/client/img/settings/facebook.png', title: 'Facebook', popover: ''  },
+      { provider: 'pi', status: 0, message: '', icon: 'modules/core/client/img/settings/pinterest.png', title: 'Pinterest', popover: ''  }
+    ];
 
     // Check if there are additional accounts
     $scope.hasConnectedAdditionalSocialAccounts = function (provider) {
