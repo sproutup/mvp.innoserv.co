@@ -349,18 +349,27 @@ ul.profile-user-social-buttons li a:hover {
   margin: 30px auto;
 }
 
-.profile-input-row .success {
-  color: #65bc25;
+.profile-input-row .message {
+  padding: 8px 14px;
+  font-size: 9.5pt;
+  background-color: @sproutup-dark-grey;
 }
 
-.profile-input-row .error {
-  color: #ed7a14;
+.profile-input-row .message a {
+  font-weight: 700;
+  color: white;
+  text-decoration: underline;
+  margin-left: 15px;
 }
 
-.profile-input-row .username-message {
-  margin-left: 350px;
-  position: relative;
-  top: 3px;
+.profile-input-row .message.success {
+  background-color: @sproutup-green;
+  color: white;
+}
+
+.profile-input-row .message.error {
+  background-color: @sproutup-salmon;
+  color: white;
 }
 
 .rewards-link {

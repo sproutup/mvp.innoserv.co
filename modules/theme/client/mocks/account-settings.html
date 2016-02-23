@@ -1,0 +1,98 @@
+<!-- Banner -->
+<div class="settings-page">
+  <div class="row settings-wrapper">
+    <div class="dashboard-banner" up-background-image="modules/core/client/img/user-profile-banner.jpg" up-background-attr="?w=1600">
+      <div class="row user-profile-info">
+        <div class="col-sm-4 user-profile-info--avartar">
+          <div class="upload-file-widget" style="background-image: url('modules/core/client/img/default-avatar.png');">
+            <a class="btn btn-lg upload-file-button">Change Photo</a>
+          </div>
+        </div>
+        <div class="col-sm-8 user-profile-info--title">
+          <h1>Tao Ni<span>@tao.ni</span></h1>
+          <ul class="list-inline profile-user-social-buttons">
+            <li ng-repeat="network in vm.network">
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'tw'"><i class="fa fa-twitter"></i></a>
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'ga'"><i class="fa fa-rss"></i></a>
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'yt'"><i class="fa fa-youtube"></i></a>
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'ig'"><i class="fa fa-instagram"></i></a>
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'fb'"><i class="fa fa-facebook"></i></a>
+              <a ng-href="{{ network.url }}" target="_blank" ng-if="network.provider === 'pi'"><i class="fa fa-pinterest"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="col-sm-3">
+      <div class="list-group">
+        <a ui-sref="user.settings.profile" class="list-group-item" ui-sref-active="active">Profile</a>
+        <a ui-sref="user.settings.social" class="list-group-item" ui-sref-active="active">Social Accounts</a>
+        <!-- <a ui-sref="user.settings.analytics" class="list-group-item" ui-sref-active="active">Analytics<span class="new-feature-label">NEW</span></a> -->
+      </div>
+    </div>
+
+    <!-- menu item content goes here -->
+    <!-- Content -->
+    <div class="col-sm-9">
+      <form name="vm.basicinfoform" class="" novalidate>
+        <!-- email and username -->
+        <div class="row profile-input-row">
+          <div class="col-sm-12 profile-input-cell">
+            <input popover="Your email" popover-trigger="focus" type="email" class="form-control form-validate form-input medium" placeholder="Email" ng-model="vm.user.email">
+            <div class="message error">Email not verified <a href="#">Resend a link</a></div>
+          </div>
+        </div>
+
+        <!-- full name -->
+        <div class="row profile-input-row">
+          <div class="col-sm-12 profile-input-cell">
+            <input popover="Your full name" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Full Name" ng-model="vm.user.name" required>
+          </div>
+        </div>
+
+        <!-- user name -->
+        <div class="row profile-input-row">
+          <div class="col-sm-12 profile-input-cell">
+            <input popover="Your SproutUp @username" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Pick a SproutUp username" ng-model="vm.user.nickname" name="username" ng-model-options="{ debounce: 400 }" username required>
+          </div>
+          <span ng-show="checking && vm.basicinfoform.username.$pending.username" class="message">Checking if this name is available...</span>
+          <span ng-show="vm.basicinfoform.username.$valid" class="message success">Cool, this username is available!</span>
+          <span ng-show="vm.basicinfoform.username.$error.username" class="message error">This username is already taken!</span>
+        </div>
+
+        <!-- short description -->
+        <div class="row profile-input-row">
+          <div class="col-sm-12 profile-input-cell">
+            <textarea popover="Short description about yourself" popover-trigger="focus" class="form-control form-input-textarea no-resize" placeholder="Short bio of yourself" rows="2" ng-model="vm.user.description"></textarea>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="profile-input-cell--title">Shipping Address</div>
+        <div class="row profile-input-row">
+          <div class="col-sm-8 profile-input-cell">
+            <input analytics-on="click" analytics-event="Enter shipping address" type="text" ng-autocomplete="" class="form-control form-input medium" placeholder="Enter your address" ng-model="vm.user.address">
+          </div>
+          <div class="col-sm-4 profile-input-cell">
+            <input type="text" ng-autocomplete="" class="form-control form-input medium" placeholder="Your zip code">
+          </div>
+        </div>
+
+        <!-- Phone number -->
+        <div class="profile-input-cell--title">Mobile Number</div>
+        <div class="row profile-input-row">
+          <div class="col-sm-12 profile-input-cell">
+            <input analytics-on="click" analytics-event="Enter phone number" type="text" class="form-control form-input medium" placeholder="Enter your mobile number. Please include the country code for non-US number." ng-model="vm.user.phone">
+          </div>
+        </div>
+
+        <!-- Save & Cancel button -->
+        <div class="add-product-actions">
+          <button analytics-on="click" analytics-event="Save user profile" ng-disabled="vm.basicinfoform.$invalid || vm.basicinfoform.$pristine" class="btn btn-lg add-product-btn save" type="submit" ng-click="vm.save()">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
