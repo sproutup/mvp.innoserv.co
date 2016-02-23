@@ -1,55 +1,69 @@
-<div class="col-sm-3 col-profile-picture" data-ng-controller="ChangeProfilePictureController as profile">
-  <div up-file-upload ng-model="user.avatar.file" on-change="profile.saveProfilePicture(user.avatar.file.id)"></div>
-</div>
+<!-- Content -->
+<div class="col-sm-9" data-ng-controller="EditProfileController">
+  <form name="vm.basicinfoform" data-ng-submit="updateUserProfile(userForm.$valid)" class="" novalidate>
+    <!-- Basic Information -->
+    <div class="profile-edit--header">
+      <h1>Basic Information<h1>
+    </div>
+    <!-- full name -->
+    <div class="row profile-input-row">
+      <div class="col-sm-12 profile-input-cell">
+        <input popover="Your full name" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Full Name" ng-model="user.displayName" required>
+      </div>
+    </div>
 
-<div class="col-sm-9 col-profile-info" data-ng-controller="EditProfileController">
-    <form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin" autocomplete="off">
-      <fieldset>
+    <!-- email and username -->
+    <div class="row profile-input-row">
+      <div class="col-sm-6 profile-input-cell">
+        <input popover="Your email" popover-trigger="focus" type="email" disabled class="form-control form-validate form-input medium" placeholder="Email" ng-model="user.email">
+      </div>
+      <div class="col-sm-6 profile-input-cell">
+        <input popover="Your SproutUp @username" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Pick a SproutUp username" ng-model="user.username" name="username" ng-model-options="{ debounce: 400 }" username required>
+      </div>
+      <span ng-show="checking && vm.basicinfoform.username.$pending.username" class="username-message">Checking if this name is available...</span>
+      <span ng-show="vm.basicinfoform.username.$valid" class="username-message success">Cool, this username is available!</span>
+      <span ng-show="vm.basicinfoform.username.$error.username" class="username-message error">This username is already taken!</span>
+    </div>
+    <!-- short description -->
+    <div class="row profile-input-row">
+      <div class="col-sm-12 profile-input-cell">
+        <textarea popover="Short description about yourself" popover-trigger="focus" class="form-control form-input-textarea no-resize" placeholder="Short description about yourself" rows="2" ng-model="user.description"></textarea>
+      </div>
+    </div>
 
-        <!-- Username -->
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" class="form-control form-validate form-input" data-ng-model="user.username" placeholder="Username">
-        </div>
+    <!-- Address -->
+    <div class="profile-input-cell--title">Shipping Address</div>
+    <div class="row profile-input-row">
+      <div class="col-sm-12 profile-input-cell">
+        <input analytics-on="click" analytics-event="Enter shipping address" type="text" ng-autocomplete="" class="form-control form-input medium" placeholder="Enter your address" ng-model="user.address">
+      </div>
+    </div>
 
-        <!-- First name -->
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" class="form-control form-validate form-input" data-ng-model="user.firstName" placeholder="First Name">
-        </div>
+    <!-- Phone number -->
+    <div class="profile-input-cell--title">Mobile Number</div>
+    <div class="row profile-input-row">
+      <div class="col-sm-12 profile-input-cell">
+        <input analytics-on="click" analytics-event="Enter phone number" type="text" class="form-control form-input medium" placeholder="Enter your mobile number. Please include the country code for non-US number." ng-model="vm.user.phone">
+      </div>
+    </div>
 
-        <!-- Last name -->
-        <div class="form-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" class="form-control form-validate form-input" data-ng-model="user.lastName" placeholder="Last Name">
-        </div>
-
-        <!-- Last name -->
-        <div class="form-group">
-          <label for="lastName">Url</label>
-          <input type="text" id="url" name="url" class="form-control form-validate form-input" data-ng-model="user.file.url" placeholder="Last Name">
-        </div>
-
-        <!-- TODO: send a verification email is users change email -->
-        <div class="form-group">
-          <label for="email">Email</label>
-<!--           <div><a href="" ng-click="emailConfirmation()" ng-if="!user.emailConfirmed">Send another email confirmation</a></div> -->
-          <input type="email" id="email" name="email" class="form-control form-validate form-input" data-ng-model="user.email" placeholder="Email">
-        </div>
-
+    <!-- Save & Cancel button -->
+    <div class="add-product-actions">
+      <input type="submit" analytics-on="click" analytics-event="Save user profile" ng-disabled="vm.basicinfoform.$invalid || vm.basicinfoform.$pristine" class="btn btn-lg add-product-btn save" type="submit">Save Changes</input>
+    </div>
         <!-- TODO: disable Save button unless users change something -->
         <div class="form-group">
           <input type="submit" id="submit" class="btn btn-lg sproutup-btn-md-main" value="Save Changes">
         </div>
 
-        <!-- TODO: change to SproutUp heads-up message style -->
-        <div data-ng-show="success" class="text-center text-success">
-          <strong>Profile Saved Successfully</strong>
-        </div>
-        <div data-ng-show="error" class="text-center text-danger">
-          <strong data-ng-bind="error"></strong>
-        </div>
-      </fieldset>
-    </form>
+
+    <!-- TODO: change to SproutUp heads-up message style -->
+    <div data-ng-show="success" class="text-center text-success">
+      <strong>Profile Saved Successfully</strong>
+    </div>
+    <div data-ng-show="error" class="text-center text-danger">
+      <strong data-ng-bind="error"></strong>
+    </div>
+  </form>
 </div>
 
