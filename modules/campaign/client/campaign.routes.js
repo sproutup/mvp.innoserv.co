@@ -6,7 +6,7 @@ angular
 
 function config($stateProvider) {
   $stateProvider
-    .state('discover', {
+    .state('navbar.discover', {
       url: '/discover',
       abstract: true,
       templateUrl: 'modules/campaign/client/discover.view.html',
@@ -16,24 +16,14 @@ function config($stateProvider) {
         title: ''
       }
     })
-    .state('user.campaign', {
-      url: '/campaign',
-      abstract: true,
-      template: '<section ng-init="company.findByStateParam()"><div ui-view></div></section>',
-      controller: 'CampaignController',
-      controllerAs: 'vm',
-      data: {
-        title: ''
-      }
-    })
-    .state('discover.list', {
+    .state('navbar.discover.list', {
       url: '',
       templateUrl: 'modules/campaign/client//list-campaign.view.html',
       data: {
           title: 'Campaign - List'
       }
     })
-    .state('discover.mine', {
+    .state('navbar.discover.mine', {
       url: '/my-stuff',
       templateUrl: 'modules/campaign/client/my-campaign.view.html',
       data: {

@@ -1,13 +1,12 @@
 'use strict';
 
 angular
-    .module('buzz')
-    .config(config);
+  .module('buzz')
+  .config(config);
 
 function config($stateProvider) {
-
     $stateProvider
-        .state('singleBuzz' ,{
+        .state('navbar.singleBuzz' ,{
             url: '/buzz/:id',
             templateUrl: 'modules/buzz/client/single-buzz.html',
             controller: 'BuzzController',
@@ -16,7 +15,7 @@ function config($stateProvider) {
                 title: 'Buzz - SproutUp'
             }
         })
-        .state('buzz' ,{
+        .state('navbar.buzz' ,{
             url: '/buzz',
             templateUrl: 'modules/buzz/client/buzz.html',
             controller: 'BuzzController',

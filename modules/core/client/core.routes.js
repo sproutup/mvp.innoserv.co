@@ -14,7 +14,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         abstract: true,
         templateUrl: 'modules/core/client/header.view.html',
         controller: 'HeaderController',
-        controllerAs: 'vm'
+        controllerAs: 'navbar'
       })
       .state('navbar.home', {
         url: '/',

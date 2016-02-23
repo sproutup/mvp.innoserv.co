@@ -3,10 +3,10 @@
 angular.module('buzz').run(['Menus',
   function (Menus) {
     Menus.addMenuItem('navbar', {
-      title: 'Buzz',
-      state: 'user.buzz',
+      title: 'BUZZ',
+      state: 'navbar.buzz',
       class: 'buzz',
-      roles: ['user', 'admin'],
+      roles: ['guest', 'user', 'admin'],
       position: 10
     });
   }

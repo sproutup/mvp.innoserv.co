@@ -1,41 +1,73 @@
-<div class="creator-menu">
-  <div class="navbar-header">
-    <button class="navbar-toggle" type="button" data-ng-click="vm.toggleCollapsibleMenu()">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="navbar-content">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sproutup-collapse-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a analytics-on="click" analytics-event="Enter Landing Page" class="navbar-brand" ui-sref="navbar.home">
+        <img class="logo" src="modules/core/client/img/logo-beta-white.png">
+      </a>
+    </div>
+    <!-- Two different nav bars. First for desktop, second one shows under 767px and collapses on an item click. -->
+    <div class="collapse navbar-collapse" id="sproutup-collapse-navbar">
+      <ul class="nav navbar-nav navbar-item navbar-right navbar-wide">
+        <li ng-repeat="item in navbar.menu.items | orderBy: 'position'"
+          ng-if="item.shouldRender(navbar.authentication.user);"
+          ng-switch="item.type"
+          ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }"
+          class="{{item.class}} nav-item-wrapper nav-item-main"
+          dropdown="item.type === 'dropdown'">
+            <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
+        </li>
+
+        <li ng-if="!navbar.authentication.user"><a ui-sref="user.login">LOG IN</a></li>
+        <li ng-if="!navbar.authentication.user"><a ui-sref="user.signup">SIGN UP</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-item navbar-right navbar-skinny">
+        <li ng-repeat="item in navbar.menu.items | orderBy: 'position'"
+          ng-if="item.shouldRender(navbar.authentication.user);"
+          ng-switch="item.type"
+          ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }"
+          class="{{item.class}} nav-item-wrapper nav-item-main"
+          dropdown="item.type === 'dropdown'">
+            <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
+        </li>
+
+        <li ng-if="!navbar.authentication.user"><a ui-sref="user.login" data-toggle="collapse" data-target="#sproutup-collapse-navbar">LOG IN</a></li>
+        <li ng-if="!navbar.authentication.user"><a ui-sref="user.signup" data-toggle="collapse" data-target="#sproutup-collapse-navbar">SIGN UP</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-item navbar-right">
+        <li><img class="profile-img" ng-src="{{navbar.authentication.user.profileImageURL}}"></li>
+        <li about="" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></a>
+            <ul class="dropdown-menu navbar-wide" role="menu">
+                <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="navbar.user.profile.buzz({ nickname: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
+                <li><a analytics-on="click" analytics-event="Enter Account Settings" ui-sref="navbar.user.settings.profile">Account Settings</a></li>
+                <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Log Out">Log Out</a></li>
+            </ul>
+            <ul class="dropdown-menu navbar-toggleMenu" role="menu">
+                <li><a class="navbar-skinny" analytics-on="click" analytics-event="View My Profile" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })" data-toggle="collapse" data-target="#sproutup-collapse-navbar">{{auth.m.user.name}}<span>(View Profile)</span></a></a></li>
+                <li><a class="navbar-skinny" analytics-on="click" analytics-event="Enter Account Settings" ui-sref="user.settings.profile" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Account Settings</a></li>
+                <li><a class="navbar-skinny" href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Log Out" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Log Out</a></li>
+            </ul>
+        </li>
+      </ul>
+
+    </div>
+
+    <nav role="navigation">
+      <div class="nav-section" ng-if="navbar.authentication.user">
+        <div class="nav-item-wrapper nav-item-main">
+          <a href="/api/auth/signout" target="_self">Log out</a>
+        </div>
+      </div>
+    </nav>
   </div>
-  <nav role="navigation">
-    <div class="nav-head" ng-if="vm.authentication.user">
-      <div class="nav-item-wrapper creator-user">
-        <a ui-sref='company.navbar.user.profile'>
-          <img alt="avatar"
-             src=""> {{ vm.authentication.user.firstName }}
-        </a>
-      </div>
-    </div>
-
-    <div class="nav-head" ng-if="!vm.authentication.user">
-      <div class="nav-item-wrapper nav-item-main">
-          <a href="/authentication/signin">Sign In</a>
-      </div>
-    </div>
-
-    <div class="nav-section" ng-if="vm.navbar.shouldRender(company.authentication.user);">
-      <div ng-repeat="item in vm.navbar.items | orderBy: 'position'" ng-if="item.shouldRender(company.authentication.user);" ng-switch="item.type" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}} nav-item-wrapper nav-item-main" dropdown="item.type === 'dropdown'">
-        <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
-      </div>
-    </div>
-
-    <div class="nav-section" ng-if="vm.authentication.user">
-      <div class="nav-item-wrapper nav-item-main">
-        <a href="/api/auth/signout" target="_self">Log out</a>
-      </div>
-    </div>
-
-  </nav>
 </div>
 
 <div ui-view class="dashboard-container"></div>
