@@ -49,14 +49,9 @@
       </div>
     </div>
 
-    <!-- Save & Cancel button -->
-    <div class="add-product-actions">
-      <input type="submit" analytics-on="click" analytics-event="Save user profile" ng-disabled="vm.basicinfoform.$invalid || vm.basicinfoform.$pristine" class="btn btn-lg add-product-btn save" type="submit">Save Changes</input>
+    <div class="settings-page-actions">
+      <button ng-disabled="vm.basicinfoform.$invalid || vm.basicinfoform.$pristine" class="btn btn-lg sproutup-btn-md-main" type="submit" ng-click="vm.save()">Save Changes</button>
     </div>
-        <!-- TODO: disable Save button unless users change something -->
-        <div class="form-group">
-          <input type="submit" id="submit" class="btn btn-lg sproutup-btn-md-main" value="Save Changes">
-        </div>
 
 
     <!-- TODO: change to SproutUp heads-up message style -->

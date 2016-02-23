@@ -26,7 +26,7 @@
     <!-- TOC -->
     <div class="col-sm-3">
       <div class="list-group">
-        <a class="list-group-item" ng-repeat="item in vm.menu.items | orderBy: 'position'" ui-sref="{{item.state}}" ng-if="item.shouldRender(navbar.authentication.user);" ng-switch="item.type" ng-class="{ active: navbar.state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}} nav-item-wrapper nav-item-main" dropdown="item.type === 'dropdown'">
+        <a class="list-group-item" ng-repeat="item in vm.menu.items | orderBy: 'position'" ui-sref="{{item.state}}" ng-if="item.shouldRender(navbar.authentication.user);" ng-class="{ current: navbar.state.includes(item.state) }">
           {{item.title}}
         </a>
       </div>
