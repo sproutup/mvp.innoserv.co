@@ -2,13 +2,11 @@
 <div class="row hangout-list"  ng-repeat="item in vm.list | orderBy:'-start.dateTime'" ng-if="item.start.dateTime < vm.date">
   <div class="col-sm-9 hangout-details">
     <div class="row">
-      <div class="col-sm-2">
-        <img class="img-responsive hangout-host-photo" ng-src="">
-      </div>
+      <div class="col-sm-1"></div>
       <div class="col-sm-10">
         <p class="hangout-host"><a ng-href="{{ item.htmlLink }}">{{item.summary}}</a></p>
         <p class="hangout-date-time">{{item.start.dateTime | date}}</p>
-        <p class="hangout-topic">{{item.description}}</p>
+        <p class="hangout-topic" ng-bind-html="item.description | linky:'_blank'"></p>
       </div>
     </div>
   </div>

@@ -14,7 +14,8 @@ var ApplicationConfiguration = (function () {
     'angularMoment',
     'ngCookies',
     'ngFileUpload',
-    'angularSpinner'
+    'angularSpinner',
+    'ngSanitize'
   ];
 
   // Add a new vertical module
