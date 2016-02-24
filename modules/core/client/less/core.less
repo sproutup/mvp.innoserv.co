@@ -997,14 +997,14 @@ a:focus {
 
 .sproutup-btn-sm.outline {
   background-color: transparent;
-  color: white;
-  border: 1px solid white;
+  color: @sproutup-carribean;
+  border: 1px solid @sproutup-carribean;
 }
 
 .sproutup-btn-sm.outline:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 1px solid white;
+  background-color: trasparent;
+  color: @sproutup-carribean-hover;
+  border: 1px solid @sproutup-carribean-hover;
 }
 
 .sproutup-btn-xs {
@@ -2752,10 +2752,30 @@ ul.company-profile-social-buttons p {
   padding-left: 19px;
 }
 
+.about-campaign-page {
+  margin: 0px;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.about-campaign-page::after{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background: linear-gradient(rgba(215, 215, 215, 0.8), rgba(215, 215, 215, 0.65)); /* Standard syntax */
+}
+
 .about-campaign-wrapper {
-  margin: 30px auto;
+  z-index: 10;
+  position: relative;
+  margin: 0px auto;
   max-width: 1250px;
-  padding: 0px 25px;
+  padding: 35px 25px 80px;
 }
 
 .suggest-page {
@@ -2816,16 +2836,18 @@ ul.company-profile-social-buttons p {
 }
 
 .about-campaign-section {
-  background-color: @sproutup-carribean;
-  color: white;
+  background-color: rgba(255, 255, 255, 0.87);
+  border: 1px solid @sproutup-lightgrey;
+  color: @main-text;
   margin: 0px 0px 10px;
 }
 
 .about-campaign-section h3 {
-  font-weight: 300;
+  font-weight: 700;
   font-size: 14pt;
   margin: 0px;
   padding: 25px 25px 0px;
+  color: @sproutup-carribean;
 }
 
 .about-campaign-section p {
@@ -2839,7 +2861,7 @@ ul.company-profile-social-buttons p {
 
 .about-campaign-section p a {
   text-decoration: underline;
-  color: @main-text-white;
+  color: @sproutup-carribean;
 }
 
 .about-campaign-section ul {
