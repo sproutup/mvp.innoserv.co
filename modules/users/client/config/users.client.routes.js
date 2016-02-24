@@ -25,6 +25,8 @@ angular.module('users').config(['$stateProvider',
       })
       .state('navbar.settings.accounts', {
         url: '/accounts',
+        controller: 'SocialAccountsController',
+        controllerAs: 'vm',
         templateUrl: 'modules/users/client/views/settings/manage-social-accounts.client.view.html'
       })
       .state('company.navbar.user.picture', {
