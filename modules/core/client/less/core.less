@@ -1697,6 +1697,14 @@ input[type=checkbox] {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)); /* Standard syntax */
 }
 
+.hangout-empty-state {
+  margin: 20px;
+}
+
+.hangout-empty-state .hangout-banner {
+  margin: 0px;
+}
+
 .hangout-info-wrapper {
   text-align: center;
   color: @main-text-white;
@@ -1721,6 +1729,18 @@ input[type=checkbox] {
   font-weight: 400;
   font-size: 16pt;
   margin: 20px 0px;
+}
+
+.hangout-info-wrapper h2
+{
+  z-index: 10;
+  position: relative;
+  font-weight: 300;
+  font-size: 12pt;
+}
+
+.hangout-empty-state .hangout-info-wrapper h1 {
+  padding: 90px 0px 50px;
 }
 
 .hangout-info-wrapper .sproutup-btn-sm {
