@@ -3,13 +3,13 @@
   <div class="col-sm-9 hangout-details">
     <div class="row">
       <div class="col-sm-12">
-        <p class="hangout-host"><a ng-href="{{ item.htmlLink }}">{{item.summary}}</a></p>
+        <p class="hangout-host"><a target="_blank" ng-href="{{ item.htmlLink }}">{{item.summary}}</a></p>
         <p class="hangout-date-time">{{item.start.dateTime | date}}</p>
         <p class="hangout-topic" ng-bind-html="item.description | linky:'_blank'"></p>
       </div>
     </div>
   </div>
   <div class="col-sm-3 hangout-action">
-    <a class="btn btn-lg sproutup-btn-md-main purple-outline" ng-href="{{ item.htmlLink }}">Watch Past Hangout</a>
+    <a class="btn btn-lg sproutup-btn-md-main purple-outline" target="_blank" ng-href="{{ item.htmlLink }}">Watch Past Hangout</a>
   </div>
 </div>
