@@ -7,7 +7,7 @@ angular.module('hangout').run(['Menus',
       state: 'navbar.hangout.list.future',
       class: 'hangout',
       roles: ['guest','user', 'admin'],
-      position: 1
+      position: 30
     });
   }
 ]);
