@@ -893,6 +893,11 @@ a:focus {
   color: white;
 }
 
+.sproutup-btn-sm.naked {
+  background: none;
+  color: @sproutup-orange;
+}
+
 .sproutup-btn-sm.twitter {
   background-color: @twitter-blue;
   color: white;
@@ -4124,11 +4129,21 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
   color: @main-text;
 }
 
+.row-social-account .header i {
+  color: @sproutup-green;
+  margin-right: 10px;
+}
+
 .row-social-account .description {
   font-size: 10.5pt;
   font-weight: 400;
   color: @main-text-lighter;
   line-height: 1.6;
+}
+
+.row-social-account .description .reach {
+  color: @sproutup-green;
+  font-weight: 700;
 }
 
 .row-social-account .action {
@@ -4137,6 +4152,7 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
 
 .row-social-account .action .btn {
   margin-top: 15px;
+  margin-right: 0px;
 }
 
 .row-social-account .action .btn i {
