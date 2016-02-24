@@ -26,7 +26,7 @@
     <div class="col-sm-3">
       <div class="list-group">
         <a class="list-group-item current">Profile</a>
-        <a class="list-group-item">Social Accounts</a>
+        <a ui-sref="navbar.theme.mocks.account-settings-social" class="list-group-item">Social Accounts</a>
         <!-- <a ui-sref="user.settings.analytics" class="list-group-item" ui-sref-active="active">Analytics<span class="new-feature-label">NEW</span></a> -->
       </div>
     </div>
@@ -99,6 +99,7 @@
           <button analytics-on="click" analytics-event="Save user profile" ng-disabled="vm.basicinfoform.$invalid || vm.basicinfoform.$pristine" class="btn btn-lg add-product-btn save" type="submit" ng-click="vm.save()">Save Changes</button>
         </div>
       </form>
+
     </div>
   </div>
 </div>

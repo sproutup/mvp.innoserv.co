@@ -118,9 +118,13 @@ angular
           url: '/view-a-conversation',
           templateUrl: 'modules/theme/client/mocks/view-a-conversation.html'
         })
-        .state('navbar.theme.mocks.account-settings', {
-          url: '/account-settings',
-          templateUrl: 'modules/theme/client/mocks/account-settings.html'
+        .state('navbar.theme.mocks.account-settings-profile', {
+          url: '/account-settings-profile',
+          templateUrl: 'modules/theme/client/mocks/account-settings-profile.html'
+        })
+        .state('navbar.theme.mocks.account-settings-social', {
+          url: '/account-settings-social',
+          templateUrl: 'modules/theme/client/mocks/account-settings-social.html'
         });
       }
     ]);
