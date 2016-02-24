@@ -34,7 +34,7 @@
       <div class="social-account-wrapper">
         <div class="profile-edit--header">
           <h1>Your social reach is your influence &#x1F388;</h1>
-          <h2>Connect your social accounts and know your social reach and influence. <a href="#" ng-click="vm.learningMore=!vm.learningMore">Learn more</a></h2>
+          <h2>Connect your social accounts and know your social reach and influence. After you get connected, your reach will be visible on your <a href="">SproutUp profile</a>. <span><a href="#" ng-click="vm.learningMore=!vm.learningMore">Learn more</a></span></h2>
       		<div class="learning-more" ng-if="vm.learningMore">
             <hr>
             <div>Why should I link my social media accounts with SproutUp?</div>
@@ -47,6 +47,36 @@
     		    </ul>
       		</div>
         </div>
+        <!-- connected to google -->
+        <div class="row row-social-account">
+          <div class="col-sm-8">
+            <div class="header"><i class="fa fa-check-circle success"></i>Connected to Google</div>
+            <div class="description">Woohoo, we are now getting your social reach from Google. You can now sign in with Google as well.</div>
+          </div>
+          <div class="col-sm-4 action">
+            <button class="btn sproutup-btn-sm naked" href="#">Disconnect</button>
+          </div>
+        </div>
+        <!-- connected to twitter -->
+        <div class="row row-social-account">
+          <div class="col-sm-8">
+            <div class="header"><i class="fa fa-check-circle success"></i>Connected to Twitter</div>
+            <div class="description">Woohoo, we are now getting your social reach from Twitter. You can now sign in with Twitter as well. <strong>We'll never post to Twitter or message your followers without your permission</strong>.</div>
+          </div>
+          <div class="col-sm-4 action">
+            <button class="btn sproutup-btn-sm naked" href="#">Disconnect</button>
+          </div>
+        </div>
+        <!-- reconnect to google -->
+        <div class="row row-social-account">
+          <div class="col-sm-8">
+            <div class="header"><i class="fa fa-question-circle error"></i>Reconnect to Google</div>
+            <div class="description">Ah oh, there is something wrong with connecting to Google. Would you mind trying again?</div>
+          </div>
+          <div class="col-sm-4 action">
+            <button class="btn sproutup-btn-sm salmon" href="#">Reconnect</button>
+          </div>
+        </div>
         <!-- Google -->
         <div class="row row-social-account">
           <div class="col-sm-8">
@@ -57,16 +87,6 @@
             <button class="btn sproutup-btn-sm google"><i class="fa fa-google-plus-square"></i>Connect</button>
           </div>
         </div>
-        <!-- connected to google -->
-        <div class="row row-social-account">
-          <div class="col-sm-8">
-            <div class="header"><i class="fa fa-check-circle"></i>Connected to Google</div>
-            <div class="description">Your collective social reach from Google is <span class="reach">58.2k</span>. You can now sign in with Google as well.</div>
-          </div>
-          <div class="col-sm-4 action">
-            <a class="btn sproutup-btn-sm naked" href="#">Disconnect</a>
-          </div>
-        </div>
         <!-- Twitter -->
         <div class="row row-social-account">
           <div class="col-sm-8">
@@ -75,16 +95,6 @@
           </div>
           <div class="col-sm-4 action">
             <button class="btn sproutup-btn-sm twitter"><i class="fa fa-twitter"></i>Connect</button>
-          </div>
-        </div>
-        <!-- connected to twitter -->
-        <div class="row row-social-account">
-          <div class="col-sm-8">
-            <div class="header"><i class="fa fa-check-circle"></i>Connected to Twitter</div>
-            <div class="description">Your social reach on Twitter is <span class="reach">137k</span>. You can now sign in with Twitter as well. <strong>We'll never post to Twitter or message your followers without your permission</strong>.</div>
-          </div>
-          <div class="col-sm-4 action">
-            <a class="btn sproutup-btn-sm naked" href="#">Disconnect</a>
           </div>
         </div>
         <!-- Facebook -->
