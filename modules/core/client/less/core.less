@@ -1803,11 +1803,33 @@ p[class="hangout-countdown-unit"] {
   font-weight: 400;
   font-size: 11pt;
   color: @main-text;
+  line-height: 1.6;
+}
+
+.hangout-topic a {
+  color: @sproutup-blue;
 }
 
 .hangout-action {
   margin-top: 15px;
   text-align: right;
+}
+
+.hangout-action a.sproutup-btn-md-main.purple-outline {
+  padding-top: 12px;
+}
+
+.hangout-action a.sproutup-btn-md-main.purple-outline:active,
+.hangout-action a.sproutup-btn-md-main.purple-outline:focus {
+  border: 1px solid @sproutup-purple;
+  color: @sproutup-purple;
+  background-color: transparent;
+}
+
+.hangout-action a.sproutup-btn-md-main.purple-outline:hover {
+  border: 1px solid @sproutup-purple-hover;
+  color: @sproutup-purple-hover;
+  background-color: transparent;
 }
 
 .hangout-chat-wrapper {
@@ -2897,7 +2919,8 @@ ul.company-profile-social-buttons p {
 }
 
 .about-campaign-section .fine-prints a {
-  color: @main-text-white;
+  color: @sproutup-carribean;
+  font-weight: 700;
 }
 
 .trial-campaign-how-it-works {
