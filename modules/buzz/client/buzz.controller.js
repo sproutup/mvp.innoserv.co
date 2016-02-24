@@ -119,7 +119,7 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
 
     function create(groupId) {
         vm.posting = true;
-        vm.post.userId = vm.user.id;
+        vm.post.userId = Authentication.user.id;
         var Post = PostService.post();
         var item = new Post(vm.post);
         item.groupId = groupId;
