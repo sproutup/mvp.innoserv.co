@@ -37,8 +37,8 @@
       </div>
     </div>
     <!-- Google -->
-    <div ng-repeat="network in vm.networks" class="row row-social-account">
-      <div class="col-sm-8">
+    <div ng-repeat="network in vm.networks" class="row row-social-account" ng-hide="vm.isConnectedSocialAccount(network.provider)">
+      <div class="col-sm-8" >
         <div class="header">Connect to {{network.title}}</div>
         <div class="description">{{network.description}}</div>
       </div>
