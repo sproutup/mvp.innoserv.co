@@ -16,8 +16,7 @@
           dropdown="item.type === 'dropdown'">
           <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>
-        <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin">LOG IN</a></li>
-        <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signup">SIGN UP</a></li>
+        <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin">SIGN IN</a></li>
         <li><img class="profile-img" ng-src="{{navbar.authentication.user.profileImageURL}}"></li>
         <li uib-dropdown ng-if="navbar.authentication.user">
             <a href="#" uib-dropdown-toggle>{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></a>
