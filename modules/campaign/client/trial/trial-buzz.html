@@ -32,5 +32,14 @@
       <!-- feed -->
       <up-content ng-repeat="item in buzzCtrl.content" content="item" state="user.buzz"></up-content>
     </div>
+    <div class="col-sm-5 campaign-buzz-column right">
+      <div class="product-trial-item--messages">
+        <div class="message-header">
+          <p><i class="fa fa-commenting"></i>ACTON</p>
+        </div>
+        {{vm.myContribution}}
+        <up-message-channel channel-id="0"/>
+      </div>
+    </div>
   </div>
 </div>
