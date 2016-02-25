@@ -1,69 +1,73 @@
-<div class="row about-campaign-wrapper" ng-init="vm.findMyContribution()">
-  <div class="col-sm-7 about-campaign-column">
-    <div class="my-content-video embedded product-video" ng-if="vm.campaign.product.video">
-     <embed-video data-ng-href="{{ vm.campaign.product.video }}" width=560 height=315></embed-video>
-    </div>
-    <div class="about-campaign-section" ng-if="vm.campaign.description">
-      <h3>TRIAL DETAILS</h3>
-      <p>{{ vm.campaign.description }}</p>
-    </div>
-  </div>
-  <div class="col-sm-5 about-campaign-column">
-    <div ng-if="vm.myContribution">
-      <div class="about-campaign-section" ng-if="vm.myContribution.state === 0">
-        <h3>You requested on <strong>{{ vm.myContribution.created | date }}</strong></h3>
-        <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
-        <div class="about-campaign-actions">
-          <a ui-sref="user.navbar.trial.edit({ campaignId: vm.campaign.id, userId: vm.user.id })" class="btn btn-md sproutup-btn-sm" style="padding-top: 9px">Edit request</a>
-          <button class="btn btn-md sproutup-btn-sm cancel" ng-click="vm.cancelRequest()">Cancel request</button>
+<div class="about-campaign-page" style="background-image: url('modules/core/client/img/about-campaign-background.jpg')">
+  <div class="row about-campaign-wrapper" ng-init="vm.findMyContribution()">
+    <div class="col-sm-7 about-campaign-column">
+      <div class="company-profile-products-section">
+        <div class="about-product--video embedded" ng-if="vm.campaign.product.video">
+         <embed-video data-ng-href="{{ vm.campaign.product.video }}" width=560 height=315></embed-video>
         </div>
       </div>
+      <div class="about-campaign-section" ng-if="vm.campaign.description">
+        <h3>TRIAL DETAILS</h3>
+        <p>{{ vm.campaign.description }}</p>
+      </div>
+    </div>
+    <div class="col-sm-5 about-campaign-column">
+      <div ng-if="vm.myContribution">
+        <div class="about-campaign-section" ng-if="vm.myContribution.state === 0">
+          <h3>You requested on <strong>{{ vm.myContribution.created | date }}</strong></h3>
+          <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
+          <div class="about-campaign-actions">
+            <a ui-sref="user.navbar.trial.edit({ campaignId: vm.campaign.id, userId: vm.user.id })" class="btn btn-md sproutup-btn-sm" style="padding-top: 9px">Edit request</a>
+            <button class="btn btn-md sproutup-btn-sm cancel" ng-click="vm.cancelRequest()">Cancel request</button>
+          </div>
+        </div>
 
-      <div class="about-campaign-section" ng-if="vm.myContribution.state === 1">
-        <h3 ng-if="vm.myContribution.trial.shippingState === 1"><strong>Product Shipped</strong></h3>
-        <h3>Nice! You were approved on <strong>{{ vm.myContribution.approved[0].created | date }}</strong></h3>
-        <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
-      </div>
+        <div class="about-campaign-section" ng-if="vm.myContribution.state === 1">
+          <h3 ng-if="vm.myContribution.trial.shippingState === 1"><strong>Product Shipped</strong></h3>
+          <h3>Nice! You were approved on <strong>{{ vm.myContribution.approved[0].created | date }}</strong></h3>
+          <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
+        </div>
 
-      <div class="about-campaign-section" ng-if="vm.myContribution.state === 10">
-        <p>You completed your trial on <strong>{{ vm.myContribution.completed[0].created | date }}</strong></p>
+        <div class="about-campaign-section" ng-if="vm.myContribution.state === 10">
+          <p>You completed your trial on <strong>{{ vm.myContribution.completed[0].created | date }}</strong></p>
+        </div>
       </div>
-    </div>
-    <div class="about-campaign-section">
-      <h3><strong>180</strong> have requested</h3>
-      <div class="about-campaign-participants">
-        <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-        <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-        <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-        <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-        <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-        <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-        <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-        <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
+      <div class="about-campaign-section">
+        <h3><strong>180</strong> have requested</h3>
+        <div class="about-campaign-participants">
+          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
+          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
+          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
+          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
+          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
+          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
+          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
+          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
+        </div>
       </div>
-    </div>
-    <div class="about-campaign-section">
-      <h3>LET'S TRY IT OUT</h3>
-      <ul>
-        <li ng-if="vm.campaign.typeOfContent.indexOf('yt')>0"><i class="fa fa-dot-circle-o"></i>We are looking for YouTubers.</li>
-        <li ng-if="vm.campaign.typeOfContent.indexOf('ig')>0"><i class="fa fa-dot-circle-o"></i>We are looking for Instagramers.</li>
-        <li ng-if="vm.campaign.typeOfContent.indexOf('tw')>0"><i class="fa fa-dot-circle-o"></i>We are looking for Tweeters.</li>
-        <li ng-if="vm.campaign.typeOfContent.indexOf('pi')>0"><i class="fa fa-dot-circle-o"></i>{{vm.typeOfContent}} We are looking for Pinners.</li>
-        <li ng-if="vm.campaign.trial.keepProduct"><i class="fa fa-dot-circle-o"></i>We will send you free product to review and keep.</li>
-        <li ng-if="vm.campaign.trial.keepProduct==false"><i class="fa fa-dot-circle-o"></i>We will send you <strong><i>loaner</i></strong> product to review and then return to us.</li>
-      </ul>
-    </div>
-    <div class="about-campaign-section">
-      <h3>HOW IT WORKS</h3>
-      <div class="trial-campaign-how-it-works">
-        <h4>Place a request</h4>
-        <div class="fine-prints">We make it simple for you! Tell us what kind of content you will create and why you are interseted in our product. If you go for sponsorship, tell us your offer. Passion and creativity make your request stand out.</div>
-        <h4>Get approved</h4>
-        <div class="fine-prints">We will review each request and pick influencers who perfectly match our brand and products.</div>
-        <h4>Unbox and enjoy</h4>
-        <div class="fine-prints">Once you are approved, congratulations! We then ship product directly to you and it's time to enjoy and have fun.</div>
-        <h4>Create content (and get paid)</h4>
-        <div class="fine-prints">Finally, make high quality content! Submit your work <a href="">here</a>, and get your cash reward (if you asked for sponsorship and was agreed by us).</div>
+      <div class="about-campaign-section">
+        <h3>LET'S TRY IT OUT</h3>
+        <ul>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('yt')>0"><i class="fa fa-dot-circle-o"></i>We are looking for YouTubers.</li>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('ig')>0"><i class="fa fa-dot-circle-o"></i>We are looking for Instagramers.</li>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('tw')>0"><i class="fa fa-dot-circle-o"></i>We are looking for Tweeters.</li>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('pi')>0"><i class="fa fa-dot-circle-o"></i>{{vm.typeOfContent}} We are looking for Pinners.</li>
+          <li ng-if="vm.campaign.trial.keepProduct"><i class="fa fa-dot-circle-o"></i>We will send you free product to review and keep.</li>
+          <li ng-if="vm.campaign.trial.keepProduct==false"><i class="fa fa-dot-circle-o"></i>We will send you <strong><i>loaner</i></strong> product to review and then return to us.</li>
+        </ul>
+      </div>
+      <div class="about-campaign-section">
+        <h3>HOW IT WORKS</h3>
+        <div class="trial-campaign-how-it-works">
+          <h4>Place a request</h4>
+          <div class="fine-prints">We make it simple for you! Tell us what kind of content you will create and why you are interseted in our product. If you go for sponsorship, tell us your offer. Passion and creativity make your request stand out.</div>
+          <h4>Get approved</h4>
+          <div class="fine-prints">We will review each request and pick influencers who perfectly match our brand and products.</div>
+          <h4>Unbox and enjoy</h4>
+          <div class="fine-prints">Once you are approved, congratulations! We then ship product directly to you and it's time to enjoy and have fun.</div>
+          <h4>Create content (and get paid)</h4>
+          <div class="fine-prints">Finally, make high quality content! Submit your work <a href="">here</a>, and get your cash reward (if you asked for sponsorship and was agreed by us).</div>
+        </div>
       </div>
     </div>
   </div>
