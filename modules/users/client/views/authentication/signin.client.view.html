@@ -1,1 +1,30 @@
-<div></div>
+<div class="signin-page">
+  <div class="signup-login-header">
+    <p>We're glad to see you</p>
+  </div>
+  <div class="signup-login-area">
+    <!-- twitter login -->
+    <button ng-click="callOauthProvider('/api/auth/twitter')" type="submit" class="btn btn-lg btn-twitter"><i class="fa fa-twitter-square"></i>Sign in with Twitter</button>
+    <!-- google login -->
+    <button ng-click="callOauthProvider('/api/auth/google')" type="submit" class="btn btn-lg btn-google"><i class="fa fa-google-plus-square"></i>Sign in with Google</button>
+    <!-- facebook login -->
+    <button ng-click="callOauthProvider('/api/auth/facebook')" type="submit" class="btn btn-lg btn-facebook"><i class="fa fa-facebook-square"></i>Sign in with Facebook</button>
+    <!-- separator -->
+    <div class="signup-or-separator">
+      <h6 class="text-special">OR</h6>
+      <hr>
+    </div>
+    <!-- email login -->
+    <form name="loginForm" class="loginForm" novalidate>
+      <div class="signup-login-form">
+        <div ng-show="true">
+          <div class="signup-login-form--error-message" ng-show="vm.form.error"><i class="fa fa-minus-circle"></i>Err... seems like invalid email or password</div>
+        </div>
+        <input class="form-control signup-login-input" id="email" type="text" required placeholder="Email address">
+        <input class="form-control signup-login-input" id="password" type="password" required placeholder="Password">
+        <button class="btn btn-lg signup-login-btn" type="submit">Log in</button>
+      </div>
+    </form>
+  </div>
+  <div class="signup-login-footer">We'll never post to Twitter, Facebook or Google Plus without your permission.</div>
+</div>
