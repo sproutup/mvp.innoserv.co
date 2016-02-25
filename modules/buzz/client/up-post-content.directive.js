@@ -78,14 +78,14 @@ function upPostContent() {
   }
 }
 
-upPostContentController.$inject = ['YouTubeService', 'AuthService'];
+upPostContentController.$inject = ['YouTubeService', 'Authentication'];
 
-function upPostContentController(YouTubeService, AuthService) {
+function upPostContentController(YouTubeService, Authentication) {
   var vm = this;
 
   vm.showYouTubeVideos = function() {
     YouTubeService.videos().get({
-      userId: AuthService.m.user.id
+      userId: Authentication.user.id
     }, function(res) {
       vm.contentState = 'youtube';
       vm.videos = res.items;
