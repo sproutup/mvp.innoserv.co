@@ -16,6 +16,13 @@ function config($stateProvider) {
         title: ''
       }
     })
+    .state('navbar.campaign', {
+      url: '/campaign/:campaignId',
+      abstract: true,
+      template: '<div ui-view ng-init="campaign.findOne()"><div>',
+      controller: 'CampaignController',
+      controllerAs: 'campaign'
+    })
     .state('navbar.discover.list', {
       url: '',
       templateUrl: 'modules/campaign/client//list-campaign.view.html',

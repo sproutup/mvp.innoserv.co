@@ -1,0 +1,24 @@
+<div class="product-trial-banner" up-background-image="{{vm.product.banner.url.image}}" up-background-attr="?w=1600" up-fallback-image="/assets/images/default-product-banner.jpg">
+    <div class="product-info-wrapper">
+        <div class="col-lg-12 product-info">
+            <form name="basicform" class="" novalidate>
+                <div class="signup-wizard">
+                    <h1>Thanks for your request. A few more things to ask to confirm your request...</h1>
+                    <div class="signup-wizard-row">
+                        <input tabindex="1" type="text" ng-model="vm.request.address" ng-autocomplete="" class="form-control form-input medium" placeholder="Your shipping address" required>
+                        <input tabindex="2" type="text" ng-model="vm.request.phone" class="form-control form-input medium" placeholder="Your phone number" required>
+                        <textarea tabindex="3" type="text" ng-model="vm.request.reason" class="form-control form-input-textarea no-resize" placeholder="Briefly describe why you're interested in trying {{vm.product.name}}. We may quote and showcase your words." rows="1" required></textarea>
+                    </div>
+
+                    <p>After you qualify, product will be shipped to the address you provided. You may be contacted by phone or email for shipping and trial related questions.</p>
+                    <p>By requesting the product trial, I agree to SproutUp's <a href="#" ui-sref="user.trial-terms">Product Trial Terms and Conditions</a>.</p>
+
+                    <div class="signup-wizard-actions">
+                        <button type="submit" analytics-on="click" analytics-event="Confirm Trial" analytics-slug="{{vm.product.slug}}" ng-disabled="basicform.$invalid" class="btn btn-lg sproutup-btn-md-main" ng-click="vm.submit()">Continue</button>
+                        <a type="submit" class="btn btn-lg sproutup-btn-md-cancel" ng-click="vm.cancel()">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

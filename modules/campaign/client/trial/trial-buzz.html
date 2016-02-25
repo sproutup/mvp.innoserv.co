@@ -1,0 +1,36 @@
+<div class="buzz-page">
+  <div class="row campaign-buzz-wrapper" infinite-scroll='buzzCtrl.loadGroupContent(vm.campaign.groupId)' infinite-scroll-disabled='buzzCtrl.busy' infinite-scroll-distance='2' ng-init="buzzCtrl.loadGroupContent(vm.campaign.groupId)">
+    <div class="col-sm-7 campaign-buzz-column left">
+      <div class="col-sm-10 my-content-body">
+        <!-- New Post -->
+        <div class="my-content-item--summary">
+          <form name="buzzCtrl.form" novalidate>
+            <p class="my-content-user buzz-user">
+              <a ui-sref="user.profile.buzz({nickname: buzzCtrl.user.nickname})">{{ buzzCtrl.user.name}}</a>
+            </p>
+            <div class="post-new-content-selector" ng-init="buzzCtrl.state = 'write'">
+              <a ng-class="{'active': buzzCtrl.state === 'write'}" href="#" ng-click="buzzCtrl.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write Something</a>
+              <a ng-class="{'active': buzzCtrl.state === 'content'}" href="#" ng-click="buzzCtrl.state = 'content'"><i class="fa fa-cloud-upload"></i>Submit My Content</a>
+            </div>
+            <div class="my-content-new">
+              <div up-post-write ng-model="buzzCtrl.post" required ng-show="buzzCtrl.state === 'write'"></div>
+              <div up-post-content ng-model="buzzCtrl.post" networks="yt, ig, url" required ng-show="buzzCtrl.state === 'content'"></div>
+            </div>
+            <div class="post-new-comment-actions">
+              <button ng-show="buzzCtrl.state === 'write'" ng-disabled="form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.create(vm.campaign.groupId)">
+                <span ng-hide="buzzCtrl.posting">Post</span>
+                <span us-spinner spinner-key="spinner-1"></span>
+              </button>
+              <button ng-show="buzzCtrl.state === 'content'" ng-disabled="form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.createContent(vm.campaign.groupId)">
+                <span ng-hide="buzzCtrl.posting">Post</span>
+                <span us-spinner spinner-key="spinner-1"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- feed -->
+      <up-content ng-repeat="item in buzzCtrl.content" content="item" state="user.buzz"></up-content>
+    </div>
+  </div>
+</div>

@@ -96,9 +96,8 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
     var campaign = CampaignService.campaign().get({
       campaignId: _id
     }, function() {
-      vm.campaign = campaign;
+      vm.item = campaign;
     }, function(err) {
-      //$state.go('landing.default');
       console.log(err);
     });
   }
