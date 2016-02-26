@@ -15,7 +15,8 @@ var ApplicationConfiguration = (function () {
     'ngCookies',
     'ngFileUpload',
     'angularSpinner',
-    'ngSanitize'
+    'ngSanitize',
+    'videosharing-embed'
   ];
 
   // Add a new vertical module
