@@ -16,7 +16,7 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
   vm.returnMatch = returnMatch;
   vm.cancelRequest = cancelRequest;
   vm.editRequest = editRequest;
-  vm.stopPromise = $interval(showNext, 5000);
+  vm.startInterval = startInterval;
 
   function find() {
      CampaignService.campaign().query({
@@ -117,7 +117,15 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
      vm.next = vm.campaigns[index++ % vm.campaigns.length];
    }
 
+   function startInterval(){
+     console.log('start interval');
+     if (!angular.isDefined(vm.stopPromise)) {
+       vm.stopPromise = $interval(showNext, 5000);
+     }
+   }
+
    function cancelInterval(){
+     console.log('cancel interval');
      if (angular.isDefined(vm.stopPromise)) {
        $interval.cancel(vm.stopPromise);
        vm.stopPromise = undefined;
