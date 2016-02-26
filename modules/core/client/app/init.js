@@ -17,6 +17,19 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
   }
 ]);
 
+// Setting spinner defaults
+angular.module(ApplicationConfiguration.applicationModuleName).config(['usSpinnerConfigProvider', function (usSpinnerConfigProvider) {
+  usSpinnerConfigProvider.setDefaults({
+    lines: 8, // The number of lines to draw
+    length: 16, // The length of each line
+    width: 23, // The line thickness
+    radius: 42, // The radius of the inner circle
+    scale: 0.13, // Scales overall size of the spinner
+    corners: 1, // Corner roundness (0..1)
+    color: 'white', // #rgb or #rrggbb or array of colors
+  });
+}]);
+
 angular.module(ApplicationConfiguration.applicationModuleName).run(function ($rootScope, $state, Authentication) {
   // Check authentication before changing state
   $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
