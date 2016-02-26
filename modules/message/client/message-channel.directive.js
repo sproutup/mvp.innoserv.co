@@ -9,7 +9,8 @@ function upMessageChannel() {
     restrict: 'EA',
     templateUrl: 'modules/message/client/message-channel.template.html',
     scope: {
-      channelId: '=',
+      channel: '&channelId',
+      refId: '&refId',
       state: '@',
       params: '='
     },
@@ -22,6 +23,20 @@ function upMessageChannel() {
   return directive;
 
   function linkFunc(scope, element, attr, ctrl) {
+    scope.$watch(scope.vm.channel(), function(val, old) {
+      console.log('channelId: ', scope.vm.channel());
+      console.log('val: ', val);
+      console.log('old: ', old);
+      if(val) {
+        console.log('channelId: ', scope.vm.channel());
+      }
+    });
+    scope.$watch(scope.vm.refId(), function() {
+      if(scope.vm.refId()) {
+        console.log('refId: ', scope.vm.refId());
+        scope.vm.loadByRef(scope.vm.refId());
+      }
+    });
   }
 }
 
@@ -29,11 +44,12 @@ MessageChannelController.$inject = ['$scope', 'Authentication', 'Socket', 'Messa
 
 function MessageChannelController($scope, Authentication, Socket, MessageService) {
     var vm = this;
+    vm.empty = true;
     vm.commentToggle = commentToggle;
     vm.send = send;
     vm.load = load;
+    vm.loadByRef = loadByRef;
     vm.messages = [];
-    init();
 
     function init() {
       // Make sure the Socket is connected
@@ -70,7 +86,7 @@ function MessageChannelController($scope, Authentication, Socket, MessageService
 
       item.$save(function (response) {
         // Emit a 'chatMessage' message event
-        Socket.emit('chatMessage', message);
+        Socket.emit('chatMessage', item);
         // Clear the message text
         vm.body = '';
       }, function (errorResponse) {
@@ -80,10 +96,26 @@ function MessageChannelController($scope, Authentication, Socket, MessageService
     }
 
     function load(){
+      console.log('load channel: ', vm.channelId);
       var ChannelMessage = MessageService.channel();
-
       ChannelMessage.query({channelId: vm.channelId}, function (response) {
         vm.messages = response;
+        init();
+        vm.empty = false;
+      }, function (errorResponse) {
+        console.log(errorResponse);
+        vm.error = errorResponse.data.message;
+      });
+    }
+
+    function loadByRef(refId){
+      console.log('load by ref: ', refId);
+      var myChannelRef = MessageService.myChannelRef();
+      myChannelRef.get({refId: refId}, function (channel) {
+        if(channel.id){
+          vm.channelId = channel.id;
+          load();
+        }
       }, function (errorResponse) {
         console.log(errorResponse);
         vm.error = errorResponse.data.message;
