@@ -8,7 +8,7 @@
     <img ng-click="callOauthProvider('/api/auth/github')" ng-src="/modules/users/client/img/buttons/github.png">
     <img ng-click="callOauthProvider('/api/auth/paypal')"  ng-src="/modules/users/client/img/buttons/paypal.png">
   </div> -->
-  <div class="signin-page">
+  <div class="signin-page" style="background-image: url('modules/core/client/img/signin-page-background.jpg')">
     <div class="exit-signin-page">
       <button class="btn sproutup-btn-xs"><i class="fa fa-times"></i></button>
     </div>
@@ -24,7 +24,6 @@
       <button ng-click="callOauthProvider('/api/auth/facebook')" type="submit" class="btn btn-lg btn-facebook"><i class="fa fa-facebook-square"></i>Sign in with Facebook</button>
       <!-- separator -->
       <div class="signup-or-separator">
-        <h6 class="text-special">OR</h6>
         <hr>
       </div>
       <!-- email login -->
@@ -35,7 +34,7 @@
           </div>
           <input class="form-control signup-login-input" id="email" type="text" required placeholder="Email address">
           <input class="form-control signup-login-input" id="password" type="password" required placeholder="Password">
-          <button class="btn btn-lg signup-login-btn" type="submit">Log in</button>
+          <button class="btn btn-lg signup-login-btn" type="submit">Log in with email</button>
         </div>
       </form>
     </div>
