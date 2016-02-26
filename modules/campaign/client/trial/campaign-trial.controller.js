@@ -65,8 +65,10 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
       vm.init = true;
       if (res.campaignId) {
         vm.myContribution = res;
-        for (var i = 0; i < vm.myContribution.log.length; i++) {
-          sortLog(vm.myContribution);
+        if(vm.myContribution.log instanceof Array){
+          for (var i = 0; i < vm.myContribution.log.length; i++) {
+            sortLog(vm.myContribution);
+          }
         }
       }
     }, function(err) {
