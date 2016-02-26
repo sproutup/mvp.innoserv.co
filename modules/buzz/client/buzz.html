@@ -2,17 +2,17 @@
   <div class="row buzz-wrapper" infinite-scroll='vm.loadContent()' infinite-scroll-disabled='vm.busy' infinite-scroll-distance='2' ng-init='vm.loadContent()'>
     <div class="col-sm-8 my-content-left-rail">
       <!-- if no user logs in, display this message -->
-      <div class="col-sm-12 my-content-item" ng-if="vm.init && !vm.user.id">
+      <div class="col-sm-12 my-content-item" ng-if="!vm.user">
         <div class="my-content-headsup">
           <p class="my-content-headsup-text">Welcome to SproutUp, a community for tech influencers and enthusiasts. <a subject-present state="user.buzz" href="#">Join today</a>.</p>
         </div>
       </div>
-      <div class="add-content-wrapper" ng-if="vm.init">
+      <div class="add-content-wrapper">
         <div class="col-sm-12 my-content-item">
           <!-- user photo -->
           <div class="col-sm-2 my-content-user-avatar post-content-user">
             <a ui-sref="user.profile.buzz({ nickname: vm.user.nickname })">
-              <img class="img-responsive my-content-user-img img-center" ng-src="{{ vm.user.avatarUrl }}">
+              <img class="img-responsive my-content-user-img img-center" ng-src="{{ vm.user.profileImageURL }}">
             </a>
           </div>
           <!-- content thumbnail -->
@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      <up-content ng-repeat="item in vm.content" content="item" state="user.buzz"></up-content>
+      <up-content ng-repeat="item in vm.content" content="item" state="navbar.buzz"></up-content>
     </div>
     <div class="col-sm-4 my-content-right-rail">
       <!-- info -->
