@@ -17,7 +17,13 @@ function HangoutController(HangoutService, $state) {
 
   function find() {
     HangoutService.hangout().query(function(val) {
-      vm.list = val;
+      vm.upcoming = val.filter(function(item) {
+        return item.start.dateTime > vm.date;
+      });
+
+      vm.past = val.filter(function(item) {
+        return item.start.dateTime < vm.date;
+      });
     }, function(err) {
       console.log(err);
     });

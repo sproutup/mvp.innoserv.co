@@ -1,4 +1,4 @@
-<div class="row hangout-list" ng-repeat="item in vm.list" ng-if="item.start.dateTime > vm.date">
+<div class="row hangout-list" ng-repeat="item in vm.upcoming" ng-if="vm.upcoming">
   <div class="col-sm-9 hangout-details">
     <div class="row">
       <div class="col-sm-12">
@@ -10,5 +10,16 @@
   </div>
   <div class="col-sm-3 hangout-action">
     <a class="btn btn-lg sproutup-btn-md-main purple" target="_blank" ng-href="{{ item.htmlLink }}">Join Hangout</a>
+  </div>
+</div>
+<div class="hangout-empty-state" ng-if="vm.upcoming.length < 1">
+  <div class="hangout-banner" style="background-image: url('modules/core/client/img/hangout.jpg')">
+    <div class="row hangout-info-wrapper">
+      <div class="col-sm-12">
+        <h1>We are scheduling hangouts will cool folks. Stay tuned for an awesome lineup!</h1>
+        <h2>Do you have someone in mind with whom you want us to interview? Suggest to us on Twitter!</h2>
+      </div>
+      <a href="http://www.twitter.com/sproutupco" target="_blank" class="btn btn-sm sproutup-btn-sm twitter">Suggest a name</a>
+    </div>
   </div>
 </div>
