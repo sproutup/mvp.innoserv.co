@@ -38,9 +38,7 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
 
     $rootScope.sharing = false;
 
-    function init() {
-        vm.user = angular.copy(Authentication.user);
-    }
+    vm.user = Authentication.user;
 
     function list() {
         PostService.post().query(function(res) {
