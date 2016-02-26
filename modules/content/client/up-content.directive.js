@@ -31,6 +31,7 @@ UpContentController.$inject = ['$scope'];
 function UpContentController($scope) {
     var vm = this;
     vm.likes = vm.content.likes;
+    vm.comments = vm.content.comment;
 
     vm.commentToggle = function() {
         if (!vm.content.commenting) {
