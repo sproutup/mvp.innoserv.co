@@ -1,23 +1,47 @@
 <nav class="navbar navbar-fixed-top" role="navigation">
   <div class="navbar-content">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Menu</button>
+      <!-- Mobile menu -->
+      <div uib-dropdown>
+        <button class="navbar-toggle" uib-dropdown-toggle>Menu</button>
+        <ul style="right: 13px; left: initial" uib-dropdown-menu class="navbar-toggleMenu nav navbar-nav navbar-item navbar-right" role="menu">
+          <li ng-repeat="item in navbar.menu.items | orderBy: 'position'"
+              ng-switch="item.type"
+              ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }"
+              class="{{item.class}} nav-item-wrapper nav-item-main"
+              dropdown="item.type === 'dropdown'">
+              <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
+          </li>
+          <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin" data-toggle="collapse" data-target="#sproutup-collapse-navbar">LOG IN</a></li>
+          <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signup" data-toggle="collapse" data-target="#sproutup-collapse-navbar">SIGN UP</a></li>
+          <li ng-if="navbar.authentication.user.profileImageURL"><img class="profile-img" ng-src="{{navbar.authentication.user.profileImageURL}}"></li>
+          <li ng-if="navbar.authentication.user.displayName">
+            <span>{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></span>
+            <ul role="menu">
+              <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })">{{auth.m.user.name}}<span>(View Profile)</span></a></li>
+              <li><a analytics-on="click" analytics-event="Enter Account Settings" ui-sref="navbar.settings.profile">Account Settings</a></li>
+              <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Log Out">Log Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
       <a analytics-on="click" analytics-event="Enter Landing Page" class="navbar-brand" ui-sref="navbar.home">
         <img class="logo" src="modules/core/client/img/logo.png">
       </a>
     </div>
-    <!-- Two different nav bars. First for desktop, second one shows under 767px and collapses on an item click. -->
+
+    <!-- Desktop/wide view menu -->
     <div class="collapse navbar-collapse" id="sproutup-collapse-navbar">
       <ul class="nav navbar-nav navbar-item navbar-right navbar-wide">
         <li ng-repeat="item in navbar.menu.items | orderBy: 'position'"
-          ng-if="item.shouldRender(navbar.authentication.user);"
           ng-switch="item.type"
           ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" nav-item-wrapper nav-item-main
           dropdown="item.type === 'dropdown'">
           <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>
         <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin">SIGN IN</a></li>
-        <li><img class="profile-img" ng-src="{{navbar.authentication.user.profileImageURL}}"></li>
+        <li ng-if="navbar.authentication.user.profileImageURL"><img class="profile-img" ng-src="{{navbar.authentication.user.profileImageURL}}"></li>
         <li uib-dropdown ng-if="navbar.authentication.user">
             <a href="#" uib-dropdown-toggle>{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></a>
             <ul uib-dropdown-menu class="navbar-wide" role="menu">
@@ -26,13 +50,13 @@
                 <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Log Out">Log Out</a></li>
             </ul>
             <ul uib-dropdown-menu class="navbar-toggleMenu" role="menu">
-                <li><a class="navbar-skinny" analytics-on="click" analytics-event="View My Profile" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })" data-toggle="collapse" data-target="#sproutup-collapse-navbar">{{auth.m.user.name}}<span>(View Profile)</span></a></a></li>
+                <li><a class="navbar-skinny" analytics-on="click" analytics-event="View My Profile" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })" data-toggle="collapse" data-target="#sproutup-collapse-navbar">{{auth.m.user.name}}<span>(View Profile)</span></a></li>
                 <li><a class="navbar-skinny" analytics-on="click" analytics-event="Enter Account Settings" ui-sref="user.settings.profile" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Account Settings</a></li>
                 <li><a class="navbar-skinny" href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Log Out" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Log Out</a></li>
             </ul>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-item navbar-right navbar-skinny">
+      <!-- <ul class="nav navbar-nav navbar-item navbar-right navbar-skinny">
         <li ng-repeat="item in navbar.menu.items | orderBy: 'position'"
           ng-if="item.shouldRender(navbar.authentication.user);"
           ng-switch="item.type"
@@ -52,12 +76,12 @@
             <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Log Out">Log Out</a></li>
           </ul>
           <ul uib-dropdown-menu class="navbar-toggleMenu" role="menu">
-            <li><a class="navbar-skinny" analytics-on="click" analytics-event="View My Profile" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })" data-toggle="collapse" data-target="#sproutup-collapse-navbar">{{auth.m.user.name}}<span>(View Profile)</span></a></a></li>
+            <li><a class="navbar-skinny" analytics-on="click" analytics-event="View My Profile" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })" data-toggle="collapse" data-target="#sproutup-collapse-navbar">{{auth.m.user.name}}<span>(View Profile)</span></a></li>
             <li><a class="navbar-skinny" analytics-on="click" analytics-event="Enter Account Settings" ui-sref="navbar.settings.profile" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Account Settings</a></li>
             <li><a class="navbar-skinny" href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Log Out" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Log Out</a></li>
           </ul>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </nav>
