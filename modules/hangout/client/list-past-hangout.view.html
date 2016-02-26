@@ -1,5 +1,5 @@
 <!-- past hangouts -->
-<div class="row hangout-list"  ng-repeat="item in vm.list | orderBy:'-start.dateTime'" ng-if="item.start.dateTime < vm.date">
+<div class="row hangout-list"  ng-repeat="item in vm.past | orderBy:'-start.dateTime'" ng-if="item.start.dateTime < vm.date">
   <div class="col-sm-9 hangout-details">
     <div class="row">
       <div class="col-sm-12">
