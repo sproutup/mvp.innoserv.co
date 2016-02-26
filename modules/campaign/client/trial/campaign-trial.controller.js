@@ -1,5 +1,4 @@
-(function () {
-  'use strict';
+'use strict';
 
 angular
   .module('campaign')
@@ -111,14 +110,14 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
       campaignId: vm.contributor.campaignId,
       userId: vm.contributor.userId
     }, function(res) {
-      $state.go('user.navbar.trial.view.details', { campaignId: vm.campaign.id });
+      $state.go('navbar.campaign.trial.view.details', { campaignId: vm.campaign.id });
     }, function(err) {
       vm.error = true;
     });
   }
 
   function connected() {
-    $state.go('navbar.campaign.trial.confirmation', { campaignId: vm.campaign.id });
+    $state.go('navbar.activity.trial.confirmation', { campaignId: vm.campaign.id });
   }
 
   // TODO — Put create post and create content into services
@@ -175,12 +174,5 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
         vm.myContribution = null;
       }
     );
-//    CampaignService.campaignSingle().update(
-//      { campaignId: campaignId, userId: Authentication.user.id }, { state: -1 }, function(res){
-//        console.log('state changed');
-//      }
-//    );
   }
 }
-
-})();
