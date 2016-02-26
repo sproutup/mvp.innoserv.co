@@ -1,6 +1,12 @@
 <div class="buzz-page">
   <div class="row campaign-buzz-wrapper" infinite-scroll='buzzCtrl.loadGroupContent(campaign.item.groupId)' infinite-scroll-disabled='buzzCtrl.busy' infinite-scroll-distance='2' ng-init="buzzCtrl.loadGroupContent(campaign.item.groupId)">
     <div class="col-sm-7 campaign-buzz-column left">
+      <!-- user photo -->
+      <div class="col-sm-2 my-content-user-avatar post-content-user">
+        <a ui-sref="user.profile.buzz({ nickname: buzzCtrl.user.nickname })">
+          <img class="img-responsive my-content-user-img img-center" ng-src="{{ buzzCtrl.user.profileImageURL }}">
+        </a>
+      </div>
       <div class="col-sm-10 my-content-body">
         <!-- New Post -->
         <div class="my-content-item--summary">
