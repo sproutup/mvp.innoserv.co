@@ -4,7 +4,7 @@
       <!-- user photo -->
       <div class="col-sm-2 my-content-user-avatar post-content-user">
         <a ui-sref="user.profile.buzz({ nickname: buzzCtrl.user.nickname })">
-          <img class="img-responsive my-content-user-img img-center" ng-src="{{ buzzCtrl.user.profileImageURL }}">
+          <img class="img-responsive my-content-user-img img-center" alt="" ng-src="{{ buzzCtrl.user.profileImageURL }}"/>
         </a>
       </div>
       <div class="col-sm-10 my-content-body">
@@ -43,7 +43,7 @@
         <div class="message-header">
           <p><i class="fa fa-commenting"></i>ACTON</p>
         </div>
-        <up-message-channel ref-id="campaign.item.id"/>
+        <up-message-channel ref-id="campaign.item.id" user-id="buzzCtrl.user.id"/>
       </div>
     </div>
   </div>

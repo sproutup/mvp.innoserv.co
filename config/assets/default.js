@@ -27,6 +27,7 @@ module.exports = {
         'public/lib/angular-spinner/angular-spinner.min.js',
         'public/lib/angular-cookies/angular-cookies.min.js',
         'public/lib/angular-sanitize/angular-sanitize.min.js',
+        'public/lib/angular-scroll-glue/src/scrollglue.js',
         'public/lib/ng-videosharing-embed/build/ng-videosharing-embed.min.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
