@@ -9,10 +9,9 @@ function upMessageChannel() {
     restrict: 'EA',
     templateUrl: 'modules/message/client/message-channel.template.html',
     scope: {
-      channel: '&channelId',
-      refId: '&refId',
-      state: '@',
-      params: '='
+      channelId: '<channelId',
+      refId: '<refId',
+      userId: '<userId'
     },
     link: linkFunc,
     controller: MessageChannelController,
@@ -23,20 +22,41 @@ function upMessageChannel() {
   return directive;
 
   function linkFunc(scope, element, attr, ctrl) {
-    scope.$watch(scope.vm.channel(), function(val, old) {
-      console.log('channelId: ', scope.vm.channel());
-      console.log('val: ', val);
-      console.log('old: ', old);
-      if(val) {
-        console.log('channelId: ', scope.vm.channel());
+    init();
+
+    scope.$watch(
+      function(scope){
+        return scope.vm.refId;
+      },
+      function(newVal, oldVal) {
+        console.log('new refId: ', oldVal);
+        console.log('old refId: ', newVal);
+        if (oldVal !== newVal) {
+          init();
+        }
       }
-    });
-    scope.$watch(scope.vm.refId(), function() {
-      if(scope.vm.refId()) {
-        console.log('refId: ', scope.vm.refId());
-        scope.vm.loadByRef(scope.vm.refId());
+    );
+
+    scope.$watch(
+      function(scope){
+        return scope.vm.userId;
+      },
+      function(newVal, oldVal) {
+        console.log('new userId: ', oldVal);
+        console.log('old userId: ', newVal);
+        if (oldVal !== newVal) {
+          init();
+        }
       }
-    });
+    );
+
+    function init(){
+      if(scope.vm.refId && scope.vm.userId) {
+        console.log('refId: ', scope.vm.refId);
+        console.log('userId: ', scope.vm.userId);
+        scope.vm.loadByRef(scope.vm.refId, scope.vm.userId);
+      }
+    }
   }
 }
 
@@ -50,25 +70,26 @@ function MessageChannelController($scope, Authentication, Socket, MessageService
     vm.load = load;
     vm.loadByRef = loadByRef;
     vm.messages = [];
+    vm.me = Authentication.user;
 
     function init() {
       // Make sure the Socket is connected
       if (!Socket.socket) {
         Socket.connect();
+
+        // Add an event listener to the 'chatMessage' event
+        Socket.on('chatMessage', function (message) {
+          console.log('msg: ', message);
+          message.inbound = (Authentication.user.id !== message.user.id);
+          vm.messages.push(message);
+        });
+
+        // Remove the event listener when the controller instance is destroyed
+        $scope.$on('$destroy', function () {
+          console.log('destroy message channel');
+          Socket.removeListener('chatMessage');
+        });
       }
-
-      // Add an event listener to the 'chatMessage' event
-      Socket.on('chatMessage', function (message) {
-        console.log('msg: ', message);
-        message.inbound = (Authentication.user.id !== message.user.id);
-        vm.messages.unshift(message);
-      });
-
-      // Remove the event listener when the controller instance is destroyed
-      $scope.$on('$destroy', function () {
-        console.log('destroy message channel');
-        Socket.removeListener('chatMessage');
-      });
     }
 
     // Create a controller method for sending messages
@@ -108,10 +129,13 @@ function MessageChannelController($scope, Authentication, Socket, MessageService
       });
     }
 
-    function loadByRef(refId){
+    function loadByRef(refId, userId){
       console.log('load by ref: ', refId);
       var myChannelRef = MessageService.myChannelRef();
-      myChannelRef.get({refId: refId}, function (channel) {
+      var item = new myChannelRef({
+        userId: userId
+      });
+      item.$save({refId: refId}, function (channel) {
         if(channel.id){
           vm.channelId = channel.id;
           load();
