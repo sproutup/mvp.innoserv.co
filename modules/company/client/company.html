@@ -16,47 +16,19 @@
 </div>
 
 <div class="row company-profile-details" ng-init="company.findCampaigns()">
-  <div class="col-md-4 col-sm-6 campaign-list-item" ng-repeat="campaign in company.company.campaigns">
-    <a href="#">
+  <div class="col-md-4 col-sm-6 campaign-list-item" ng-repeat="campaign in company.company.campaigns" ng-if="campaign.type === 'trial' || campaign.type === 'contest'">
+    <!-- link for trial -->
+    <a ng-if="campaign.type === 'trial'" ui-sref="navbar.campaign.trial.view.details({ campaignId: campaign.id })">
+      <div class="campaign-list-item-banner" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/ccd20a3d-1a0d-4545-870a-94e1c645ff96_0_admin.jpg?w=1600');">
+        <p class="campaign-name">{{campaign.name}}</p>
+      </div>
+    </a>
+    <!-- link for contest -->
+    <a ng-if="campaign.type === 'contest'" ui-sref="navbar.campaign.contest.view.details({ campaignId: campaign.id })">
+      contest
       <div class="campaign-list-item-banner" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/ccd20a3d-1a0d-4545-870a-94e1c645ff96_0_admin.jpg?w=1600');">
         <p class="campaign-name">{{campaign.name}}</p>
       </div>
     </a>
   </div>
 </div>
-
-  <!-- <div class="col-md-4 col-sm-6 campaign-list-item">
-    <a href="#">
-      <div class="campaign-list-item-banner" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/ccd20a3d-1a0d-4545-870a-94e1c645ff96_0_admin.jpg?w=1600');">
-        <p class="campaign-name">Try Boosted Single</p>
-      </div>
-    </a>
-  </div>
-  <div class="col-md-4 col-sm-6 campaign-list-item">
-    <a href="#">
-      <div class="campaign-list-item-banner" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/ccd20a3d-1a0d-4545-870a-94e1c645ff96_0_admin.jpg?w=1600');">
-        <p class="campaign-name">Try Boosted Single</p>
-      </div>
-    </a>
-  </div>
-  <div class="col-md-4 col-sm-6 campaign-list-item">
-    <a href="#">
-      <div class="campaign-list-item-banner" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/ccd20a3d-1a0d-4545-870a-94e1c645ff96_0_admin.jpg?w=1600');">
-        <p class="campaign-name">Try Boosted Single</p>
-      </div>
-    </a>
-  </div>
-  <div class="col-md-4 col-sm-6 campaign-list-item">
-    <a href="#">
-      <div class="campaign-list-item-banner" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/ccd20a3d-1a0d-4545-870a-94e1c645ff96_0_admin.jpg?w=1600');">
-        <p class="campaign-name">Try Boosted Single</p>
-      </div>
-    </a>
-  </div>
-  <div class="col-md-4 col-sm-6 campaign-list-item">
-    <a href="#">
-      <div class="campaign-list-item-banner" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/ccd20a3d-1a0d-4545-870a-94e1c645ff96_0_admin.jpg?w=1600');">
-        <p class="campaign-name">Try Boosted Single</p>
-      </div>
-    </a>
-  </div> -->
