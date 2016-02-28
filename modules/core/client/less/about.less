@@ -38,48 +38,51 @@
 }
 
 .team-banner {
-  margin-top: 20px;
-  margin-bottom: 0;
-  color: #fff;
-  background: url(../images/about/team_banner.jpg) no-repeat center center;
+  margin: 70px 0px 0px;
+  background-position:center;
+  background-repeat:no-repeat;
   background-size: cover;
-  padding: 15px 0px;
+  position: relative;
+  color: #fff;
+  background-size: cover;
+  min-height: 520px;
+  padding: 80px 20px 40px;
+}
+
+.team-banner::after{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5)); /* Standard syntax */
+}
+
+.team-header {
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 0px;
+  line-height: 1.6;
+  font-size: 20pt;
+  font-weight: 300;
+  z-index: 10;
+  position: relative;
+  color: white;
+  text-align: center;
 }
 
 .team-img {
-  width: 160px;
-  height: 160px;
-  border-radius: 160px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
   border: 1px solid @form-border;
-}
-
-.team-section-title {
-  margin-top: 40px;
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 32pt;
-  font-family: "lato",Helvetica,Arial,sans-serif;
-  font-weight: 300;
-}
-
-.team-section-subtitle {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  line-height: 1.5;
-  font-size: 14pt;
-  font-family: "lato", Helvetica, Arial, sans-serif;
-  font-weight: 300;
 }
 
 .team-member {
   text-align: center;
-  margin: 0px;
-  overflow: hidden;
-  min-height: 340px;
+  margin: 0px 0px 20px;
+  min-height: 250px;
 }
 
 .team-member img {
@@ -87,43 +90,43 @@
 }
 
 .team-member > h3 {
-  margin-top: 15px;
-  margin-bottom: 0px;
-  font-size: 14pt;
-  font-weight: 400;
+  padding: 15px 0px 0px;
+  margin: 0px;
+  font-size: 12.5pt;
+  font-weight: 700;
+  color: @main-text;
 }
 
 .team-member > h4 {
-  margin-top: 0px;
-  margin-bottom: 5px;
   padding: 10px 0px;
-  font-size: 12pt;
-  font-weight: 300;
-  color: @main-text-white;
+  margin: 0px;
+  font-size: 11pt;
+  font-weight: 400;
+  color: @main-text-light;
   line-height: 1.5;
 }
 
 .team-member > h4 a {
-  color: @main-text-white;
+  color: @main-text-light;
   text-decoration: underline;
 }
 
 .team-member > h4 a:hover {
-  color: @sproutup-blue-bright;
-  text-decoration: underline;
+  color: @sproutup-blue;
 }
 
 ul.social-buttons li a {
   display: block;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
+  margin: 0px 0px 5px;
   border-radius: 100%;
-  font-size: 11pt;
-  line-height: 36px;
+  font-size: 9pt;
+  line-height: 30px;
   outline: 0;
-  color: #fff;
+  color: @main-text-lighter;
   background-color: none;
-  border: solid 1px #fff;
+  border: solid 1px @main-text-lighter;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
   transition: all .3s;
@@ -136,7 +139,6 @@ ul.social-buttons li a:hover {
 }
 
 .sproutup-team {
-  max-width: 1160px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1100px;
+  margin: 40px auto;
 }

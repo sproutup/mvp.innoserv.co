@@ -1011,7 +1011,9 @@ a.sproutup-btn-sm {
   border: 1px solid @sproutup-carribean-hover;
 }
 
-.sproutup-btn-xs {
+.sproutup-btn-xs,
+.sproutup-btn-xs:active,
+.sproutup-btn-xs:focus {
   height: 32px;
   font-weight: 700;
   font-size: 9pt;
@@ -4326,6 +4328,28 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
 
 .row-social-account .action .btn i {
   margin-right: 12px;
+}
+
+.about-banner {
+  margin: 70px 0px 0px;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+  background-size: cover;
+  min-height: 800px;
+  padding: 0px 20px;
+}
+
+.about-banner::after{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5)); /* Standard syntax */
 }
 
 // media queries
