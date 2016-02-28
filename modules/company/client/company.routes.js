@@ -3,12 +3,16 @@
 angular.module('company').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
-      .state('company', {
-        url: '/com/:companySlug',
+      .state('navbar.company', {
+        url: '/company/:companySlug',
         abstract: true,
         template: '<section ng-init="company.findByStateParam()"><div ui-view></div></section>',
         controller: 'CompanyController',
         controllerAs: 'company'
+      })
+      .state('navbar.company.view', {
+        url: '',
+        templateUrl: 'modules/company/client/company.html'
       })
       .state('company.navbar.list', {
         url: '/select',
@@ -28,7 +32,11 @@ angular.module('company').config(['$stateProvider',
           roles: ['user', 'admin']
         }
       })
-     .state('company.navbar.company.create', {
+      .state('company.navbar.company.create', {
+        url: '/create',
+        templateUrl: 'modules/company/client/admin/create-company.html'
+      })
+      .state('company.navbar.company.view', {
         url: '/create',
         templateUrl: 'modules/company/client/admin/create-company.html'
       })

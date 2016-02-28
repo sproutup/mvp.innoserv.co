@@ -17,13 +17,14 @@
         vm.find = find;
         vm.findOne = findOne;
         vm.findMyCompany = findMyCompany;
+        vm.findCampaigns = findCampaigns;
         vm.findByStateParam = findByStateParam;
         vm.authentication = Authentication;
         vm.state = $state;
         vm.company = {};
 
         // Get the topbar menu
-        vm.menu = Menus.getMenu('company.settings.menu');
+        // vm.menu = Menus.getMenu('company.settings.menu');
 
         function create(isValid) {
           vm.error = null;
@@ -113,10 +114,26 @@
         }
 
         function findOne() {
-          console.log('find one');
           vm.company = CompanyService.company()
             .get({companyId: $state.params.companyId}, function(data){
               //vm.company = data;
+            });
+        }
+
+        function findCampaigns() {
+          if (!$scope.company.company.id) {
+            var listener = $scope.$watch('company.company.id', function(val) {
+              if(val) {
+                listener();
+                findCampaigns();
+              }
+            });
+            return;
+          }
+
+          CampaignService.listByCompany()
+            .query({companyId: $scope.company.company.id}, function(data){
+              $scope.company.company.campaigns = data;
             });
         }
 

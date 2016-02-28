@@ -13,6 +13,7 @@ function CampaignService($resource){
     campaign: campaign,
     campaignSingle: campaignSingle,
     listByUser: listByUser,
+    listByCompany: listByCompany,
     contributor: contributor,
     listMyContributions: listMyContributions
   };
@@ -31,6 +32,10 @@ function CampaignService($resource){
 
   function listByUser () {
     return $resource('/api/user/:userId/campaign', { userId:'@id' }, { 'update': {method:'PUT'}, 'query': {method:'GET', isArray:true} } );
+  }
+
+  function listByCompany () {
+    return $resource('/api/company/:companyId/campaign', { companyId:'@id' }, { 'update': {method:'PUT'}, 'query': {method:'GET', isArray:true} } );
   }
 
   function contributor () {
