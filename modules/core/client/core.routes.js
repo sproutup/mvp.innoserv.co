@@ -16,7 +16,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         controller: 'HeaderController',
         controllerAs: 'navbar'
       })
-      .state('not-found', {
+      .state('navbar.not-found', {
         url: '/not-found',
         templateUrl: 'modules/core/client/404.view.html'
       });

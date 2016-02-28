@@ -125,6 +125,14 @@ angular
         .state('navbar.theme.mocks.account-settings-social', {
           url: '/account-settings-social',
           templateUrl: 'modules/theme/client/mocks/account-settings-social.html'
+        })
+        .state('navbar.theme.mocks.team', {
+          url: '/team',
+          templateUrl: 'modules/theme/client/mocks/team.html'
+        })
+        .state('navbar.theme.mocks.about', {
+          url: '/about',
+          templateUrl: 'modules/theme/client/mocks/about.html'
         });
       }
     ]);

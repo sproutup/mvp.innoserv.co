@@ -1011,7 +1011,9 @@ a.sproutup-btn-sm {
   border: 1px solid @sproutup-carribean-hover;
 }
 
-.sproutup-btn-xs {
+.sproutup-btn-xs,
+.sproutup-btn-xs:active,
+.sproutup-btn-xs:focus {
   height: 32px;
   font-weight: 700;
   font-size: 9pt;
@@ -3173,7 +3175,6 @@ p[class="campaign-countdown-unit"] {
   font-weight: 400;
   font-size: 11pt;
   margin: 5px 0px;
-  height: 160px;
   color: @main-text-veryverylight;
   line-height: 1.6;
   padding: 50px 20px;
@@ -4092,9 +4093,63 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
 }
 
 .signin-page {
-  padding-top: 70px;
-  padding-bottom: 50px;
-  background-color: @sproutup-veryverylightgrey;
+  margin: 0px;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.signin-page::after{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.86)); /* Standard syntax */
+}
+
+.exit-signin-page {
+  padding: 0px 50px;
+  z-index: 10;
+  position: relative;
+}
+
+.exit-signin-page .sproutup-btn-xs {
+  background-color: @sproutup-grey;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 12pt;
+}
+
+.exit-signin-page .sproutup-btn-xs:hover {
+  background-color: @sproutup-aqua;
+  color: white;
+}
+
+.exit-signin-page .sproutup-btn-xs i {
+  margin: 0px;
+  padding: 0px;
+}
+
+.signin-page .signup-login-header {
+  z-index: 10;
+  position: relative;
+}
+
+.signin-page .signup-login-area {
+  z-index: 10;
+  position: relative;
+}
+
+.signin-page .signup-login-footer {
+  z-index: 10;
+  position: relative;
 }
 
 .signup-login-header .twitter-profile-photo {
@@ -4275,6 +4330,28 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
   margin-right: 12px;
 }
 
+.about-banner {
+  margin: 70px 0px 0px;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+  background-size: cover;
+  min-height: 800px;
+  padding: 0px 20px;
+}
+
+.about-banner::after{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)); /* Standard syntax */
+}
+
 // media queries
 @media (min-width: 1200px) {
   .product-trial-stage-avatar {
@@ -4434,4 +4511,9 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
   .row-social-account .action {
     text-align: left;
   }
+
+  .signin-page {
+    padding-top: 25px;
+  }
+
 }

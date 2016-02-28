@@ -13,6 +13,7 @@ var ApplicationConfiguration = (function () {
     'chart.js',
     'angularMoment',
     'ngCookies',
+    'luegg.directives',
     'ngFileUpload',
     'angularSpinner',
     'ngSanitize',
