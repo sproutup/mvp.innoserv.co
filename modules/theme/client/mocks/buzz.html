@@ -12,11 +12,6 @@
 <div class="buzz-page">
   <div class="row buzz-wrapper no-user-session">
     <div class="col-sm-8 my-content-left-rail">
-      <!-- <div class="col-sm-12 my-content-item">
-        <div class="my-content-headsup">
-          <p class="my-content-headsup-text">Welcome to SproutUp, a community for tech influencers and enthusiasts. <a subject-present state="user.buzz" href="#">Join today</a>.</p>
-        </div>
-      </div> -->
       <!-- new post -->
       <div class="col-sm-12 my-content-item">
         <div class="col-sm-2 my-content-user-avatar post-content-user">
@@ -32,6 +27,7 @@
             <form name="form" novalidate>
               <div class="post-new-content-selector">
                 <a class="active" href="#"><i class="fa fa-pencil-square-o"></i>Write Something</a>
+                <a href="#"><i class="fa fa-binoculars"></i>Suggest product</a>
                 <a href="#"><i class="fa fa-video-camera"></i>Add Video</a>
                 <a href="#"><i class="fa fa-picture-o"></i>Add Photos</a>
               </div>
@@ -184,6 +180,27 @@
           </div>
         </div>
       </div>
+      <div class="col-sm-12 my-content-item">
+        <div class="col-sm-2 my-content-user-avatar post-content-user">
+          <a ui-sref="#">
+            <img class="img-responsive my-content-user-img img-center" src="modules/theme/client/img/default-avatar.png">
+          </a>
+        </div>
+        <div class="col-sm-10 my-content-body">
+          <div class="suggested-product-item" style="background-image: url('https://d36us2xspih4bl.cloudfront.net/static/upload/images/product/teleport-vr-kit-19.jpg');">
+            <p class="my-content-user">
+              <a class="suggested-product-item-name" href="">Nest Cam</a>
+              <span class="activity">suggested by</span>
+              <a href="#">Thomas O'Brien</a>
+            </p>
+            <p class="suggested-product-item-description">Home security made simple</p>
+            <div class="my-content-actions">
+              <a href="#">UPVOTE (89)</a>
+              <a href="#">COMMENTS (12)</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- A post with only text -->
       <div class="col-sm-12 my-content-item">
         <!-- user photo -->
@@ -212,7 +229,52 @@
           </div>
         </div>
       </div>
-
+      <div class="col-sm-12 my-content-item">
+        <div class="col-sm-2 my-content-user-avatar post-content-user">
+          <a ui-sref="#">
+            <img class="img-responsive my-content-user-img img-center" src="modules/theme/client/img/default-avatar.png">
+          </a>
+        </div>
+        <div class="col-sm-10 my-content-body">
+          <div class="suggested-product-item" style="background-image: url('https://i.ytimg.com/vi/vKht76-zRBI/maxresdefault.jpg');">
+            <p class="my-content-user">
+              <a class="suggested-product-item-name" href="">DJI Inspire 3</a>
+              <span class="activity">suggested by</span>
+              <a href="#">Tao Ni</a>
+            </p>
+            <p class="suggested-product-item-description">Best DJI drone we've made so far</p>
+            <div class="my-content-actions">
+              <a href="#">UPVOTE (89)</a>
+              <a href="#">SHOW COMMENTS (12)</a>
+            </div>
+          </div>
+          <!-- comment area -->
+          <div class="my-content-comments">
+            <div class="row my-content-comment-row">
+              <div class="col-sm-1 my-content-user-avatar comment-user-avatar">
+                <a href="#">
+                  <img class="img-responsive post-comment-user-img-circle img-center" src="modules/theme/client/img/user/UM9WLXps_400x400.jpg">
+                </a>
+              </div>
+              <div class="col-sm-11 my-content-comment-blurb">
+                <p class="my-content-user comment"><a href="#">Peter Andersen</a><span class="my-content-timestamp comment"> 9 hours ago</span></p>
+                <p class="my-content-text comment">This is an awesome product. I love it!!</p>
+              </div>
+            </div>
+            <div class="row my-content-comment-row">
+              <div class="col-sm-1 my-content-user-avatar comment-user-avatar">
+                <a href="#">
+                  <img class="img-responsive post-comment-user-img-circle img-center" src="modules/theme/client/img/user/UM9WLXps_400x400.jpg">
+                </a>
+              </div>
+              <div class="col-sm-11 my-content-comment-blurb">
+                <p class="my-content-user comment"><a href="#">Peter Andersen</a><span class="my-content-timestamp comment"> 9 hours ago</span></p>
+                <p class="my-content-text comment">This is an awesome product. I love it!!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-sm-4 my-content-right-rail">
       <!-- featured items -->
