@@ -10,6 +10,7 @@ function MessageService($resource) {
   var service = {
     message: message,
     channel: channel,
+    campaignChannel: campaignChannel,
     myChannelRef: myChannelRef
   };
 
@@ -21,6 +22,10 @@ function MessageService($resource) {
 
   function channel () {
      return $resource('/api/channel/:channelId/message/:messageId', {channelId: '@channelId', messageId:'@Id'}, { 'update': {method:'PUT'}, 'query': {method:'GET', isArray:true} } );
+  }
+
+  function campaignChannel () {
+     return $resource('/api/campaign/:campaignId/channel/:channelId', {channelId: '@Id', campaignId:'@campaignId'}, { 'update': {method:'PUT'}, 'query': {method:'GET', isArray:true} } );
   }
 
   function myChannelRef () {
