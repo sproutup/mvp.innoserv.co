@@ -17,11 +17,11 @@
     </div>
     <div class="signup-login-area">
       <!-- twitter login -->
-      <button ng-click="callOauthProvider('/api/auth/twitter')" type="submit" class="btn btn-lg btn-twitter"><i class="fa fa-twitter-square"></i>Sign in with Twitter</button>
+      <button analytics-on="click" analytics-event="Sign In" analytics-provider="Twitter" ng-click="callOauthProvider('/api/auth/twitter')" type="submit" class="btn btn-lg btn-twitter"><i class="fa fa-twitter-square"></i>Sign in with Twitter</button>
       <!-- google login -->
-      <button ng-click="callOauthProvider('/api/auth/google')" type="submit" class="btn btn-lg btn-google"><i class="fa fa-google-plus-square"></i>Sign in with Google</button>
+      <button analytics-on="click" analytics-event="Sign In" analytics-provider="Google" ng-click="callOauthProvider('/api/auth/google')" type="submit" class="btn btn-lg btn-google"><i class="fa fa-google-plus-square"></i>Sign in with Google</button>
       <!-- facebook login -->
-      <button ng-click="callOauthProvider('/api/auth/facebook')" type="submit" class="btn btn-lg btn-facebook"><i class="fa fa-facebook-square"></i>Sign in with Facebook</button>
+      <button analytics-on="click" analytics-event="Sign In" analytics-provider="Facebook" ng-click="callOauthProvider('/api/auth/facebook')" type="submit" class="btn btn-lg btn-facebook"><i class="fa fa-facebook-square"></i>Sign in with Facebook</button>
       <!-- separator -->
       <div class="signup-or-separator">
         <hr>

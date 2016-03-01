@@ -19,7 +19,7 @@
             <ul role="menu">
               <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })">{{auth.m.user.name}}<span>(View Profile)</span></a></li>
               <li><a analytics-on="click" analytics-event="Enter Account Settings" ui-sref="navbar.settings.profile">Account Settings</a></li>
-              <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Log Out">Log Out</a></li>
+              <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out">Sign Out</a></li>
             </ul>
           </li>
         </ul>
@@ -46,12 +46,12 @@
             <ul uib-dropdown-menu class="navbar-wide" role="menu">
                 <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="navbar.user.profile.buzz({ nickname: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
                 <li><a analytics-on="click" analytics-event="Enter Account Settings" ui-sref="navbar.settings.profile">Account Settings</a></li>
-                <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Log Out">Log Out</a></li>
+                <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out">Sign Out</a></li>
             </ul>
             <ul uib-dropdown-menu class="navbar-toggleMenu" role="menu">
                 <li><a class="navbar-skinny" analytics-on="click" analytics-event="View My Profile" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })" data-toggle="collapse" data-target="#sproutup-collapse-navbar">{{auth.m.user.name}}<span>(View Profile)</span></a></li>
                 <li><a class="navbar-skinny" analytics-on="click" analytics-event="Enter Account Settings" ui-sref="user.settings.profile" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Account Settings</a></li>
-                <li><a class="navbar-skinny" href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Log Out" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Log Out</a></li>
+                <li><a class="navbar-skinny" href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Sign Out</a></li>
             </ul>
         </li>
       </ul>

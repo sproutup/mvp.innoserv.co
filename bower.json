@@ -23,7 +23,9 @@
     "angular-sanitize": "1.5.0",
     "ng-videosharing-embed": "0.3.4",
     "spin.js": "2.3.2",
-    "angular-scroll-glue": "2.0.6"
+    "angular-scroll-glue": "2.0.6",
+    "angulartics-google-analytics": "",
+    "angulartics-mixpanel": ""
   },
   "resolutions": {
     "angular": "1.5.0"
