@@ -2,20 +2,12 @@
 
 angular.module('message').run(['Menus',
   function (Menus) {
-/*    Menus.addMenuItem('navbar', {
-      title: 'Company Settings',
-      state: 'company.navbar.settings.profile',
+    Menus.addMenuItem('navbar', {
+      title: 'MESSAGES',
+      state: 'navbar.conversation.list',
       class: '',
       roles: ['user', 'admin'],
-      position: 3
+      position: 100
     });
-
-    Menus.addMenuItem('company.settings.menu', {
-      title: 'Profile',
-      state: 'company.navbar.settings.profile',
-      class: '',
-      roles: ['*'],
-      position: 1
-    }); */
   }
 ]);
