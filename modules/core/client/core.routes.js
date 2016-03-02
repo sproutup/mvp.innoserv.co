@@ -19,6 +19,14 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       .state('navbar.not-found', {
         url: '/not-found',
         templateUrl: 'modules/core/client/404.view.html'
+      })
+      .state('navbar.privacy', {
+        url: '/privacy',
+        templateUrl: 'modules/core/client/privacy.view.html'
+      })
+      .state('navbar.terms', {
+        url: '/terms',
+        templateUrl: 'modules/core/client/terms.view.html'
       });
   }
 ]);
