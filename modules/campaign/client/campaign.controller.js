@@ -19,6 +19,7 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
   vm.cancelRequest = cancelRequest;
   vm.editRequest = editRequest;
   vm.startInterval = startInterval;
+  vm.state = $state;
 
   function loadChannel(){
     console.log('find channel by ref: ', $state.params.campaignId);
