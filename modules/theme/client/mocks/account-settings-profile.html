@@ -90,7 +90,7 @@
         <div class="profile-input-cell--title">Mobile Number</div>
         <div class="row profile-input-row">
           <div class="col-sm-12 profile-input-cell">
-            <input type="text" class="form-control form-validate form-input medium" ng-model="tel" ng-intl-tel-input>
+            <input analytics-on="click" analytics-event="Enter phone number" type="text" class="form-control form-input medium" placeholder="Enter your mobile number. Please include the country code for non-US number." ng-model="vm.user.phone">
           </div>
         </div>
 
