@@ -26,7 +26,8 @@
     "angular-scroll-glue": "2.0.6",
     "angulartics-google-analytics": "",
     "angulartics-mixpanel": "",
-    "ng-intl-tel-input": ""
+    "ng-intl-tel-input": "",
+    "ngAutocomplete": "1.0.0"
   },
   "resolutions": {
     "angular": "1.5.0"
