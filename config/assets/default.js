@@ -7,7 +7,8 @@ module.exports = {
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/angular-chart.js/dist/angular-chart.min.css',
-        'public/lib/components-font-awesome/css/font-awesome.min.css'
+        'public/lib/components-font-awesome/css/font-awesome.min.css',
+        'public/lib/intl-tel-input/build/css/intlTelInput.css'
       ],
       js: [
         'public/lib/angular/angular.js',
@@ -31,7 +32,10 @@ module.exports = {
         'public/lib/ng-videosharing-embed/build/ng-videosharing-embed.min.js',
         'public/lib/angulartics/dist/angulartics.min.js',
         'public/lib/angulartics-mixpanel/dist/angulartics-mixpanel.min.js',
-        'public/lib/angulartics-google-analytics/dist/angulartics-google-analytics.min.js'
+        'public/lib/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
+        'public/lib/intl-tel-input/build/js/intlTelInput.min.js',
+        'public/lib/intl-tel-input/lib/libphonenumber/build/utils.js',
+        'public/lib/ng-intl-tel-input/dist/ng-intl-tel-input.min.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

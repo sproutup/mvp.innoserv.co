@@ -25,7 +25,8 @@
     "spin.js": "2.3.2",
     "angular-scroll-glue": "2.0.6",
     "angulartics-google-analytics": "",
-    "angulartics-mixpanel": ""
+    "angulartics-mixpanel": "",
+    "ng-intl-tel-input": ""
   },
   "resolutions": {
     "angular": "1.5.0"

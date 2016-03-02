@@ -4382,6 +4382,55 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
   line-height: 1.7;
 }
 
+.intl-tel-input {
+  width: 100% !important;
+}
+
+.intl-tel-input .flag-dropdown {
+  outline: 0 !important;
+}
+
+.intl-tel-input .selected-flag {
+  z-index: 1;
+  position: relative;
+  width: 50px;
+  height: 100%;
+  padding: 0px 0px 0px 12px;
+}
+
+.intl-tel-input input, .intl-tel-input input[type=text], .intl-tel-input input[type=tel] {
+  position: relative;
+  z-index: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: 60px;
+  margin-left: 0;
+  transition: background-color 100ms ease-out;
+}
+
+.intl-tel-input .selected-flag .arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  right: 4px;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid @sproutup-grey;
+}
+
+.iti-flag {
+  box-shadow: none;
+}
+
+.intl-tel-input .country-list .country {
+  padding: 8px 10px;
+  font-weight: 400;
+  font-size: 10pt;
+  color: @main-text-light;
+}
+
 // media queries
 @media (min-width: 1200px) {
   .product-trial-stage-avatar {
