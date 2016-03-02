@@ -185,11 +185,6 @@ a.list-group-item:last-child {
   color: @main-text-lighter;
 }
 
-.navbar-nav > li > a i {
-  margin-right: 7px;
-  font-size: 12pt;
-}
-
 .navbar-nav > .open > a:focus {
   color: black;
   background-color: transparent;
@@ -338,10 +333,13 @@ ul.dropdown-menu {
   color: @sproutup-darkgold;
 }
 
-.navbar-item sup {
-  font-weight: 400;
-  font-size: 9pt;
-  padding-left: 2px;
+.navbar-item .label-new-message {
+  margin-left: 3px;
+  background-color: @sproutup-salmon;
+  font-weight: 700;
+  font-size: 8.5pt;
+  border-radius: 4px;
+  padding: 3px 7px;
 }
 
 .navbar-item .fa-search.active {
@@ -446,8 +444,9 @@ input:-ms-input-placeholder {
   border: 1px solid @sproutup-green;
 }
 
-.login-angle-down {
-  padding-left: 8px;
+.fa.login-angle-down {
+  margin-left: 8px;
+  font-size: 8pt;
 }
 
 .btn:focus,.btn:active:focus,.btn.active:focus {
@@ -3205,9 +3204,9 @@ p[class="campaign-countdown-unit"] {
 
 .message-blurb .content {
   font-weight: 400;
-  font-size: 10pt;
+  font-size: 10.5pt;
   line-height: 1.6;
-  padding: 12px 15px;
+  padding: 10px 15px;
 }
 
 .message-blurb .btn {
@@ -3223,12 +3222,12 @@ p[class="campaign-countdown-unit"] {
 }
 
 .message-blurb.outbound .content {
-  background-color: @sproutup-green;
+  background-color: @sproutup-aqua;
   color: @main-text-white;
 }
 
 .message-blurb.inbound .content {
-  background-color: @sproutup-lightgrey;
+  background-color: @sproutup-lightergrey;
   color: @main-text;
 }
 
@@ -3352,6 +3351,7 @@ p[class="campaign-countdown-unit"] {
 
 .post-new-content-selector a {
   margin-right: 5px;
+  margin-bottom: 3px;
   text-align: center;
   padding: 8px 10px;
   background-color: transparent;
@@ -3976,6 +3976,10 @@ ul.list-conversation-thread li a {
   font-weight: 700;
   padding-bottom: 2px;
   color: @main-text-lighter;
+}
+
+.sproutup-table.messages .name .spacer {
+  padding: 0px 5px;
 }
 
 .sproutup-table.messages .text {

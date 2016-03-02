@@ -17,7 +17,10 @@ var ApplicationConfiguration = (function () {
     'ngFileUpload',
     'angularSpinner',
     'ngSanitize',
-    'videosharing-embed'
+    'videosharing-embed',
+    'angulartics',
+    'angulartics.google.analytics',
+    'angulartics.mixpanel'
   ];
 
   // Add a new vertical module

@@ -4,7 +4,6 @@
  * Module dependencies.
  */
 var config = require('../config'),
-  google = require('config/lib/google'),
   redis = require('./redis'),
   express = require('./express'),
   chalk = require('chalk'),
@@ -19,14 +18,8 @@ module.exports.loadModels = function loadModels() {
 };
 
 module.exports.init = function init(callback) {
-
   var app = express.init();
-
   if(callback) callback(app, config);
-
-  google.connect(function() {
-    console.log('google jwt connected');
-  });
 };
 
 module.exports.start = function start(callback) {

@@ -9,6 +9,6 @@
   <textarea ng-hide="vm.empty" ng-model="vm.body" class="form-control form-input-textarea sm" placeholder="If you have any questions, you can message the user here."></textarea>
   <button ng-hide="vm.empty" class="btn btn-sm sproutup-btn-xs" ng-click="vm.send()">Send message</button>
   <div ng-show="vm.empty" class="message-blurb">
-    <button class="btn btn-sm sproutup-btn-xs">Start a conversation</button>
+    <button class="btn btn-sm sproutup-btn-xs" ng-click="vm.start()">Start a conversation</button>
   </div>
 </div>

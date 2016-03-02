@@ -5,18 +5,56 @@ angular
   .module('campaign')
   .controller('CampaignController', CampaignController);
 
-CampaignController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', '$interval'];
+CampaignController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', '$interval', 'MessageService'];
 
-function CampaignController(CampaignService, $state, Authentication, $scope, $interval) {
+function CampaignController(CampaignService, $state, Authentication, $scope, $interval, MessageService) {
   var vm = this;
   vm.product = {};
   vm.find = find;
   vm.findOne = findOne;
+  vm.loadChannel = loadChannel;
+  vm.startChannel = startChannel;
   vm.findMyCampaigns = findMyCampaigns;
   vm.returnMatch = returnMatch;
   vm.cancelRequest = cancelRequest;
   vm.editRequest = editRequest;
   vm.startInterval = startInterval;
+
+  function loadChannel(){
+    console.log('find channel by ref: ', $state.params.campaignId);
+    var myChannelRef = MessageService.myChannelRef();
+    var item = new myChannelRef({
+      userId: Authentication.user.id
+    });
+    // Use save to post a request. we are not really saving anything
+    item.$save({refId: $state.params.campaignId}, function (channel) {
+      if(channel.id){
+        console.log('channel found: ', channel.id);
+        vm.channelId = channel.id;
+      }
+    }, function (errorResponse) {
+      console.log(errorResponse);
+      vm.error = errorResponse.data.message;
+    });
+  }
+
+  function startChannel(){
+    console.log('start channel by ref: ', $state.params.campaignId);
+    var campaignChannel = MessageService.campaignChannel();
+    var item = new campaignChannel({
+      userId: Authentication.user.id
+    });
+    // Use save to post a request. we are not really saving anything
+    item.$save({campaignId: $state.params.campaignId}, function (channel) {
+      if(channel.id){
+        console.log('channel created: ', channel.id);
+        vm.channelId = channel.id;
+      }
+    }, function (errorResponse) {
+      console.log(errorResponse);
+      vm.error = errorResponse.data.message;
+    });
+  }
 
   function find() {
      CampaignService.campaign().query({

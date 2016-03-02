@@ -83,7 +83,7 @@ module.exports = function (app, db) {
         passport.initialize()(socket.request, {}, function () {
           passport.session()(socket.request, {}, function () {
             if (socket.request.user) {
-              console.log('socket user: ', socket.request.user);
+              console.log('socket user: ', socket.request.user.id);
               next(null, true);
             } else {
               next(new Error('User is not authenticated'), false);
