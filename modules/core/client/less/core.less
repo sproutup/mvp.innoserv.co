@@ -4335,15 +4335,15 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
 }
 
 .about-banner {
-  margin: 70px 0px 0px;
+  margin: 0px;
   background-position:center;
   background-repeat:no-repeat;
   background-size: cover;
   position: relative;
   color: #fff;
   background-size: cover;
-  min-height: 800px;
-  padding: 0px 20px;
+  min-height: 750px;
+  padding: 150px 20px 40px;
 }
 
 .about-banner::after{
@@ -4354,6 +4354,32 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
   bottom: 0;
   content: "";
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)); /* Standard syntax */
+}
+
+.about-banner-content {
+  z-index: 10;
+  position: relative;
+  color: @main-text-white;
+}
+
+.about-banner-content .header {
+  font-size: 30pt;
+  font-weight: 300;
+  text-align: center;
+}
+
+.about-banner-content .content {
+  padding: 60px 0px;
+  max-width: 1024px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.about-banner-content .content p {
+  margin: 0px;
+  font-weight: 300;
+  font-size: 18pt;
+  line-height: 1.7;
 }
 
 // media queries
