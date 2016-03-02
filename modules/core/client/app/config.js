@@ -20,7 +20,8 @@ var ApplicationConfiguration = (function () {
     'videosharing-embed',
     'angulartics',
     'angulartics.google.analytics',
-    'angulartics.mixpanel'
+    'angulartics.mixpanel',
+    'ngAutocomplete'
   ];
 
   // Add a new vertical module

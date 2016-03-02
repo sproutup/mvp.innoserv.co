@@ -31,7 +31,8 @@ module.exports = {
         'public/lib/ng-videosharing-embed/build/ng-videosharing-embed.min.js',
         'public/lib/angulartics/dist/angulartics.min.js',
         'public/lib/angulartics-mixpanel/dist/angulartics-mixpanel.min.js',
-        'public/lib/angulartics-google-analytics/dist/angulartics-google-analytics.min.js'
+        'public/lib/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
+        'public/lib/ngAutocomplete/src/ngAutocomplete.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

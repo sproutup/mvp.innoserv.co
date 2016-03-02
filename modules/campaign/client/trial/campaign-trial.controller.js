@@ -96,7 +96,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
     CampaignService.contributor().save({
       userId: Authentication.user.id,
       campaignId: vm.campaign.id,
-      address: vm.address,
+      address: vm.addressDetails.formatted_address,
       phone: vm.phone,
       comment: vm.comment,
       bid: vm.bid
