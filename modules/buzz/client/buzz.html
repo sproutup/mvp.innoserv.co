@@ -24,9 +24,11 @@
                 </p>
                 <div class="post-new-content-selector" ng-init="vm.state = 'write'">
                   <a ng-class="{'active': vm.state === 'write'}" href="#" ng-click="vm.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write Something</a>
+                  <a ng-class="{'active': vm.state === 'suggest'}" href="#" ng-click="vm.state = 'suggest'"><i class="fa fa-binoculars"></i>Suggest product</a>
                 </div>
                 <div class="my-content-new">
-                  <div up-post-write ng-model="vm.post" required ng-show="vm.state === 'write'"></div>
+                  <div up-post-write ng-model="vm.post" required ng-if="vm.state === 'write'"></div>
+                  <div up-post-suggestion ng-model="vm.suggestion" required ng-if="vm.state === 'suggest'"></div>
                 </div>
                 <div class="post-new-comment-actions">
                   <button ng-disabled="form.$invalid || vm.posting" class="btn btn-post content-post-button btn-post-default" ng-click="vm.create()">

@@ -8,9 +8,9 @@ angular
 // This controller contains logic for main buzz page as well as individual product buzz pages
 // Functions loadInit and loadMore have seperate queries for when a slug is present (product buzz page) vs. when there is no slug (main buzz page)
 
-BuzzController.$inject = ['$stateParams', '$state', 'FeedService', 'ContentService', 'Authentication', '$rootScope', '$scope', 'PostService', '$timeout', 'usSpinnerService'];
+BuzzController.$inject = ['$stateParams', '$state', 'FeedService', 'ContentService', 'Authentication', '$rootScope', '$scope', 'PostService', '$timeout', 'usSpinnerService', 'SuggestService'];
 
-function BuzzController($stateParams, $state, FeedService, ContentService, Authentication, $rootScope, $scope, PostService, $timeout, usSpinnerService) {
+function BuzzController($stateParams, $state, FeedService, ContentService, Authentication, $rootScope, $scope, PostService, $timeout, usSpinnerService, SuggestService) {
     var vm = this;
     var content = [];
     vm.content = [];
@@ -116,6 +116,14 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     }
 
     function create(groupId) {
+        if (vm.state === 'write') {
+            createPost(groupId);
+        } else if (vm.state === 'suggest') {
+            createSuggestion(groupId);
+        }
+    }
+
+    function createPost(groupId) {
         vm.posting = true;
         vm.post.userId = Authentication.user.id;
         var Post = PostService.post();
@@ -132,6 +140,21 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
             console.log(err);
             usSpinnerService.stop('spinner-1');
         });
+    }
+
+    function createSuggestion(groupId) {
+      // TODO - save post
+      saveSuggestion();
+    }
+
+    function saveSuggestion() {
+      var Suggest = SuggestService.suggest();
+      var suggestItem = new Suggest({
+        name: vm.suggestion.name,
+        url: vm.suggestion.url
+      });
+
+      suggestItem.$save();
     }
 
     function createContent(groupId) {
