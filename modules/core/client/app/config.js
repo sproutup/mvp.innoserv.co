@@ -21,6 +21,7 @@ var ApplicationConfiguration = (function () {
     'angulartics',
     'angulartics.google.analytics',
     'angulartics.mixpanel',
+    'ngIntlTelInput',
     'ngAutocomplete'
   ];
 
