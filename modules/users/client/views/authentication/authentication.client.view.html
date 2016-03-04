@@ -1,4 +1,4 @@
-<section class="row" ng-controller="AuthenticationController">
+<section ng-controller="AuthenticationController">
   <!-- <h3 class="col-md-12 text-center">Sign in using your social accounts</h3> -->
   <!-- <div class="col-md-12 text-center">
     <img ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png">
@@ -13,7 +13,7 @@
       <button class="btn sproutup-btn-xs"><i class="fa fa-times"></i></button>
     </div>
     <div class="signup-login-header">
-      <p>We're glad to see you</p>
+      <h1>We're glad to see you</h1>
     </div>
     <div class="signup-login-area">
       <!-- twitter login -->
@@ -37,6 +37,9 @@
           <button class="btn btn-lg signup-login-btn" type="submit">Log in with email</button>
         </div>
       </form>
+      <div class="signup-login-form-footer">
+        <p><a ui-sref="password.forgot">Forgot password?</a></p>
+      </div>
     </div>
     <div class="signup-login-footer">We'll never post to Twitter, Facebook or Google Plus without your permission.</div>
   </div>
