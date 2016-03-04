@@ -1912,8 +1912,10 @@ p[class="hangout-countdown-unit"] {
 }
 
 .auth-header {
-  padding-top: 100px;
+  padding-top: 20px;
   height: 80px;
+  position: relative;
+  z-index: 10;
 }
 
 .auth-header hr {
@@ -4112,6 +4114,7 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
   position: relative;
   padding-top: 30px;
   padding-bottom: 60px;
+  min-height: 800px;
 }
 
 .signin-page::after{
@@ -4125,7 +4128,7 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
 }
 
 .exit-signin-page {
-  padding: 0px 50px;
+  padding: 0px 30px;
   z-index: 10;
   position: relative;
 }
@@ -4152,6 +4155,31 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
 .signin-page .signup-login-header {
   z-index: 10;
   position: relative;
+  text-align: center;
+  padding: 0px 25px;
+}
+
+.signin-page .signup-login-header h1 {
+  padding: 40px 10px 0px;
+  margin: 0px;
+  font-weight: 400;
+  font-size: 15pt;
+  color: @main-text;
+  line-height: 1.5;
+}
+
+.signin-page .signup-login-header h2 {
+  padding: 15px 10px 0px;
+  margin: 0px;
+  font-weight: 400;
+  font-size: 11pt;
+  color: @main-text-lighter;
+  line-height: 1.5;
+}
+
+.signin-page .signup-login-header h2 span {
+  font-weight: 700;
+  color: @sproutup-blue;
 }
 
 .signin-page .signup-login-area {
