@@ -1,15 +1,26 @@
 'use strict';
 
 // Create the 'chat' controller
-angular.module('message').controller('MessageController', ['$scope', '$location', 'Authentication', 'Socket',
-  function ($scope, $location, Authentication, Socket) {
+angular.module('message').controller('MessageController', ['$scope', 'MessageService', '$location', 'Authentication', 'Socket',
+  function ($scope, messageService, $location, Authentication, Socket) {
+    var vm = this;
+
     // Create a messages array
     $scope.messages = [];
+    vm.channels = [];
 
     // If user is not signed in then redirect back home
     if (!Authentication.user) {
       $location.path('/');
     }
+
+    vm.listMyChannels = function(){
+      vm.channels = messageService.listMyChannels().then(function(res){
+        vm.channels = res;
+      }, function(err){
+        console.log('err: ', err);
+      });
+    };
 
     // Make sure the Socket is connected
     if (!Socket.socket) {

@@ -5,11 +5,10 @@
       <a href="#" class="list-group-item">Unread</a>
     </div>
   </div>
-
   <!-- Content -->
-  <div class="col-sm-9">
+  <div class="col-sm-9" ng-init="messageCtrl.listMyChannels()">
     <ul class="list-conversation-thread">
-      <li class="unread">
+      <li class="unread" ng-repeat="channel in messageCtrl.channels">
         <a ui-sref="navbar.theme.mocks.view-a-conversation">
           <div class="sproutup-table messages">
             <table class="table">
@@ -20,7 +19,7 @@
                   </td>
                   <td>
                     <div class="name">Elon Musk<span class="spacer">&#183;</span>SpaceX</div>
-                    <div class="text">Hello there. Can I try this product from you guys? I am a huge fan!</div>
+                    <div class="text">{{channel.id}} Hello there. Can I try this product from you guys? I am a huge fan!</div>
                   </td>
                   <td class="time">1 day ago</td>
                 </tr>
