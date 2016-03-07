@@ -14,7 +14,7 @@ function upPostWrite() {
       ngDisabled: '='
     },
     link: linkFunc,
-    template: '<textarea ng-model="item.body" ng-change="onChange()" name="content" placeholder="What do you have in mind? A cool product video? Good stuff for others to bite on?" class="form-control post-new-textarea link" required></textarea>'
+    template: '<textarea ng-model="item.body" ng-change="onChange()" up-embed ng-model-options="{ debounce: 250 }" name="content" placeholder="What do you have in mind? A cool product video? Good stuff for others to bite on?" class="form-control post-new-textarea link" required></textarea>'
   };
 
   return directive;
@@ -30,7 +30,8 @@ function upPostWrite() {
     };
 
     ngModel.$render = function() {
-      scope.item = ngModel.$modelValue;
+      console.log('render', scope);
+      // scope.item = ngModel.$viewValue;
     };
   }
 }
