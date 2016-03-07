@@ -31,7 +31,6 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     local.displayTweet = displayTweet;
     local.optimizeContentDisplay = local.optimizeContentDisplay;
     var position = 0;
-    vm.post = {};
     vm.create = create;
     vm.createContent = createContent;
     vm.list = list;
