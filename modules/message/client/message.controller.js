@@ -1,8 +1,8 @@
 'use strict';
 
 // Create the 'chat' controller
-angular.module('message').controller('MessageController', ['$scope', 'MessageService', '$location', 'Authentication', 'Socket',
-  function ($scope, messageService, $location, Authentication, Socket) {
+angular.module('message').controller('MessageController', ['$scope', 'MessageService', '$location', 'Authentication', 'Socket', '$state',
+  function ($scope, messageService, $location, Authentication, Socket, $state) {
     var vm = this;
 
     // Create a messages array
@@ -13,6 +13,10 @@ angular.module('message').controller('MessageController', ['$scope', 'MessageSer
     if (!Authentication.user) {
       $location.path('/');
     }
+
+    vm.getChannelId = function() {
+      return $state.params.channelId;
+    };
 
     vm.listMyChannels = function(){
       vm.channels = messageService.listMyChannels().then(function(res){

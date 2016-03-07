@@ -133,6 +133,10 @@ angular
         .state('navbar.theme.mocks.about', {
           url: '/about',
           templateUrl: 'modules/theme/client/mocks/about.html'
+        })
+        .state('navbar.theme.mocks.my-dashboard', {
+          url: '/my-dashboard',
+          templateUrl: 'modules/theme/client/mocks/my-dashboard.html'
         });
       }
     ]);

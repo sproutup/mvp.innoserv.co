@@ -1010,6 +1010,19 @@ a.sproutup-btn-sm {
   border: 1px solid @sproutup-carribean-hover;
 }
 
+.sproutup-btn-sm.minimal {
+  color: @main-text-lighter;
+  background-color: @sproutup-veryverylightgrey;
+  border: 1px solid @sproutup-grey;
+}
+
+.sproutup-btn-sm.minimal:hover {
+  color: @main-text-lighter;
+  background-color: white;
+  border: 1px solid @sproutup-grey;
+}
+
+
 .sproutup-btn-xs,
 .sproutup-btn-xs:active,
 .sproutup-btn-xs:focus {
@@ -4467,6 +4480,98 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
   color: @main-text-light;
 }
 
+.my-dashboard-page {
+	margin: 0px;
+  padding: 0px;
+  background-color: @sproutup-lightergrey;
+}
+
+.my-dashboard-wrapper {
+  max-width: 1100px;
+	margin: 0px auto;
+  padding: 100px 15px;
+}
+
+.stats-overview-chart {
+  background-color: white;
+  padding: 0px;
+  border: 1px solid @sproutup-lightgrey;
+  margin: 0px 15px 30px;
+}
+
+.stats-overview-chart .date-range-selector {
+  padding: 20px 30px;
+  border-bottom: 1px solid @sproutup-lightgrey;
+}
+
+.stats-overview-chart .date-range-selector .sproutup-btn-sm span {
+  padding: 0px 12px;
+}
+
+.stats-overview-chart .left {
+  border-right: 1px solid @sproutup-lightgrey;
+  padding: 20px 30px;
+}
+
+.stats-overview-chart .right {
+  padding: 20px 30px;
+}
+
+.stats-overview-chart .title {
+  font-weight: 400;
+  font-size: 12pt;
+  padding-bottom: 20px;
+  border-bottom: 1px solid @sproutup-lightgrey;
+}
+
+.stats-overview-chart .title strong {
+  font-size: 17pt;
+  padding-right: 8px;
+}
+
+.stats-details-list {
+  background-color: white;
+  padding: 5px 30px;
+  border: 1px solid @sproutup-lightgrey;
+  margin: 0px 15px 30px;
+}
+
+.stats-details-row {
+  padding: 10px;
+  border-bottom: 1px solid @sproutup-lightgrey;
+}
+
+.stats-details-row.last-row {
+  border-bottom: none;
+}
+
+.stats-details-row.header .stat {
+  font-size: 10pt;
+  color: @main-text-verylight;
+}
+
+.stats-details-row .content {
+  font-weight: 700;
+  font-size: 13pt;
+  padding: 10px;
+}
+
+.stats-details-row .content a {
+  color: @main-text;
+}
+
+.stats-details-row .stat {
+  font-weight: 700;
+  font-size: 13pt;
+  text-align: right;
+  padding: 10px;
+  color: @main-text-light;
+}
+
+.stats-details-row .stat.earning {
+  color: @sproutup-blue;
+}
+
 // media queries
 @media (min-width: 1200px) {
   .product-trial-stage-avatar {
@@ -4483,6 +4588,27 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
 }
 
 @media (max-width:767px) {
+
+  .stats-details-row.header {
+    border-bottom: none;
+    padding: 0px;
+  }
+
+  .stats-details-row .content {
+    font-weight: 700;
+    font-size: 11.5pt;
+  }
+
+  .stats-details-row .stat {
+    font-weight: 700;
+    font-size: 10pt;
+    text-align: left;
+  }
+
+  .stats-overview-chart .left {
+    border-right: none;
+  }
+
   .buzz-text {
     padding-top: 30px !important;
   }
@@ -4617,6 +4743,7 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
     padding: 0px 10px;
     margin: 0px;
     width: auto;
+    border-left: none;
   }
 
   .profile-input-cell input {
