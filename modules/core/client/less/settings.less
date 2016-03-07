@@ -273,7 +273,7 @@
 }
 
 .my-content-actions {
-    border-top: 1px dashed @sproutup-grey;
+    //border-top: 1px dashed @sproutup-grey;
     padding-top: 10px;
     position: relative;
 }
@@ -437,12 +437,30 @@
     margin: 10px 0px 15px;
 }
 
+.my-content-og-image {
+  height: 300px;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  position: relative;
+  border-left: 1px solid @form-border;
+  border-right: 1px solid @form-border;
+  border-top: 1px solid @form-border;
+}
+
+.my-content-og-content {
+  padding: 15px;
+  border-left: 1px solid @form-border;
+  border-right: 1px solid @form-border;
+  border-bottom: 1px solid @form-border;
+}
+
 .my-content-og-headline {
     font-size: 12pt;
     font-weight: 700;
     color: @main-text;
     line-height: 1.6;
-    padding: 10px 0px 5px;
+    padding: 0px 0px 5px;
     margin: 0px;
 }
 
@@ -477,14 +495,13 @@
 }
 
 .my-content-og-text {
-    font-size: 10pt;
+    font-size: 9pt;
     font-weight: 400;
-    color: @main-text-light;
+    color: @main-text-lighter;
     line-height: 1.6;
-    padding: 0px;
+    padding: 0px 0px 5px;
     margin: 0px;
     white-space: pre-wrap;
-    padding-bottom: 5px;
 }
 
 .my-content-text.comment {
@@ -494,7 +511,7 @@
 }
 
 .my-content-video {
-    margin: 10px 0px;
+    margin: 10px 0px 0px;
     background-color: #333;
     height: 100%;
     width: 100%;
