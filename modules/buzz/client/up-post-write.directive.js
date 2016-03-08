@@ -20,9 +20,6 @@ function upPostWrite() {
   return directive;
 
   function linkFunc(scope, element, attrs, ngModel) {
-    scope.item = {
-      body: ''
-    };
     ngModel.$valid = false;
 
     scope.onChange = function(){
@@ -31,7 +28,7 @@ function upPostWrite() {
 
     ngModel.$render = function() {
       console.log('render', scope);
-      // scope.item = ngModel.$viewValue;
+      scope.item = ngModel.$viewValue;
     };
   }
 }

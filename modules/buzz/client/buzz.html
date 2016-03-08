@@ -30,6 +30,8 @@
                   <div up-post-write ng-model="vm.post" required ng-if="vm.state === 'write'"></div>
                   <div up-post-suggestion ng-model="vm.suggestion" required ng-if="vm.state === 'suggest'"></div>
                 </div>
+                <button ng-if="vm.post.meta" ng-click="vm.post.meta = vm.post.url = null">Remove Content Preview</button>
+                <up-meta ng-if="vm.post.meta" item="vm.post.meta" url="vm.post.url"></up-meta>
                 <div class="post-new-comment-actions">
                   <button ng-disabled="form.$invalid || vm.posting" class="btn btn-post content-post-button btn-post-default" ng-click="vm.create()">
                     <span ng-hide="vm.posting">Post</span>

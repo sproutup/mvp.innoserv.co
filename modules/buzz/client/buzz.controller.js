@@ -34,6 +34,9 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     vm.create = create;
     vm.createContent = createContent;
     vm.list = list;
+    vm.post = {
+        body: ''
+    };
 
     $rootScope.sharing = false;
 

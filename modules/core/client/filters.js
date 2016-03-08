@@ -10,7 +10,7 @@ angular.module('core').
 
 angular.module('core').filter('urlify', function() {
     return function(text) {
-        var urlRegex = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/g;
+        var urlRegex = /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/;
         if (text) {
             return text.replace(urlRegex, function(url) {
                 var displayedUrl;
@@ -20,7 +20,13 @@ angular.module('core').filter('urlify', function() {
                 } else {
                     displayedUrl = url;
                 }
-                return '<a href="' + url + '" target="blank">' + displayedUrl + '</a>';
+
+                var index = url.indexOf('www');
+                if (index === 0) {
+                    url = 'http://' + url;
+                }
+
+                return '<a href="' + url + '" target="_blank">' + displayedUrl + '</a>';
             });
         }
     }

@@ -21,25 +21,7 @@
                     <button class="trial-product selected-trial-product up-content-product"><i class="fa fa-tag product-post-tag"></i>{{ vm.content.product.name }}</button>
                 </a>
                 <div class="my-content-text" ng-bind-html="vm.content.body | urlify"></div>
-
-                <div class="my-content-video embedded" ng-if="vm.content.content.youtube" ng-hide="vm.content.content.tweet">
-                    <iframe width="560" height="315" ng-src="{{ vm.content.content.youtube }}" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <a analytics-on="click" analytics-event="Click Buzz Post" analytics-post="{{ vm.content.id }}" analytics-author="{{ vm.content.user.name }}" analytics-slug="{{ vm.content.product.slug }}" href="{{ vm.content.content.url }}" target="blank" ng-hide="vm.content.content.tweet">
-                    <img class="my-content-image img-responsive" src="{{vm.content.content.image}}" ng-hide="vm.content.content.youtube">
-                    <p class="my-content-og-headline" ng-show="vm.content.content.title">{{ vm.content.content.title }}</p>
-                    <p class="my-content-og-text" ng-show="vm.content.content.description">{{ vm.content.content.description }}</p>
-                </a>
-                <a ng-href="{{ vm.content.content.url }}" ng-if="vm.content.content.tweet" target="blank">
-                    <div class="tweetWrapper" ng-href="vm.content.content.url" ng-class="{ 'tweetWithPicture': vm.content.content.tweet.picture }">
-                        <div class="tweetTextWrapper" ng-class="{ 'tweetWithPicture': vm.content.content.tweet.picture }">
-                            <span class="tweetName">{{ vm.content.content.tweet.twitterName }}</span>
-                            <span class="tweetUsername">@{{ vm.content.content.tweet.twitterUsername }}</span>
-                            <div class="tweetBody">{{ vm.content.content.tweet.tweetBody }}</div>
-                        </div>
-                        <img ng-src="{{ vm.content.content.tweet.picture }}" ng-if="vm.content.content.tweet.picture" class="tweet--picture"/>
-                    </div>
-                </a>
+                <up-meta item="vm.content.meta" url="vm.content.url"></up-meta>
             </div>
             <div class="my-content-actions">
                 <up-like likes="vm.content.likes" up-id="vm.content.id" up-type="models.post" state="{{ vm.state }}" params="vm.params"></up-like>
