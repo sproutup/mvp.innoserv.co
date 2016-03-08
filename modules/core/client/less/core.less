@@ -1091,6 +1091,37 @@ a.sproutup-btn-sm {
   border: 1px solid @sproutup-red-hover;
 }
 
+.sproutup-btn-square,
+.sproutup-btn-square:active,
+.sproutup-btn-square:focus {
+  height: 36px;
+  width: 36px;
+  background-color: @sproutup-blue;
+  color: white;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.sproutup-btn-square:hover {
+  background: @sproutup-blue-hover;
+  color: white;
+}
+
+.sproutup-btn-square.aqua,
+.sproutup-btn-square.aqua:active,
+.sproutup-btn-square.aqua:focus {
+  color: white;
+  background-color: @sproutup-aqua;
+  border: 1px solid @sproutup-aqua;
+}
+
+.sproutup-btn-square.aqua:hover {
+  color: white;
+  background-color: @sproutup-aqua-hover;
+  border: 1px solid @sproutup-aqua-hover;
+}
+
 input[type=checkbox] {
   margin-right: 6px;
 }
@@ -3368,7 +3399,7 @@ p[class="campaign-countdown-unit"] {
 .post-new-content-selector {
   padding: 15px 0px 0px;
   font-weight: 700;
-  font-size: 9pt;
+  font-size: 9.5pt;
   text-decoration: none !important;
 }
 
@@ -3379,21 +3410,19 @@ p[class="campaign-countdown-unit"] {
   padding: 8px 10px;
   background-color: transparent;
   color: @sproutup-aqua;
-  border: 1px solid @sproutup-aqua;
   -moz-transition: all .2s;
   -webkit-transition: all .2s;
   transition: all .2s
 }
 
-.post-new-content-selector a[class="active"],
+.post-new-content-selector a.active,
 .post-new-content-selector a:hover {
   background-color: @sproutup-aqua;
   color: white;
-  border: 1px solid @sproutup-aqua;
 }
 
 .post-new-content-selector a i {
-  margin-right: 8px;
+  margin-right: 7px;
 }
 
 .post-new-content-uploader {
