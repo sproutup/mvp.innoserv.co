@@ -11,9 +11,6 @@ function upPostSuggestion() {
       ngModel: '=',
       ngDisabled: '='
     },
-    controller: upPostSuggestionController,
-    controllerAs: 'vm',
-    bindToController: true,
     link: linkFunc,
     templateUrl: 'modules/suggest/client/up-post-suggestion.template.html'
   };
@@ -21,10 +18,6 @@ function upPostSuggestion() {
   return directive;
 
   function linkFunc(scope, element, attrs, ngModel) {
-    scope.item = {
-      url: '',
-      name: ''
-    };
     ngModel.$valid = false;
 
     scope.onChange = function(){
@@ -32,14 +25,7 @@ function upPostSuggestion() {
     };
 
     ngModel.$render = function() {
-      scope.item = ngModel.$modelValue;
+      scope.item = ngModel.$viewValue;
     };
   }
-}
-
-upPostSuggestionController.$inject = ['YouTubeService', 'Authentication'];
-
-function upPostSuggestionController(YouTubeService, Authentication) {
-  var vm = this;
-
 }

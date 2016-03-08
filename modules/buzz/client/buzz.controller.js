@@ -37,6 +37,9 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     vm.post = {
         body: ''
     };
+    vm.suggestion = {
+        body: ''
+    };
 
     $rootScope.sharing = false;
 
@@ -119,8 +122,10 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
 
     function create(groupId) {
         if (vm.state === 'write') {
+            vm.post.type = 0;
             createPost(groupId);
         } else if (vm.state === 'suggest') {
+            vm.suggestion.type = 1;
             createSuggestion(groupId);
         }
     }
@@ -150,13 +155,27 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     }
 
     function saveSuggestion() {
+      vm.posting = true;
+      usSpinnerService.spin('spinner-1');
       var Suggest = SuggestService.suggest();
       var suggestItem = new Suggest({
-        name: vm.suggestion.name,
+        body: vm.suggestion.body,
         url: vm.suggestion.url
       });
 
-      suggestItem.$save();
+      // TODO - confirm this works after we set up the suggest backend
+      suggestItem.$save(function(res) {
+        // For now, we need vm.post for the createPost() function
+        vm.post = vm.suggestion;
+        vm.post.refType = 'Suggest';
+        vm.post.refId = res.id;
+        createPost();
+        vm.suggestion = {};
+      }, function(err) {
+        vm.posting = false;
+        console.log(err);
+        usSpinnerService.stop('spinner-1');
+      });
     }
 
     function createContent(groupId) {
