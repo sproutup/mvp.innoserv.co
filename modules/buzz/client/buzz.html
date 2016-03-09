@@ -19,9 +19,6 @@
           <div class="col-sm-10 my-content-body">
             <div class="my-content-item--summary">
               <form name="form" novalidate>
-                <p class="my-content-user buzz-user">
-                  <a ui-sref="user.profile.buzz({nickname: vm.user.nickname})">{{ vm.user.name}}</a>
-                </p>
                 <div class="post-new-content-selector" ng-init="vm.state = 'write'">
                   <a ng-class="{'active': vm.state === 'write'}" href="#" ng-click="vm.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write Something</a>
                   <a ng-class="{'active': vm.state === 'suggest'}" href="#" ng-click="vm.state = 'suggest'"><i class="fa fa-binoculars"></i>Suggest product</a>
