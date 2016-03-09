@@ -35,6 +35,7 @@ function upLikeController(likesService, Authentication, $timeout, $scope, $rootS
   vm.upvoteMouseLeave = upvoteMouseLeave;
   vm.didIlikeItAlready = didIlikeItAlready;
   vm.user = Authentication.user;
+  didIlikeItAlready();
 
   function didIlikeItAlready() {
     if(Authentication.user) {
