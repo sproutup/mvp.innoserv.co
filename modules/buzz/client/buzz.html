@@ -27,7 +27,7 @@
                   <div up-post-write ng-model="vm.post" required ng-if="vm.state === 'write'"></div>
                   <div up-post-suggestion ng-model="vm.suggestion" required ng-if="vm.state === 'suggest'"></div>
                 </div>
-                <div class="remove-my-content-og-content" ng-click="vm.post.meta = vm.post.url = null" ng-if="vm.post.meta">
+                <div class="remove-my-content-og-content" ng-click="vm.post.meta = vm.post.url = null" ng-if="vm.post.meta && vm.state === 'write'">
                   <button class="btn sproutup-btn-square aqua"><i class="fa fa-times"></i></button>
                 </div>
                 <up-meta ng-if="vm.state === 'write' && vm.post.meta" item="vm.post.meta" url="vm.post.url"></up-meta>
