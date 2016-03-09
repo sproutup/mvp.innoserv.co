@@ -54,6 +54,7 @@ function MessageChannelController($scope, Authentication, Socket, MessageService
     vm.load = load;
     vm.loadByRef = loadByRef;
     vm.messages = [];
+    vm.conversation = {};
     vm.me = Authentication.user;
 
     function init() {
@@ -110,8 +111,9 @@ function MessageChannelController($scope, Authentication, Socket, MessageService
     function load(){
       console.log('load messages from channel: ', vm.channel);
       var ChannelMessage = MessageService.channel();
-      ChannelMessage.query({channelId: vm.channel}, function (response) {
-        vm.messages = response;
+      ChannelMessage.get({channelId: vm.channel}, function (response) {
+        vm.messages = response.messages;
+        vm.conversation = response;
         join(vm.channel);
         init();
         vm.empty = false;

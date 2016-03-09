@@ -1,18 +1,27 @@
-<div class="message-body" scroll-glue-bottom="true" >
-  <div ng-show="vm.empty" class="empty-state">If you have questions about the campaign or product, feel free to message us. Please do NOT spam us, though ^_^</div>
-  <div ng-hide="vm.empty" ng-repeat="message in vm.messages" ng-class="{inbound: vm.me.id !== message.userId, outbound: vm.me.id === message.userId}" class="message-blurb">
-    <div class="sender">
-      <span ng-show="vm.me.id === message.userId">Me</span>
-      <span ng-show="vm.me.id !== message.userId">{{message.user.displayName}}</span>
-      <span class="time">{{message.created | fromNow}}</span>
+
+<div class="header">
+  Your conversation with <strong>{{vm.conversation.channel.ref.company.name}}</strong> about <a href="#">{{vm.conversation.channel.ref.name}}</a>
+  {{vm.conversation.channel.members['6110118358563160064'].user.displayName}}
+</div>
+
+<div class="product-trial-item--messages">
+  <div class="message-body" scroll-glue-bottom="true" >
+    <div ng-show="vm.empty" class="empty-state">If you have questions about the campaign or product, feel free to message us. Please do NOT spam us, though ^_^</div>
+    <div ng-hide="vm.empty" ng-repeat="message in vm.messages" ng-class="{inbound: vm.me.id !== message.userId, outbound: vm.me.id === message.userId}" class="message-blurb">
+      <div class="sender">
+        <span ng-show="vm.me.id === message.userId">Me</span>
+        <span ng-show="vm.me.id !== message.userId">{{message.userId}}{{vm.conversation.channel.members[message.userId].user.displayName}}</span>
+        <span class="time">{{message.created | fromNow}}</span>
+      </div>
+      <div class="content" ng-bind="message.body"></div>
     </div>
-    <div class="content" ng-bind="message.body"></div>
+  </div>
+  <div class="message-footer">
+    <div class="message-blurb">
+      <textarea ng-hide="vm.empty" ng-model="vm.body" class="form-control form-input-textarea sm" placeholder="If you have any questions, you can message the user here."></textarea>
+      <button ng-hide="vm.empty" class="btn btn-sm sproutup-btn-xs" ng-click="vm.send()">Send message</button>
+      <button ng-show="vm.empty" class="btn btn-sm sproutup-btn-xs" ng-click="vm.start()">Start a conversation</button>
+    </div>
   </div>
 </div>
-<div class="message-footer">
-  <textarea ng-hide="vm.empty" ng-model="vm.body" class="form-control form-input-textarea sm" placeholder="If you have any questions, you can message the user here."></textarea>
-  <button ng-hide="vm.empty" class="btn btn-sm sproutup-btn-xs" ng-click="vm.send()">Send message</button>
-  <div ng-show="vm.empty" class="message-blurb">
-    <button class="btn btn-sm sproutup-btn-xs" ng-click="vm.start()">Start a conversation</button>
-  </div>
-</div>
+
