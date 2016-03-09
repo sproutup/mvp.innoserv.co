@@ -1,7 +1,7 @@
 <form name="form" novalidate>
   <div class="my-content-new">
     <!-- This should input should have type="url", but as it is, an input like that isn't triggering ng-change -->
-    <input ng-model="item.url" ng-change="onChange()" type="text" class="form-control form-input medium" placeholder="The product site URL" required>
+    <input ng-model="item.url" up-embed ng-change="onChange()" type="text" class="form-control form-input medium" placeholder="The product site URL" required>
     <input ng-model="item.name" ng-change="onChange()" type="text" class="form-control form-input medium" placeholder="The product name" required>
   </div>
 </form>

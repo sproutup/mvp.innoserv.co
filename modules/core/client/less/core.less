@@ -1091,6 +1091,37 @@ a.sproutup-btn-sm {
   border: 1px solid @sproutup-red-hover;
 }
 
+.sproutup-btn-square,
+.sproutup-btn-square:active,
+.sproutup-btn-square:focus {
+  height: 36px;
+  width: 36px;
+  background-color: @sproutup-blue;
+  color: white;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.sproutup-btn-square:hover {
+  background: @sproutup-blue-hover;
+  color: white;
+}
+
+.sproutup-btn-square.aqua,
+.sproutup-btn-square.aqua:active,
+.sproutup-btn-square.aqua:focus {
+  color: white;
+  background-color: @sproutup-aqua;
+  border: 1px solid @sproutup-aqua;
+}
+
+.sproutup-btn-square.aqua:hover {
+  color: white;
+  background-color: @sproutup-aqua-hover;
+  border: 1px solid @sproutup-aqua-hover;
+}
+
 input[type=checkbox] {
   margin-right: 6px;
 }
@@ -1981,11 +2012,15 @@ p[class="hangout-countdown-unit"] {
 .browse-wrapper {
   max-width: 1250px;
   margin: 0px auto;
-  padding: 90px 30px 0px;
+  padding: 40px 30px;
+}
+
+.browse-wrapper.all-campaigns-page {
+  padding-top: 100px;
 }
 
 .feature-campaign-banner {
-  min-height: 450px;
+  min-height: 510px;
   margin: 0px;
   background-position:center;
   background-repeat:no-repeat;
@@ -2006,7 +2041,7 @@ p[class="hangout-countdown-unit"] {
 
 .feature-campaign-info-wrapper {
   position: absolute;
-  top: 100px;
+  top: 170px;
   left: 5%;
   right: 5%;
   z-index: 10;
@@ -2056,6 +2091,14 @@ p[class="hangout-countdown-unit"] {
   margin-top: 40px;
 }
 
+.banner-container {
+  margin: 0px;
+}
+
+.carousel {
+  margin: 0px;
+}
+
 .carousel-control {
   width: 10%;
 }
@@ -2084,7 +2127,7 @@ p[class="hangout-countdown-unit"] {
 
 .browse-campaign-sidebar {
   margin: 0px;
-  padding: 30px 0px 15px;
+  padding: 0px 0px 20px;
 }
 
 ul.browse-campaign-sidenav {
@@ -2132,7 +2175,7 @@ ul.browse-campaign-sidenav li a.active {
 
 .browse-campaign-main {
   margin: 0px;
-  padding: 30px 0px;
+  padding: 0px 0px 20px;
 }
 
 .browse-campaign-section {
@@ -2141,8 +2184,10 @@ ul.browse-campaign-sidenav li a.active {
 }
 
 .browse-campaign-section h4 {
-  padding: 0px 3px 15px;
+  padding: 10px 3px 20px;
+  margin: 0px;
   font-size: 16pt;
+  color: @main-text-lighter;
 }
 
 .browse-campaign-section h4 span {
@@ -2154,12 +2199,11 @@ ul.browse-campaign-sidenav li a.active {
   float: right;
   height: 36px;
   font-weight: 700;
-  font-size: 10pt;
-  background-color: white;
-  border: 1px solid @sproutup-blue;
+  font-size: 11pt;
+  background-color: transparent;
   color: @sproutup-blue;
   border-radius: 2px;
-  padding: 7px 15px 0px;
+  padding: 0px;
   margin: 0px;
   -webkit-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
@@ -2167,21 +2211,8 @@ ul.browse-campaign-sidenav li a.active {
 }
 
 .browse-campaign-section .browse-all-button:hover {
-  background-color: @sproutup-blue;
-  border: 1px solid @sproutup-blue;
-  color: white;
-}
-
-.browse-campaign-section.trial h4 span {
-  color: @sproutup-salmon;
-}
-
-.browse-campaign-section.contest h4 span {
-  color: @sproutup-green;
-}
-
-.browse-campaign-section.sweepstakes h4 span {
-  color: @twitter-blue;
+  color: @sproutup-blue-hover;
+  text-decoration: underline;
 }
 
 .campaign-list-item {
@@ -2213,14 +2244,25 @@ ul.browse-campaign-sidenav li a.active {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)); /* Standard syntax */
 }
 
-.campaign-name {
+.campaign-list-item-banner .campaign-name {
   margin: 0px;
-  padding: 125px 0px 0px;
-  text-align: center;
+  padding: 25px 20px 0px;
+  text-align: left;
   z-index: 10;
   position: relative;
   font-weight: 400;
-  font-size: 12pt;
+  font-size: 11pt;
+  color: @main-text-white;
+}
+
+.campaign-list-item-banner .campaign-description {
+  margin: 0px;
+  padding: 10px 20px 0px;
+  text-align: left;
+  z-index: 10;
+  position: relative;
+  font-weight: 300;
+  font-size: 9.5pt;
   color: @main-text-white;
 }
 
@@ -3368,7 +3410,7 @@ p[class="campaign-countdown-unit"] {
 .post-new-content-selector {
   padding: 15px 0px 0px;
   font-weight: 700;
-  font-size: 9pt;
+  font-size: 9.5pt;
   text-decoration: none !important;
 }
 
@@ -3379,21 +3421,19 @@ p[class="campaign-countdown-unit"] {
   padding: 8px 10px;
   background-color: transparent;
   color: @sproutup-aqua;
-  border: 1px solid @sproutup-aqua;
   -moz-transition: all .2s;
   -webkit-transition: all .2s;
   transition: all .2s
 }
 
-.post-new-content-selector a[class="active"],
+.post-new-content-selector a.active,
 .post-new-content-selector a:hover {
   background-color: @sproutup-aqua;
   color: white;
-  border: 1px solid @sproutup-aqua;
 }
 
 .post-new-content-selector a i {
-  margin-right: 8px;
+  margin-right: 7px;
 }
 
 .post-new-content-uploader {

@@ -13,6 +13,6 @@ function SuggestService($resource){
   return service;
 
   function suggest() {
-    return $resource('/api/suggest/:id', {id:'@id'}, {update:{method:'PUT'}} );
+    return $resource('/api/suggestion/:id', {id:'@id'}, {update:{method:'PUT'}} );
   }
 }

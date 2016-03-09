@@ -45,7 +45,8 @@
             <a href="#" uib-dropdown-toggle>{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></a>
             <ul uib-dropdown-menu class="navbar-wide" role="menu">
                 <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="navbar.user.profile.buzz({ nickname: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
-                <li><a analytics-on="click" analytics-event="Enter Account Settings" ui-sref="navbar.settings.profile">Account Settings</a></li>
+                <li><a analytics-on="click" analytics-event="View My Stuff" ui-sref="navbar.discover.mine">My Stuff</a></li>
+                <li><a analytics-on="click" analytics-event="View Account Settings" ui-sref="navbar.settings.profile">Account Settings</a></li>
                 <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out">Sign Out</a></li>
             </ul>
             <ul uib-dropdown-menu class="navbar-toggleMenu" role="menu">
@@ -85,21 +86,18 @@
   </div>
 </nav>
 
-<div ui-view class=""></div>
+<div ui-view class="" autoscroll="true"></div>
 
 <footer>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
         <ul class="list-inline sproutup-footer-links">
-          <!-- <li><a ui-sref="user.community">Community</a></li> -->
-<!--           <li><a href="">FAQs</a></li>
-          <li><a href="">About Us</a></li> -->
+          <li><a ui-sref="navbar.team">Team</a></li>
           <li><a href="http://blog.sproutup.co" target="_blank">Blog</a></li>
-          <li><a href="https://angel.co/sproutup/jobs" target="_blank">Career</a></li>
-         <!--  <li><a href="mailto:tao@sproutup.co" target="_top">Contact Us</a></li> -->
-          <li><a ui-sref="navbar.privacy">Privacy Policy</a></li>
+          <li><a href="https://angel.co/sproutup/jobs" target="_blank">Jobs</a></li>
           <li><a ui-sref="navbar.terms">Terms</a></li>
+          <li><a ui-sref="navbar.privacy">Privacy Policy</a></li>
         </ul>
         <ul class="list-inline sproutup-social-buttons">
           <li>

@@ -34,6 +34,12 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     vm.create = create;
     vm.createContent = createContent;
     vm.list = list;
+    vm.post = {
+        body: ''
+    };
+    vm.suggestion = {
+        body: ''
+    };
 
     $rootScope.sharing = false;
 
@@ -116,6 +122,7 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
 
     function create(groupId) {
         if (vm.state === 'write') {
+            vm.post.type = 0;
             createPost(groupId);
         } else if (vm.state === 'suggest') {
             createSuggestion(groupId);
@@ -147,13 +154,30 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     }
 
     function saveSuggestion() {
+      vm.posting = true;
+      usSpinnerService.spin('spinner-1');
       var Suggest = SuggestService.suggest();
       var suggestItem = new Suggest({
         name: vm.suggestion.name,
         url: vm.suggestion.url
       });
 
-      suggestItem.$save();
+      suggestItem.$save(function(res) {
+        vm.post = {
+          url: vm.suggestion.url,
+          body: vm.suggestion.name,
+          type: 1,
+          refType: 'Suggest',
+          refId: res.id,
+          meta: vm.suggestion.meta
+        };
+        createPost();
+        vm.suggestion = {};
+      }, function(err) {
+        vm.posting = false;
+        console.log(err);
+        usSpinnerService.stop('spinner-1');
+      });
     }
 
     function createContent(groupId) {

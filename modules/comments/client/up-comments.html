@@ -1,4 +1,4 @@
-<div class="my-content-comments">
+<div class="my-content-comments" ng-if="vm.commenting">
     <!-- Existing comments -->
     <div class="row my-content-comment-row" ng-repeat="comment in vm.comments | orderBy: 'createdAt'">
         <div class="col-sm-2 my-content-user-avatar comment-user-avatar">
@@ -12,9 +12,8 @@
             <p class="my-content-text comment" ng-bind-html="comment.body | urlify"></p>
         </div>
     </div>
-    <button ng-if="!vm.commenting" ng-hide="vm.state === 'user.buzz' && vm.comments.length < 1" subject-present="vm.handleAddCommentClick()" state="{{ vm.state }}" class="add-comment-button" ng-class="{ 'suggest': vm.state === 'user.suggest', 'buzz': vm.state === 'user.buzz' }">ADD COMMENT</button>
     <!-- New comment from current user -->
-    <div class="row my-content-comment-row" ng-if="vm.commenting">
+    <div class="row my-content-comment-row">
         <div class="col-sm-2 my-content-user-avatar comment-user-avatar">
             <img class="img-responsive post-comment-user-img-circle img-center" ng-src="{{ vm.user.avatarUrl }}">
         </div>

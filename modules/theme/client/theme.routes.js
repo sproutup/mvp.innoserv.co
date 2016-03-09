@@ -37,6 +37,10 @@ angular
           url: '/browse-campaigns',
           templateUrl: 'modules/theme/client/mocks/browse-campaigns.html'
         })
+        .state('navbar.theme.mocks.browse-more-campaigns', {
+          url: '/browse-more-campaigns',
+          templateUrl: 'modules/theme/client/mocks/browse-more-campaigns.html'
+        })
         .state('navbar.theme.mocks.my-campaigns', {
           url: '/my-campaigns',
           templateUrl: 'modules/theme/client/mocks/my-campaigns.html'
