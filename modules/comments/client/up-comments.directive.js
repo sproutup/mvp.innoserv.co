@@ -56,7 +56,6 @@ function upCommentsController(CommentService, Authentication, $timeout, $scope, 
       if(typeof vm.comments === 'undefined') vm.comments = [];
       vm.comments.push(res);
       vm.newComment = '';
-      vm.commenting = false;
       vm.disabled = false;
       usSpinnerService.stop('spinner-3');
     });
