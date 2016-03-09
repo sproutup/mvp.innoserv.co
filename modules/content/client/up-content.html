@@ -34,7 +34,7 @@
               <span class="activity">suggested by</span>
               <a href="#">{{ vm.content.user.displayName }}</a>
             </p>
-            <p class="suggested-product-item-description">{{ vm.content.meta.description }}</p>
+            <p class="suggested-product-item-description">{{ vm.content.meta.description | limitTo: 120 }}{{vm.content.meta.description.length < 120 ? '' : '...'}}</p>
             <div class="my-content-actions">
               <up-like likes="vm.content.likes" up-id="vm.content.id" up-type="models.post" state="{{ vm.state }}" params="vm.params"></up-like>
               <a href="#" ng-click="vm.content.commenting = !vm.content.commenting">COMMENTS ({{ vm.content.comment.length || 0 }})</a>
