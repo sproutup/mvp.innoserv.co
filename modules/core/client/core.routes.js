@@ -20,6 +20,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         url: '/not-found',
         templateUrl: 'modules/core/client/404.view.html'
       })
+      .state('navbar.team', {
+        url: '/team',
+        templateUrl: 'modules/core/client/team.view.html'
+      })
       .state('navbar.privacy', {
         url: '/privacy',
         templateUrl: 'modules/core/client/privacy.view.html'
