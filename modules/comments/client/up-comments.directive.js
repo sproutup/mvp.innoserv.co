@@ -35,6 +35,16 @@ function upCommentsController(CommentService, Authentication, $timeout, $scope, 
   vm.user = Authentication.user;
   vm.disabled = false;
 
+  CommentService.comment().query({
+    refType: 'Post',
+    refId: vm.id
+  }, function(response){
+    vm.comments = response;
+  }, function(error) {
+    vm.error = error;
+    console.log(error);
+  });
+
   vm.handleAddCommentClick = function() {
     if (!Authentication.user) {
       $scope.$emit('LoginEvent', {
