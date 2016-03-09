@@ -1,25 +1,25 @@
-<div class="row browse-wrapper" ng-init="vm.find()">
-
-  <div class="banner-container" ng-init="vm.startInterval()">
-    <div class="banner" ng-animate-swap="vm.next">
-      <div class="feature-campaign-banner" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/e43e8342-c41b-4d66-aa3a-133eccfe93de_0_admin.jpg?w=1600')">
-          <div class="row feature-campaign-info-wrapper">
-            <div class="col-sm-12">
-              <h1>{{vm.next.name}}</h1>
-              <h2>{{vm.next.tagline}}</h2>
-              <p>by <span><a href="#">{{vm.next.company.name}}</a></span></p>
-              <button href="#" class="btn btn-lg sproutup-btn-lg-main">Try it out</button>
-            </div>
+<div class="banner-container" ng-init="vm.startInterval()">
+  <div class="banner" ng-animate-swap="vm.next">
+    <div class="feature-campaign-banner" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/e43e8342-c41b-4d66-aa3a-133eccfe93de_0_admin.jpg?w=1600')">
+        <div class="row feature-campaign-info-wrapper">
+          <div class="col-sm-12">
+            <h1>{{vm.next.name}}</h1>
+            <h2>{{vm.next.tagline}}</h2>
+            <p>by <span><a href="#">{{vm.next.company.name}}</a></span></p>
+            <button href="#" class="btn btn-lg sproutup-btn-lg-main">Try it out</button>
           </div>
-      </div>
+        </div>
     </div>
   </div>
+</div>
+
+<div class="row browse-wrapper" ng-init="vm.find()">
 
   <!-- side navbar -->
   <div class="col-sm-3 browse-campaign-sidebar">
     <ul class="nav browse-campaign-sidenav">
-      <li><a ui-sref="navbar.discover.list" ng-class="{ active: vm.state.includes('navbar.discover.list') }">Everything</a></li>
       <li><a ui-sref="navbar.discover.mine" ng-class="{ active: vm.state.includes('navbar.discover.mine') }">My Stuff</a></li>
+      <li><a ui-sref="navbar.discover.list" ng-class="{ active: vm.state.includes('navbar.discover.list') }">Everything</a></li>
     </ul>
   </div>
 
