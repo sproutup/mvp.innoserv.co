@@ -16,9 +16,6 @@
             </p>
             <p class="my-content-timestamp"><a ui-sref="user.singleBuzz({ id: vm.content.id })">{{ vm.content.created | fromNow }}</a></p>
             <div class="my-content-item-main">
-                <a ui-sref="user.product.detail.buzz({ slug: vm.content.product.slug })">
-                    <button class="trial-product selected-trial-product up-content-product"><i class="fa fa-tag product-post-tag"></i>{{ vm.content.product.name }}</button>
-                </a>
                 <div class="my-content-text" ng-bind-html="vm.content.body | urlify"></div>
                 <up-meta item="vm.content.meta" url="vm.content.url"></up-meta>
             </div>
