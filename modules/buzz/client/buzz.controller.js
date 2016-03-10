@@ -8,9 +8,9 @@ angular
 // This controller contains logic for main buzz page as well as individual product buzz pages
 // Functions loadInit and loadMore have seperate queries for when a slug is present (product buzz page) vs. when there is no slug (main buzz page)
 
-BuzzController.$inject = ['$stateParams', '$state', 'FeedService', 'ContentService', 'Authentication', '$rootScope', '$scope', 'PostService', '$timeout', 'usSpinnerService', 'SuggestService'];
+BuzzController.$inject = ['$stateParams', '$state', 'FeedService', 'ContentService', 'Authentication', '$rootScope', '$scope', 'PostService', '$timeout', 'usSpinnerService', 'SuggestService', 'CampaignService'];
 
-function BuzzController($stateParams, $state, FeedService, ContentService, Authentication, $rootScope, $scope, PostService, $timeout, usSpinnerService, SuggestService) {
+function BuzzController($stateParams, $state, FeedService, ContentService, Authentication, $rootScope, $scope, PostService, $timeout, usSpinnerService, SuggestService, CampaignService) {
     var vm = this;
     var content = [];
     vm.content = [];
@@ -41,8 +41,8 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
         body: ''
     };
 
+    findCampaigns();
     $rootScope.sharing = false;
-
     vm.user = Authentication.user;
 
     function list() {
@@ -254,6 +254,23 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
             vm.postCount = 0;
             usSpinnerService.stop('spinner-1');
         });
+    }
+
+    function findCampaigns() {
+      CampaignService.campaign().query(function(res) {
+        vm.campaigns = [];
+        while (vm.campaigns.length < 2) {
+          var randomnumber = Math.ceil(Math.random() * res.length);
+          var found = false;
+          for (var i = 0; i < res.length ; i++) {
+            if (vm.campaigns[i] === randomnumber) { found = true; break; }
+          }
+          if (!found) vm.campaigns[vm.campaigns.length] = res[randomnumber];
+        }
+      }, function(err) {
+        vm.error = true;
+        console.log(err);
+      });
     }
 
     function loadCallback(content) {

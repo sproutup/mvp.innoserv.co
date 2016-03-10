@@ -46,6 +46,13 @@
       <up-content ng-repeat="item in vm.content" content="item" state="navbar.buzz"></up-content>
     </div>
     <div class="col-sm-4 my-content-right-rail">
+      <div class="buzz-sidebar-item">
+        <div class="title campaign">Discover and join activities sponsored by awesome brands</div>
+        <div class="subtitle">Tryout and review latest products. Join video and photo contest. And more to unleash your creativity.</div>
+        <div class="content" ng-repeat="campaign in vm.campaigns">
+          <up-trial-highlight campaign="campaign"></up-trial-highlight>
+        </div>
+      </div>
       <!-- info -->
       <div class="my-content-info-header">
         <p>WHAT IS BUZZ</p>

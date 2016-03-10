@@ -1,0 +1,6 @@
+<a ui-sref="navbar.campaign.{{ vm.campaign.type }}.view.details({ campaignId: vm.campaign.id })">
+  <div class="buzz-sidebar-content-item" style="background-image: url({{ vm.campaign.image || 'https://d30xksqof6w2my.cloudfront.net/ccd20a3d-1a0d-4545-870a-94e1c645ff96_0_admin.jpg?w=1600' }});">
+    <p class="campaign-name">{{ vm.campaign.name }}</p>
+    <p class="campaign-type"><span class="label label-activity-type-small trial">{{ vm.campaign.type }}</span></p>
+  </div>
+</a>
