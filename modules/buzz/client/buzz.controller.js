@@ -8,9 +8,9 @@ angular
 // This controller contains logic for main buzz page as well as individual product buzz pages
 // Functions loadInit and loadMore have seperate queries for when a slug is present (product buzz page) vs. when there is no slug (main buzz page)
 
-BuzzController.$inject = ['$stateParams', '$state', 'FeedService', 'ContentService', 'Authentication', '$rootScope', '$scope', 'PostService', '$timeout', 'usSpinnerService', 'SuggestService', 'CampaignService'];
+BuzzController.$inject = ['$stateParams', '$state', 'FeedService', 'ContentService', 'Authentication', '$rootScope', '$scope', 'PostService', '$timeout', 'usSpinnerService', 'SuggestService', 'CampaignService', 'HangoutService'];
 
-function BuzzController($stateParams, $state, FeedService, ContentService, Authentication, $rootScope, $scope, PostService, $timeout, usSpinnerService, SuggestService, CampaignService) {
+function BuzzController($stateParams, $state, FeedService, ContentService, Authentication, $rootScope, $scope, PostService, $timeout, usSpinnerService, SuggestService, CampaignService, HangoutService) {
     var vm = this;
     var content = [];
     vm.content = [];
@@ -42,6 +42,7 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     };
 
     findCampaigns();
+    findHangouts();
     $rootScope.sharing = false;
     vm.user = Authentication.user;
 
@@ -266,6 +267,23 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
             if (vm.campaigns[i] === randomnumber) { found = true; break; }
           }
           if (!found) vm.campaigns[vm.campaigns.length] = res[randomnumber];
+        }
+      }, function(err) {
+        vm.error = true;
+        console.log(err);
+      });
+    }
+
+    function findHangouts() {
+      vm.hangouts = [];
+      HangoutService.hangout().query(function(res) {
+        while (vm.hangouts.length < 2) {
+          var randomnumber = Math.ceil(Math.random() * res.length);
+          var found = false;
+          for (var i = 0; i < res.length ; i++) {
+            if (vm.hangouts[i] === randomnumber) { found = true; break; }
+          }
+          if (!found) vm.hangouts[vm.hangouts.length] = res[randomnumber];
         }
       }, function(err) {
         vm.error = true;

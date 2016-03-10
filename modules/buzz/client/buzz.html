@@ -46,12 +46,22 @@
       <up-content ng-repeat="item in vm.content" content="item" state="navbar.buzz"></up-content>
     </div>
     <div class="col-sm-4 my-content-right-rail">
+      <!-- Highlighted campaigns -->
       <div class="buzz-sidebar-item">
         <div class="title campaign">Discover and join activities sponsored by awesome brands</div>
         <div class="subtitle">Tryout and review latest products. Join video and photo contest. And more to unleash your creativity.</div>
         <div class="content" ng-repeat="campaign in vm.campaigns">
           <up-trial-highlight campaign="campaign"></up-trial-highlight>
         </div>
+      </div>
+      <!-- Highlighted hangouts -->
+      <div class="buzz-sidebar-item">
+        <div class="title hangout">Hangout with brilliant minds in tech, content creation, and beyond</div>
+        <div class="subtitle">We invite the most interesting creators, makers and thinkers to live chat with us and the community. You'll surely learn a lot from them!</div>
+        <div class="content" ng-repeat="hangout in vm.hangouts">
+          <up-hangout-highlight hangout="hangout"></up-hangout-highlight>
+        </div>
+        <div class="link"><a ui-sref="navbar.hangout.list.future">See more upcoming hangouts<i class="fa fa-angle-right"></i></a></p></div>
       </div>
       <!-- info -->
       <div class="my-content-info-header">
