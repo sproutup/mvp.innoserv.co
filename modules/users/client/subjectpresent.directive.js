@@ -27,7 +27,7 @@ function subjectPresent($parse, Authentication, $state) {
             onLogin(scope);
           });
 
-          $state.transitionTo('authentication.signin');
+          $state.go('authentication.signin');
         }
       });
     }
