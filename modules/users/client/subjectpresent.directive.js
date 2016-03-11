@@ -15,7 +15,7 @@ function subjectPresent($parse, Authentication, $state) {
 
       element.on('click', function () {
         var params = scope.vm.params;
-        if(Authentication.user){
+        if(Authentication.user.id){
           // The event originated outside of angular,
           // We need to call $apply
           scope.$apply(function () {
@@ -26,12 +26,8 @@ function subjectPresent($parse, Authentication, $state) {
           scope.$apply(function () {
             onLogin(scope);
           });
-          if (!params) {
-            params = {};
-          }
-          if(state!==null){
-            Authentication.loginAndRedirect(state, params);
-          }
+
+          $state.transitionTo('authentication.signin');
         }
       });
     }

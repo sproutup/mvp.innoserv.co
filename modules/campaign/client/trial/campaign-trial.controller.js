@@ -17,6 +17,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
   vm.cancelRequest = cancelRequest;
   vm.connected = connected;
   vm.createPost = createPost;
+  vm.goToRequest = goToRequest;
 
   function find() {
     vm.campaigns = CampaignService.campaign().query({
@@ -176,5 +177,9 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
         vm.myContribution = null;
       }
     );
+  }
+
+  function goToRequest() {
+    $state.go('navbar.campaign.trial.info');
   }
 }
