@@ -3,131 +3,143 @@ Handle product with no image
 Create seperate pages for individual suggested products -->
 
 <div class="suggest-page">
-  <div class="row buzz-wrapper">
-    <div class="col-sm-7 my-content-left-rail">
-      <!-- new post -->
-      <div class="col-sm-12 my-content-item">
-        <div class="col-sm-2 my-content-user-avatar post-content-user">
-          <a ui-sref="#">
-            <img class="img-responsive my-content-user-img img-center" src="modules/theme/client/img/default-avatar.png">
-          </a>
-        </div>
-        <div class="col-sm-10 my-content-body">
-          <div class="my-content-item--summary">
-            <form name="form" novalidate>
-              <div class="my-content-new">
-                <input type="text" class="form-control form-input medium" placeholder="The product name" required>
-                <input type="url" class="form-control form-input medium" placeholder="The product site URL" required>
-              </div>
-              <div class="my-content-item-main ">
-                <a href="#">
-                  <div class="my-content-og-image" style="background-image: url('http://ahundredmonkeys.com/site/wp-content/uploads/2015/12/eerospeaker.jpeg')"></div>
-                  <div class="my-content-og-content">
-                    <p class="my-content-og-headline">eero</p>
-                    <p class="my-content-og-text">Best Wi-Fi for home networking</p>
-                  </div>
-                </a>
-              </div>
-              <div class="post-new-comment-actions">
-                <button type="button" class="btn btn-post content-post-button btn-post-default">
-                  <span>Post</span>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- product list -->
-      <div class="col-sm-12 my-content-item">
-        <div class="col-sm-2 my-content-user-avatar post-content-user">
-          <a ui-sref="#">
-            <img class="img-responsive my-content-user-img img-center" src="modules/theme/client/img/default-avatar.png">
-          </a>
-        </div>
-        <div class="col-sm-10 my-content-body">
-          <div class="suggested-product-item" style="background-image: url('https://d36us2xspih4bl.cloudfront.net/static/upload/images/product/teleport-vr-kit-19.jpg');">
-            <p class="my-content-user">
-              <a class="suggested-product-item-name" href="">Nest Cam</a>
-              <span class="activity">suggested by</span>
-              <a href="#">Thomas O'Brien</a>
-            </p>
-            <p class="suggested-product-item-description">Home security made simple</p>
-            <div class="my-content-actions">
-              <a href="#">UPVOTE (89)</a>
-              <a href="#">SHOW COMMENTS (12)</a>
-              <a href="#">REQUEST</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 my-content-item">
-        <div class="col-sm-2 my-content-user-avatar post-content-user">
-          <a ui-sref="#">
-            <img class="img-responsive my-content-user-img img-center" src="modules/theme/client/img/default-avatar.png">
-          </a>
-        </div>
-        <div class="col-sm-10 my-content-body">
-          <div class="suggested-product-item" style="background-image: url('modules/core/client/img/default-campaign-banner.jpg');">
-            <p class="my-content-user">
-              <a class="suggested-product-item-name" href="">DJI Inspire 3</a>
-              <span class="activity">suggested by</span>
-              <a href="#">Tao Ni</a>
-            </p>
-            <p class="suggested-product-item-description">Best DJI drone we've made so far</p>
-            <div class="my-content-actions">
-              <a href="#">UPVOTE (89)</a>
-              <a href="#">SHOW COMMENTS (12)</a>
-              <a href="#">REQUEST</a>
-            </div>
-          </div>
-          <!-- comment area -->
-          <div class="my-content-comments">
-            <div class="row my-content-comment-row">
-              <div class="col-sm-1 my-content-user-avatar comment-user-avatar">
-                <a href="#">
-                  <img class="img-responsive post-comment-user-img-circle img-center" src="modules/theme/client/img/user/UM9WLXps_400x400.jpg">
-                </a>
-              </div>
-              <div class="col-sm-11 my-content-comment-blurb">
-                <p class="my-content-user comment"><a href="#">Peter Andersen</a><span class="my-content-timestamp comment"> 9 hours ago</span></p>
-                <p class="my-content-text comment">This is an awesome product. I love it!!</p>
-              </div>
-            </div>
-            <div class="row my-content-comment-row">
-              <div class="col-sm-1 my-content-user-avatar comment-user-avatar">
-                <a href="#">
-                  <img class="img-responsive post-comment-user-img-circle img-center" src="modules/theme/client/img/user/UM9WLXps_400x400.jpg">
-                </a>
-              </div>
-              <div class="col-sm-11 my-content-comment-blurb">
-                <p class="my-content-user comment"><a href="#">Peter Andersen</a><span class="my-content-timestamp comment"> 9 hours ago</span></p>
-                <p class="my-content-text comment">This is an awesome product. I love it!!</p>
-              </div>
-            </div>
+  <div class="row suggest-wrapper">
+    <!-- product list -->
+    <div class="col-sm-6 my-content-item">
+      <div class="my-content-body">
+        <div class="suggested-product-item" style="background-image: url('https://d36us2xspih4bl.cloudfront.net/static/upload/images/product/teleport-vr-kit-19.jpg');">
+          <p class="my-content-user">
+            <a class="suggested-product-item-name" href="">Nest Cam</a>
+            <span class="activity">suggested by</span>
+            <a href="#">Thomas O'Brien</a>
+          </p>
+          <p class="suggested-product-item-description">Home security made simple</p>
+          <div class="my-content-actions">
+            <a href="#">UPVOTE (89)</a>
+            <a href="#">SHOW COMMENTS (12)</a>
+            <a href="#">REQUEST</a>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="col-sm-5 my-content-right-rail">
-      <!-- info -->
-      <div class="buzz-sidebar-item">
-        <div class="title suggest">Be a start scout</div>
-        <div class="subtitle">Stumble upon cool products? Post them here and share with your community.</div>
+    <div class="col-sm-6 my-content-item">
+      <div class="my-content-body">
+        <div class="suggested-product-item" style="background-image: url('http://cnet2.cbsistatic.com/hub/i/r/2015/04/08/7663b5f4-dd0e-47e2-9dde-339fe7d58ddd/thumbnail/770x433/e33377cba67d69fe416ff36219206fe0/dji-phantom-3-professional-advanced-5.jpg');">
+          <p class="my-content-user">
+            <a class="suggested-product-item-name" href="">DJI Inspire 3</a>
+            <span class="activity">suggested by</span>
+            <a href="#">Tao Ni</a>
+          </p>
+          <p class="suggested-product-item-description">Best DJI drone we've made so far</p>
+          <div class="my-content-actions">
+            <a href="#">UPVOTE (89)</a>
+            <a href="#">SHOW COMMENTS (12)</a>
+            <a href="#">REQUEST</a>
+          </div>
+        </div>
       </div>
-      <div class="buzz-sidebar-item">
-        <div class="title suggest">Get perks</div>
-        <div class="subtitle">We'll pick the best suggestions (based on high number of votes received) to include on SproutUp. Whoever suggested the products we pick will receive a surprise perk from us.</div>
+    </div>
+    <div class="col-sm-6 my-content-item">
+      <div class="my-content-body">
+        <div class="suggested-product-item" style="background-image: url('http://cdn.coolmompicks.com/wp-content/uploads/sites/2/2015/11/spire-anti-stress-monitor.jpeg');">
+          <p class="my-content-user">
+            <a class="suggested-product-item-name" href="">Nest Cam</a>
+            <span class="activity">suggested by</span>
+            <a href="#">Thomas O'Brien</a>
+          </p>
+          <p class="suggested-product-item-description">Home security made simple</p>
+          <div class="my-content-actions">
+            <a href="#">UPVOTE (89)</a>
+            <a href="#">SHOW COMMENTS (12)</a>
+            <a href="#">REQUEST</a>
+          </div>
+        </div>
       </div>
-      <div class="buzz-sidebar-item">
-        <div class="title suggest">Engage with product creators</div>
-        <div class="subtitle">Love the product? Wanna try out and review the product? Directly request it to the product creators and together, we'll make it happen!</div>
+    </div>
+    <div class="col-sm-6 my-content-item">
+      <div class="my-content-body">
+        <div class="suggested-product-item" style="background-image: url('http://cdn.cultofmac.com/wp-content/uploads/2014/12/20131228_moment-lens_0028.jpg');">
+          <p class="my-content-user">
+            <a class="suggested-product-item-name" href="">Nest Cam</a>
+            <span class="activity">suggested by</span>
+            <a href="#">Thomas O'Brien</a>
+          </p>
+          <p class="suggested-product-item-description">Home security made simple</p>
+          <div class="my-content-actions">
+            <a href="#">UPVOTE (89)</a>
+            <a href="#">SHOW COMMENTS (12)</a>
+            <a href="#">REQUEST</a>
+          </div>
+        </div>
       </div>
-      <div class="buzz-sidebar-item">
-        <div class="title suggest">What to post</div>
-        <div class="subtitle">Our community loves new, popular and rad products. Post products that you're genuinely interested in and you'd love to try out by yourself. Or something your friend, spouse, a family member would buy.</div>
-        <div class="subtitle">These could be from emerging tech like wearables, hoverboards, drones, smart devices, speakers, video games, apps, VR gears and so forth.</div>
-        <div class="subtitle">Please do not post irrelevant things.</div>
+    </div>
+    <div class="col-sm-6 my-content-item">
+      <div class="my-content-body">
+        <div class="suggested-product-item" style="background-image: url('http://cdn.shopify.com/s/files/1/0324/8561/products/board1_2048x2048_4084376a-9415-4aaf-97f4-f3d26bf406dc.jpeg?v=1454864511');">
+          <p class="my-content-user">
+            <a class="suggested-product-item-name" href="">Nest Cam</a>
+            <span class="activity">suggested by</span>
+            <a href="#">Thomas O'Brien</a>
+          </p>
+          <p class="suggested-product-item-description">Home security made simple</p>
+          <div class="my-content-actions">
+            <a href="#">UPVOTE (89)</a>
+            <a href="#">SHOW COMMENTS (12)</a>
+            <a href="#">REQUEST</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 my-content-item">
+      <div class="my-content-body">
+        <div class="suggested-product-item" style="background-image: url('https://cookingcontestcentral.com/wp-content/uploads/2014/07/DrinkSoma.jpg');">
+          <p class="my-content-user">
+            <a class="suggested-product-item-name" href="">Nest Cam</a>
+            <span class="activity">suggested by</span>
+            <a href="#">Thomas O'Brien</a>
+          </p>
+          <p class="suggested-product-item-description">Home security made simple</p>
+          <div class="my-content-actions">
+            <a href="#">UPVOTE (89)</a>
+            <a href="#">SHOW COMMENTS (12)</a>
+            <a href="#">REQUEST</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 my-content-item">
+      <div class="my-content-body">
+        <div class="suggested-product-item" style="background-image: url('https://blurppy.files.wordpress.com/2012/05/1astudio-headphones-by-colorware-1.jpg');">
+          <p class="my-content-user">
+            <a class="suggested-product-item-name" href="">Nest Cam</a>
+            <span class="activity">suggested by</span>
+            <a href="#">Thomas O'Brien</a>
+          </p>
+          <p class="suggested-product-item-description">Home security made simple</p>
+          <div class="my-content-actions">
+            <a href="#">UPVOTE (89)</a>
+            <a href="#">SHOW COMMENTS (12)</a>
+            <a href="#">REQUEST</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 my-content-item">
+      <div class="my-content-body">
+        <div class="suggested-product-item" style="background-image: url('http://www.technobuffalo.com/wp-content/uploads/2015/03/Apple-Watch-Event-2015-New-MacBook-Hands-On-Gold-1.jpg');">
+          <p class="my-content-user">
+            <a class="suggested-product-item-name" href="">Nest Cam</a>
+            <span class="activity">suggested by</span>
+            <a href="#">Thomas O'Brien</a>
+          </p>
+          <p class="suggested-product-item-description">Home security made simple</p>
+          <div class="my-content-actions">
+            <a href="#">UPVOTE (89)</a>
+            <a href="#">SHOW COMMENTS (12)</a>
+            <a href="#">REQUEST</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>

@@ -97,6 +97,10 @@ angular
           url: '/buzz',
           templateUrl: 'modules/theme/client/mocks/buzz.html'
         })
+        .state('navbar.theme.mocks.single-buzz', {
+          url: '/single-buzz',
+          templateUrl: 'modules/theme/client/mocks/single-buzz.html'
+        })
         .state('navbar.theme.mocks.suggest', {
           url: '/suggest',
           templateUrl: 'modules/theme/client/mocks/suggest.html'
