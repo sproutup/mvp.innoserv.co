@@ -8,10 +8,8 @@
   <!-- Content -->
   <div class="col-sm-9">
     <div class="detail-conversation-thread">
-      <div class="back"><a ui-sref="navbar.conversation.list">Back to all messages</a></div>
-      <hr>
+      <div class="back"><a ui-sref="navbar.conversation.list"><i class="fa fa-angle-left"></i>Back to all messages</a></div>
       <up-message-channel channel="messageCtrl.getChannelId()" on-start="messageCtrl.startChannel()"/>
     </div>
   </div>
 </div>
-

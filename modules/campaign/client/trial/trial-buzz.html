@@ -39,12 +39,7 @@
       <up-content ng-repeat="item in buzzCtrl.content" content="item" state="user.buzz"></up-content>
     </div>
     <div class="col-sm-5 campaign-buzz-column right" ng-init="campaign.loadChannel()">
-      <div class="product-trial-item--messages">
-        <div class="message-header">
-          <p><i class="fa fa-commenting"></i>{{campaign.item.company.name}}</p>
-        </div>
-        <up-message-channel channel="campaign.channelId" on-start="campaign.startChannel()"/>
-      </div>
+      <up-message-channel channel="campaign.channelId" on-start="campaign.startChannel()"/>
     </div>
   </div>
 </div>
