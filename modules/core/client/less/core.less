@@ -2643,7 +2643,16 @@ ul.browse-campaign-sidenav li a.active {
   text-align: left;
   color: @main-text-white;
   margin: 0px auto;
-  padding: 100px 15px 100px;
+  padding: 120px 15px 100px;
+}
+
+.campaign-info-wrapper .brand-logo {
+  z-index: 10;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border: 2px solid @sproutup-grey;
+  border-radius: 8px;
 }
 
 .campaign-info-wrapper h1
@@ -2949,6 +2958,16 @@ ul.company-profile-social-buttons p {
   background-color: @sproutup-lightergrey;
 }
 
+.suggest-page .my-content-item {
+  padding: 0px 7px 14px;
+}
+
+.suggest-wrapper {
+  max-width: 1250px;
+  margin: 0px auto;
+  padding: 100px 23px;
+}
+
 .message-page {
   max-width: 960px;
   margin: 0px auto;
@@ -3083,7 +3102,7 @@ ul.company-profile-social-buttons p {
   color: @main-text-white;
   z-index: 10;
   position: relative;
-  margin: 30px 0px 0px;
+  margin: 0px;
 }
 
 .campaign-countdown-wrapper .header {
@@ -3742,7 +3761,7 @@ p[class="campaign-countdown-unit"] {
   left: 0;
   bottom: 0;
   content: "";
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.45)); /* Standard syntax */
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)); /* Standard syntax */
 }
 
 .suggested-product-item form {
@@ -3786,7 +3805,7 @@ p[class="campaign-countdown-unit"] {
   font-size: 9.5pt;
   font-weight: 400;
   line-height: 1.6;
-  padding: 15px 0px;
+  padding: 10px 0px;
 }
 
 .suggested-product-item .my-content-actions {
@@ -3980,7 +3999,7 @@ p[class="campaign-countdown-unit"] {
   font-size: 16pt;
   padding: 20px 10px;
   margin: 0px;
-  color: @main-text-verylight;
+  color: @main-text-light;
 }
 
 .user-profile-activities.empty-state .cta {
@@ -4631,6 +4650,31 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
 
 .stats-details-row .stat.earning {
   color: @sproutup-blue;
+}
+
+.message-page .empty-state {
+  background-color: white;
+  padding: 0px;
+  text-align: center;
+  border: 1px solid @sproutup-lightgrey;
+  margin-bottom: 40px;
+}
+
+.message-page .empty-state img {
+  width: 100%;
+}
+
+.message-page .empty-state p {
+  font-weight: 300;
+  font-size: 16pt;
+  padding: 20px 10px;
+  margin: 0px;
+  color: @main-text-light;
+}
+
+.top-picks-wrapper {
+  padding: 0px 10px;
+  margin: 0px;
 }
 
 // media queries
