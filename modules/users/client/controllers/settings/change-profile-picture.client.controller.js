@@ -22,7 +22,7 @@ angular.module('users').controller('ChangeProfilePictureController', ['$scope', 
       console.log('save:');
       $http(req).then(function(val){
         // Populate user object
-        $scope.user = Authentication.user = val;
+        $scope.user = Authentication.user = val.data;
       }, function(err){
         console.log('err: ', err);
       });
