@@ -1,12 +1,6 @@
 <div class="row message-page">
-  <div class="col-sm-2">
-    <div class="list-group">
-      <a href="#" class="list-group-item current">All</a>
-      <a href="#" class="list-group-item">Unread</a>
-    </div>
-  </div>
   <!-- Content -->
-  <div class="col-sm-10" ng-init="messageCtrl.listMyChannels()">
+  <div class="col-sm-12" ng-init="messageCtrl.listMyChannels()">
     <ul class="list-conversation-thread">
       <li class="unread" ng-repeat="channel in messageCtrl.channels">
         <a ui-sref="navbar.conversation.view({channelId: channel.id})">

@@ -6,8 +6,8 @@
     <div ng-show="vm.empty" class="empty-state">If you have questions about the campaign or product, feel free to message us. Please do NOT spam us, though ^_^</div>
     <div ng-hide="vm.empty" ng-repeat="message in vm.messages" ng-class="{inbound: vm.me.id !== message.userId, outbound: vm.me.id === message.userId}" class="message-blurb">
       <div class="sender">
-        <span ng-show="vm.me.id === message.userId">Me</span>
-        <span ng-show="vm.me.id !== message.userId">{{message.userId}}{{vm.conversation.channel.members[message.userId].user.displayName}}</span>
+        <span class="name" ng-show="vm.me.id === message.userId">Me</span>
+        <span class="name" ng-show="vm.me.id !== message.userId">{{message.userId}}{{vm.conversation.channel.members[message.userId].user.displayName}}</span>
         <span class="time">{{message.created | fromNow}}</span>
       </div>
       <div class="content" ng-bind="message.body"></div>

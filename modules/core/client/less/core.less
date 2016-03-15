@@ -2969,7 +2969,7 @@ ul.company-profile-social-buttons p {
 }
 
 .message-page {
-  max-width: 1024px;
+  max-width: 800px;
   margin: 0px auto;
   padding: 100px 15px 40px;
 }
@@ -3299,20 +3299,27 @@ p[class="campaign-countdown-unit"] {
 }
 
 .message-blurb {
-  margin: 0px 0px 12px;
+  margin: 0px 0px 15px;
 }
 
 .message-blurb .sender {
-  font-weight: 700;
-  font-size: 8pt;
-  padding: 0px 0px 5px;
-  color: @main-text-lighter;
+  padding: 0px 0px 7px;
+  font-size: 8.5pt;
 }
 
-.message-blurb .sender span {
+.message-blurb .sender .name {
+  font-weight: 700;
+  color: @main-text-light;
+}
+
+.message-blurb .sender .spacer {
+  padding: 0px 5px;
+}
+
+.message-blurb .sender .time {
   font-weight: 400;
-  color: @main-text-verylight;
-  padding-left: 10px;
+  color: @sproutup-grey;
+  padding-left: 15px;
 }
 
 .message-blurb .content {
@@ -4097,11 +4104,6 @@ ul.list-conversation-thread li a {
   font-weight: 400;
   font-size: 10.5pt;
   line-height: 1.5;
-}
-
-ul.list-conversation-thread li.unread .sproutup-table.messages .text {
-  font-weight: 700;
-  font-size: 10pt;
 }
 
 .sproutup-table.messages .time {
