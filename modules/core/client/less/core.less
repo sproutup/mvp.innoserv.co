@@ -2701,7 +2701,7 @@ ul.browse-campaign-sidenav li a.active {
   position: relative;
   font-weight: 400;
   font-size: 13pt;
-  margin: 15px 15px 30px;
+  margin: 0px 15px 30px;
   padding: 10px 15px;
 }
 
@@ -2969,7 +2969,7 @@ ul.company-profile-social-buttons p {
 }
 
 .message-page {
-  max-width: 960px;
+  max-width: 800px;
   margin: 0px auto;
   padding: 100px 15px 40px;
 }
@@ -3199,8 +3199,8 @@ p[class="campaign-countdown-unit"] {
   border-bottom: 6px solid @sproutup-blue;
 }
 
-.detail-conversation-thread .product-trial-item--messages,
-.campaign-buzz-wrapper .product-trial-item--messages {
+
+.conversation-wrapper {
   margin: 0px 0px 15px;
   border: 1px solid @sproutup-lightgrey;
   padding: 0px;
@@ -3247,17 +3247,25 @@ p[class="campaign-countdown-unit"] {
 }
 
 .message-header {
-  padding: 15px;
+  padding: 20px 15px 15px;
   margin: 0px 15px;
   border-bottom: 1px solid @form-border;
 }
 
 .message-header p {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 11pt;
   color: @main-text-lighter;
   padding: 0px;
   margin: 0px;
+}
+
+.message-header p a {
+  color: @sproutup-blue;
+}
+
+.buzz-page .message-header p {
+  font-size: 10pt;
 }
 
 .message-header i {
@@ -3291,20 +3299,27 @@ p[class="campaign-countdown-unit"] {
 }
 
 .message-blurb {
-  margin: 0px 0px 12px;
+  margin: 0px 0px 15px;
 }
 
 .message-blurb .sender {
-  font-weight: 700;
-  font-size: 8pt;
-  padding: 0px 0px 5px;
-  color: @main-text-lighter;
+  padding: 0px 0px 7px;
+  font-size: 8.5pt;
 }
 
-.message-blurb .sender span {
+.message-blurb .sender .name {
+  font-weight: 700;
+  color: @main-text-light;
+}
+
+.message-blurb .sender .spacer {
+  padding: 0px 5px;
+}
+
+.message-blurb .sender .time {
   font-weight: 400;
-  color: @main-text-verylight;
-  padding-left: 10px;
+  color: @sproutup-grey;
+  padding-left: 15px;
 }
 
 .message-blurb .content {
@@ -4077,7 +4092,7 @@ ul.list-conversation-thread li a {
 
 .sproutup-table.messages .name {
   font-weight: 700;
-  padding-bottom: 2px;
+  padding-bottom: 3px;
   color: @main-text-lighter;
 }
 
@@ -4088,16 +4103,14 @@ ul.list-conversation-thread li a {
 .sproutup-table.messages .text {
   font-weight: 400;
   font-size: 10.5pt;
-}
-
-ul.list-conversation-thread li.unread .sproutup-table.messages .text {
-  font-weight: 700;
+  line-height: 1.5;
 }
 
 .sproutup-table.messages .time {
   text-align: right;
   color: @sproutup-grey;
   font-size: 8.5pt;
+  width: 20%;
 }
 
 .detail-conversation-thread {
@@ -4105,19 +4118,18 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
   padding: 15px 30px 25px;
 }
 
-.detail-conversation-thread hr {
-  border-top: 1px solid @sproutup-grey;
-  margin-top: 10px;
-}
-
 .detail-conversation-thread .back {
   font-weight: 400;
   font-size: 9.5pt;
-  padding: 0px;
+  padding: 10px 0px 15px;
 }
 
 .detail-conversation-thread .back a {
   color: @sproutup-blue;
+}
+
+.detail-conversation-thread .back a i {
+  margin-right: 12px;
 }
 
 .detail-conversation-thread .back a:hover {
@@ -4283,20 +4295,22 @@ ul.list-conversation-thread li.unread .sproutup-table.messages .text {
 .signin-page .signup-login-footer {
   z-index: 10;
   position: relative;
+  max-width: 750px;
+  margin: 0px auto;
 }
 
-.signup-login-header .twitter-profile-photo {
-  padding: 0px 10px 12px;
+.signup-login-header .profile-photo {
+  padding: 40px 10px 12px;
 }
 
-.signup-login-header .twitter-profile-photo img {
+.signup-login-header .profile-photo img {
   width: 64px;
   height: 64px;
   border-radius: 100%;
   border: 1px solid @sproutup-lightgrey;
 }
 
-.signup-login-header .twitter-profile-name {
+.signup-login-header .profile-name {
   font-weight: 700;
   font-size: 12.5pt;
   color: @main-text-light;

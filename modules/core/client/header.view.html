@@ -13,7 +13,7 @@
               <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
           </li>
           <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin" data-toggle="collapse" data-target="#sproutup-collapse-navbar">SIGN IN</a></li>
-          <li ng-if="navbar.authentication.user.profileImageURL"><img class="profile-img" ng-src="{{navbar.authentication.user.profileImageURL}}"></li>
+          <li ng-if="navbar.authentication.user.avatar.file"><img class="profile-img" ng-src="{{navbar.authentication.user.avatar.file.url}}?w=36&h=36"></li>
           <li ng-if="navbar.authentication.user.displayName">
             <span>{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></span>
             <ul role="menu">
@@ -40,7 +40,7 @@
           <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>
         <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin">SIGN IN</a></li>
-        <li ng-if="navbar.authentication.user.profileImageURL"><img class="profile-img" ng-src="{{navbar.authentication.user.profileImageURL}}"></li>
+        <li ng-if="navbar.authentication.user.avatar.file"><img class="profile-img" ng-src="{{navbar.authentication.user.avatar.file.url}}?w=84&h=84"></li>
         <li uib-dropdown ng-if="navbar.authentication.user">
             <a href="#" uib-dropdown-toggle>{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></a>
             <ul uib-dropdown-menu class="navbar-wide" role="menu">
