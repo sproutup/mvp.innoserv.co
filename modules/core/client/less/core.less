@@ -4776,14 +4776,23 @@ ul.list-conversation-thread li a {
   }
 
   .dropdown-menu li a {
-    padding: 6px 20px;
+    padding: 10px 20px;
     font-weight: 400;
     font-size: 11pt;
-    color: @main-text-white;
+    color: @main-text-light;
+  }
+
+  .dropdown-menu ul.submenu-in-dropdown {
+    list-style: none;
+    padding: 15px 0px 0px;
+  }
+
+  .dropdown-menu ul.submenu-in-dropdown li {
+    padding: 0px 0px 15px;
   }
 
   .dropdown-menu li a:hover {
-    color: #fff;;
+    color: @main-text;
   }
 
   .suggest-preview {
