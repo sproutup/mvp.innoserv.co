@@ -3,7 +3,7 @@
     <!-- user photo -->
     <div class="col-sm-2 my-content-user-avatar post-user-avatar">
         <a ui-sref="user.profile.buzz({ nickname: vm.content.user.nickname })">
-            <img class="img-responsive my-content-user-img img-center" ng-src="{{ vm.content.user.profileImageURL }}">
+            <img class="img-responsive my-content-user-img img-center" ng-src="{{ vm.content.user.avatar.file.url ? vm.content.user.avatar.file.url+'?w=80&h=80' : vm.content.user.profileImageURL}}">
         </a>
     </div>
     <!-- content thumbnail -->
