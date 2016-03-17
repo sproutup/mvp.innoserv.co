@@ -62,4 +62,8 @@
       <a href="#" ng-repeat="video in vm.videos" ng-click="selectVideo(video)"><p>{{ video.snippet.title }}</p></a>
     </div>
   </div>
+  <!--content added -->
+  <div ng-show="vm.contentState==='error'">
+    <div>Oops, something went wrong. <button class="btn btn-sm sproutup-btn-xs ng-click" style="margin-left: 7px" ng-click="vm.contentState = 'select'">Back</button>
+  </div>
 </div>

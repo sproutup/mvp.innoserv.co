@@ -8,7 +8,10 @@ var config = require('config/config'),
  */
 exports.renderIndex = function (req, res) {
   res.render('modules/core/server/index', {
-    user: req.user || null, title: 'SproutUp - A Community for Product Influencers and Enthusiasts'
+    user: req.user || null,
+    title: 'SproutUp - A Community for Product Influencers and Enthusiasts',
+    mixpanelToken: config.mixpanel.token,
+    googleMapsKey: config.google.maps.key
   });
 };
 

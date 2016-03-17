@@ -90,6 +90,7 @@ function upPostContentController(YouTubeService, Authentication) {
       vm.contentState = 'youtube';
       vm.videos = res.items;
     }, function(err) {
+      vm.contentState = 'error';
       console.log('err here', err);
     });
   };

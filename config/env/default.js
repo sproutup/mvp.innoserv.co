@@ -11,6 +11,14 @@ module.exports = {
     host: process.env.REDIS_HOST || '127.0.0.1',
     port: process.env.REDIS_PORT || '6379'
   },
+  google: {
+    maps: {
+      key: process.env.GOOGLE_MAPS_KEY || 'AIzaSyDnnN1fL1vkptQQLdTL17pFrnH3XOlDNdo'
+    }
+  },
+  mixpanel: {
+    token: process.env.MIXPANEL_TOKEN || '90327b5fc1f60a0b7b51366fa5b432dc'
+  },
   port: process.env.PORT || 9000,
   templateEngine: 'swig',
   // Session Cookie settings
