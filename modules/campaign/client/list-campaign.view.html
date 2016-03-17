@@ -1,5 +1,5 @@
 <!-- campaigns -->
-<div class="col-sm-9 browse-campaign-main" ng-init="vm.find()">
+<div class="col-sm-9 browse-campaign-main">
   <div class="row browse-campaign-section trial">
     <h4><span>Try products</span>&#x1F680;<a href="#" class="btn btn-sm browse-all-button">More to try</a></h4>
     <div class="col-md-4 col-sm-6 campaign-list-item" ng-repeat="item in vm.campaigns | filter: {type:'trial', status: 1}: vm.returnMatch">
