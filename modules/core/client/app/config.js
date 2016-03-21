@@ -9,7 +9,7 @@ var ApplicationConfiguration = (function () {
     'ngAnimate',
     'ui.router',
     'ui.bootstrap',
-    'ui.utils',
+    'ui.validate',
     'chart.js',
     'angularMoment',
     'ngCookies',
