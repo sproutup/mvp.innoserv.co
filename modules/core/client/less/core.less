@@ -2563,6 +2563,24 @@ ul.browse-campaign-sidenav li a.active {
   margin: 20px auto;
 }
 
+.campaign-join-form .message {
+  padding: 8px 14px;
+  font-size: 9.5pt;
+  background-color: @sproutup-dark-grey;
+  text-align: left;
+  //margin-bottom: 10px;
+}
+
+.campaign-join-form .message.success {
+  background-color: @sproutup-green;
+  color: white;
+}
+
+.campaign-join-form .message.error {
+  background-color: @sproutup-salmon;
+  color: white;
+}
+
 .campaign-join-action {
   z-index: 10;
   position: relative;
@@ -2601,11 +2619,15 @@ ul.browse-campaign-sidenav li a.active {
 }
 
 .campaign-join-form input {
-  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.campaign-join-form textarea {
+  margin-top: 10px;
 }
 
 .campaign-join-form .intl-tel-input {
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .campaign-join-form .intl-tel-input .country-list {
