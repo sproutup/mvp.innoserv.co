@@ -5,7 +5,7 @@ angular.module('buzz').run(['Menus',
     Menus.addMenuItem('navbar', {
       title: 'HOME',
       state: 'navbar.home',
-      roles: ['guest', 'user', 'admin'],
+      roles: ['*'],
       position: 10
     });
   }

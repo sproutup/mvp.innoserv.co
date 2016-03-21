@@ -31,6 +31,7 @@
     <div class="collapse navbar-collapse" id="sproutup-collapse-navbar">
       <ul class="nav navbar-nav navbar-item navbar-right navbar-wide">
         <li ng-repeat="item in navbar.menu.items | orderBy: 'position'"
+          ng-if="item.shouldRender(navbar.authentication.user);"
           ng-switch="item.type"
           ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" nav-item-wrapper nav-item-main
           dropdown="item.type === 'dropdown'">

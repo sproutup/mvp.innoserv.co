@@ -6,7 +6,7 @@ angular.module('campaign').run(['Menus',
       title: 'DISCOVER',
       state: 'navbar.discover.list',
       class: 'campaign',
-      roles: ['guest','user', 'admin'],
+      roles: ['*'],
       position: 20
     });
   }
