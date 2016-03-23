@@ -2024,14 +2024,26 @@ p[class="hangout-countdown-unit"] {
   max-width: 960px;
 }
 
+.banner-container {
+  margin: 0px;
+  height: 500px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
 .feature-campaign-banner {
-  min-height: 510px;
+  height: 500px;
+  width: 100%;
   margin: 0px;
   background-position:center;
   background-repeat:no-repeat;
   background-size: cover;
   color: #fff;
-  position: relative;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
 }
 
 .feature-campaign-banner::after{
@@ -2093,11 +2105,7 @@ p[class="hangout-countdown-unit"] {
 .feature-campaign-info-wrapper button {
   z-index: 10;
   position: relative;
-  margin-top: 40px;
-}
-
-.banner-container {
-  margin: 0px;
+  margin-top: 140px;
 }
 
 .carousel {
@@ -4710,6 +4718,28 @@ ul.list-conversation-thread li a {
   margin: 0px;
 }
 
+.swap-animation.ng-enter, .swap-animation.ng-leave {
+  transition: 1.0s ease-in-out all;
+  -webkit-transition: 1.0s ease-in-out all;
+  -moz-transition: 1.0s ease-in-out all;
+}
+
+.swap-animation.ng-enter {
+  top: 100%;
+}
+
+.swap-animation.ng-enter-active {
+  top: 0px;
+}
+
+.swap-animation.ng-leave {
+  top: 0px;
+}
+
+.swap-animation.ng-leave-active {
+  top: -100%;
+}
+
 // media queries
 @media (min-width: 1200px) {
   .product-trial-stage-avatar {
@@ -4915,6 +4945,18 @@ ul.list-conversation-thread li a {
 
   .signin-page {
     padding-top: 25px;
+  }
+
+  .feature-campaign-info-wrapper button {
+    margin-top: 100px;
+  }
+
+  .feature-campaign-info-wrapper h1 {
+    font-size: 14pt;
+  }
+
+  .feature-campaign-info-wrapper h2 {
+    font-size: 10pt;
   }
 
 }
