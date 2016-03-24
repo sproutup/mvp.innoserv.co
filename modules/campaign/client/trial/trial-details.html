@@ -27,8 +27,8 @@
         </div>
 
         <div class="about-campaign-section" ng-if="vm.myContribution.state === 1">
-          <h3 ng-if="vm.myContribution.trial.shippingState === 1"><strong>Product Shipped</strong></h3>
-          <h3>Nice! You were approved on <strong>{{ vm.myContribution.approved[0].created | date }}</strong></h3>
+          <h3 ng-if="vm.myContribution.trial.shippingState === 1"><strong>Hooray! Product is on your way</strong></h3>
+          <h3 ng-if="!vm.myContribution.trial.shippingState">Nice! Your request was approved on <strong>{{ vm.myContribution.approved[0].created | date }}</strong></h3>
           <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
         </div>
 
