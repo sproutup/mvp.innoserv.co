@@ -21,8 +21,8 @@
           <h3>You requested on <strong>{{ vm.myContribution.created | date }}</strong></h3>
           <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
           <div class="about-campaign-actions">
-            <a ui-sref="navbar.activity.trial.edit({ campaignId: vm.campaign.id, userId: vm.user.id })" class="btn btn-md sproutup-btn-sm" style="padding-top: 9px">Edit request</a>
-            <button class="btn btn-md sproutup-btn-sm cancel" ng-click="vm.cancelRequest()">Cancel request</button>
+            <a ui-sref="navbar.activity.trial.edit({ campaignId: vm.campaign.id, userId: vm.user.id })" class="btn sproutup-btn-sm outline">Edit request</a>
+            <button class="btn sproutup-btn-sm outline" ng-click="vm.cancelRequest()">Cancel request</button>
           </div>
         </div>
 
