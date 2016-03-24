@@ -30,7 +30,7 @@
         <div class="my-content-body" ng-if="vm.content.type === 1">
           <div class="suggested-product-item" style="background-image: url({{ vm.content.meta.image }});">
             <p class="my-content-user">
-              <a class="suggested-product-item-name" ng-href="{{ vm.content.url }}">{{ vm.content.body }}</a>
+              <a class="suggested-product-item-name" ng-href="{{ vm.content.url }}" target="_blank">{{ vm.content.body }}</a>
               <span class="activity">suggested by</span>
               <a href="#">{{ vm.content.user.displayName }}</a>
             </p>
