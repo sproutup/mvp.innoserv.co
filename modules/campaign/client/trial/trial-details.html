@@ -7,7 +7,7 @@
       </div>
       <div class="company-profile-products-section">
         <div class="about-product--video embedded" ng-if="vm.campaign.product.video">
-         <embed-video data-ng-href="{{ vm.campaign.product.video }}" width=560 height=315></embed-video>
+         <embed-video data-ng-href="{{ vm.campaign.product.video }}" width=560 height=315 autohide=1 showinfo=0></embed-video>
         </div>
       </div>
       <div class="about-campaign-section" ng-if="vm.campaign.product.description">
@@ -48,7 +48,7 @@
           <li ng-if="vm.campaign.typeOfContent.indexOf('tw')>0"><i class="fa fa-dot-circle-o"></i>We are looking for Tweeters.</li>
           <li ng-if="vm.campaign.typeOfContent.indexOf('pi')>0"><i class="fa fa-dot-circle-o"></i>{{vm.typeOfContent}} We are looking for Pinners.</li>
           <li ng-if="vm.campaign.trial.keepProduct"><i class="fa fa-dot-circle-o"></i>We will send you free product to review and keep.</li>
-          <li ng-if="vm.campaign.trial.keepProduct==false"><i class="fa fa-dot-circle-o"></i>We will send you <strong><i>loaner</i></strong> product to review and then return to us.</li>
+          <li ng-if="vm.campaign.trial.keepProduct==false"><i class="fa fa-dot-circle-o"></i>We will send you <strong><u>loaner</u></strong> product to review and then return to us. NO cost on you.</li>
         </ul>
       </div>
       <div class="about-campaign-section">
