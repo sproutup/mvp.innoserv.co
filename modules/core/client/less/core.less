@@ -2020,18 +2020,31 @@ p[class="hangout-countdown-unit"] {
 }
 
 .browse-wrapper.my-campaigns {
-  padding-top: 100px;
+  padding: 0px;
+  margin: 0px auto;
   max-width: 960px;
 }
 
+.banner-container {
+  margin: 0px;
+  height: 500px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
 .feature-campaign-banner {
-  min-height: 510px;
+  height: 500px;
+  width: 100%;
   margin: 0px;
   background-position:center;
   background-repeat:no-repeat;
   background-size: cover;
   color: #fff;
-  position: relative;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
 }
 
 .feature-campaign-banner::after{
@@ -2093,11 +2106,7 @@ p[class="hangout-countdown-unit"] {
 .feature-campaign-info-wrapper button {
   z-index: 10;
   position: relative;
-  margin-top: 40px;
-}
-
-.banner-container {
-  margin: 0px;
+  margin-top: 140px;
 }
 
 .carousel {
@@ -2108,23 +2117,20 @@ p[class="hangout-countdown-unit"] {
   width: 10%;
 }
 
-.carousel-control .fa {
-  position: absolute;
-  top: 50%;
-  z-index: 5;
-  width: 30px;
-  height: 30px;
-  margin-top: -15px;
-  font-size: 30px;
+.carousel-indicators li {
+  margin: 0px 2px;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
 }
 
-.carousel-control .fa-angle-left {
-  left: 25%;
+.carousel-indicators li.active {
+  margin: 0px 2px;
+  width: 10px;
+  height: 10px;
 }
 
-.carousel-control .fa-angle-right {
-  right: 25%;
-}
 
 .browse-campaigns-main {
   padding: 0px 15px 50px;
@@ -2563,6 +2569,24 @@ ul.browse-campaign-sidenav li a.active {
   margin: 20px auto;
 }
 
+.campaign-join-form .message {
+  padding: 8px 14px;
+  font-size: 9.5pt;
+  background-color: @sproutup-dark-grey;
+  text-align: left;
+  //margin-bottom: 10px;
+}
+
+.campaign-join-form .message.success {
+  background-color: @sproutup-green;
+  color: white;
+}
+
+.campaign-join-form .message.error {
+  background-color: @sproutup-salmon;
+  color: white;
+}
+
 .campaign-join-action {
   z-index: 10;
   position: relative;
@@ -2601,11 +2625,15 @@ ul.browse-campaign-sidenav li a.active {
 }
 
 .campaign-join-form input {
-  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.campaign-join-form textarea {
+  margin-top: 10px;
 }
 
 .campaign-join-form .intl-tel-input {
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .campaign-join-form .intl-tel-input .country-list {
@@ -2690,6 +2718,8 @@ ul.browse-campaign-sidenav li a.active {
 .campaign-info-wrapper h1 span a {
   color: @main-text-white;
   font-weight: 400;
+  font-size: 13pt;
+  padding-left: 5px;
 }
 
 .campaign-info-wrapper h1 span a:hover {
@@ -3286,7 +3316,7 @@ p[class="campaign-countdown-unit"] {
   background-color: @sproutup-verylightgrey;
   font-weight: 400;
   font-size: 11pt;
-  margin: 5px 0px;
+  margin: 0px 0px 5px;
   color: @main-text-veryverylight;
   line-height: 1.6;
   padding: 50px 20px;
@@ -4691,6 +4721,28 @@ ul.list-conversation-thread li a {
   margin: 0px;
 }
 
+.swap-animation.ng-enter, .swap-animation.ng-leave {
+  transition: 1.0s ease-in-out all;
+  -webkit-transition: 1.0s ease-in-out all;
+  -moz-transition: 1.0s ease-in-out all;
+}
+
+.swap-animation.ng-enter {
+  top: 100%;
+}
+
+.swap-animation.ng-enter-active {
+  top: 0px;
+}
+
+.swap-animation.ng-leave {
+  top: 0px;
+}
+
+.swap-animation.ng-leave-active {
+  top: -100%;
+}
+
 // media queries
 @media (min-width: 1200px) {
   .product-trial-stage-avatar {
@@ -4896,6 +4948,18 @@ ul.list-conversation-thread li a {
 
   .signin-page {
     padding-top: 25px;
+  }
+
+  .feature-campaign-info-wrapper button {
+    margin-top: 100px;
+  }
+
+  .feature-campaign-info-wrapper h1 {
+    font-size: 14pt;
+  }
+
+  .feature-campaign-info-wrapper h2 {
+    font-size: 10pt;
   }
 
 }

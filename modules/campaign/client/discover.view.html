@@ -1,14 +1,11 @@
 <div class="banner-container" ng-init="vm.startInterval()">
-  <div class="banner" ng-animate-swap="vm.next">
-    <div class="feature-campaign-banner" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/e43e8342-c41b-4d66-aa3a-133eccfe93de_0_admin.jpg?w=1600')">
-        <div class="row feature-campaign-info-wrapper">
-          <div class="col-sm-12">
-            <h1>{{vm.next.name}}</h1>
-            <h2>{{vm.next.tagline}}</h2>
-            <p>by <span><a href="#">{{vm.next.company.name}}</a></span></p>
-            <button href="#" class="btn btn-lg sproutup-btn-lg-main">Try it out</button>
-          </div>
-        </div>
+  <div class="feature-campaign-banner swap-animation" ng-animate-swap="vm.next" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/e43e8342-c41b-4d66-aa3a-133eccfe93de_0_admin.jpg?w=1600')">
+    <div class="row feature-campaign-info-wrapper">
+      <div class="col-sm-12">
+        <h1>{{vm.next.name}}</h1>
+        <h2>{{vm.next.tagline}}</h2>
+        <button href="#" class="btn btn-lg sproutup-btn-lg-main">View More</button>
+      </div>
     </div>
   </div>
 </div>

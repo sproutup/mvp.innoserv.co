@@ -1,18 +1,22 @@
+<div ng-if="!vm.user" class="marketing-container" style="background-image: url('modules/core/client/img/about/about-banner.jpg');">
+  <div class="marketing-header">
+    <h1>Passion. Creativity. Influence.</h1>
+    <h2>Our mission is to help <strong><i>creative minds</i></strong> across the globe build their personal brands. We bring you the opportunities to create content of snackable size or long form. We connect you with your audience and other creators. And, we help you make good money (or earn other kinds of reward).</h2>
+  </div>
+  <div class="marketing-cta">
+    <button class="btn sproutup-btn-lg-main" subject-present state="user.buzz">JOIN TODAY</button>
+  </div>
+</div>
+
 <div class="buzz-page">
-  <div class="row buzz-wrapper" infinite-scroll='vm.loadContent()' infinite-scroll-disabled='vm.busy' infinite-scroll-distance='2' ng-init='vm.loadContent()'>
+  <div class="row buzz-wrapper" ng-class="{ 'no-user-session': !vm.user }" infinite-scroll='vm.loadContent()' infinite-scroll-disabled='vm.busy' infinite-scroll-distance='2' ng-init='vm.loadContent()'>
     <div class="col-sm-8 my-content-left-rail">
-      <!-- if no user logs in, display this message -->
-      <div class="col-sm-12 my-content-item" ng-if="!vm.user">
-        <div class="my-content-headsup">
-          <p class="my-content-headsup-text">Welcome to SproutUp, a community for tech influencers and enthusiasts. <a subject-present state="user.buzz" href="#">Join today</a>.</p>
-        </div>
-      </div>
       <div class="add-content-wrapper" ng-if="vm.user">
         <div class="col-sm-12 my-content-item">
           <!-- user photo -->
           <div class="col-sm-2 my-content-user-avatar post-content-user">
             <a ui-sref="user.profile.buzz({ nickname: vm.user.nickname })">
-              <img class="img-responsive my-content-user-img img-center" ng-src="{{ vm.user.profileImageURL }}">
+              <img class="img-responsive my-content-user-img img-center" ng-src="{{ vm.user.avatar.file.url ? vm.user.avatar.file.url+'?w=80&h=80' : vm.user.profileImageURL}}">
             </a>
           </div>
           <!-- content thumbnail -->
@@ -20,7 +24,7 @@
             <div class="my-content-item--summary">
               <form name="form" novalidate>
                 <div class="post-new-content-selector" ng-init="vm.state = 'write'">
-                  <a ng-class="{'active': vm.state === 'write'}" href="#" ng-click="vm.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write Something</a>
+                  <a ng-class="{'active': vm.state === 'write'}" href="#" ng-click="vm.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write something</a>
                   <a ng-class="{'active': vm.state === 'suggest'}" href="#" ng-click="vm.state = 'suggest'"><i class="fa fa-binoculars"></i>Suggest product</a>
                 </div>
                 <div class="my-content-new">
@@ -53,6 +57,7 @@
         <div class="content" ng-repeat="campaign in vm.campaigns">
           <up-trial-highlight campaign="campaign"></up-trial-highlight>
         </div>
+        <div class="link"><a ui-sref="navbar.discover.list">See more stuff<i class="fa fa-angle-right"></i></a></p></div>
       </div>
       <!-- Highlighted hangouts -->
       <div class="buzz-sidebar-item">
@@ -66,13 +71,13 @@
       <!-- for brands -->
       <div class="buzz-sidebar-item">
         <div class="title brand">Are you a product creator?</div>
-        <div class="subtitle">Collaborate with an amazing community of <strong>product influencers</strong> and <strong>enthusiasts</strong> to grow your brand and products!!</div>
+        <div class="subtitle">Create beautiful campaigns. Collaborate with a community of <strong>influencers</strong> and <strong>enthusiasts</strong>. Generate high quality leads. And grow your business.</div>
         <div class="content">
-          <a href="#">
+          <a href="https://dashboard.sproutup.co">
             <img class="img-responsive" src="modules/core/client/img/creator/dashboard.jpg">
           </a>
         </div>
-        <div class="link"><a href="#">Get started here<i class="fa fa-angle-right"></i></a></p></div>
+        <div class="link"><a href="https://dashboard.sproutup.co">Get started here<i class="fa fa-angle-right"></i></a></p></div>
       </div>
       <!-- footer -->
       <div class="buzz-sidebar-item">

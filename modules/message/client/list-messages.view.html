@@ -13,7 +13,7 @@
                   </td>
                   <td>
                     <div class="name" ng-bind="channel.last.user.displayName"></div>
-                    <div class="text" ng-bind="channel.last.body"></div>
+                    <div class="text" ng-bind="(channel.last.body | limitTo: 140) + (channel.last.body.length < 140 ? '' : '...')"></div>
                   </td>
                   <td class="time"><span am-time-ago="channel.last.created"></span></td>
                 </tr>

@@ -25,7 +25,7 @@ function config($stateProvider) {
     })
     .state('navbar.discover.list', {
       url: '',
-      templateUrl: 'modules/campaign/client//list-campaign.view.html',
+      templateUrl: 'modules/campaign/client/list-campaign.view.html',
       data: {
           title: 'Campaign - List'
       }

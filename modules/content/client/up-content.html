@@ -3,7 +3,7 @@
     <!-- user photo -->
     <div class="col-sm-2 my-content-user-avatar post-user-avatar">
         <a ui-sref="user.profile.buzz({ nickname: vm.content.user.nickname })">
-            <img class="img-responsive my-content-user-img img-center" ng-src="{{ vm.content.user.profileImageURL }}">
+            <img class="img-responsive my-content-user-img img-center" ng-src="{{ vm.content.user.avatar.file.url ? vm.content.user.avatar.file.url+'?w=80&h=80' : vm.content.user.profileImageURL}}">
         </a>
     </div>
     <!-- content thumbnail -->
@@ -19,10 +19,10 @@
                 <div class="my-content-text" ng-bind-html="vm.content.body | urlify"></div>
                 <up-meta item="vm.content.meta" url="vm.content.url"></up-meta>
             </div>
+            <hr>
             <div class="my-content-actions">
                 <up-like likes="vm.content.likes" up-id="vm.content.id" up-type="models.post" state="{{ vm.state }}" params="vm.params"></up-like>
                 <a analytics-on="click" analytics-event="Comment Buzz Post" analytics-id="{{ vm.content.id }}" href="#" subject-present="vm.commentToggle()" state="{{ vm.state }}" params="vm.params" ng-click="vm.content.commenting != vm.content.commenting">COMMENTS ({{ vm.content.comment.length || 0 }})</a>
-                <a analytics-on="click" analytics-event="Share Buzz Post" product="{{vm.content.product.id}}" id="3000" analytics-id="{{ vm.content.id }}" ng-href="{{ vm.content.tweetContentLink }}">SHARE</a>
                 <span class="analytics-total" ng-if="vm.content.analytics.total > 0">{{ vm.content.analytics.total | humanizeNumber }} views</span>
             </div>
         </div>
@@ -30,11 +30,11 @@
         <div class="my-content-body" ng-if="vm.content.type === 1">
           <div class="suggested-product-item" style="background-image: url({{ vm.content.meta.image }});">
             <p class="my-content-user">
-              <a class="suggested-product-item-name" ng-href="{{ vm.content.url }}">{{ vm.content.body }}</a>
+              <a class="suggested-product-item-name" ng-href="{{ vm.content.url }}" target="_blank">{{ vm.content.body }}</a>
               <span class="activity">suggested by</span>
               <a href="#">{{ vm.content.user.displayName }}</a>
             </p>
-            <p class="suggested-product-item-description">{{ vm.content.meta.description | limitTo: 120 }}{{vm.content.meta.description.length < 120 ? '' : '...'}}</p>
+            <p ng-show="{{ vm.content.meta.description.length > 0 }}" class="suggested-product-item-description">{{ vm.content.meta.description | limitTo: 120 }}{{ vm.content.meta.description.length < 120 ? '' : '...' }}</p>
             <div class="my-content-actions">
               <up-like likes="vm.content.likes" up-id="vm.content.id" up-type="models.post" state="{{ vm.state }}" params="vm.params"></up-like>
               <a href="#" ng-click="vm.content.commenting = !vm.content.commenting">COMMENTS ({{ vm.content.comment.length || 0 }})</a>

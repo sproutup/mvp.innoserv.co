@@ -1,18 +1,18 @@
 <div class="about-campaign-page" style="background-image: url('modules/core/client/img/about-campaign-background.jpg')">
   <div class="row about-campaign-wrapper" ng-init="vm.findMyContribution()">
     <div class="col-sm-7 about-campaign-column">
+      <div class="about-campaign-section" ng-if="vm.campaign.description">
+        <h3>WHAT'S IT ABOUT</h3>
+        <p>{{ vm.campaign.description }}</p>
+      </div>
       <div class="company-profile-products-section">
         <div class="about-product--video embedded" ng-if="vm.campaign.product.video">
          <embed-video data-ng-href="{{ vm.campaign.product.video }}" width=560 height=315></embed-video>
         </div>
       </div>
-      <div class="about-campaign-section" ng-if="vm.campaign.description">
+      <div class="about-campaign-section" ng-if="vm.campaign.product.description">
         <h3>PRODUCT DETAILS</h3>
         <p>{{ vm.campaign.product.description }}</p>
-      </div>
-      <div class="about-campaign-section" ng-if="vm.campaign.description">
-        <h3>TRIAL DETAILS</h3>
-        <p>{{ vm.campaign.description }}</p>
       </div>
     </div>
     <div class="col-sm-5 about-campaign-column">
@@ -21,14 +21,14 @@
           <h3>You requested on <strong>{{ vm.myContribution.created | date }}</strong></h3>
           <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
           <div class="about-campaign-actions">
-            <a ui-sref="navbar.activity.trial.edit({ campaignId: vm.campaign.id, userId: vm.user.id })" class="btn btn-md sproutup-btn-sm" style="padding-top: 9px">Edit request</a>
-            <button class="btn btn-md sproutup-btn-sm cancel" ng-click="vm.cancelRequest()">Cancel request</button>
+            <a ui-sref="navbar.activity.trial.edit({ campaignId: vm.campaign.id, userId: vm.user.id })" class="btn sproutup-btn-sm outline">Edit request</a>
+            <button class="btn sproutup-btn-sm outline" ng-click="vm.cancelRequest()">Cancel request</button>
           </div>
         </div>
 
         <div class="about-campaign-section" ng-if="vm.myContribution.state === 1">
-          <h3 ng-if="vm.myContribution.trial.shippingState === 1"><strong>Product Shipped</strong></h3>
-          <h3>Nice! You were approved on <strong>{{ vm.myContribution.approved[0].created | date }}</strong></h3>
+          <h3 ng-if="vm.myContribution.trial.shippingState === 1"><strong>Hooray! Product is on your way</strong></h3>
+          <h3 ng-if="!vm.myContribution.trial.shippingState">Nice! Your request was approved on <strong>{{ vm.myContribution.approved[0].created | date }}</strong></h3>
           <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
         </div>
 
@@ -36,18 +36,9 @@
           <p>You completed your trial on <strong>{{ vm.myContribution.completed[0].created | date }}</strong></p>
         </div>
       </div>
-      <div class="about-campaign-section">
-        <h3><strong>180</strong> have requested</h3>
-        <div class="about-campaign-participants">
-          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-          <a href="#"><img src="assets/images/user/hLjUxD7m_400x400.jpg"></a>
-        </div>
+      <div class="about-campaign-section" ng-if="vm.campaign.instructions">
+        <h3>INSTRUCTIONS</h3>
+        <p>{{ vm.campaign.instructions }}</p>
       </div>
       <div class="about-campaign-section">
         <h3>MORE DETAILS</h3>
