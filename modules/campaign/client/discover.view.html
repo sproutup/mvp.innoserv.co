@@ -1,5 +1,5 @@
 <div class="banner-container" ng-init="vm.startInterval()">
-  <div class="feature-campaign-banner swap-animation" ng-animate-swap="vm.next" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/e43e8342-c41b-4d66-aa3a-133eccfe93de_0_admin.jpg?w=1600')">
+  <div class="feature-campaign-banner swap-animation" ng-animate-swap="vm.next" ng-style="{'background-image': 'url({{ vm.next.banner.file.url || 'modules/core/client/img/default-product-banner.jpg' }})'}">
     <div class="row feature-campaign-info-wrapper">
       <div class="col-sm-12">
         <h1>{{vm.next.name}}</h1>

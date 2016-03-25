@@ -17,7 +17,7 @@
     </div>
     <div class="col-sm-5 about-campaign-column">
       <div ng-if="vm.myContribution">
-        <div class="about-campaign-section" ng-if="vm.myContribution.state === 0">
+        <div class="about-campaign-section" ng-if="vm.myContribution.state == 0">
           <h3>You requested on <strong>{{ vm.myContribution.created | date }}</strong></h3>
           <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
           <div class="about-campaign-actions">

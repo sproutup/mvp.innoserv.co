@@ -1,21 +1,20 @@
 <div class="buzz-page">
   <div class="row campaign-buzz-wrapper" infinite-scroll='buzzCtrl.loadGroupContent(campaign.item.groupId)' infinite-scroll-disabled='buzzCtrl.busy' infinite-scroll-distance='2' ng-init="buzzCtrl.loadGroupContent(campaign.item.groupId)">
     <div class="col-sm-7 campaign-buzz-column left">
-      <!-- new post -->
-      <div class="col-sm-12 my-content-item" ng-if="!auth.user">
-        <div class="my-content-headsup">
-          <p class="my-content-headsup-text">It sounds silly, but you have to <a subject-present state="user.buzz" href="#">sign in</a> to post anything.</p>
-        </div>
+      <!-- empty state -->
+      <div class="col-sm-12 my-content-item empty-state" ng-if="buzzCtrl.content.length == 0" hide-if-auth>
+        <p>Bummer! We're still waiting for the first post.</p>
+        <img class="img-responsive" src="modules/core/client/img/giphy/no-content.gif">
       </div>
-      <div class="col-sm-12 my-content-item" ng-if="auth.user">
+      <!-- new post -->
+      <div class="col-sm-12 my-content-item" show-if-auth>
         <!-- user photo -->
         <div class="col-sm-2 my-content-user-avatar post-content-user">
           <a ui-sref="user.profile.buzz({ nickname: buzzCtrl.user.nickname })">
-            <img class="img-responsive my-content-user-img img-center" alt="" ng-src="{{ buzzCtrl.user.profileImageURL }}"/>
+            <img class="img-responsive my-content-user-img img-center" alt="" ng-src="{{ buzzCtrl.user.avatar.file.url ? buzzCtrl.user.avatar.file.url+'?w=80&h=80' : buzzCtrl.user.profileImageURL }}"/>
           </a>
         </div>
         <div class="col-sm-10 my-content-body">
-          <!-- New Post -->
           <div class="my-content-item--summary">
             <form name="buzzCtrl.form" novalidate>
               <p class="my-content-user buzz-user">
@@ -29,6 +28,10 @@
                 <div up-post-write ng-model="buzzCtrl.post" required ng-show="buzzCtrl.state === 'write'"></div>
                 <div up-post-content ng-model="buzzCtrl.post" networks="yt, ig, url" required ng-show="buzzCtrl.state === 'content'"></div>
               </div>
+              <div class="remove-my-content-og-content" ng-click="buzzCtrl.post.meta = buzzCtrl.post.url = null" ng-if="buzzCtrl.post.meta && buzzCtrl.state === 'write'">
+                <button class="btn sproutup-btn-square aqua"><i class="fa fa-times"></i></button>
+              </div>
+              <up-meta ng-if="buzzCtrl.state === 'write' && buzzCtrl.post.meta" item="buzzCtrl.post.meta" url="buzzCtrl.post.url"></up-meta>
               <div class="post-new-comment-actions">
                 <button ng-show="buzzCtrl.state === 'write'" ng-disabled="form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.create(vm.campaign.groupId)">
                   <span ng-hide="buzzCtrl.posting">Post</span>
@@ -46,7 +49,7 @@
       <!-- feed -->
       <up-content ng-repeat="item in buzzCtrl.content" content="item" state="user.buzz"></up-content>
     </div>
-    <div class="col-sm-5 campaign-buzz-column right" ng-if="!auth.user">
+    <div class="col-sm-5 campaign-buzz-column right" hide-if-auth>
       <div class="conversation-wrapper">
         <div class="message-header">
           <p><i class="fa fa-commenting"></i>Message</p>
@@ -58,7 +61,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-5 campaign-buzz-column right" ng-init="campaign.loadChannel()" ng-if="auth.user">
+    <div class="col-sm-5 campaign-buzz-column right" ng-init="campaign.loadChannel()" show-if-auth>
       <up-message-channel channel="campaign.channelId" on-start="campaign.startChannel()"/>
     </div>
   </div>
