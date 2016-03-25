@@ -11,7 +11,7 @@
         <!-- user photo -->
         <div class="col-sm-2 my-content-user-avatar post-content-user">
           <a ui-sref="user.profile.buzz({ nickname: buzzCtrl.user.nickname })">
-            <img class="img-responsive my-content-user-img img-center" alt="" ng-src="{{ buzzCtrl.user.profileImageURL }}"/>
+            <img class="img-responsive my-content-user-img img-center" alt="" ng-src="{{ buzzCtrl.user.avatar.file.url ? buzzCtrl.user.avatar.file.url+'?w=80&h=80' : buzzCtrl.user.profileImageURL }}"/>
           </a>
         </div>
         <div class="col-sm-10 my-content-body">
@@ -28,6 +28,10 @@
                 <div up-post-write ng-model="buzzCtrl.post" required ng-show="buzzCtrl.state === 'write'"></div>
                 <div up-post-content ng-model="buzzCtrl.post" networks="yt, ig, url" required ng-show="buzzCtrl.state === 'content'"></div>
               </div>
+              <div class="remove-my-content-og-content" ng-click="buzzCtrl.post.meta = buzzCtrl.post.url = null" ng-if="buzzCtrl.post.meta && buzzCtrl.state === 'write'">
+                <button class="btn sproutup-btn-square aqua"><i class="fa fa-times"></i></button>
+              </div>
+              <up-meta ng-if="buzzCtrl.state === 'write' && buzzCtrl.post.meta" item="buzzCtrl.post.meta" url="buzzCtrl.post.url"></up-meta>
               <div class="post-new-comment-actions">
                 <button ng-show="buzzCtrl.state === 'write'" ng-disabled="form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.create(vm.campaign.groupId)">
                   <span ng-hide="buzzCtrl.posting">Post</span>
