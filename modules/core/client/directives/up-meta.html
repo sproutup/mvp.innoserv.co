@@ -20,7 +20,7 @@
 <!-- if youtube video -->
 <div ng-if="vm.videoUrl" class="my-content-item-main">
   <div class="my-content-video embedded">
-    <embed-video data-ng-href="{{ vm.videoUrl }}" width=560 height=315></embed-video>
+    <embed-video data-ng-href="{{ vm.videoUrl }}" width=560 height=315 autohide=1 showinfo=0></embed-video>
   </div>
   <div class="my-content-og-content">
     <a ng-href="{{ vm.url }}" target="_blank">
