@@ -1,12 +1,16 @@
+<div ng-if="!vm.user" class="marketing-container" style="background-image: url('modules/core/client/img/about/about-banner.jpg');">
+  <div class="marketing-header">
+    <h1>Passion. Creativity. Influence.</h1>
+    <h2>Our mission is to help <strong><i>creative minds</i></strong> across the globe build their personal brands. We bring you the opportunities to create content of snackable size or long form. We connect you with your audience and other creators. And, we help you make good money (or earn other kinds of reward).</h2>
+  </div>
+  <div class="marketing-cta">
+    <button class="btn sproutup-btn-lg-main" subject-present state="user.buzz">JOIN TODAY</button>
+  </div>
+</div>
+
 <div class="buzz-page">
-  <div class="row buzz-wrapper" infinite-scroll='vm.loadContent()' infinite-scroll-disabled='vm.busy' infinite-scroll-distance='2' ng-init='vm.loadContent()'>
+  <div class="row buzz-wrapper" ng-class="{ 'no-user-session': !vm.user }" infinite-scroll='vm.loadContent()' infinite-scroll-disabled='vm.busy' infinite-scroll-distance='2' ng-init='vm.loadContent()'>
     <div class="col-sm-8 my-content-left-rail">
-      <!-- if no user logs in, display this message -->
-      <div class="col-sm-12 my-content-item" ng-if="!vm.user">
-        <div class="my-content-headsup">
-          <p class="my-content-headsup-text">Welcome to SproutUp, a community for tech influencers and enthusiasts. <a subject-present state="user.buzz" href="#">Join today</a>.</p>
-        </div>
-      </div>
       <div class="add-content-wrapper" ng-if="vm.user">
         <div class="col-sm-12 my-content-item">
           <!-- user photo -->
