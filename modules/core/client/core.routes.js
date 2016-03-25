@@ -31,6 +31,17 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       .state('navbar.terms', {
         url: '/terms',
         templateUrl: 'modules/core/client/terms.view.html'
+      })
+      .state('navbar.slug', {
+        url: '/:slug',
+        controller: 'SlugController',
+        controllerAs: 'slug',
+        template: '<div ui-view ng-init="slug.slug()"></div>',
+        resolve: {
+          slugitem: function($stateParams, SlugService) {
+            return SlugService.find($stateParams.slug);
+          }
+        }
       });
   }
 ]);

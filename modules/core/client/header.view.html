@@ -15,7 +15,7 @@
           <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin" data-toggle="collapse" data-target="#sproutup-collapse-navbar">SIGN IN</a></li>
           <hr>
           <ul class="submenu-in-dropdown" ng-if="navbar.authentication.user.displayName">
-            <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
+            <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="navbar.slug({ slug: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
             <li><a analytics-on="click" analytics-event="Enter Account Settings" ui-sref="navbar.settings.profile">Account Settings</a></li>
             <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out">Sign Out</a></li>
           </ul>
@@ -42,7 +42,7 @@
         <li uib-dropdown ng-if="navbar.authentication.user">
             <a href="#" uib-dropdown-toggle>{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></a>
             <ul uib-dropdown-menu class="navbar-wide" role="menu">
-                <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="navbar.user.profile.buzz({ nickname: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
+                <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="navbar.slug({ slug: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
                 <li><a analytics-on="click" analytics-event="View My Stuff" ui-sref="navbar.discover.mine">My Stuff</a></li>
                 <li><a analytics-on="click" analytics-event="View Account Settings" ui-sref="navbar.settings.profile">Account Settings</a></li>
                 <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out">Sign Out</a></li>

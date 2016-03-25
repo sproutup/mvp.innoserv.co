@@ -121,6 +121,17 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
       });
     }
 
+    function loadUserContent(user) {
+      console.log('load user buzz: ', user);
+      vm.busy = true;
+      content = FeedService.buzzUser().query({
+          nickname: user.username,
+          start: position
+      }, function() {
+          loadCallback(content);
+      });
+    }
+
     function create(groupId) {
         if (vm.state === 'write') {
             vm.post.type = 0;

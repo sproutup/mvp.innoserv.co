@@ -1,0 +1,37 @@
+<div class="user-profile-banner">
+
+</div>
+<div class="user-profile-page">
+  <div class="row user-profile-wrapper">
+    <div class="col-sm-3 user-profile-rail left">
+      <img class="img-responsive user-profile-photo" src="https://pbs.twimg.com/profile_images/3515083808/f11b5b878b58fe68aaa3e07d9c1d989d_400x400.jpeg">
+      <div class="user-profile-name">Peter Thiel<sup class="label label-influencer">Influencer</sup></div>
+      <div class="user-profile-bio">Co-founder & Chief Product Officer at SproutUp. Tech enthusiast. Product Lover. Enjoy green tea. The most successful venture captialist in silicon valley.</div>
+      <div class="user-profile-networks">
+        <ul class="list-inline">
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-9 user-profile-rail right">
+      <div class="row user-profile-rail-main">
+        <div class="user-profile-rail--menu">
+          <ul class="list-inline">
+            <li ng-repeat="item in profile.menu.items | orderBy: 'position'"
+              ng-if="item.shouldRender(profile.auth.user);"
+              ng-switch="item.type"
+              ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" nav-item-wrapper nav-item-main
+              dropdown="item.type === 'dropdown'">
+              <a ui-sref="{{item.state}}">{{item.title}}</a>
+            </li>
+          </ul>
+        </div>
+        <!-- tab view -->
+        <div ui-view></div>
+      </div>
+    </div>
+  </div>
+</div>

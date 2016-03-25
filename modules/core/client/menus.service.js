@@ -201,6 +201,16 @@ angular.module('core').service('Menus', [
       roles: ['*']
     });
 
+    //Adding the discover menu
+    this.addMenu('discover', {
+      roles: ['*']
+    });
+
+    //Adding the user profile menu
+    this.addMenu('user.profile.menu', {
+      roles: ['*']
+    });
+
     //Adding the company profile menu
     this.addMenu('settings', {
       roles: ['*']

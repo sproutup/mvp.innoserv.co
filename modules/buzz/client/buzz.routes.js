@@ -23,5 +23,14 @@ function config($stateProvider) {
       data: {
           title: 'Buzz - SproutUp'
       }
+    })
+    .state('navbar.slug.user.buzz' ,{
+      url: '/buzz',
+      templateUrl: 'modules/buzz/client/user-buzz.html',
+      controller: 'BuzzController',
+      controllerAs: 'buzz',
+      data: {
+          title: 'Buzz - SproutUp'
+      }
     });
 }
