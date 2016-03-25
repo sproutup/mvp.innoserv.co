@@ -1,42 +1,62 @@
 <div class="buzz-page">
   <div class="row campaign-buzz-wrapper" infinite-scroll='buzzCtrl.loadGroupContent(campaign.item.groupId)' infinite-scroll-disabled='buzzCtrl.busy' infinite-scroll-distance='2' ng-init="buzzCtrl.loadGroupContent(campaign.item.groupId)">
     <div class="col-sm-7 campaign-buzz-column left">
-      <!-- user photo -->
-      <div class="col-sm-2 my-content-user-avatar post-content-user">
-        <a ui-sref="user.profile.buzz({ nickname: buzzCtrl.user.nickname })">
-          <img class="img-responsive my-content-user-img img-center" alt="" ng-src="{{ buzzCtrl.user.profileImageURL }}"/>
-        </a>
+      <!-- new post -->
+      <div class="col-sm-12 my-content-item" ng-if="!vm.user">
+        <div class="my-content-headsup">
+          <p class="my-content-headsup-text">It sounds silly, but you have to <a subject-present state="user.buzz" href="#">sign in</a> to post anything.</p>
+        </div>
       </div>
-      <div class="col-sm-10 my-content-body">
-        <!-- New Post -->
-        <div class="my-content-item--summary">
-          <form name="buzzCtrl.form" novalidate>
-            <p class="my-content-user buzz-user">
-              <a ui-sref="user.profile.buzz({nickname: buzzCtrl.user.nickname})">{{ buzzCtrl.user.name}}</a>
-            </p>
-            <div class="post-new-content-selector" ng-init="buzzCtrl.state = 'content'">
-              <a ng-class="{'active': buzzCtrl.state === 'content'}" href="#" ng-click="buzzCtrl.state = 'content'"><i class="fa fa-cloud-upload"></i>Submit My Content</a>
-              <a ng-class="{'active': buzzCtrl.state === 'write'}" href="#" ng-click="buzzCtrl.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write Something</a>
-            </div>
-            <div class="my-content-new">
-              <div up-post-write ng-model="buzzCtrl.post" required ng-show="buzzCtrl.state === 'write'"></div>
-              <div up-post-content ng-model="buzzCtrl.post" networks="yt, ig, url" required ng-show="buzzCtrl.state === 'content'"></div>
-            </div>
-            <div class="post-new-comment-actions">
-              <button ng-show="buzzCtrl.state === 'write'" ng-disabled="form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.create(vm.campaign.groupId)">
-                <span ng-hide="buzzCtrl.posting">Post</span>
-                <span us-spinner spinner-key="spinner-1"></span>
-              </button>
-              <button ng-show="buzzCtrl.state === 'content'" ng-disabled="form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.createContent(vm.campaign.groupId)">
-                <span ng-hide="buzzCtrl.posting">Post</span>
-                <span us-spinner spinner-key="spinner-1"></span>
-              </button>
-            </div>
-          </form>
+      <div class="col-sm-12 my-content-item">
+        <!-- user photo -->
+        <div class="col-sm-2 my-content-user-avatar post-content-user">
+          <a ui-sref="user.profile.buzz({ nickname: buzzCtrl.user.nickname })">
+            <img class="img-responsive my-content-user-img img-center" alt="" ng-src="{{ buzzCtrl.user.profileImageURL }}"/>
+          </a>
+        </div>
+        <div class="col-sm-10 my-content-body">
+          <!-- New Post -->
+          <div class="my-content-item--summary">
+            <form name="buzzCtrl.form" novalidate>
+              <p class="my-content-user buzz-user">
+                <a ui-sref="user.profile.buzz({nickname: buzzCtrl.user.nickname})">{{ buzzCtrl.user.name}}</a>
+              </p>
+              <div class="post-new-content-selector" ng-init="buzzCtrl.state = 'content'">
+                <a ng-class="{'active': buzzCtrl.state === 'content'}" href="#" ng-click="buzzCtrl.state = 'content'"><i class="fa fa-cloud-upload"></i>Submit My Content</a>
+                <a ng-class="{'active': buzzCtrl.state === 'write'}" href="#" ng-click="buzzCtrl.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write Something</a>
+              </div>
+              <div class="my-content-new">
+                <div up-post-write ng-model="buzzCtrl.post" required ng-show="buzzCtrl.state === 'write'"></div>
+                <div up-post-content ng-model="buzzCtrl.post" networks="yt, ig, url" required ng-show="buzzCtrl.state === 'content'"></div>
+              </div>
+              <div class="post-new-comment-actions">
+                <button ng-show="buzzCtrl.state === 'write'" ng-disabled="form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.create(vm.campaign.groupId)">
+                  <span ng-hide="buzzCtrl.posting">Post</span>
+                  <span us-spinner spinner-key="spinner-1"></span>
+                </button>
+                <button ng-show="buzzCtrl.state === 'content'" ng-disabled="form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.createContent(vm.campaign.groupId)">
+                  <span ng-hide="buzzCtrl.posting">Post</span>
+                  <span us-spinner spinner-key="spinner-1"></span>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
       <!-- feed -->
       <up-content ng-repeat="item in buzzCtrl.content" content="item" state="user.buzz"></up-content>
+    </div>
+    <div class="col-sm-5 campaign-buzz-column right" ng-if="!vm.user">
+      <div class="conversation-wrapper">
+        <div class="message-header">
+          <p><i class="fa fa-commenting"></i>Message</p>
+        </div>
+        <div class="message-body">
+          <div class="empty-state">
+            <p>If you have questions about the campaign or product, feel free to message us. But you need to sign in first.</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-sm-5 campaign-buzz-column right" ng-init="campaign.loadChannel()">
       <up-message-channel channel="campaign.channelId" on-start="campaign.startChannel()"/>
