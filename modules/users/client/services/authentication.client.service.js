@@ -6,7 +6,8 @@ angular.module('users').factory('Authentication', ['$window',
     var auth = {
       user: $window.user,
       company: {},
-      setCompany: setCompany
+      setCompany: setCompany,
+      isLoggedIn: isLoggedIn
     };
 
     return auth;
@@ -15,7 +16,9 @@ angular.module('users').factory('Authentication', ['$window',
       console.log('set company: ', company.name);
       auth.company = company;
     }
- }
 
-
+    function isLoggedIn(){
+      return auth.user !== '';
+    }
+  }
 ]);
