@@ -5,17 +5,6 @@ angular
   .config(['$stateProvider',
     function config($stateProvider) {
       $stateProvider
-        .state('navbar.theme', {
-          url: '/theme',
-          abstract: true,
-          template: '<ui-view/>',
-          controller: '',
-          controllerAs: ''
-        })
-        .state('navbar.theme.index' ,{
-            url: '',
-            templateUrl: 'modules/theme/client/theme.view.html'
-        })
         .state('navbar.theme.mocks', {
           url: '/mocks',
           abstract: true,

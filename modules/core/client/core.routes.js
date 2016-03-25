@@ -32,6 +32,17 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         url: '/terms',
         templateUrl: 'modules/core/client/terms.view.html'
       })
+      .state('navbar.theme', {
+        url: '/theme',
+        abstract: true,
+        template: '<ui-view/>',
+        controller: '',
+        controllerAs: ''
+      })
+      .state('navbar.theme.index' ,{
+          url: '',
+          templateUrl: 'modules/theme/client/theme.view.html'
+      })      
       .state('navbar.slug', {
         url: '/:slug',
         controller: 'SlugController',
