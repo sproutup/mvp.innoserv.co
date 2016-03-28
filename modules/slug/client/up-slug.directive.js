@@ -17,7 +17,12 @@ function SlugDirective($q, $timeout, $http, SlugService) {
   function linkFunc(scope, el, attr, ctrl) {
     ctrl.$asyncValidators.uniqueslug = function(modelValue, viewValue) {
       if (ctrl.$isEmpty(modelValue)) {
-        // consider empty model valid
+        // consider empty or pristine model valid
+        return $q.when();
+      }
+
+      if (ctrl.$pristine) {
+        // consider pristine model valid
         return $q.when();
       }
 
