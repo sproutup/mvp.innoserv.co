@@ -10,7 +10,12 @@ angular.module('users').config(['$stateProvider',
         url: '',
         templateUrl: 'modules/users/client/profile/profile.header.view.html',
         controller: 'ProfileController',
-        controllerAs: 'profile'
+        controllerAs: 'profile',
+        resolve: {
+          buzz: function(FeedService, slugitem) {
+            return FeedService.getUserBuzz(slugitem.data.item.id, 0);
+          }
+        }
       });
   }
 ]);

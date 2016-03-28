@@ -26,23 +26,7 @@
                 <span class="analytics-total" ng-if="vm.content.analytics.total > 0">{{ vm.content.analytics.total | humanizeNumber }} views</span>
             </div>
         </div>
-
-        <div class="my-content-body" ng-if="vm.content.type === 1">
-          <div class="suggested-product-item" style="background-image: url({{ vm.content.meta.image }});">
-            <p class="my-content-user">
-              <a class="suggested-product-item-name" ng-href="{{ vm.content.url }}" target="_blank">{{ vm.content.body }}</a>
-              <span class="activity">suggested by</span>
-              <a href="#">{{ vm.content.user.displayName }}</a>
-            </p>
-            <p ng-show="{{ vm.content.meta.description.length > 0 }}" class="suggested-product-item-description">{{ vm.content.meta.description | limitTo: 120 }}{{ vm.content.meta.description.length < 120 ? '' : '...' }}</p>
-            <div class="my-content-actions">
-              <up-like likes="vm.content.likes" up-id="vm.content.id" up-type="models.post" state="{{ vm.state }}" params="vm.params"></up-like>
-              <a href="#" ng-click="vm.content.commenting = !vm.content.commenting">COMMENTS ({{ vm.content.comment.length || 0 }})</a>
-<!--               <a href="#">REQUEST</a> -->
-            </div>
-          </div>
-        </div>
-
+        <up-suggestion ng-if="vm.content.type === 1" suggestion="vm.content"></up-suggestion>
         <up-comments commenting="vm.content.commenting" comments="vm.content.comment" up-id="vm.content.id" up-type="Post" state="{{ vm.state }}" params="vm.params" ng-if="vm.content.commenting"></up-comments>
     </div>
 </div>
