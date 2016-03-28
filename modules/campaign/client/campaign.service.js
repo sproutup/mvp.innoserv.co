@@ -32,7 +32,7 @@ function CampaignService($resource, $q){
   }
 
   function listByUser () {
-    return $resource('/api/user/:userId/campaign' { 'query': {method:'GET', isArray:true} });
+    return $resource('/api/user/:userId/campaign', { 'query': {method:'GET', isArray:true} });
   }
 
   function getUserActivities(userId) {
