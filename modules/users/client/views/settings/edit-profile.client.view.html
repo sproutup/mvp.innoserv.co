@@ -19,7 +19,7 @@
     <!-- user name -->
     <div class="row profile-input-row">
       <div class="col-sm-12 profile-input-cell">
-        <input uib-popover="Your SproutUp @username" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Pick a SproutUp username" ng-model="user.username" name="username" ng-model-options="{ debounce: 400 }" username required>
+        <input uib-popover="Your SproutUp @username" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Pick a SproutUp username" ng-model="user.username" name="username" ng-model-options="{ debounce: 400 }" username up-slug required>
         <div ng-show="checking && vm.basicinfoform.username.$pending.username" class="message">Checking if this name is available...</div>
         <div ng-show="vm.basicinfoform.username.$valid" class="message success">Cool, this username is available!</div>
         <div ng-show="vm.basicinfoform.username.$error.username" class="message error">This username is already taken!</div>
