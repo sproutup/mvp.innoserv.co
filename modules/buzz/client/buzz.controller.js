@@ -269,13 +269,13 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     }
 
     function findCampaigns() {
+      vm.campaigns = [];
       CampaignService.campaign().query(function(res) {
-        vm.campaigns = [];
         while (vm.campaigns.length < 2) {
           var randomnumber = Math.ceil(Math.random() * res.length);
           var found = false;
-          for (var i = 0; i < res.length ; i++) {
-            if (vm.campaigns[i] === randomnumber) { found = true; break; }
+          for (var i = 0; i < vm.campaigns.length ; i++) {
+            if (vm.campaigns[i].id === res[randomnumber].id) { found = true; break; }
           }
           if (!found) vm.campaigns[vm.campaigns.length] = res[randomnumber];
         }
@@ -291,8 +291,8 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
         while (vm.hangouts.length < 2) {
           var randomnumber = Math.ceil(Math.random() * res.length);
           var found = false;
-          for (var i = 0; i < res.length ; i++) {
-            if (vm.hangouts[i] === randomnumber) { found = true; break; }
+          for (var i = 0; i < vm.hangouts.length ; i++) {
+            if (vm.hangouts[i].id === res[randomnumber].id) { found = true; break; }
           }
           if (!found) vm.hangouts[vm.hangouts.length] = res[randomnumber];
         }
