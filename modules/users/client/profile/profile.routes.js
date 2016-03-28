@@ -14,6 +14,9 @@ angular.module('users').config(['$stateProvider',
         resolve: {
           buzz: function(FeedService, slugitem) {
             return FeedService.getUserBuzz(slugitem.data.item.id, 0);
+          },
+          activities: function(CampaignService, slugitem) {
+            return CampaignService.getUserActivities(slugitem.data.item.id);
           }
         }
       });

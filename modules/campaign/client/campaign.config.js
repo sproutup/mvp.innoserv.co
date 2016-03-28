@@ -9,5 +9,11 @@ angular.module('campaign').run(['Menus',
       roles: ['*'],
       position: 20
     });
+    Menus.addMenuItem('user.profile.menu', {
+      title: 'Activities',
+      state: 'navbar.slug.user.activities',
+      roles: ['*'],
+      position: 10
+    });
   }
 ]);

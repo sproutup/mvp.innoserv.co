@@ -36,5 +36,12 @@ function config($stateProvider) {
       data: {
           title: 'Campaign - List'
       }
+    })
+    .state('navbar.slug.user.activities' ,{
+      url: '/activities',
+      templateUrl: 'modules/campaign/client/user-activities.html',
+      data: {
+          title: 'Activities - SproutUp'
+      }
     });
 }

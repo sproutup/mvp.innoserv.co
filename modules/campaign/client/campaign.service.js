@@ -4,15 +4,16 @@ angular
   .module('campaign')
   .factory('CampaignService', CampaignService);
 
-CampaignService.$inject = ['$resource'];
+CampaignService.$inject = ['$resource', '$q'];
 
-function CampaignService($resource){
+function CampaignService($resource, $q){
   var user = {};
 
   var service = {
     campaign: campaign,
     campaignSingle: campaignSingle,
     listByUser: listByUser,
+    getUserActivities: getUserActivities,
     listByCompany: listByCompany,
     contributor: contributor,
     listMyContributions: listMyContributions
@@ -31,7 +32,22 @@ function CampaignService($resource){
   }
 
   function listByUser () {
-    return $resource('/api/user/:userId/campaign', { userId:'@id' }, { 'update': {method:'PUT'}, 'query': {method:'GET', isArray:true} } );
+    return $resource('/api/user/:userId/campaign' { 'query': {method:'GET', isArray:true} });
+  }
+
+  function getUserActivities(userId) {
+    var defer = $q.defer();
+    var promise = defer.promise;
+
+    listByUser().query({
+      userId: userId
+    }, function(response) {
+      return defer.resolve(response);
+    }, function(errorResponse) {
+      return defer.reject(errorResponse);
+    });
+
+    return promise;
   }
 
   function listByCompany () {
