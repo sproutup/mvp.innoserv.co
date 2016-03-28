@@ -193,7 +193,8 @@ gulp.task('protractor', function () {
 
 // Lint CSS and JavaScript files.
 gulp.task('lint', function(done) {
-  runSequence('less', ['csslint', 'jshint'], done);
+  // runSequence('less', ['csslint', 'jshint'], done);
+ runSequence('less', ['jshint'], done);
 });
 
 // Lint project files and minify them into two production files.

@@ -1,34 +1,44 @@
 'use strict';
 
-angular.module('users').controller('EditProfileController', ['$scope', '$http', '$location', 'Users', 'Authentication',
-  function ($scope, $http, $location, Users, Authentication) {
-    $scope.user = Authentication.user;
+angular
+  .module('users')
+  .controller('EditProfileController', EditProfileController);
 
-    // Update a user profile
-    $scope.updateUserProfile = function (isValid) {
-      if (isValid) {
-        $scope.success = $scope.error = null;
-        var user = new Users($scope.user);
+EditProfileController.$inject = ['$http', '$location', 'Users', 'Authentication'];
 
-        user.$update(function (response) {
-          $scope.success = true;
-          Authentication.user = response;
-        }, function (response) {
-          $scope.error = response.data.message;
-        });
-      } else {
-        $scope.submitted = true;
-      }
-    };
+function EditProfileController($http, $location, Users, Authentication) {
+  var vm = this;
+  vm.user = {};
+  vm.updateUserProfile = updateUserProfile;
+  vm.emailConfirmation = emailConfirmation;
 
-    // Send another email confirmation
-    $scope.emailConfirmation = function() {
-        $http.post('/api/users/email/confirmation').success(function (response) {
-            $scope.message = 'Email sent successfully';
-            $scope.success = true;
-        }).error(function (response) {
-            $scope.message = 'Email failed to send';
-        });
-    };
+  vm.user.displayName = Authentication.user.displayName;
+  vm.user.email = Authentication.user.email;
+  vm.user.username = Authentication.user.username;
+  vm.user.description = Authentication.user.description;
+  vm.user.phone = Authentication.user.phone;
+  vm.user.address = Authentication.user.address;
+
+  // Update a user profile
+  function updateUserProfile () {
+    vm.success = vm.error = null;
+    var user = new Users(vm.user);
+
+    user.$update(function (response) {
+      vm.success = true;
+      Authentication.user = response;
+    }, function (response) {
+      vm.error = response.data.message;
+    });
   }
-]);
+
+  // Send another email confirmation
+  function emailConfirmation () {
+      $http.post('/api/users/email/confirmation').success(function (response) {
+          vm.message = 'Email sent successfully';
+          vm.success = true;
+      }).error(function (response) {
+          vm.message = 'Email failed to send';
+      });
+  }
+}

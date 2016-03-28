@@ -17,7 +17,9 @@ angular.module('users').config(['$stateProvider',
       })
       .state('navbar.settings.profile', {
         url: '/profile',
-        templateUrl: 'modules/users/client/views/settings/edit-profile.client.view.html'
+        templateUrl: 'modules/users/client/views/settings/edit-profile.client.view.html',
+        controller: 'EditProfileController',
+        controllerAs: 'profile'
       })
       .state('company.navbar.user.password', {
         url: '/password',
