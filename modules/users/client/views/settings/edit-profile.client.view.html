@@ -4,7 +4,7 @@
     <!-- email -->
     <div class="row profile-input-row">
       <div class="col-sm-12 profile-input-cell">
-        <input uib-popover="Your email" popover-trigger="focus" type="email" class="form-control form-validate form-input medium" placeholder="Email" ng-model="profile.user.email">
+        <input id="email" name="email" type="email" class="form-control form-validate form-input medium" placeholder="Email" ng-model="profile.user.email">
         <div class="message error">Email not verified <a href="#">Resend a link</a></div>
       </div>
     </div>
@@ -12,24 +12,31 @@
     <!-- full name -->
     <div class="row profile-input-row">
       <div class="col-sm-12 profile-input-cell">
-        <input popover="Your full name" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Full Name" ng-model="profile.user.displayName" required>
+        <input popover="Your full name" id="fullname" name="fullname" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Full Name" ng-model="profile.user.displayName" required>
+        <div ng-messages="profile.basicinfoform.fullname.$error" ng-show="profile.basicinfoform.fullname.$touched">
+          <div class="message error" ng-message="required">Your name cannot be empty.</div>
+        </div>
+
       </div>
     </div>
 
     <!-- user name -->
     <div class="row profile-input-row">
       <div class="col-sm-12 profile-input-cell">
-        <input uib-popover="Your SproutUp @username" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Pick a SproutUp username" ng-model="profile.user.username" name="username" ng-model-options="{ debounce: 400 }" username up-slug required>
-        <div ng-show="checking && vm.basicinfoform.username.$pending.username" class="message">Checking if this name is available...</div>
-        <div ng-show="vm.basicinfoform.username.$valid" class="message success">Cool, this username is available!</div>
-        <div ng-show="vm.basicinfoform.username.$error.username" class="message error">This username is already taken!</div>
+        <input type="text" class="form-control form-validate form-input medium" placeholder="Pick a SproutUp username" ng-model="profile.user.username" id="username" name="username" ng-model-options="{ debounce: 400 }" ng-pattern="/^[a-zA-Z0-9]+$/" ng-minlength="3" up-slug required>
+        <div ng-messages="profile.basicinfoform.username.$error" ng-show="profile.basicinfoform.username.$touched">
+          <div class="message error" ng-message="required">A user without a username? Silly.</div>
+          <div class="message error" ng-message="uniqueslug">This username has been taken.</div>
+          <div class="message error" ng-message="minlength">Your username has to be at least 3 characters long.</div>
+          <div class="message error" ng-message="pattern">Your username can only have letters and numbers. It can't have any spaces either.</div>
+        </div>
       </div>
     </div>
 
     <!-- short bio -->
     <div class="row profile-input-row">
       <div class="col-sm-12 profile-input-cell">
-        <textarea uib-popover="Short bio of yourself" popover-trigger="focus" class="form-control form-input-textarea no-resize" placeholder="Write a short bio of yourself. Visible to other users and brands." rows="2" ng-model="profile.user.description"></textarea>
+        <textarea class="form-control form-input-textarea no-resize" placeholder="Write a short bio of yourself. Visible to other users and brands." rows="2" ng-model="profile.user.description"></textarea>
       </div>
     </div>
 
@@ -60,11 +67,11 @@
 
 
     <!-- TODO: change to SproutUp heads-up message style -->
-    <div data-ng-show="profile.success" class="text-center text-success">
+    <!-- <div data-ng-show="profile.success" class="text-center text-success">
       <strong>Profile Saved Successfully</strong>
     </div>
     <div data-ng-show="profile.error" class="text-center text-danger">
       <strong data-ng-bind="error"></strong>
-    </div>
+    </div> -->
   </form>
 </div>
