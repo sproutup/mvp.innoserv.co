@@ -16,7 +16,7 @@ function EditProfileController($http, $location, Users, Authentication) {
   vm.user.email = Authentication.user.email;
   vm.user.username = Authentication.user.username;
   vm.user.description = Authentication.user.description;
-  vm.user.tel = Authentication.user.tel;
+  vm.user.phone = Authentication.user.phone;
   vm.user.address = Authentication.user.address;
 
   // Update a user profile
