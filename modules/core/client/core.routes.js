@@ -5,7 +5,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
   function ($stateProvider, $urlRouterProvider) {
 
     // Redirect to 404 when route not found
-    $urlRouterProvider.otherwise('not-found');
+    $urlRouterProvider.otherwise('navbar.not-found');
 
     // Home state routing
     $stateProvider
@@ -32,19 +32,8 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         url: '/terms',
         templateUrl: 'modules/core/client/terms.view.html'
       })
-      .state('navbar.theme', {
-        url: '/theme',
-        abstract: true,
-        template: '<ui-view/>',
-        controller: '',
-        controllerAs: ''
-      })
-      .state('navbar.theme.index' ,{
-          url: '',
-          templateUrl: 'modules/theme/client/theme.view.html'
-      })      
       .state('navbar.slug', {
-        url: '/:slug',
+        url: '/{slug: ^(?!theme|discover|hangout|conversation|settings|authentication).*$}',
         controller: 'SlugController',
         controllerAs: 'slug',
         template: '<div ui-view ng-init="slug.slug()"></div>',
