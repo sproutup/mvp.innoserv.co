@@ -1,6 +1,6 @@
 <form name="form" novalidate>
   <div class="my-content-new">
-    <input ng-model="item.url" up-embed ng-change="onChange()" type="url" class="form-control form-input medium" placeholder="The product site URL" required>
+    <input ng-model="item.url" up-embed ng-change="onChange()" type="url" class="form-control form-input medium" placeholder="The product site URL" required up-http-prefix>
     <input ng-model="item.name" ng-change="onChange()" type="text" class="form-control form-input medium" placeholder="The product name" required>
   </div>
 </form>
