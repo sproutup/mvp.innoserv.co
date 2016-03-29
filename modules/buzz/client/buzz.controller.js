@@ -34,6 +34,8 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     vm.create = create;
     vm.createContent = createContent;
     vm.list = list;
+    vm.findCampaigns = findCampaigns;
+    vm.findHangouts = findHangouts;
     vm.post = {
         body: ''
     };
@@ -41,8 +43,6 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
         body: ''
     };
 
-    findCampaigns();
-    findHangouts();
     $rootScope.sharing = false;
     vm.user = Authentication.user;
 
