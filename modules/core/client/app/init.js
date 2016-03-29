@@ -25,6 +25,18 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
   }
 ]);
 
+angular.module(ApplicationConfiguration.applicationModuleName).config(function ($urlRouterProvider) {
+  // if the path doesn't match any of the urls you configured
+  // otherwise will take care of routing the user to the
+  // specified url
+//  $urlRouterProvider.otherwise('/index');
+
+  // Example of using function rule as param
+//  $urlRouterProvider.otherwise(function ($injector, $location) {
+//    return '/a/valid/url';
+//  });
+});
+
 // Setting spinner defaults
 angular.module(ApplicationConfiguration.applicationModuleName).config(['usSpinnerConfigProvider', function (usSpinnerConfigProvider) {
   usSpinnerConfigProvider.setDefaults({
@@ -63,11 +75,17 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
 
   // Record previous state
   $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+    console.log('stateChangeSuccess: ', toState.name);
     $state.previous = {
       state: fromState,
       params: fromParams,
       href: $state.href(fromState, fromParams)
     };
+  });
+
+  $rootScope.$on('$stateChangeError',
+  function(event, toState, toParams, fromState, fromParams, error){
+    console.log('stateChangeError: ', toState.name, error);
   });
 });
 
