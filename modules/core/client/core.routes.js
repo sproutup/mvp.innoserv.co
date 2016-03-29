@@ -1,11 +1,29 @@
 'use strict';
 
 // Setting up route
-angular.module('core').config(['$stateProvider', '$urlRouterProvider',
-  function ($stateProvider, $urlRouterProvider) {
+angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatcherFactoryProvider',
+  function ($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider) {
+
+    var patt = new RegExp('^[a-zA-Z0-9]+$');
+
+    $urlMatcherFactoryProvider.type('slugItem', {
+      decode: function(val) {
+        return val.toLowerCase();
+      },
+      encode: function(val) {
+        return val;
+      },
+      equals: function(a, b) {
+        return this.is(a) && a === b;
+      },
+      is: function(val) {
+        return patt.test(val);
+      },
+      pattern: /(?!theme$|discover$|hangout$|conversation$|settings$|authentication$)[a-zA-Z0-9]+/
+    });
 
     // Redirect to 404 when route not found
-    $urlRouterProvider.otherwise('navbar.not-found');
+    $urlRouterProvider.otherwise('/not-found');
 
     // Home state routing
     $stateProvider
@@ -33,10 +51,12 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'modules/core/client/terms.view.html'
       })
       .state('navbar.slug', {
-        url: '/{slug: ^(?!theme$|discover$|hangout$|conversation$|settings$|authentication$).*}',
+        //url: '/{slug: ^(?!theme$|discover$|hangout$|conversation$|settings$|authentication$).*}',
+        url: '/{slug:slugItem}',
+        //url: '/:slug',
         controller: 'SlugController',
         controllerAs: 'slug',
-        template: '<div ui-view ng-init="slug.slug()"></div>',
+        template: '<div ui-view></div>',
         resolve: {
           slugitem: function($stateParams, SlugService) {
             return SlugService.find($stateParams.slug);
