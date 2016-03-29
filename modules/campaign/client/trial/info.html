@@ -1,6 +1,6 @@
-<form name="form">
-  <fieldset>
-    <div class="campaign-banner join" style="background-image: url('https://d30xksqof6w2my.cloudfront.net/e43e8342-c41b-4d66-aa3a-133eccfe93de_0_admin.jpg?w=1600')" ng-init="vm.findOne()">
+<form name="form" ng-init="vm.findOne()">
+  <fieldset ng-if="vm.campaignInit">
+    <div class="campaign-banner join" ng-style="{'background-image': 'url({{ vm.campaign.banner.file.url || 'modules/core/client/img/default-product-banner.jpg' }})'}">
       <div class="row campaign-join-wrapper">
         <div class="col-lg-12">
           <h1>Thanks for requesting product trial!</h1>
