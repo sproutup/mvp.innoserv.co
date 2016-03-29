@@ -40,6 +40,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
     CampaignService.campaign().get({
       campaignId: $state.params.campaignId
     }, function(res) {
+      vm.campaignInit = true;
       vm.campaign = res;
     }, function(err) {
       //$state.go('landing.default');

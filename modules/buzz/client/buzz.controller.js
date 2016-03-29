@@ -34,6 +34,8 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     vm.create = create;
     vm.createContent = createContent;
     vm.list = list;
+    vm.findCampaigns = findCampaigns;
+    vm.findHangouts = findHangouts;
     vm.post = {
         body: ''
     };
@@ -41,8 +43,6 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
         body: ''
     };
 
-    findCampaigns();
-    findHangouts();
     $rootScope.sharing = false;
     vm.user = Authentication.user;
 
@@ -272,7 +272,7 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
       vm.campaigns = [];
       CampaignService.campaign().query(function(res) {
         while (vm.campaigns.length < 2) {
-          var randomnumber = Math.ceil(Math.random() * res.length);
+          var randomnumber = Math.ceil(Math.random() * (res.length - 1));
           var found = false;
           for (var i = 0; i < vm.campaigns.length ; i++) {
             if (vm.campaigns[i].id === res[randomnumber].id) { found = true; break; }
@@ -289,7 +289,7 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
       vm.hangouts = [];
       HangoutService.hangout().query(function(res) {
         while (vm.hangouts.length < 2) {
-          var randomnumber = Math.ceil(Math.random() * res.length);
+          var randomnumber = Math.ceil(Math.random() * (res.length - 1));
           var found = false;
           for (var i = 0; i < vm.hangouts.length ; i++) {
             if (vm.hangouts[i].id === res[randomnumber].id) { found = true; break; }

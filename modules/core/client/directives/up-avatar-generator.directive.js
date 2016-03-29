@@ -4,9 +4,9 @@
 
 angular
     .module('core')
-    .directive('upAvatar', upAvatar);
+    .directive('upAvatarGenerator', upAvatarGenerator);
 
-function upAvatar() {
+function upAvatarGenerator() {
   var directive = {
     restrict: 'A',
     link: function (scope, element, attrs) {
@@ -50,7 +50,7 @@ function upAvatar() {
       context.font = attrs.fontsize + 'px Arial';
       context.textAlign = 'center';
       context.fillStyle = '#FFF';
-      context.fillText(initials, canvasCssWidth / 2, canvasCssHeight / 1.5);
+      context.fillText(initials, canvasCssWidth / 1, canvasCssHeight / 1);
     }
   };
 
