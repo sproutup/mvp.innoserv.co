@@ -33,7 +33,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'modules/core/client/terms.view.html'
       })
       .state('navbar.slug', {
-        url: '/{slug: ^(?!theme|discover|hangout|conversation|settings|authentication).*$}',
+        url: '/{slug: ^(?!theme$|discover$|hangout$|conversation$|settings$|authentication$).*}',
         controller: 'SlugController',
         controllerAs: 'slug',
         template: '<div ui-view ng-init="slug.slug()"></div>',
