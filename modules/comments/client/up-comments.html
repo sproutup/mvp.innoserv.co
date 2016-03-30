@@ -2,12 +2,12 @@
   <!-- Existing comments -->
   <div class="row my-content-comment-row" ng-repeat="comment in vm.comments | orderBy: 'createdAt'">
     <div class="col-sm-1 my-content-user-avatar comment-user-avatar">
-      <a ui-sref="user.profile.buzz({ nickname: comment.user.nickname })">
-        <img class="img-responsive post-comment-user-img-circle img-center" ng-src="{{ comment.user.avatar.file.url ? comment.user.avatar.file.url+'?w=80&h=80' : comment.user.profileImageURL }}">
+      <a ui-sref="navbar.slug({ slug: comment.user.username })">
+        <img class="img-responsive post-comment-user-img-circle img-center" up-avatar="comment.user" width="80" height="80">
       </a>
     </div>
     <div class="col-sm-11 my-content-comment-blurb">
-      <p class="my-content-user comment"><a ui-sref="user.profile.buzz({ nickname: comment.user.nickname })">{{ comment.userId }}</a><span class="my-content-timestamp comment">{{ comment.created | fromNow }}</span></p>
+      <p class="my-content-user comment"><a ui-sref="navbar.slug({ slug: comment.user.username })">{{ comment.user.displayName }}</a><span class="my-content-timestamp comment">{{ comment.created | fromNow }}</span></p>
       <p class="my-content-text comment" ng-bind-html="comment.body | urlify"></p>
     </div>
   </div>
@@ -15,7 +15,7 @@
   <!-- New comment from current user -->
   <div class="row my-content-comment-row">
     <div class="col-sm-1 my-content-user-avatar comment-user-avatar">
-      <img class="img-responsive post-comment-user-img-circle img-center" ng-src="{{ vm.user.avatar.file.url ? vm.user.avatar.file.url+'?w=80&h=80' : vm.user.profileImageURL }}">
+      <img class="img-responsive post-comment-user-img-circle img-center" up-avatar="vm.user" width="80" height="80">
     </div>
 
     <div class="col-md-11 my-content-comment-blurb">
