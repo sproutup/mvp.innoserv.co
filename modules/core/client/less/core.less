@@ -3904,16 +3904,20 @@ p[class="campaign-countdown-unit"] {
 }
 
 .user-profile-rail.left {
-  padding: 0px 25px 0px 10px;
+  padding: 0px 20px 0px 10px;
   margin: 0px;
-  width: 22%;
+  width: 21%;
+}
+
+.user-profile-rail.left .user-profile-photo {
+  width: 100%;
 }
 
 .user-profile-rail.right {
-  padding: 0px 10px 0px 25px;
+  padding: 0px 10px 0px 20px;
   margin: 0px;
   border-left: 1px dashed @sproutup-grey;
-  width: 78%;
+  width: 79%;
 }
 
 .user-profile-rail.right .user-profile-rail-main {
@@ -3942,7 +3946,7 @@ p[class="campaign-countdown-unit"] {
 
 .user-profile-bio {
   font-weight: 400;
-  font-size: 10.5pt;
+  font-size: 10pt;
   padding: 15px 0px 0px;
   line-height: 1.6;
 }
@@ -4018,6 +4022,12 @@ p[class="campaign-countdown-unit"] {
   color: @sproutup-blue;
 }
 
+.user-profile-rail--misc .buzz-sidebar-item .title .comingsoon {
+  font-size: 9.5pt;
+  color: @main-text-verylight;
+  margin-left: 10px;
+}
+
 .user-profile-rail--misc .buzz-sidebar-item .title .stats-highlight {
   color: @sproutup-green;
   font-size: 15pt;
@@ -4031,6 +4041,7 @@ p[class="campaign-countdown-unit"] {
 
 .user-profile-activities {
   margin-bottom: 15px;
+  border: 1px solid @sproutup-lightgrey;
 }
 
 .user-profile-activities.empty-state {

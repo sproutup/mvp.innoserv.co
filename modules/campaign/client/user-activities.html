@@ -1,3 +1,7 @@
+<div class="user-profile-activities empty-state" ng-if="profile.activities.length === 0">
+  <p>Err... we cannot find any activities yet.</p>
+  <img class="img-responsive" src="modules/theme/client/img/giphy/no-activities.gif">
+</div>
 <div class="user-profile-activities" ng-repeat="activity in profile.activities">
   <a ui-sref="navbar.campaign.trial.view.details({campaignId: activity.campaign.id})">
     <div class="buzz-sidebar-content-item" ng-style="{'background-image': 'url({{ activity.campaign.banner.file.url || 'modules/core/client/img/default-product-banner.jpg' }})'}">
