@@ -44,6 +44,10 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
       });
     };
 
+    $scope.back = function () {
+      $state.go($state.previous.state.name || 'navbar.home', $state.previous.params);
+    };
+
     $scope.signin = function () {
       $http.post('/api/auth/signin', $scope.credentials).success(function (response) {
         $scope.authentication.user = response;

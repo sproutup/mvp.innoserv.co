@@ -1,0 +1,21 @@
+<!-- email login -->
+<form name="loginForm" class="loginForm" ng-submit="signin()" novalidate>
+  <div class="signup-login-form">
+    <div ng-show="true">
+      <div class="signup-login-form--error-message" ng-show="error"><i class="fa fa-minus-circle"></i>Err... seems like invalid email or password</div>
+    </div>
+    <input class="form-control signup-login-input" id="email" name="email" type="email" ng-model="credentials.username" required placeholder="Email address">
+    <div ng-messages="loginForm.email.$error" role="alert" ng-show="loginForm.email.$touched">
+      <p class="help-block text-danger" ng-message="required">Email is required.</p>
+      <p class="help-block text-danger" ng-message="email">Not a valid email</p>
+    </div>
+    <input class="form-control signup-login-input" id="password" name="password" type="password" ng-model="credentials.password" required placeholder="Password">
+    <div ng-messages="loginForm.password.$error" role="alert"  ng-show="loginForm.password.$touched">
+        <p class="help-block text-danger" ng-message="required">Password is required.</p>
+    </div>
+    <button ng-disabled="loginForm.$invalid || loginForm.$pristine" class="btn btn-lg signup-login-btn" type="submit">Log in with email</button>
+  </div>
+</form>
+<div class="signup-login-form-footer">
+  <p><a ui-sref="password.forgot">Forgot password?</a></p>
+</div>
