@@ -20,9 +20,7 @@ var config = require('../config'),
   consolidate = require('consolidate'),
   path = require('path'),
   httpProxy = require('http-proxy'),
-  proxy = httpProxy.createProxyServer({
-    xfwd: true
-  });
+  proxy = httpProxy.createProxyServer();
 
 
 /**
