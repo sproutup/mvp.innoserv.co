@@ -21,7 +21,6 @@ var config = require('../config'),
   path = require('path'),
   httpProxy = require('http-proxy'),
   proxy = httpProxy.createProxyServer({
-    protocolRewrite: 'https',
     xfwd: true
   });
 
@@ -231,6 +230,12 @@ module.exports.initHttpProxy = function (app){
       );
     } else {
       next();
+    }
+  });
+
+  proxy.on('proxyReq', function(proxyReq, req, res, options) {
+    if(req.path === '/api/auth/google'){
+      proxyReq.setHeader('x-forwarded-proto', 'https');
     }
   });
 };
