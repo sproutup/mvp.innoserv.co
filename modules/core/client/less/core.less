@@ -595,6 +595,10 @@ a:focus {
   transition: all .1s ease-in-out;
 }
 
+a.sproutup-btn-lg-main {
+  padding-top: 13px;
+}
+
 .sproutup-btn-lg-main:hover {
   background-color: @sproutup-blue-hover;
   color: white;
@@ -1721,9 +1725,9 @@ input[type=checkbox] {
 }
 
 .wrapper-hangout {
-  margin: 70px auto 30px;
+  margin: 90px auto 30px;
   padding: 0px 15px;
-  max-width: 1000px
+  max-width: 1100px;
 }
 
 .hangout-banner {
@@ -1778,6 +1782,7 @@ input[type=checkbox] {
   font-weight: 400;
   font-size: 16pt;
   margin: 20px 0px;
+  line-height: 1.6;
 }
 
 .hangout-info-wrapper h2
@@ -1786,17 +1791,17 @@ input[type=checkbox] {
   position: relative;
   font-weight: 300;
   font-size: 12pt;
+  line-height: 1.6;
 }
 
 .hangout-empty-state .hangout-info-wrapper h1 {
-  padding: 90px 0px 50px;
+  padding: 70px 0px 0px;
 }
 
-.hangout-info-wrapper .sproutup-btn-sm {
+.hangout-info-wrapper .sproutup-btn-lg-main {
   z-index: 10;
   position: relative;
-  width: 160px;
-  margin: 30px 3px;
+  margin: 50px 3px;
 }
 
 .hangout-countdown {
@@ -3539,8 +3544,9 @@ p[class="campaign-countdown-unit"] {
   opacity: 0.7;
 }
 
-.post-new-content-tip i {
-  margin-right: 12px;
+.post-new-content-tip span a {
+  color: white;
+  float: right;
 }
 
 .post-new-content-uploader-method {
@@ -3806,7 +3812,7 @@ p[class="campaign-countdown-unit"] {
   left: 0;
   bottom: 0;
   content: "";
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)); /* Standard syntax */
+  background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.40)); /* Standard syntax */
 }
 
 .suggested-product-item form {
@@ -3899,16 +3905,21 @@ p[class="campaign-countdown-unit"] {
 }
 
 .user-profile-rail.left {
-  padding: 0px 25px 0px 10px;
+  padding: 0px 20px 0px 10px;
   margin: 0px;
-  width: 22%;
+  width: 21%;
+}
+
+.user-profile-rail.left .user-profile-photo {
+  width: 100%;
+  border: 1px solid @sproutup-lightgrey;
 }
 
 .user-profile-rail.right {
-  padding: 0px 10px 0px 25px;
+  padding: 0px 10px 0px 20px;
   margin: 0px;
   border-left: 1px dashed @sproutup-grey;
-  width: 78%;
+  width: 79%;
 }
 
 .user-profile-rail.right .user-profile-rail-main {
@@ -3937,7 +3948,7 @@ p[class="campaign-countdown-unit"] {
 
 .user-profile-bio {
   font-weight: 400;
-  font-size: 10.5pt;
+  font-size: 10pt;
   padding: 15px 0px 0px;
   line-height: 1.6;
 }
@@ -4013,6 +4024,12 @@ p[class="campaign-countdown-unit"] {
   color: @sproutup-blue;
 }
 
+.user-profile-rail--misc .buzz-sidebar-item .title .comingsoon {
+  font-size: 9.5pt;
+  color: @main-text-verylight;
+  margin-left: 10px;
+}
+
 .user-profile-rail--misc .buzz-sidebar-item .title .stats-highlight {
   color: @sproutup-green;
   font-size: 15pt;
@@ -4026,6 +4043,7 @@ p[class="campaign-countdown-unit"] {
 
 .user-profile-activities {
   margin-bottom: 15px;
+  border: 1px solid @sproutup-lightgrey;
 }
 
 .user-profile-activities.empty-state {

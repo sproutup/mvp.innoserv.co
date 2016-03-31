@@ -13,7 +13,7 @@
   </div>
 
   <!-- New comment from current user -->
-  <div class="row my-content-comment-row">
+  <div class="row my-content-comment-row" ng-if="vm.user.id">
     <div class="col-sm-1 my-content-user-avatar comment-user-avatar">
       <img class="img-responsive post-comment-user-img-circle img-center" up-avatar="vm.user" width="80" height="80">
     </div>
@@ -29,6 +29,10 @@
         </button>
       </div>
     </div>
+  </div>
 
+  <!-- Sign in to comment button -->
+  <div class="row my-content-comment-row" ng-if="!vm.user.id">
+    <button subject-present="" state="{{ vm.state }}" params="vm.params">Sign in to commment</button>
   </div>
 </div>

@@ -4,8 +4,8 @@
 <div class="user-profile-page">
   <div class="row user-profile-wrapper">
     <div class="col-sm-3 user-profile-rail left">
-      <img class="img-responsive user-profile-photo" ng-src="{{slug.item.avatar.file.url}}?w=200&h=200">
-      <div class="user-profile-name">{{slug.item.displayName}}<!--sup class="label label-influencer">Influencer</sup--></div>
+      <img class="img-responsive user-profile-photo" up-avatar="slug.item" width="200" height="200">
+      <div class="user-profile-name">{{slug.item.displayName}}</div>
       <div class="user-profile-bio">{{slug.item.description}}</div>
       <div class="user-profile-networks">
         <ul class="list-inline">
@@ -35,24 +35,6 @@
         </div>
         <div class="col-sm-4 user-profile-rail--misc">
           <div class="buzz-sidebar-item">
-            <div class="title">Your Stats</div>
-            <div class="subtitle">Your content have earned <span class="stats-highlight">99,392 impressions</span> to date.</div>
-            <div class="content">
-              <img class="img-responsive" src="modules/theme/client/img/mock/impressions.png">
-            </div>
-            <hr>
-            <div class="subtitle">Your content have earned <span class="stats-highlight">1,202 referral clicks</span> to date.</div>
-            <div class="content">
-              <img class="img-responsive" src="modules/theme/client/img/mock/clicks.png">
-            </div>
-            <div class="link"> <a href="#">View analytics details <i class="fa fa-angle-right"> </i> </a> </div>
-          </div>
-          <div class="buzz-sidebar-item">
-            <div class="title">Your Earnings</div>
-            <div class="subtitle">You have earned <span class="stats-highlight">$400</span> so far. Keep up with good work!</div>
-            <div class="link"><a href="#">View earning details<i class="fa fa-angle-right"></i></a></div>
-          </div>
-          <div class="buzz-sidebar-item">
             <div class="title"><span class="stats-highlight">128k</span>Social Reach</div>
             <div class="subtitle">The social reach is calculated from all social network accounts the user has connected to.</div>
             <div class="content">
@@ -60,8 +42,22 @@
             </div>
           </div>
           <div class="buzz-sidebar-item">
-            <div class="title"><span class="stats-highlight">4,200</span>Points</div>
-            <div class="subtitle">Sprout Points this user has earned.</div>
+            <div class="title">Your Stats <span class="comingsoon">coming soon</span></div>
+            <div class="subtitle"><span class="stats-highlight">Impressions</span> your content have earned to date.</div>
+            <div class="content">
+              <img class="img-responsive" src="modules/theme/client/img/mock/impressions.png">
+            </div>
+            <hr>
+            <div class="subtitle"><span class="stats-highlight">Referral clicks</span> your content have earned to date.</div>
+            <div class="content">
+              <img class="img-responsive" src="modules/theme/client/img/mock/clicks.png">
+            </div>
+            <div class="link"> <a href="#">View analytics details <i class="fa fa-angle-right"> </i> </a> </div>
+          </div>
+          <div class="buzz-sidebar-item">
+            <div class="title">Your Earnings <span class="comingsoon">coming soon</span></div>
+            <div class="subtitle">You have earned <span class="stats-highlight">$amount</span> so far. Keep up with good work!</div>
+            <div class="link"><a href="#">View earning details<i class="fa fa-angle-right"></i></a></div>
           </div>
         </div>
       </div>
