@@ -231,10 +231,10 @@ module.exports.initHttpProxy = function (app){
     }
   });
 
-  proxy.on('proxyReq', function(proxyReq, req, res, options) {
-    console.log('proxy: ', req.path); // === '/api/auth/google'){
-    proxyReq.setHeader('x-forwarded-proto', 'https');
-  });
+//  proxy.on('proxyReq', function(proxyReq, req, res, options) {
+//    console.log('proxy: ', req.path); // === '/api/auth/google'){
+//    proxyReq.setHeader('x-forwarded-proto', 'https');
+//  });
 };
 
 
