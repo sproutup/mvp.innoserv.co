@@ -6,7 +6,7 @@
     <div class="col-sm-3 user-profile-rail left">
       <img class="img-responsive user-profile-photo" up-avatar="slug.item" width="200" height="200">
       <div class="user-profile-name">{{slug.item.displayName}}</div>
-      <div class="user-profile-bio">{{slug.item.description}}</div>
+      <div class="user-profile-bio" ng-if="slug.item.description">{{slug.item.description}}</div>
       <div class="user-profile-networks">
         <ul class="list-inline">
           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
