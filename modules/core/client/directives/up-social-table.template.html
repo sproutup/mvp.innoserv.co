@@ -1,38 +1,30 @@
 <div ng-init="table.load()">
-  <div class="social-account-wrapper">
-    <div class="profile-edit--header">
-      <h2>To request for a trial, you need <strong>at least one</strong> network connected. Without it, we really have no way to know more about you. The more networks you connect, the better your chances of earning a trial!</h2>
+  <div ng-repeat="provider in table.providers" class="row row-social-account">
+    <div class="col-sm-8">
+      <div class="header"><i class="fa fa-check-circle success"></i>Connected to {{provider.provider}}</div>
+      <div class="description">Woohoo, we are now getting your social reach from Google. You can now sign in with Google as well.</div>
     </div>
-    <!-- connected to providers -->
-    <div ng-repeat="provider in table.providers" class="row row-social-account">
-      <div class="col-sm-8">
-        <div class="header"><i class="fa fa-check-circle success"></i>Connected to {{provider.provider}}</div>
-        <div class="description">Woohoo, we are now getting your social reach from Google. You can now sign in with Google as well.</div>
-      </div>
-      <div class="col-sm-4 action">
-        <button class="btn sproutup-btn-sm naked" ng-click="table.removeUserSocialAccount(provider.provider)">Disconnect</button>
-      </div>
+    <div class="col-sm-4 action">
+      <button class="btn sproutup-btn-sm naked" ng-click="table.removeUserSocialAccount(provider.provider)">Disconnect</button>
     </div>
-    <!-- reconnect to google -->
-    <div ng-repeat="provider in table.providers | filter:{status:-1}" class="row row-social-account">
-      <div class="col-sm-8">
-        <div class="header"><i class="fa fa-question-circle error"></i>Reconnect to {{provider.provider}}</div>
-        <div class="description">Oh oh, something went wrong when connecting to {{provider.provider}}. Would you mind trying again?</div>
-      </div>
-      <div class="col-sm-4 action">
-        <button class="btn sproutup-btn-sm salmon" href="#">Reconnect</button>
-        <button class="btn sproutup-btn-sm naked" ng-click="table.removeUserSocialAccount(provider.provider)">Disconnect</button>
-      </div>
+  </div>
+  <div ng-repeat="provider in table.providers | filter:{status:-1}" class="row row-social-account">
+    <div class="col-sm-8">
+      <div class="header"><i class="fa fa-question-circle error"></i>Reconnect to {{provider.provider}}</div>
+      <div class="description">Oh no, something went wrong when connecting to {{provider.provider}}. Would you mind trying again?</div>
     </div>
-    <!-- Google -->
-    <div ng-repeat="network in table.networks" class="row row-social-account" ng-hide="table.isConnectedSocialAccount(network.provider)">
-      <div class="col-sm-8" >
-        <div class="header">Connect to {{network.title}}</div>
-        <div class="description">{{network.description}}</div>
-      </div>
-      <div class="col-sm-4 action">
-        <a class="btn sproutup-btn-sm google" ng-click="table.callOauthProvider('/api/auth/' + network.provider)"><i class="fa fa-google-plus-square"></i>Connect</a>
-      </div>
+    <div class="col-sm-4 action">
+      <button class="btn sproutup-btn-sm salmon" href="#">Reconnect</button>
+      <button class="btn sproutup-btn-sm naked" ng-click="table.removeUserSocialAccount(provider.provider)">Disconnect</button>
+    </div>
+  </div>
+  <div ng-repeat="network in table.networks" class="row row-social-account" ng-hide="table.isConnectedSocialAccount(network.provider)">
+    <div class="col-sm-8" >
+      <div class="header">Connect to {{network.title}}</div>
+      <div class="description">{{network.description}}</div>
+    </div>
+    <div class="col-sm-4 action">
+      <a class="btn sproutup-btn-sm google" ng-click="table.callOauthProvider('/api/auth/' + network.provider)"><i class="fa fa-google-plus-square"></i>Connect</a>
     </div>
   </div>
 </div>

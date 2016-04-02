@@ -1,3 +1,20 @@
 <div class="col-sm-9">
-  <up-social-table></up-social-table>
+  <div class="social-account-wrapper">
+    <div class="profile-edit--header">
+      <h1>Your social reach is your influence &#x1F388;</h1>
+      <h2>Connect your social accounts and know your social reach and influence. After you get connected, your reach will be visible on your profile page. <span><a href="#" ng-click="vm.learningMore=!vm.learningMore">Learn more</a></span></h2>
+      <div class="learning-more" ng-if="vm.learningMore">
+        <hr>
+        <div>Why should I link my social media accounts with SproutUp?</div>
+        <ul>
+          <li><i class="fa fa-check-circle"></i><strong>Verify. </strong>Connecting accounts helps us make sure you're a the real account owner. &#x1f60e;</li>
+          <li><i class="fa fa-check-circle"></i><strong>Qualify. </strong>We use your collective social media reach to determine qualification for product trials.</li>
+          <li><i class="fa fa-check-circle"></i><strong>Measure. </strong>Get bragging rights when you move up the rank on SproutUp leader board.</li>
+          <li><i class="fa fa-check-circle"></i><strong>Earn. </strong>Earn Sprout Points based on your content’s performance.</li>
+          <li><i class="fa fa-check-circle"></i><strong>Assurance. </strong>Don’t worry, we’ll never post on your accounts unless you tell us to.</li>
+        </ul>
+      </div>
+    </div>
+    <up-social-table></up-social-table>
+  </div>
 </div>
