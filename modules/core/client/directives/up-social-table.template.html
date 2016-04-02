@@ -2,7 +2,10 @@
   <div ng-repeat="provider in table.providers" class="row row-social-account">
     <div class="col-sm-8">
       <div class="header"><i class="fa fa-check-circle success"></i>Connected to {{provider.provider}}</div>
-      <div class="description">Woohoo, we are now getting your social reach from Google. You can now sign in with Google as well.</div>
+      <div class="description" ng-if="provider.provider===Google">We are getting your social reach from Google. You can now sign in with Google as well.</div>
+      <div class="description" ng-if="provider.provider===Facebook">We are getting your social reach from Facebook. You can now sign in with Facebook as well. <strong>We'll never post to Facebook or message your friends without your permission</strong>.</div>
+      <div class="description" ng-if="provider.provider===Twitter">We are getting your social reach from Twitter. You can now sign in with Twitter as well. <strong>We'll never post to Twitter or message your followers without your permission</strong>.</div>
+      <div class="description" ng-if="provider.provider===Instagram">We are getting your social reach from Instagram. <strong>We'll never post to Instagram</strong>.</div>
     </div>
     <div class="col-sm-4 action">
       <button class="btn sproutup-btn-sm naked" ng-click="table.removeUserSocialAccount(provider.provider)">Disconnect</button>
