@@ -11,11 +11,19 @@ angular.module('users').run(['Menus',
     });
 
     Menus.addMenuItem('settings', {
-      title: 'Accounts',
+      title: 'Social Networks',
       state: 'navbar.settings.accounts',
       class: '',
       roles: ['*'],
       position: 20
+    });
+
+    Menus.addMenuItem('settings', {
+      title: 'Get Paid',
+      state: 'navbar.settings.payment',
+      class: '',
+      roles: ['*'],
+      position: 30
     });
   }
 ]);
