@@ -1,11 +1,14 @@
 <div ng-init="table.load()">
   <div ng-repeat="provider in table.providers" class="row row-social-account">
     <div class="col-sm-8">
-      <div class="header"><i class="fa fa-check-circle success"></i>Connected to {{provider.provider}}</div>
-      <div class="description" ng-if="provider.provider==='Google'">We are getting your social reach from Google. You can now sign in with Google as well.</div>
-      <div class="description" ng-if="provider.provider==='Facebook'">We are getting your social reach from Facebook. You can now sign in with Facebook as well. <strong>We'll never post to Facebook or message your friends without your permission</strong>.</div>
-      <div class="description" ng-if="provider.provider==='Twitter'">We are getting your social reach from Twitter. You can now sign in with Twitter as well. <strong>We'll never post to Twitter or message your followers without your permission</strong>.</div>
-      <div class="description" ng-if="provider.provider==='Instagram'">We are getting your social reach from Instagram. <strong>We'll never post to Instagram</strong>.</div>
+      <div class="header" ng-if="provider.provider==='google'"><i class="fa fa-check-circle success"></i>Connected to Google</div>
+      <div class="header" ng-if="provider.provider==='facebook'"><i class="fa fa-check-circle success"></i>Connected to Facebook</div>
+      <div class="header" ng-if="provider.provider==='twitter'"><i class="fa fa-check-circle success"></i>Connected to Twitter</div>
+      <div class="header" ng-if="provider.provider==='instagram'"><i class="fa fa-check-circle success"></i>Connected to Instagram</div>
+      <div class="description" ng-if="provider.provider==='google'">We are getting your social reach from Google. You can now sign in with Google as well.</div>
+      <div class="description" ng-if="provider.provider==='facebook'">We are getting your social reach from Facebook. You can now sign in with Facebook as well. <strong>We'll never post to Facebook or message your friends without your permission</strong>.</div>
+      <div class="description" ng-if="provider.provider==='twitter'">We are getting your social reach from Twitter. You can now sign in with Twitter as well. <strong>We'll never post to Twitter or message your followers without your permission</strong>.</div>
+      <div class="description" ng-if="provider.provider==='instagram'">We are getting your social reach from Instagram. <strong>We'll never post to Instagram</strong>.</div>
     </div>
     <div class="col-sm-4 action">
       <button class="btn sproutup-btn-sm naked" ng-click="table.removeUserSocialAccount(provider.provider)">Disconnect</button>
@@ -13,8 +16,14 @@
   </div>
   <div ng-repeat="provider in table.providers | filter:{status:-1}" class="row row-social-account">
     <div class="col-sm-8">
-      <div class="header"><i class="fa fa-question-circle error"></i>Reconnect to {{provider.provider}}</div>
-      <div class="description">Oh no, something went wrong when connecting to {{provider.provider}}. Would you mind trying again?</div>
+      <div class="header" ng-if="provider.provider==='google'"><i class="fa fa-question-circle error"></i>Reconnect to Google</div>
+      <div class="header" ng-if="provider.provider==='facebook'"><i class="fa fa-question-circle error"></i>Reconnect to Facebook</div>
+      <div class="header" ng-if="provider.provider==='twitter'"><i class="fa fa-question-circle error"></i>Reconnect to Twitter</div>
+      <div class="header" ng-if="provider.provider==='instagram'"><i class="fa fa-question-circle error"></i>Reconnect to Instagram</div>
+      <div class="description" ng-if="provider.provider==='google'">Oh no, something went wrong when connecting to Google. Would you mind trying again?</div>
+      <div class="description" ng-if="provider.provider==='facebook'">Oh no, something went wrong when connecting to Facebook. Would you mind trying again?</div>
+      <div class="description" ng-if="provider.provider==='twitter'">Oh no, something went wrong when connecting to Twitter. Would you mind trying again?</div>
+      <div class="description" ng-if="provider.provider==='instagram'">Oh no, something went wrong when connecting to Instagram. Would you mind trying again?</div>
     </div>
     <div class="col-sm-4 action">
       <button class="btn sproutup-btn-sm salmon" href="#">Reconnect</button>
