@@ -2,12 +2,12 @@
   <!-- Existing comments -->
   <div class="row my-content-comment-row" ng-repeat="comment in vm.comments | orderBy: 'createdAt'">
     <div class="col-sm-1 my-content-user-avatar comment-user-avatar">
-      <a ui-sref="navbar.slug({ slug: comment.user.username })">
+      <a ui-sref="navbar.slug.user.buzz({ slug: comment.user.username })">
         <img class="img-responsive post-comment-user-img-circle img-center" up-avatar="comment.user" width="80" height="80">
       </a>
     </div>
     <div class="col-sm-11 my-content-comment-blurb">
-      <p class="my-content-user comment"><a ui-sref="navbar.slug({ slug: comment.user.username })">{{ comment.user.displayName }}</a><span class="my-content-timestamp comment">{{ comment.created | fromNow }}</span></p>
+      <p class="my-content-user comment"><a ui-sref="navbar.slug.user.buzz({ slug: comment.user.username })">{{ comment.user.displayName }}</a><span class="my-content-timestamp comment">{{ comment.created | fromNow }}</span></p>
       <p class="my-content-text comment" ng-bind-html="comment.body | urlify"></p>
     </div>
   </div>
