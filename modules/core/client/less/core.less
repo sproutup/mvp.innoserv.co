@@ -4816,6 +4816,14 @@ ul.list-conversation-thread li a {
   color: @sproutup-blue;
 }
 
+.my-content-comment-row .my-content-user-avatar {
+  width: 10%;
+  padding: 0px;
+}
+
+.my-content-comment-row .my-content-comment-blurb {
+  width: 90%;
+}
 
 // media queries
 @media (min-width: 1200px) {
@@ -4833,6 +4841,15 @@ ul.list-conversation-thread li a {
 }
 
 @media (max-width:767px) {
+
+  .my-content-comment-row .my-content-user-avatar {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .my-content-comment-row .my-content-comment-blurb {
+    width: 100%;
+  }
 
   .col-sm-3.browse-campaign-sidebar {
     width: 100%;

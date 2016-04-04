@@ -1,9 +1,9 @@
 <div class="my-content-comments" ng-if="vm.commenting">
   <!-- Existing comments -->
   <div class="row my-content-comment-row" ng-repeat="comment in vm.comments | orderBy: 'createdAt'">
-    <div class="col-sm-1 my-content-user-avatar comment-user-avatar">
+    <div class="col-sm-1 my-content-user-avatar">
       <a ui-sref="navbar.slug.user.buzz({ slug: comment.user.username })">
-        <img class="img-responsive post-comment-user-img-circle img-center" up-avatar="comment.user" width="80" height="80">
+        <img class="img-responsive post-comment-user-img-circle" up-avatar="comment.user" width="80" height="80">
       </a>
     </div>
     <div class="col-sm-11 my-content-comment-blurb">
@@ -14,11 +14,11 @@
 
   <!-- New comment from current user -->
   <div class="row my-content-comment-row" ng-if="vm.user.id">
-    <div class="col-sm-1 my-content-user-avatar comment-user-avatar">
-      <img class="img-responsive post-comment-user-img-circle img-center" up-avatar="vm.user" width="80" height="80">
+    <div class="col-sm-1 my-content-user-avatar">
+      <img class="img-responsive post-comment-user-img-circle" up-avatar="vm.user" width="80" height="80">
     </div>
 
-    <div class="col-md-11 my-content-comment-blurb">
+    <div class="col-sm-11 my-content-comment-blurb">
       <div class="post-comment-form">
         <textarea name="comment" placeholder="Write a comment... Be cool / kind / funny / constructive / helpful..." class="form-control post-comment-textarea" rows="2" ng-model="vm.newComment" required=""></textarea>
       </div>
