@@ -8,7 +8,7 @@
     <div ng-hide="vm.empty" ng-repeat="message in vm.messages" ng-class="{inbound: vm.me.id !== message.userId, outbound: vm.me.id === message.userId}" class="message-blurb">
       <div class="sender">
         <span class="name" ng-show="vm.me.id === message.userId">Me</span>
-        <span class="name" ng-show="vm.me.id !== message.userId">{{message.userId}}<span class="spacer">&#183;</span>{{ vm.conversation.channel.ref.company.name }}</span>
+        <span class="name" ng-show="vm.me.id !== message.userId">{{message.user.displayName}}</span>
         <span class="time">{{message.created | fromNow}}</span>
       </div>
       <div class="content" ng-bind="message.body"></div>
