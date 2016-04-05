@@ -3,22 +3,24 @@
     <button class="btn sproutup-btn-xs"><i class="fa fa-times"></i></button>
   </div>
   <div class="signup-login-header">
+    <div class="profile-name">Welcome, <strong>Kevin The Tech Ninja</strong>. We just built your profile based on what we got, but feel free to update.</div>
     <div class="user-profile-info--avartar">
       <div data-ng-controller="ChangeProfilePictureController as profile">
         <div up-file-upload ng-model="user.avatar.file" on-change="profile.saveProfilePicture(user.avatar.file.id)"></div>
       </div>
     </div>
-    <div class="profile-name">Welcome, <strong>Kevin The Tech Ninja</strong>. We just built your profile based on what we got, but feel free to update.</div>
   </div>
-  <hr>
   <div class="signup-login-area">
     <form name="loginForm" class="loginForm" novalidate>
       <div class="signup-login-form">
+        <label>Your Name</label>
         <input class="form-control signup-login-input" type="text" required placeholder="Your full name">
+        <label>Email</label>
         <input class="form-control signup-login-input" type="email" required placeholder="Your email address">
         <div>
           <div class="signup-login-form--error-message"><i class="fa fa-minus-circle"></i>This email has been taken.</div>
         </div>
+        <label>SproutUp Username</label>
         <input class="form-control signup-login-input" type="text" required placeholder="Choose a username">
         <div>
           <div class="signup-login-form--error-message"><i class="fa fa-minus-circle"></i>This username has been taken.</div>
