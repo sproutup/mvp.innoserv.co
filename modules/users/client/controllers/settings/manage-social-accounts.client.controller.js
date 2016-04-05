@@ -1,8 +1,9 @@
 'use strict';
 
-angular.module('users').controller('SocialAccountsController', ['$scope', '$http', 'Authentication', 'ProviderService',
-  function ($scope, $http, Authentication, ProviderService) {
+angular.module('users').controller('SocialAccountsController', ['$scope', '$http', 'Authentication', 'ProviderService', '$state',
+  function ($scope, $http, Authentication, ProviderService, $state) {
     var vm = this;
+    vm.state = $state;
 
     vm.user = Authentication.user;
     vm.networks = [
