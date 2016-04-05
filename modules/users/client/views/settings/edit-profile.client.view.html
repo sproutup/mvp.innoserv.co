@@ -1,5 +1,12 @@
 <!-- Content -->
 <div class="col-sm-9" data-ng-controller="EditProfileController">
+  <!-- TODO: change to SproutUp heads-up message style -->
+  <div data-ng-show="profile.success" class="form-hud success">
+    <strong>Profile Saved Successfully</strong>
+  </div>
+  <div data-ng-show="profile.error" class="form-hud error">
+    <strong data-ng-bind="error"></strong>
+  </div>
   <form name="profile.basicinfoform" data-ng-submit="profile.updateUserProfile()" class="" novalidate>
     <!-- email -->
     <div class="row profile-input-row">
@@ -50,7 +57,6 @@
     </div>
 
     <!-- Phone number -->
-    <!-- TODO: link ng-intl-tel-input to ng-model -->
     <div class="profile-input-cell--title">Mobile Number</div>
     <div class="row profile-input-row">
       <div class="col-sm-12 profile-input-cell">
@@ -65,14 +71,5 @@
     <div class="settings-page-actions">
       <button ng-disabled="profile.basicinfoform.$invalid || profile.basicinfoform.$pristine" class="btn btn-lg sproutup-btn-md-main" type="submit">Save Changes</button>
     </div>
-
-
-    <!-- TODO: change to SproutUp heads-up message style -->
-    <!-- <div data-ng-show="profile.success" class="text-center text-success">
-      <strong>Profile Saved Successfully</strong>
-    </div>
-    <div data-ng-show="profile.error" class="text-center text-danger">
-      <strong data-ng-bind="error"></strong>
-    </div> -->
   </form>
 </div>

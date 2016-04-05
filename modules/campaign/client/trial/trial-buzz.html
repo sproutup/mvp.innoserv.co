@@ -17,10 +17,7 @@
         <div class="col-sm-10 my-content-body">
           <div class="my-content-item--summary">
             <form name="buzzCtrl.form" novalidate>
-              <p class="my-content-user buzz-user">
-                <a ui-sref="user.profile.buzz({nickname: buzzCtrl.user.nickname})">{{ buzzCtrl.user.name}}</a>
-              </p>
-              <div ng-if="vm.myContribution.state === 0">
+              <div ng-if="!vm.myContribution.state">
                 <div class="post-new-content-selector" ng-init="buzzCtrl.state = 'write'">
                   <a ng-class="{'active': buzzCtrl.state === 'write'}" href="#" ng-click="buzzCtrl.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write Something</a>
                 </div>
@@ -28,7 +25,7 @@
                   <div up-post-write ng-model="buzzCtrl.post" required ng-show="buzzCtrl.state === 'write'"></div>
                 </div>
               </div>
-              <div ng-if="vm.myContribution.state !== 0">
+              <div ng-if="vm.myContribution.state && vm.myContribution.state > 0">
                 <div class="post-new-content-selector" ng-init="buzzCtrl.state = 'content'">
                   <a ng-class="{'active': buzzCtrl.state === 'content'}" href="#" ng-click="buzzCtrl.state = 'content'"><i class="fa fa-cloud-upload"></i>Submit My Content</a>
                   <a ng-class="{'active': buzzCtrl.state === 'write'}" href="#" ng-click="buzzCtrl.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write Something</a>

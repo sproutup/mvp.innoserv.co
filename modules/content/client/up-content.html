@@ -1,32 +1,32 @@
 <!-- content blurb -->
 <div class="col-sm-12 my-content-item">
-    <!-- user photo -->
-    <div class="col-sm-2 my-content-user-avatar post-user-avatar">
-        <a ui-sref="user.profile.buzz({ nickname: vm.content.user.nickname })">
-            <img class="img-responsive my-content-user-img img-center" up-avatar="vm.content.user" width="80" height="80">
-        </a>
+  <!-- user photo -->
+  <div class="col-sm-2 my-content-user-avatar">
+    <a ui-sref="navbar.slug.user.buzz({ slug: vm.content.user.username })">
+      <img class="img-responsive my-content-user-img" up-avatar="vm.content.user" width="80" height="80">
+    </a>
+  </div>
+  <!-- content thumbnail -->
+  <div class="col-sm-10 my-content-body">
+    <div class="my-content-item--summary" ng-if="vm.content.type !== 1">
+      <p class="my-content-user">
+        <span class="my-content-user-name">
+          <a class="content-user-link" ui-sref="navbar.slug.user.buzz({ slug: vm.content.user.username })">{{ vm.content.user.displayName }}</a>
+        </span>
+      </p>
+      <p class="my-content-timestamp"><a href="#">{{ vm.content.created | fromNow }}</a></p>
+      <div class="my-content-item-main">
+        <div class="my-content-text" ng-bind-html="vm.content.body | urlify"></div>
+        <up-meta item="vm.content.meta" url="vm.content.url"></up-meta>
+      </div>
+      <hr>
+      <div class="my-content-actions">
+        <up-like likes="vm.content.likes" up-id="vm.content.id" up-type="models.post" state="{{ vm.state }}" params="vm.params"></up-like>
+        <a analytics-on="click" analytics-event="Comment Buzz Post" analytics-id="{{ vm.content.id }}" href="#" ng-click="vm.commentToggle()">COMMENTS ({{ vm.content.comment.length || 0 }})</a>
+        <span class="analytics-total" ng-if="vm.content.analytics.total > 0">{{ vm.content.analytics.total | humanizeNumber }} views</span>
+      </div>
     </div>
-    <!-- content thumbnail -->
-    <div class="col-sm-10 my-content-body">
-        <div class="my-content-item--summary" ng-if="vm.content.type !== 1">
-            <p class="my-content-user">
-                <span class="my-content-user-name">
-                    <a analytics-on="click" analytics-event="Check Public Profile" analytics-user="{{vm.content.user.nickname}}" class="content-user-link" ui-sref="user.profile.buzz({ nickname: vm.content.user.nickname })">{{ vm.content.user.displayName }}</a>
-                </span>
-            </p>
-            <p class="my-content-timestamp"><a ui-sref="user.singleBuzz({ id: vm.content.id })">{{ vm.content.created | fromNow }}</a></p>
-            <div class="my-content-item-main">
-                <div class="my-content-text" ng-bind-html="vm.content.body | urlify"></div>
-                <up-meta item="vm.content.meta" url="vm.content.url"></up-meta>
-            </div>
-            <hr>
-            <div class="my-content-actions">
-                <up-like likes="vm.content.likes" up-id="vm.content.id" up-type="models.post" state="{{ vm.state }}" params="vm.params"></up-like>
-                <a analytics-on="click" analytics-event="Comment Buzz Post" analytics-id="{{ vm.content.id }}" href="#" ng-click="vm.commentToggle()">COMMENTS ({{ vm.content.comment.length || 0 }})</a>
-                <span class="analytics-total" ng-if="vm.content.analytics.total > 0">{{ vm.content.analytics.total | humanizeNumber }} views</span>
-            </div>
-        </div>
-        <up-suggestion ng-if="vm.content.type === 1" suggestion="vm.content"></up-suggestion>
-        <up-comments commenting="vm.content.commenting" comments="vm.content.comment" up-id="vm.content.id" up-type="Post" state="{{ vm.state }}" params="vm.params" ng-if="vm.content.commenting"></up-comments>
-    </div>
+    <up-suggestion ng-if="vm.content.type === 1" suggestion="vm.content"></up-suggestion>
+    <up-comments commenting="vm.content.commenting" comments="vm.content.comment" up-id="vm.content.id" up-type="Post" state="{{ vm.state }}" params="vm.params" ng-if="vm.content.commenting"></up-comments>
+  </div>
 </div>

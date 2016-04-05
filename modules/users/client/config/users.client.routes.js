@@ -21,12 +21,18 @@ angular.module('users').config(['$stateProvider',
         controller: 'EditProfileController',
         controllerAs: 'profile'
       })
+      .state('navbar.settings.payment', {
+        url: '/payment',
+        templateUrl: 'modules/users/client/views/settings/edit-payment.client.view.html',
+        controller: '',
+        controllerAs: ''
+      })
       .state('company.navbar.user.password', {
         url: '/password',
         templateUrl: 'modules/users/client/views/settings/change-password.client.view.html'
       })
       .state('navbar.settings.accounts', {
-        url: '/accounts',
+        url: '/social',
         controller: 'SocialAccountsController',
         controllerAs: 'vm',
         templateUrl: 'modules/users/client/views/settings/manage-social-accounts.client.view.html'

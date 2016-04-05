@@ -15,7 +15,7 @@ angular
         .state('navbar.theme.index' ,{
             url: '',
             templateUrl: 'modules/theme/client/theme.view.html'
-        })      
+        })
         .state('navbar.theme.mocks', {
           url: '/mocks',
           abstract: true,
@@ -133,6 +133,10 @@ angular
         .state('navbar.theme.mocks.account-settings-social', {
           url: '/account-settings-social',
           templateUrl: 'modules/theme/client/mocks/account-settings-social.html'
+        })
+        .state('navbar.theme.mocks.account-settings-payment', {
+          url: '/account-settings-payment',
+          templateUrl: 'modules/theme/client/mocks/account-settings-payment.html'
         })
         .state('navbar.theme.mocks.team', {
           url: '/team',

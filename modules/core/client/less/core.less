@@ -16,6 +16,15 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+.sproutup-form-label {
+  margin-bottom: 10px;
+  color: @main-text-lighter;
+}
+
+.sproutup-form-label a {
+  color: @sproutup-blue;
+}
+
 .list-group {
   border-radius: 0px;
   font-weight: 700;
@@ -596,7 +605,7 @@ a:focus {
 }
 
 a.sproutup-btn-lg-main {
-  padding-top: 13px;
+  padding-top: 15px;
 }
 
 .sproutup-btn-lg-main:hover {
@@ -903,8 +912,12 @@ a.sproutup-btn-sm {
 .sproutup-btn-sm.naked {
   background: none;
   color: @sproutup-orange;
-  font-size: 9pt;
+  font-size: 9.5pt;
   font-weight: 400;
+}
+
+.sproutup-btn-sm.naked:hover {
+  color: @sproutup-orange-hover;
 }
 
 .sproutup-btn-sm.twitter {
@@ -952,7 +965,7 @@ a.sproutup-btn-sm {
   color: white;
 }
 
-.sproutup-btn-sm.instagram:hover {
+.sproutup-btn-sm.pinterest:hover {
   background-color: @pinterest-red-hover;
   color: white;
 }
@@ -1024,6 +1037,10 @@ a.sproutup-btn-sm {
   color: @main-text-lighter;
   background-color: white;
   border: 1px solid @sproutup-grey;
+}
+
+.sproutup-btn-sm.squarecash {
+  margin-top: 15px;
 }
 
 
@@ -3075,7 +3092,7 @@ ul.company-profile-social-buttons p {
   margin: 0px;
   padding: 25px;
   white-space: pre-wrap;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .about-campaign-section p a {
@@ -3086,6 +3103,15 @@ ul.company-profile-social-buttons p {
 .about-campaign-section ul {
   padding: 25px;
   list-style: none;
+}
+
+.about-campaign-section ul .list-header {
+  font-weight: 400;
+  font-size: 12.5pt;
+  margin: 0px;
+  padding: 0px 0px 15px;
+  white-space: pre-wrap;
+  line-height: 1.7;
 }
 
 .about-campaign-section ul li {
@@ -3544,8 +3570,9 @@ p[class="campaign-countdown-unit"] {
   opacity: 0.7;
 }
 
-.post-new-content-tip i {
-  margin-right: 12px;
+.post-new-content-tip span a {
+  color: white;
+  float: right;
 }
 
 .post-new-content-uploader-method {
@@ -3685,6 +3712,12 @@ p[class="campaign-countdown-unit"] {
   line-height: 1.6;
   margin: 0px;
   padding: 0px 20px 10px;
+}
+
+.buzz-sidebar-item .title .label-info {
+  position: relative;
+  bottom: 3px;
+  margin-left: 8px;
 }
 
 .buzz-sidebar-item .subtitle {
@@ -3904,16 +3937,21 @@ p[class="campaign-countdown-unit"] {
 }
 
 .user-profile-rail.left {
-  padding: 0px 25px 0px 10px;
+  padding: 0px 20px 0px 10px;
   margin: 0px;
-  width: 22%;
+  width: 19.5%;
+}
+
+.user-profile-rail.left .user-profile-photo {
+  width: 100%;
+  border: 1px solid @sproutup-lightgrey;
 }
 
 .user-profile-rail.right {
-  padding: 0px 10px 0px 25px;
+  padding: 0px 10px 0px 20px;
   margin: 0px;
   border-left: 1px dashed @sproutup-grey;
-  width: 78%;
+  width: 80.5%;
 }
 
 .user-profile-rail.right .user-profile-rail-main {
@@ -3942,8 +3980,8 @@ p[class="campaign-countdown-unit"] {
 
 .user-profile-bio {
   font-weight: 400;
-  font-size: 10.5pt;
-  padding: 15px 0px 0px;
+  font-size: 10pt;
+  padding: 5px 0px 0px;
   line-height: 1.6;
 }
 
@@ -4018,6 +4056,12 @@ p[class="campaign-countdown-unit"] {
   color: @sproutup-blue;
 }
 
+.user-profile-rail--misc .buzz-sidebar-item .title .comingsoon {
+  font-size: 9.5pt;
+  color: @main-text-verylight;
+  margin-left: 10px;
+}
+
 .user-profile-rail--misc .buzz-sidebar-item .title .stats-highlight {
   color: @sproutup-green;
   font-size: 15pt;
@@ -4031,6 +4075,7 @@ p[class="campaign-countdown-unit"] {
 
 .user-profile-activities {
   margin-bottom: 15px;
+  border: 1px solid @sproutup-lightgrey;
 }
 
 .user-profile-activities.empty-state {
@@ -4346,10 +4391,10 @@ ul.list-conversation-thread li a {
 }
 
 .signup-login-header .profile-name {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 12.5pt;
   color: @main-text-light;
-  padding: 0px 10px 6px;
+  padding: 30px 10px 5px;
 }
 
 .signup-login-header .twitter-profile-handle {
@@ -4373,7 +4418,7 @@ ul.list-conversation-thread li a {
 
 .social-account-wrapper {
   background-color: white;
-  padding: 20px;
+  padding: 30px;
   text-align: left;
 }
 
@@ -4780,6 +4825,43 @@ ul.list-conversation-thread li a {
   color: @sproutup-blue;
 }
 
+.my-content-comment-row .my-content-user-avatar {
+  width: 10%;
+  padding: 0px;
+}
+
+.my-content-comment-row .my-content-comment-blurb {
+  width: 90%;
+}
+
+.form-hud {
+  margin: 0px 0px 20px;
+  padding: 20px 15px;
+  font-weight: 400;
+  font-size: 11pt;
+  text-align: center;
+  color: white;
+}
+
+.form-hud i {
+  padding-right: 12px;
+}
+
+.form-hud.success {
+  background-color: @sproutup-green;
+}
+
+.form-hud.error {
+  background-color: @sproutup-salmon;
+}
+
+.signup-login-form label {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 8px;
+  color: @main-text-verylight;
+  font-size: 10pt;
+}
 
 // media queries
 @media (min-width: 1200px) {
@@ -4797,6 +4879,15 @@ ul.list-conversation-thread li a {
 }
 
 @media (max-width:767px) {
+
+  .my-content-comment-row .my-content-user-avatar {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .my-content-comment-row .my-content-comment-blurb {
+    width: 100%;
+  }
 
   .col-sm-3.browse-campaign-sidebar {
     width: 100%;
