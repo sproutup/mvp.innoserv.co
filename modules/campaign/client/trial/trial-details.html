@@ -43,11 +43,15 @@
       <div class="about-campaign-section">
         <h3>MORE DETAILS</h3>
         <ul>
-          <li ng-if="vm.campaign.typeOfContent.indexOf('yt')>0"><i class="fa fa-dot-circle-o"></i>We are looking for YouTubers.</li>
-          <li ng-if="vm.campaign.typeOfContent.indexOf('ig')>0"><i class="fa fa-dot-circle-o"></i>We are looking for Instagramers.</li>
-          <li ng-if="vm.campaign.typeOfContent.indexOf('tw')>0"><i class="fa fa-dot-circle-o"></i>We are looking for Tweeters.</li>
-          <li ng-if="vm.campaign.typeOfContent.indexOf('pi')>0"><i class="fa fa-dot-circle-o"></i>{{vm.typeOfContent}} We are looking for Pinners.</li>
-          <li ng-if="vm.campaign.trial.keepProduct"><i class="fa fa-dot-circle-o"></i>We will send you free product to review and keep.</li>
+          <div class="list-header">Type of content we're looking for:</div>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('yt') >= 0"><i class="fa fa-dot-circle-o"></i>YouTube</li>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('ig') >= 0"><i class="fa fa-dot-circle-o"></i>Instagram</li>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('vi') >= 0"><i class="fa fa-dot-circle-o"></i>Vine</li>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('ps') >= 0"><i class="fa fa-dot-circle-o"></i>Periscope</li>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('tw') >= 0"><i class="fa fa-dot-circle-o"></i>Twitter</li>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('bl') >= 0"><i class="fa fa-dot-circle-o"></i>Blog</li>
+          <li ng-if="vm.campaign.typeOfContent.indexOf('sc') >= 0"><i class="fa fa-dot-circle-o"></i>Snapchat</li>
+          <li ng-if="vm.campaign.trial.keepProduct"><i class="fa fa-check-circle"></i>We will send you free product to review and keep.</li>
           <li ng-if="vm.campaign.trial.keepProduct==false"><i class="fa fa-dot-circle-o"></i>We will send you <strong><u>loaner</u></strong> product to review and then return to us. NO cost on you.</li>
         </ul>
       </div>
