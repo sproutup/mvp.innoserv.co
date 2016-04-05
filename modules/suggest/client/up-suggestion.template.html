@@ -1,5 +1,5 @@
 <div class="my-content-body">
-  <div class="suggested-product-item" style="background-image: url({{ suggestion.meta.image }});">
+  <div class="suggested-product-item" ng-style="{ 'background-image': 'url({{ suggestion.meta.image || 'modules/core/client/img/default-banner-suggested-product.jpg' }})' }">
     <p class="my-content-user">
       <a class="suggested-product-item-name" ng-href="{{ suggestion.url }}" target="_blank">{{ suggestion.body }}</a>
       <span class="activity">suggested by</span>
