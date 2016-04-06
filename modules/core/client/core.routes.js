@@ -19,7 +19,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatc
       is: function(val) {
         return patt.test(val);
       },
-      pattern: /(?!theme$|discover$|hangout$|conversation$|settings$|authentication$)[a-zA-Z0-9]+/
+      pattern: /(?!theme$|discover$|hangout$|conversation$|settings$|authentication$|welcome$)[a-zA-Z0-9]+/
     });
 
     // Redirect to 404 when route not found

@@ -4,12 +4,16 @@ angular
   .module('users')
   .controller('EditProfileController', EditProfileController);
 
-EditProfileController.$inject = ['$http', '$location', 'Users', 'Authentication'];
+EditProfileController.$inject = ['$http', '$location', 'Users', 'Authentication', '$state'];
 
-function EditProfileController($http, $location, Users, Authentication) {
+function EditProfileController($http, $location, Users, Authentication, $state) {
   var vm = this;
   vm.user = {};
+  vm.auth = {
+    user: Authentication.user
+  };
   vm.updateUserProfile = updateUserProfile;
+  vm.completeUserProfile = completeUserProfile;
   vm.emailConfirmation = emailConfirmation;
 
   vm.user.displayName = Authentication.user.displayName;
@@ -27,6 +31,20 @@ function EditProfileController($http, $location, Users, Authentication) {
     user.$update(function (response) {
       vm.success = true;
       Authentication.user = response;
+    }, function (response) {
+      vm.error = response.data.message;
+    });
+  }
+
+  // Update a user profile
+  function completeUserProfile () {
+    vm.success = vm.error = null;
+    var user = new Users(vm.user);
+
+    user.$update(function (response) {
+      vm.success = true;
+      Authentication.user = response;
+      $state.go('navbar.discover.list');
     }, function (response) {
       vm.error = response.data.message;
     });

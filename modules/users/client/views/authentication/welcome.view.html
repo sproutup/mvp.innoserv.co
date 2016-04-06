@@ -1,0 +1,28 @@
+<div class="signin-page" style="background-image: url('modules/core/client/img/signin-page-background.jpg')">
+  <div class="exit-signin-page">
+    <button class="btn sproutup-btn-xs"><i class="fa fa-times"></i></button>
+  </div>
+  <div class="signup-login-header">
+    <div class="profile-photo"><img up-avatar="profile.auth.user" width="64" height="64"></div>
+    <div class="profile-name">Welcome, {{profile.auth.user.displayName}}</div>
+  </div>
+  <hr>
+  <div class="signup-login-area">
+    <div class="signup-login-form-header">We're almost there.</div>
+    <form name="profile.basicinfoform" class="loginForm" data-ng-submit="profile.completeUserProfile()" novalidate autocomplete="off">
+      <div class="signup-login-form">
+        <input id="email" name="email" type="email" class="form-control signup-login-input text-center form-validate" ng-model="profile.user.email" required unique-email placeholder="Your email address" ng-model-options="{ debounce: 400 }">
+        <input type="text" class="form-control signup-login-input text-center form-validate" placeholder="Choose username" ng-model="profile.user.username" id="username" name="username" ng-model-options="{ debounce: 400 }" ng-pattern="/^[a-zA-Z0-9]+$/" ng-minlength="3" up-slug required>
+        <div ng-messages="profile.basicinfoform.username.$error" ng-show="profile.basicinfoform.username.$touched">
+          <div class="message error" ng-message="required">A user without a username? Silly.</div>
+          <div class="message error" ng-message="uniqueslug">This username has been taken.</div>
+          <div class="message error" ng-message="minlength">Your username has to be at least 3 characters long.</div>
+          <div class="message error" ng-message="pattern">Your username can only have letters and numbers. It can't have any spaces either.</div>
+        </div>
+        <button ng-disabled="profile.basicinfoform.$invalid" class="btn btn-lg signup-login-btn" type="submit">Continue</button>
+      </div>
+    </form>
+  </div>
+  <div class="signup-login-footer">Please provide a <strong>valid</strong> email for future communications about your activities, notifications and updates on SproutUp. We will send a verification email in a second.</div>
+</div>
+
