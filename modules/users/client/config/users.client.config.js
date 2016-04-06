@@ -25,6 +25,14 @@ angular.module('users').run(['Menus',
       roles: ['*'],
       position: 30
     });
+
+    Menus.addMenuItem('settings', {
+      title: 'Password',
+      state: 'navbar.settings.password',
+      class: '',
+      roles: ['*'],
+      position: 40
+    });
   }
 ]);
 

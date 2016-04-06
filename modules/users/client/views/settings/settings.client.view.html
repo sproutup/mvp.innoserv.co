@@ -26,7 +26,7 @@
     <!-- TOC -->
     <div class="col-sm-3">
       <div class="list-group">
-        <a class="list-group-item" ng-repeat="item in vm.menu.items | orderBy: 'position'" ui-sref="{{item.state}}" ng-if="item.shouldRender(navbar.authentication.user);" ng-class="{ current: navbar.state.includes(item.state) }">
+        <a class="list-group-item" ng-repeat="item in vm.menu.items | orderBy: 'position'" ui-sref="{{item.state}}" ng-if="item.shouldRender(navbar.authentication.user);" ng-class="{ current: item.state === vm.state.current.name }">
           {{item.title}}
         </a>
       </div>

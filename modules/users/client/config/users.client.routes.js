@@ -27,6 +27,12 @@ angular.module('users').config(['$stateProvider',
         controller: '',
         controllerAs: ''
       })
+      .state('navbar.settings.password', {
+        url: '/password',
+        templateUrl: 'modules/users/client/views/settings/change-password.client.view.html',
+        controller: '',
+        controllerAs: ''
+      })
       .state('company.navbar.user.password', {
         url: '/password',
         templateUrl: 'modules/users/client/views/settings/change-password.client.view.html'

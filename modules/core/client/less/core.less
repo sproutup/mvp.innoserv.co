@@ -3088,7 +3088,7 @@ ul.company-profile-social-buttons p {
 
 .about-campaign-section p {
   font-weight: 400;
-  font-size: 12.5pt;
+  font-size: 12pt;
   margin: 0px;
   padding: 25px;
   white-space: pre-wrap;
@@ -3107,38 +3107,47 @@ ul.company-profile-social-buttons p {
 
 .about-campaign-section ul .list-header {
   font-weight: 400;
-  font-size: 12.5pt;
+  font-size: 12pt;
   margin: 0px;
   padding: 0px 0px 15px;
   white-space: pre-wrap;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .about-campaign-section ul li {
   padding-bottom: 10px;
   font-weight: 400;
-  font-size: 12.5pt;
+  font-size: 12pt;
   white-space: pre-wrap;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .about-campaign-section ul li i {
   padding-right: 10px;
 }
 
+.about-campaign-section ul li .fa {
+  color: @main-text-verylight;
+}
+
+.about-campaign-section ul li .fa.green {
+  color: @sproutup-green;
+}
+
 .about-campaign-section h4 {
   font-weight: 400;
-  font-size: 12.5pt;
+  font-size: 12pt;
   margin: 0px;
   padding: 25px 25px 10px;
 }
 
 .about-campaign-section .fine-prints {
-  font-weight: 300;
-  font-size: 10.5pt;
+  font-weight: 400;
+  font-size: 10pt;
   margin: 0px;
   padding: 0px 25px;
   line-height: 1.6;
+  color: @main-text-verylight;
 }
 
 .about-campaign-section .fine-prints a {
@@ -4391,10 +4400,10 @@ ul.list-conversation-thread li a {
 }
 
 .signup-login-header .profile-name {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 12.5pt;
   color: @main-text-light;
-  padding: 0px 10px 6px;
+  padding: 30px 10px 5px;
 }
 
 .signup-login-header .twitter-profile-handle {
@@ -4501,7 +4510,7 @@ ul.list-conversation-thread li a {
 }
 
 .settings-page-actions {
-	margin: 20px 3px 0px;
+	margin: 10px 3px 0px;
 	float: right;
 }
 
@@ -4832,6 +4841,42 @@ ul.list-conversation-thread li a {
 
 .my-content-comment-row .my-content-comment-blurb {
   width: 90%;
+}
+
+.form-hud {
+  margin: 0px 0px 20px;
+  padding: 20px 15px;
+  font-weight: 400;
+  font-size: 11pt;
+  text-align: center;
+  color: white;
+}
+
+.form-hud i {
+  padding-right: 12px;
+}
+
+.form-hud.success {
+  background-color: @sproutup-green;
+}
+
+.form-hud.error {
+  background-color: @sproutup-salmon;
+}
+
+.signup-login-form label {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 8px;
+  color: @main-text-verylight;
+  font-size: 10pt;
+}
+
+.settings-wrapper label {
+  margin-top: 8px;
+  color: @main-text-verylight;
+  font-size: 10pt;
+  margin-bottom: 5px;
 }
 
 // media queries
