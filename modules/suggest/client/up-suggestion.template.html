@@ -3,13 +3,12 @@
     <p class="my-content-user">
       <a class="suggested-product-item-name" ng-href="{{ suggestion.url }}" target="_blank">{{ suggestion.body }}</a>
       <span class="activity">suggested by</span>
-      <a href="#">{{ suggestion.user.displayName }}</a>
+      <a ui-sref="navbar.slug.user.buzz({ slug: suggestion.user.username })">{{ suggestion.user.displayName }}</a>
     </p>
     <p ng-show="{{ suggestion.meta.description.length > 0 }}" class="suggested-product-item-description">{{ suggestion.meta.description | limitTo: 120 }}{{ suggestion.meta.description.length < 120 ? '' : '...' }}</p>
     <div class="my-content-actions">
       <up-like likes="suggestion.likes" up-id="suggestion.id" up-type="models.post" state="{{ vm.state }}" params="vm.params"></up-like>
       <a href="#" ng-click="suggestion.commenting = !suggestion.commenting">COMMENTS ({{ suggestion.comment.length || 0 }})</a>
-<!--               <a href="#">REQUEST</a> -->
     </div>
   </div>
 </div>
