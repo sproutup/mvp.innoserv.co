@@ -62,7 +62,6 @@ function EditProfileController($http, $location, Users, Authentication, $state) 
   function sendEmailVerification () {
     $http.post('/api/auth/email/verification').success(function (response) {
       vm.emailSuccess = true;
-      console.log(response);
       if (response.url) {
         vm.emailUrl = response.url;
       }
