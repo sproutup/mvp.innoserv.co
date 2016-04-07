@@ -90,5 +90,16 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
         $scope.error = errorResponse.message;
       });
     };
+
+    $scope.verifyEmailToken = function() {
+      $http.get('/api/auth/email/confirmation/' + $state.params.token).success(function (response) {
+        $scope.success = true;
+        $scope.emailInit = true;
+        Authentication.user = response;
+      }).error(function (errorResponse) {
+        $scope.emailInit = true;
+        $scope.error = errorResponse.message;
+      });
+    };
   }
 ]);

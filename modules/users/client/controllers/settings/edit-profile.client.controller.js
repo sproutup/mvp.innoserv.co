@@ -13,16 +13,16 @@ function EditProfileController($http, $location, Users, Authentication, $state) 
     user: Authentication.user
   };
   vm.updateUserProfile = updateUserProfile;
+  vm.sendEmailVerification = sendEmailVerification;
   vm.back = back;
   vm.completeUserProfile = completeUserProfile;
-  vm.emailConfirmation = emailConfirmation;
-
   vm.user.displayName = Authentication.user.displayName;
   vm.user.email = Authentication.user.email;
   vm.user.username = Authentication.user.username;
   vm.user.description = Authentication.user.description;
   vm.user.phone = Authentication.user.phone;
   vm.user.address = Authentication.user.address;
+  vm.user.emailConfirmed = Authentication.user.emailConfirmed;
 
   // Update a user profile
   function updateUserProfile () {
@@ -31,7 +31,9 @@ function EditProfileController($http, $location, Users, Authentication, $state) 
 
     user.$update(function (response) {
       vm.success = true;
+      vm.basicinfoform.email.$pristine = true;
       Authentication.user = response;
+      vm.user.emailConfirmed = Authentication.user.emailConfirmed;
     }, function (response) {
       vm.error = response.data.message;
     });
@@ -56,12 +58,11 @@ function EditProfileController($http, $location, Users, Authentication, $state) 
   }
 
   // Send another email confirmation
-  function emailConfirmation () {
-      $http.post('/api/users/email/confirmation').success(function (response) {
-          vm.message = 'Email sent successfully';
-          vm.success = true;
-      }).error(function (response) {
-          vm.message = 'Email failed to send';
-      });
+  function sendEmailVerification () {
+    $http.post('/api/auth/email/verification').success(function (response) {
+      vm.emailSuccess = true;
+    }).error(function (response) {
+        vm.message = 'Email failed to send';
+    });
   }
 }

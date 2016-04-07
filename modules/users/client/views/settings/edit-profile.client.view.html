@@ -1,7 +1,10 @@
 <!-- Content -->
 <div class="col-sm-9" data-ng-controller="EditProfileController">
   <div data-ng-show="profile.success" class="form-hud success">
-    <strong>Profile Saved Successfully</strong>
+    <strong>Profile saved successfully</strong>
+  </div>
+  <div data-ng-show="profile.emailSuccess" class="form-hud success">
+    <strong>Email verification sent to {{ profile.user.email }}</strong>
   </div>
   <div data-ng-show="profile.error" class="form-hud error">
     <strong data-ng-bind="error"></strong>
@@ -12,7 +15,14 @@
       <!-- email -->
       <div class="row profile-input-row">
         <div class="col-sm-12 profile-input-cell">
-          <input id="email" name="email" type="email" class="form-control form-validate form-input medium" placeholder="Email" ng-model="profile.user.email">
+          <input id="email" name="email" type="email" class="form-control form-validate form-input medium" placeholder="Email" ng-model="profile.user.email" unique-email>
+          <div class="message error" ng-if="profile.user.email && !profile.user.emailConfirmed && profile.basicinfoform.email.$pristine">Email not verified <a ng-click="profile.sendEmailVerification()" href="#">Resend a link</a></div>
+          <span class="input-feedback-right success" ng-if="profile.user.emailConfirmed && profile.basicinfoform.email.$pristine"><i class="fa fa-check-circle"></i>Verified</span>
+          <div ng-messages="profile.basicinfoform.email.$error" ng-show="profile.basicinfoform.email.$touched">
+            <div class="message error" ng-message="required">A valid email is required.</div>
+            <div class="message error" ng-message="uniqueemail">This email has been taken.</div>
+            <div class="message error" ng-message="email">Seems like an invalid email.</div>
+          </div>
           <!-- <div class="message error">Email not verified <a href="#">Resend a link</a></div> -->
           <!-- <span class="input-feedback-right success"><i class="fa fa-check-circle"></i>Verified</span> -->
         </div>
