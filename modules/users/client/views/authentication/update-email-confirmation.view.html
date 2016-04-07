@@ -1,5 +1,11 @@
 <div ng-init="verifyEmailToken()" ng-show="emailInit">
-  <h2 ng-if="success">You've successfully confirmed your email.</h2>
-  <h2 ng-if="error">This token is invalid.</h2>
-  <a ui-sref="navbar.home">Go Home</a>
+  <div class="signin-page" style="background-image: url('modules/core/client/img/signin-page-background.jpg')">
+    <div class="signup-login-header email-verification">
+      <h1 ng-if="success">You've successfully verified your email.</h1>
+      <h1 ng-if="error">This verification link you clicked has expired. Please request another one.</h1>
+    </div>
+    <div class="signup-login-form-footer">
+      <p><a ui-sref="navbar.home">Back to SproutUp</a></p>
+    </div>
+  </div>
 </div>
