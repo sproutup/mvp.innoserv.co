@@ -23,7 +23,8 @@ var ApplicationConfiguration = (function () {
     'angulartics.google.analytics',
     'angulartics.mixpanel',
     'ngIntlTelInput',
-    'ngAutocomplete'
+    'ngAutocomplete',
+    'infinite-scroll'
   ];
 
   // Add a new vertical module
