@@ -3,7 +3,7 @@
     <div class="campaign-banner join" ng-style="{'background-image': 'url({{ vm.campaign.banner.file.url || 'modules/core/client/img/default-product-banner.jpg' }})'}">
       <div class="row campaign-join-wrapper">
         <div class="col-lg-12">
-          <h1>Thanks for requesting product trial!</h1>
+          <h1>Thanks for requesting!</h1>
           <h2>A few more things to ask...</h2>
           <div class="campaign-join-form" ng-init="vm.item = {}">
             <textarea class="form-validate form-control form-input-textarea" ng-model="vm.comment" name="comment" placeholder="Pitch to us what kind of content you would create and why are you interested in this product."></textarea>
@@ -30,7 +30,7 @@
               </div>
             </div>
           </div>
-          <div class="campaign-join-fintprints">After {{ vm.campaign.company.name }} accepts your request, the product will be shipped to the address you provided above. You may be contacted by phone or email for shipping and trial related questions.</div>
+          <div class="campaign-join-fintprints">After {{ vm.campaign.company.name }} accepts your request, the product will be shipped to the address you provided above. Please pay attention to your messages as {{ vm.campaign.company.name }} may contact you.</div>
           <div class="campaign-join-action">
             <button class="btn btn-lg sproutup-btn-lg-main" ng-disabled="form.$invalid" ng-click="vm.submitRequest()">Send my request</button>
           </div>
