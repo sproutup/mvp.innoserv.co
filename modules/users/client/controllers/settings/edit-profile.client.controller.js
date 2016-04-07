@@ -13,6 +13,7 @@ function EditProfileController($http, $location, Users, Authentication, $state) 
     user: Authentication.user
   };
   vm.updateUserProfile = updateUserProfile;
+  vm.back = back;
   vm.completeUserProfile = completeUserProfile;
   vm.emailConfirmation = emailConfirmation;
 
@@ -34,6 +35,10 @@ function EditProfileController($http, $location, Users, Authentication, $state) 
     }, function (response) {
       vm.error = response.data.message;
     });
+  }
+
+  function back () {
+    $state.go($state.previous.state.name || 'navbar.home', $state.previous.params);
   }
 
   // Update a user profile
