@@ -1,0 +1,36 @@
+<div class="signin-page" style="background-image: url('modules/core/client/img/signin-page-background.jpg')">
+  <div class="exit-signin-page">
+    <button class="btn sproutup-btn-xs" ng-click="profile.back()"><i class="fa fa-times"></i></button>
+  </div>
+  <div class="signup-login-header">
+    <div class="profile-photo"><img up-avatar="profile.auth.user" width="80" height="80"></div>
+    <div class="profile-name">Welcome, <strong>{{profile.auth.user.displayName}}</strong>. We just built your profile based on what we got, but feel free to update.</div>
+    <div class="ps">PS: If you see a username with many weird digits, it means we tried hard to get you a nice one but it's been taken. Please make it more friendly. &#x1F609;</div>
+  </div>
+  <hr>
+  <div class="signup-login-area">
+    <form name="profile.basicinfoform" class="loginForm" data-ng-submit="profile.completeUserProfile()" novalidate autocomplete="off">
+      <div class="signup-login-form">
+        <!-- email -->
+        <label>Email</label>
+        <input id="email" name="email" type="email" class="form-control signup-login-input form-validate" ng-model="profile.user.email" required unique-email placeholder="Your email address" ng-model-options="{ debounce: 400 }">
+        <div ng-messages="profile.basicinfoform.email.$error" ng-show="profile.basicinfoform.email.$touched">
+          <div class="signup-login-form--error-message" ng-message="uniqueemail"><i class="fa fa-minus-circle"></i>This email has been taken.</div>
+          <div class="signup-login-form--error-message" ng-message="required"><i class="fa fa-minus-circle"></i>A valid email is required.</div>
+          <div class="signup-login-form--error-message" ng-message="email"><i class="fa fa-minus-circle"></i>Seems like an invalid email.</div>
+        </div>
+        <!-- username -->
+        <label>SproutUp Username</label>
+        <input type="text" class="form-control signup-login-input form-validate" placeholder="Choose username" ng-model="profile.user.username" id="username" name="username" ng-model-options="{ debounce: 400 }" ng-pattern="/^[a-zA-Z0-9]+$/" ng-minlength="3" up-slug required>
+        <div ng-messages="profile.basicinfoform.username.$error" ng-show="profile.basicinfoform.username.$touched">
+          <div class="signup-login-form--error-message" ng-message="required"><i class="fa fa-minus-circle"></i>A user without a username? Silly.</div>
+          <div class="signup-login-form--error-message" ng-message="uniqueslug"><i class="fa fa-minus-circle"></i>This username has been taken.</div>
+          <div class="signup-login-form--error-message" ng-message="minlength"><i class="fa fa-minus-circle"></i>Your username has to be at least 3 characters long.</div>
+          <div class="signup-login-form--error-message" ng-message="pattern"><i class="fa fa-minus-circle"></i>Your username can only have letters and numbers. It can't have any spaces either.</div>
+        </div>
+        <button ng-disabled="profile.basicinfoform.$invalid" class="btn btn-lg signup-login-btn" type="submit">Update my profile</button>
+      </div>
+    </form>
+  </div>
+  <div class="signup-login-footer">Please provide a <strong>valid</strong> email for future communications about your activities, notifications and updates on SproutUp. We will send a verification email in a second.</div>
+</div>

@@ -29,13 +29,10 @@ function EmailDirective($q, $timeout, $http) {
         console.log('email domain: ', attr.uniqueEmail);
         email = email + '@' + attr.uniqueEmail;
       }
-      else{
-        scope.vm.domain = email.substring(email.lastIndexOf('@')+1, email.length);
-      }
 
       $http.post('/api/auth/validate/email', {email: email}).success(function (response) {
         if(response.result === 1){
-          scope.vm.company = response.company;
+          //scope.vm.company = response.company;
           def.resolve();
         }
         else{

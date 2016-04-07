@@ -4,14 +4,18 @@ angular
   .module('users')
   .controller('EditProfileController', EditProfileController);
 
-EditProfileController.$inject = ['$http', '$location', 'Users', 'Authentication'];
+EditProfileController.$inject = ['$http', '$location', 'Users', 'Authentication', '$state'];
 
-function EditProfileController($http, $location, Users, Authentication) {
+function EditProfileController($http, $location, Users, Authentication, $state) {
   var vm = this;
   vm.user = {};
+  vm.auth = {
+    user: Authentication.user
+  };
   vm.updateUserProfile = updateUserProfile;
   vm.sendEmailVerification = sendEmailVerification;
-
+  vm.back = back;
+  vm.completeUserProfile = completeUserProfile;
   vm.user.displayName = Authentication.user.displayName;
   vm.user.email = Authentication.user.email;
   vm.user.username = Authentication.user.username;
@@ -30,6 +34,24 @@ function EditProfileController($http, $location, Users, Authentication) {
       vm.basicinfoform.email.$pristine = true;
       Authentication.user = response;
       vm.user.emailConfirmed = Authentication.user.emailConfirmed;
+    }, function (response) {
+      vm.error = response.data.message;
+    });
+  }
+
+  function back () {
+    $state.go($state.previous.state.name || 'navbar.home', $state.previous.params);
+  }
+
+  // Update a user profile
+  function completeUserProfile () {
+    vm.success = vm.error = null;
+    var user = new Users(vm.user);
+
+    user.$update(function (response) {
+      vm.success = true;
+      Authentication.user = response;
+      $state.go('navbar.discover.list');
     }, function (response) {
       vm.error = response.data.message;
     });

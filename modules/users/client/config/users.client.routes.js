@@ -27,6 +27,12 @@ angular.module('users').config(['$stateProvider',
         controller: '',
         controllerAs: ''
       })
+      .state('navbar.settings.password', {
+        url: '/password',
+        templateUrl: 'modules/users/client/views/settings/change-password.client.view.html',
+        controller: '',
+        controllerAs: ''
+      })
       .state('company.navbar.user.password', {
         url: '/password',
         templateUrl: 'modules/users/client/views/settings/change-password.client.view.html'
@@ -49,6 +55,12 @@ angular.module('users').config(['$stateProvider',
       .state('authentication.signup', {
         url: '/signup',
         templateUrl: 'modules/users/client/views/authentication/signup.client.view.html'
+      })
+      .state('welcome', {
+        url: '/welcome',
+        controller: 'EditProfileController',
+        controllerAs: 'profile',
+        templateUrl: 'modules/users/client/views/authentication/welcome.view.html'
       })
       .state('authentication.signin', {
         url: '/signin?err',
