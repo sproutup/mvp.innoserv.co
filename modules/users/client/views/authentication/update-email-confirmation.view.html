@@ -1,0 +1,5 @@
+<div ng-init="verifyEmailToken()" ng-show="emailInit">
+  <h2 ng-if="success">You've successfully confirmed your email.</h2>
+  <h2 ng-if="error">This token is invalid.</h2>
+  <a ui-sref="navbar.home">Go Home</a>
+</div>

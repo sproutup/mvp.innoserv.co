@@ -99,6 +99,11 @@ angular.module('users').config(['$stateProvider',
         url: '/email',
         template: '<ui-view/>'
       })
+      .state('email.update-confirmation', {
+        url: '/update/confirmation/:token',
+        templateUrl: 'modules/users/client/views/authentication/update-email-confirmation.view.html',
+        controller: 'AuthenticationController'
+      })
       .state('email.confirmation', {
         abstract: true,
         url: '',
