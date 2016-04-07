@@ -18,15 +18,15 @@
                 <div class="sponsorship-question-answer">You'll have to return this product after you try it.</div>
                 <hr>
               </div>
-              <div class="sponsorship-question-title">And we'd love to sponsor really awesome content creators. If you are interested, we'd like to hear from you!</div>
+              <div class="sponsorship-question-title">And we'd love to sponsor really awesome content creators. If you are interested, we'd like to hear from you! Leave it empty if you don't ask for sponsorship.</div>
               <div class="form-inline">
-                <span style="margin-right: 5px;">$</span><input type="number" class="form-control form-validate form-input small" ng-model="vm.bid" min="0" max="1000000000">
-              </div>
-              <div role="alert">
-                <span class="error" ng-show="form.$error.max">
-                  A billion is too much.</span>
-                <span class="error" ng-show="form.$error.min">
-                  No need to pay us for this! ;)</span>
+                <span class="dollar-sign">$</span><input type="number" class="form-control form-validate form-input small" ng-model="vm.bid" min="0" max="1000000">
+                <div role="alert">
+                  <div class="message error" ng-show="form.$error.max">
+                    WOW, one million dollars sound too much!</div>
+                  <div class="message error" ng-show="form.$error.min">
+                    No need to pay us for this! ;)</div>
+                </div>
               </div>
             </div>
           </div>
