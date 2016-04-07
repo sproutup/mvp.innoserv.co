@@ -23,7 +23,7 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     vm.displayLinkPhoto = displayLinkPhoto;
     vm.displayLinkVideo = displayLinkVideo;
     vm.selectTrialProduct = selectTrialProduct;
-    vm.busy = true;
+    vm.busy = false;
     vm.disabled = false;
     var local = {};
     local.loadCallback = loadCallback;
@@ -53,6 +53,7 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     }
 
     function loadContent() {
+        console.log('load buzz: ', position);
         vm.busy = true;
         if (vm.slug) {
             content = FeedService.buzzProduct().query({
