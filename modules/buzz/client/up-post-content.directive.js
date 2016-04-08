@@ -84,9 +84,7 @@ function upPostContentController(YouTubeService, Authentication) {
   var vm = this;
 
   vm.showYouTubeVideos = function() {
-    YouTubeService.videos().get({
-      userId: Authentication.user.id
-    }, function(res) {
+    YouTubeService.videos().get({}, function(res) {
       vm.contentState = 'youtube';
       vm.videos = res.items;
     }, function(err) {

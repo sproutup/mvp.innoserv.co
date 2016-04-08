@@ -14,6 +14,6 @@ function YouTubeService($resource) {
   return service;
 
   function videos() {
-    return $resource('/api/user/:userId/youtube/video', { userId:'@userId' }, { update:{ method:'PUT' } } );
+    return $resource('/api/me/youtube/video', {}, { update:{ method:'PUT' } } );
   }
 }
