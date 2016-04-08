@@ -10,9 +10,9 @@
   <div class="col-sm-10 my-content-body">
     <div class="my-content-item--summary" ng-if="vm.content.type !== 1">
       <p class="my-content-user">
-        <span class="my-content-user-name">
-          <a class="content-user-link" ui-sref="navbar.slug.user.buzz({ slug: vm.content.user.username })">{{ vm.content.user.displayName }}</a>
-        </span>
+        <a class="content-user-link" ui-sref="navbar.slug.user.buzz({ slug: vm.content.user.username })">{{ vm.content.user.displayName }}</a>
+        <span ng-if="vm.content.groupId" class="activity">posted a content for</span>
+        <a ng-if="vm.content.groupId" href="">{{ vm.content.groupId }}</a>
       </p>
       <p class="my-content-timestamp"><a href="#">{{ vm.content.created | fromNow }}</a></p>
       <div class="my-content-item-main">
