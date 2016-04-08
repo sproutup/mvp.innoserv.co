@@ -32,7 +32,7 @@
                 </div>
                 <div class="my-content-new">
                   <div up-post-write ng-model="buzzCtrl.post" required ng-show="buzzCtrl.state === 'write'"></div>
-                  <div up-post-content ng-model="buzzCtrl.post" networks="yt, ig, url" required ng-show="buzzCtrl.state === 'content'"></div>
+                  <div up-post-content ng-model="buzzCtrl.post" networks="yt, ig, url" ng-show="buzzCtrl.state === 'content'"></div>
                 </div>
               </div>
               <div class="remove-my-content-og-content" ng-click="buzzCtrl.post.meta = buzzCtrl.post.url = null" ng-if="buzzCtrl.post.meta && buzzCtrl.state === 'write'">
@@ -44,7 +44,7 @@
                   <span ng-hide="buzzCtrl.posting">Post</span>
                   <span us-spinner spinner-key="spinner-1"></span>
                 </button>
-                <button ng-show="buzzCtrl.state === 'content'" ng-disabled="buzzCtrl.form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.createContent(vm.campaign.groupId)">
+                <button ng-show="buzzCtrl.state === 'content'" ng-disabled="buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.createContent(vm.campaign.groupId)">
                   <span ng-hide="buzzCtrl.posting">Post</span>
                   <span us-spinner spinner-key="spinner-1"></span>
                 </button>
