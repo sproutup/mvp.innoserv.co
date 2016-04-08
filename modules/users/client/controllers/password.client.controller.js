@@ -33,14 +33,9 @@ angular.module('users').controller('PasswordController', ['$scope', '$http', '$l
       $scope.success = $scope.error = null;
 
       $http.post('/api/auth/reset/' + $stateParams.token, $scope.passwordDetails).success(function (response) {
-        // If successful show success message and clear form
-        $scope.passwordDetails = null;
-
-        // Attach user profile
         Authentication.user = response;
 
-        // And redirect to the index page
-        $state.go('mycompany');
+        $state.go('navbar.home');
       }).error(function (response) {
         $scope.error = response.message;
       });
