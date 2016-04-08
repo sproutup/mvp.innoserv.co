@@ -4,9 +4,9 @@ angular
   .module('campaign')
   .controller('CampaignTrialController', CampaignTrialController);
 
-CampaignTrialController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', 'PostService', 'usSpinnerService', 'ContentService', '$rootScope'];
+CampaignTrialController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', 'PostService', 'usSpinnerService', 'ContentService', '$rootScope', '$uibModal'];
 
-function CampaignTrialController(CampaignService, $state, Authentication, $scope, PostService, usSpinnerService, ContentService, $rootScope) {
+function CampaignTrialController(CampaignService, $state, Authentication, $scope, PostService, usSpinnerService, ContentService, $rootScope, $modal) {
   var vm = this;
   vm.find = find;
   vm.findOne = findOne;
@@ -14,6 +14,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
   vm.submitRequest = submitRequest;
   vm.findContributor = findContributor;
   vm.updateRequest = updateRequest;
+  vm.openCancelModal = openCancelModal;
   vm.cancelRequest = cancelRequest;
   vm.connected = connected;
   vm.createPost = createPost;
@@ -170,6 +171,23 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
     });
 
     contentItem.$save();
+  }
+
+  function openCancelModal() {
+    var modalInstance = $modal.open({
+      templateUrl: 'modules/core/client/cancel-request-confirmation.html',
+      controller: 'DeleteController',
+      controllerAs: 'vm',
+      resolve: {
+        message: function() { return 'Your request will be gone forever and ever.'; }
+      }
+    });
+
+    modalInstance.result.then(function () {
+      cancelRequest();
+    }, function () {
+      console.log('Modal dismissed at: ' + new Date());
+    });
   }
 
   function cancelRequest() {
