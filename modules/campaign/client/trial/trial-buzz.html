@@ -39,12 +39,14 @@
                 <button class="btn sproutup-btn-square aqua"><i class="fa fa-times"></i></button>
               </div>
               <up-meta ng-if="buzzCtrl.state === 'write' && buzzCtrl.post.meta" item="buzzCtrl.post.meta" url="buzzCtrl.post.url"></up-meta>
-              <div class="post-new-comment-actions">
-                <button ng-show="buzzCtrl.state === 'write'" ng-disabled="buzzCtrl.form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.create(vm.campaign.groupId)">
+              <div class="post-new-comment-actions" ng-if="buzzCtrl.state === 'write'">
+                <button ng-disabled="buzzCtrl.form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.create(vm.campaign.groupId)">
                   <span ng-hide="buzzCtrl.posting">Post</span>
                   <span us-spinner spinner-key="spinner-1"></span>
                 </button>
-                <button ng-show="buzzCtrl.state === 'content'" ng-disabled="buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.createContent(vm.campaign.groupId)">
+              </div>
+              <div class="post-new-comment-actions" ng-if="buzzCtrl.state === 'content'">
+                <button ng-disabled="buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.createContent(vm.campaign.groupId)">
                   <span ng-hide="buzzCtrl.posting">Post</span>
                   <span us-spinner spinner-key="spinner-1"></span>
                 </button>
