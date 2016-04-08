@@ -5,6 +5,7 @@
   </div>
   <div data-ng-show="profile.emailSuccess" class="form-hud success">
     <strong>Email verification sent to {{ profile.user.email }}</strong>
+    <div ng-if="profile.emailUrl"><a ng-href="{{ profile.emailUrl }}">Confirmation Link</a></div>
   </div>
   <div data-ng-show="profile.error" class="form-hud error">
     <strong data-ng-bind="error"></strong>

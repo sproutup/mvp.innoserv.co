@@ -50,6 +50,11 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatc
         url: '/terms',
         templateUrl: 'modules/core/client/terms.view.html'
       })
+      .state('navbar.i', {
+        url: '/i',
+        abstract: true,
+        template: '<ui-view />'
+      })
       .state('navbar.slug', {
         //url: '/{slug: ^(?!theme$|discover$|hangout$|conversation$|settings$|authentication$).*}',
         url: '/{slug:slugItem}',

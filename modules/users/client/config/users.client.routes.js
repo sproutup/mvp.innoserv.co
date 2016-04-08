@@ -106,34 +106,10 @@ angular.module('users').config(['$stateProvider',
         controller: 'PasswordController',
         templateUrl: 'modules/users/client/views/password/reset-password.client.view.html'
       })
-      .state('email', {
-        abstract: true,
-        url: '/email',
-        template: '<ui-view/>'
-      })
-      .state('email.update-confirmation', {
-        url: '/update/confirmation/:token',
+      .state('navbar.i.update-confirmation', {
+        url: '/update-email/:token',
         templateUrl: 'modules/users/client/views/authentication/update-email-confirmation.view.html',
         controller: 'AuthenticationController'
-      })
-      .state('email.confirmation', {
-        abstract: true,
-        url: '',
-        template: '<ui-view/>'
-      })
-      .state('email.confirmation.details', {
-        url: '/confirmation/:token',
-        templateUrl: 'modules/users/client/views/authentication/email-confirmation-details.html',
-        controller: 'AuthenticationController'
-      })
-      .state('email.confirmation.success', {
-        url: '/success',
-        templateUrl: 'modules/users/client/views/authentication/email-confirmation-success.client.view.html'
-      })
-      .state('email.confirmation.invalid', {
-        url: '/invalid',
-        controller: 'EmailController',
-        templateUrl: 'modules/users/client/views/authentication/email-confirmation-invalid.client.view.html'
       });
   }
 ]);

@@ -30,6 +30,7 @@ function EditProfileController($http, $location, Users, Authentication, $state) 
     var user = new Users(vm.user);
 
     user.$update(function (response) {
+      console.log(response);
       vm.success = true;
       vm.basicinfoform.email.$pristine = true;
       Authentication.user = response;
@@ -61,6 +62,9 @@ function EditProfileController($http, $location, Users, Authentication, $state) 
   function sendEmailVerification () {
     $http.post('/api/auth/email/verification').success(function (response) {
       vm.emailSuccess = true;
+      if (response.url) {
+        vm.emailUrl = response.url;
+      }
     }).error(function (response) {
         vm.message = 'Email failed to send';
     });
