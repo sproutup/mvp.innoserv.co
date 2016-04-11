@@ -2717,6 +2717,15 @@ ul.browse-campaign-sidenav li a.active {
   border-radius: 8px;
 }
 
+.company-profile-info-wrapper .brand-logo {
+  z-index: 10;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border: 2px solid @sproutup-grey;
+  border-radius: 8px;
+}
+
 .campaign-info-wrapper h1
 {
   z-index: 10;
@@ -4258,7 +4267,7 @@ ul.list-conversation-thread li a {
 }
 
 .company-profile-banner {
-  min-height: 300px;
+  min-height: 400px;
   margin: 0px;
   background-position:center;
   background-repeat:no-repeat;
@@ -4282,7 +4291,7 @@ ul.list-conversation-thread li a {
   text-align: left;
   color: @main-text-white;
   margin: 0px auto;
-  padding: 100px 15px 40px;
+  padding: 125px 15px 40px;
 }
 
 .company-profile-info-wrapper h1
@@ -4299,7 +4308,7 @@ ul.list-conversation-thread li a {
 .company-profile-info-wrapper h1 span {
   font-size: 12pt;
   font-weight: 400;
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .buzz-sidebar-item ul.buzz-sidebar-footer {
@@ -4923,6 +4932,12 @@ ul.list-conversation-thread li a {
 }
 
 @media (max-width:767px) {
+
+  .company-profile-info-wrapper h1 span {
+    display: block;
+    margin-top: 25px;
+    margin-left: 0px;
+  }
 
   .my-content-comment-row .my-content-user-avatar {
     width: 100%;
