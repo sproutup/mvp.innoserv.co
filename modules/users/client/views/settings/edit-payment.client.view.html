@@ -1,14 +1,22 @@
-<div class="col-sm-9">
+<div class="col-sm-9" data-ng-controller="EditPaymentController">
+  <div data-ng-show="payment.success" class="form-hud success">
+    <strong>Payment information saved successfully</strong>
+  </div>
+  <div data-ng-show="payment.error" class="form-hud error">
+    <strong data-ng-bind="error"></strong>
+  </div>
   <div class="social-account-wrapper">
     <div class="profile-edit--header">
-      <h1>Get paid. With Square Cash.</h1>
-      <h2><a class="squarecash" href="https://cash.me/" target="_blank">Learn more about Square Cash</a>. And you may wonder why Square Cash? Because it's fast, easy, free and beautiful! You simply get paid with your <a class="squarecash" href="https://cash.me/cashtags" target="_blank">$Cashtag</a>, like this:</h2>
-      <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/sproutup-assets/squarecash.png">
+      <h1>Get paid with Square Cash&trade;</h1>
+      <h2 ng-if="!payment.user.cashtag"><a class="squarecash" href="https://cash.me/" target="_blank">Learn more about Square Cash</a>. And you may wonder why Square Cash? Because it's fast, easy, free and beautiful! You simply get paid with your <a class="squarecash" href="https://cash.me/cashtags" target="_blank">$Cashtag</a>, like this:</h2>
+      <h2 ng-if="payment.user.cashtag">You're all set and ready to receive payments from awesome brands on SproutUp! <a class="squarecash" href="https://cash.me/{{ payment.user.cashtag }}" target="_blank">Click here</a> to make sure it's your Square Cash account.</h2>
+      <img ng-if="!payment.user.cashtag" class="img-responsive" src="https://s3-us-west-2.amazonaws.com/sproutup-assets/squarecash.png">
+      <img ng-if="payment.user.cashtag" class="img-responsive" src="https://s3-us-west-2.amazonaws.com/sproutup-assets/getpaid.gif">
     </div>
-    <form>
+    <form name="payment.paymentForm" data-ng-submit="payment.updateUserProfile()" novalidate>
       <label class="sproutup-form-label">Enter your Square $Cashtag. <a href="https://cash.me/" target="_blank">Get it here</a> if you don't have one.</label>
-      <input type="text" class="form-control form-validate form-input medium" placeholder="Square $Cashtag">
-      <button class="btn sproutup-btn-sm squarecash">Save Changes</button>
+      <input id="cashtag" name="cashtag" type="text" class="form-control form-input medium" ng-model="payment.user.cashtag" placeholder="Square $Cashtag">
+      <button ng-disabled="payment.paymentForm.$invalid || payment.paymentForm.$pristine" class="btn sproutup-btn-sm squarecash" type="submit">Save Changes</button>
     </form>
   </div>
 </div>
