@@ -5,6 +5,8 @@
     .module('core')
     .controller('DeleteController', DeleteController);
 
+  DeleteController.$inject = ['$scope', '$uibModalInstance', 'message'];
+
   function DeleteController($scope, $modalInstance, message) {
     var vm = this;
     vm.message = message;
