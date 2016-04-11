@@ -210,6 +210,9 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
       usSpinnerService.spin('spinner-1');
 
       item.$save(function(res) {
+        if (vm.post.media) {
+          saveContent();
+        }
         vm.posting = false;
         vm.post = {};
         vm.selectedVideo = {};
@@ -221,10 +224,6 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
         vm.posting = false;
         usSpinnerService.stop('spinner-1');
       });
-
-      if (vm.post.media) {
-        saveContent();
-      }
     }
 
     function saveContent() {
