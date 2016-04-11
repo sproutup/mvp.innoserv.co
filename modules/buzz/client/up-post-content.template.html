@@ -1,12 +1,16 @@
-<div class="post-new-content-uploader">
+<div class="post-new-content-uploader" ng-init="vm.load()" ng-show="vm.providers.$resolved">
   <div ng-show="vm.contentState==='select'">
     <div ng-if="youtube">
       <div class="post-new-content-uploader-method">
         <table>
           <tbody>
-            <tr ng-click="showYouTubeVideos()">
+            <tr ng-if="vm.user.google" ng-click="showYouTubeVideos()">
               <td><a href="#"><img src="modules/core/client/img/settings/youtube.png"></a></td>
-              <td><a href="#" ng-click="vm.contentState='write'">Choose video from YouTube<span>For YouTubers, please choose the content from your channel.</span></a></td>
+              <td><a href="#">Choose video from YouTube<span>For YouTubers, please choose the content from your channel.</span></a></td>
+            </tr>
+            <tr ng-if="!vm.user.google" ng-click="vm.callOauthProvider('/api/auth/google')">
+              <td><a href="#"><img src="modules/core/client/img/settings/youtube.png"></a></td>
+              <td><a href="#">Connect your YouTube<span>To post content from your channel, connect here.</span></a></td>
             </tr>
           </tbody>
         </table>
