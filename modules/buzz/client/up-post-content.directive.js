@@ -78,12 +78,29 @@ function upPostContent() {
   }
 }
 
-upPostContentController.$inject = ['YouTubeService', 'Authentication'];
+upPostContentController.$inject = ['YouTubeService', 'ProviderService', 'Authentication', '$window'];
 
-function upPostContentController(YouTubeService, Authentication) {
+function upPostContentController(YouTubeService, ProviderService, Authentication, $window) {
   var vm = this;
+  vm.user = Authentication.user;
+  vm.load = load;
+  vm.showYouTubeVideos = showYouTubeVideos;
+  vm.callOauthProvider = callOauthProvider;
 
-  vm.showYouTubeVideos = function() {
+  function load(){
+    vm.providers = ProviderService.provider().query({
+      userId: Authentication.user.id
+    }, function() {
+      var google = vm.providers.filter(function(item) {
+        return item.provider === 'google';
+      });
+      Authentication.user.google = google[0];
+    }, function(err) {
+      console.log(err);
+    });
+  }
+
+  function showYouTubeVideos() {
     YouTubeService.videos().get({}, function(res) {
       vm.contentState = 'youtube';
       vm.videos = res.items;
@@ -91,5 +108,12 @@ function upPostContentController(YouTubeService, Authentication) {
       vm.contentState = 'error';
       console.log('err here', err);
     });
-  };
+  }
+
+  function callOauthProvider(url) {
+    url += '?redirect_to=' + encodeURIComponent($window.location.pathname);
+
+    // Effectively call OAuth authentication route:
+    $window.location.href = url;
+  }
 }

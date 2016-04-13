@@ -32,7 +32,7 @@
       <!-- full name -->
       <div class="row profile-input-row">
         <div class="col-sm-12 profile-input-cell">
-          <input popover="Your full name" id="fullname" name="fullname" popover-trigger="focus" type="text" class="form-control form-validate form-input medium" placeholder="Full Name" ng-model="profile.user.displayName" required>
+          <input popover="Your full name" id="fullname" name="fullname" type="text" class="form-control form-validate form-input medium" placeholder="Full Name" ng-model="profile.user.displayName" required>
           <div ng-messages="profile.basicinfoform.fullname.$error" ng-show="profile.basicinfoform.fullname.$touched">
             <div class="message error" ng-message="required">Your name cannot be empty.</div>
           </div>

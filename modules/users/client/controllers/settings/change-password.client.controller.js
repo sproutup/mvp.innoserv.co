@@ -12,6 +12,8 @@ angular.module('users').controller('ChangePasswordController', ['$scope', '$http
         // If successful show success message and clear form
         $scope.success = true;
         $scope.passwordDetails = null;
+        $scope.changePasswordForm.newPassword.$touched = null;
+        $scope.changePasswordForm.$submitted = null;
       }).error(function (response) {
         $scope.error = response.message;
       });

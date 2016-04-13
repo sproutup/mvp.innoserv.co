@@ -510,56 +510,56 @@ a:focus {
 }
 
 .legal-title {
-  text-align: center;
-  font-weight: 300;
-  color: @sproutup-blue;
-  font-size: 28pt;
-  margin: 40px 20px 20px;
+    text-align: center;
+    font-weight: 300;
+    color: @sproutup-blue;
+    font-size: 18pt;
+    padding: 30px 10px 20px;
 }
 
 .legal-content {
-  text-align: left;
-  margin: 20px auto;
-  max-width: 768px;
-  padding: 0px 20px;
+    text-align: left;
+    margin: 0px auto;
+    max-width: 850px;
+    padding: 0px 20px 40px;
 }
 
 .legal-content h2 {
-  font-weight: 400;
-  color: @main-text-verylight;
-  font-size: 16pt;
-  margin-top: 40px;
-  margin-bottom: 15px;
-  line-height: 1.5;
+    font-weight: 400;
+    color: @main-text-verylight;
+    font-size: 16pt;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    line-height: 1.5;
 }
 
 .legal-content h2 i {
-  color: @sproutup-green;
-  padding-right: 15px;
+    color: @sproutup-green;
+    padding-right: 15px;
 }
 
 .legal-content p {
-  font-weight: 400;
-  color: @main-text;
-  font-size: 13pt;
-  line-height: 1.6;
+    font-weight: 400;
+    color: @main-text;
+    font-size: 11pt;
+    line-height: 1.6;
 }
 
 .legal-content p span {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .legal-content h3 {
-  font-weight: 700;
-  color: @main-text;
-  font-size: 11pt;
+    font-weight: 700;
+    color: @main-text;
+    font-size: 11pt;
 }
 
 .legal-content li {
-  font-weight: 400;
-  font-size: 13pt;
-  margin-bottom: 10px;
-  line-height: 1.6;
+    font-weight: 400;
+    font-size: 11pt;
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 .sproutup-footer-links {
@@ -899,6 +899,12 @@ a.sproutup-btn-lg-main {
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
+
+.sproutup-btn-sm:focus {
+  color: white;
+  background-color: @sproutup-blue;
+}
+
 
 a.sproutup-btn-sm {
   padding-top: 10px;
@@ -2080,18 +2086,18 @@ p[class="hangout-countdown-unit"] {
   left: 0;
   bottom: 0;
   content: "";
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)); /* Standard syntax */
+  background: linear-gradient(rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.36)); /* Standard syntax */
 }
 
 .feature-campaign-info-wrapper {
   position: absolute;
-  top: 170px;
+  top: 160px;
   left: 5%;
   right: 5%;
   z-index: 10;
   text-align: center;
   color: @main-text-white;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0px auto;
   padding: 0px;
 }
@@ -2100,19 +2106,21 @@ p[class="hangout-countdown-unit"] {
   z-index: 10;
   position: relative;
   font-weight: 400;
-  font-size: 18pt;
+  font-size: 22pt;
   margin: 0px;
-  padding: 0px 0px 20px;
+  padding: 0px 0px 30px;
+  line-height: 1.7;
 }
 
 .feature-campaign-info-wrapper h2 {
   z-index: 10;
   position: relative;
   font-weight: 300;
-  font-size: 13pt;
+  font-size: 14pt;
   margin: 0px;
   padding: 0px;
   line-height: 1.6;
+  line-height: 1.7;
 }
 
 .feature-campaign-info-wrapper p {
@@ -2132,7 +2140,7 @@ p[class="hangout-countdown-unit"] {
 .feature-campaign-info-wrapper button {
   z-index: 10;
   position: relative;
-  margin-top: 140px;
+  margin-top: 120px;
 }
 
 .carousel {
@@ -2278,7 +2286,7 @@ ul.browse-campaign-sidenav li a.active {
   left: 0;
   bottom: 0;
   content: "";
-  background: linear-gradient(rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.64)); /* Standard syntax */
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)); /* Standard syntax */
 }
 
 .campaign-list-item-banner .campaign-name {
@@ -2709,6 +2717,15 @@ ul.browse-campaign-sidenav li a.active {
 }
 
 .campaign-info-wrapper .brand-logo {
+  z-index: 10;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border: 2px solid @sproutup-grey;
+  border-radius: 8px;
+}
+
+.company-profile-info-wrapper .brand-logo {
   z-index: 10;
   position: relative;
   width: 64px;
@@ -4258,7 +4275,7 @@ ul.list-conversation-thread li a {
 }
 
 .company-profile-banner {
-  min-height: 300px;
+  min-height: 400px;
   margin: 0px;
   background-position:center;
   background-repeat:no-repeat;
@@ -4282,7 +4299,7 @@ ul.list-conversation-thread li a {
   text-align: left;
   color: @main-text-white;
   margin: 0px auto;
-  padding: 100px 15px 40px;
+  padding: 125px 15px 40px;
 }
 
 .company-profile-info-wrapper h1
@@ -4299,7 +4316,7 @@ ul.list-conversation-thread li a {
 .company-profile-info-wrapper h1 span {
   font-size: 12pt;
   font-weight: 400;
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .buzz-sidebar-item ul.buzz-sidebar-footer {
@@ -4457,6 +4474,11 @@ ul.list-conversation-thread li a {
   background-color: white;
   padding: 30px;
   text-align: left;
+}
+
+.social-account-wrapper .profile-edit--header img {
+  width: 100%;
+  margin: 15px 0px 0px;
 }
 
 .upload-file-widget {
@@ -4923,6 +4945,12 @@ ul.list-conversation-thread li a {
 }
 
 @media (max-width:767px) {
+
+  .company-profile-info-wrapper h1 span {
+    display: block;
+    margin-top: 25px;
+    margin-left: 0px;
+  }
 
   .my-content-comment-row .my-content-user-avatar {
     width: 100%;

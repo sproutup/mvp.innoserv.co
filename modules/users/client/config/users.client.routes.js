@@ -24,8 +24,8 @@ angular.module('users').config(['$stateProvider',
       .state('navbar.settings.payment', {
         url: '/payment',
         templateUrl: 'modules/users/client/views/settings/edit-payment.client.view.html',
-        controller: '',
-        controllerAs: ''
+        controller: 'EditPaymentController',
+        controllerAs: 'payment'
       })
       .state('navbar.settings.password', {
         url: '/password',

@@ -7,8 +7,8 @@
           <h2>A few more things to ask...</h2>
           <div class="campaign-join-form" ng-init="vm.item = {}">
             <textarea class="form-validate form-control form-input-textarea" ng-model="vm.comment" name="comment" placeholder="Pitch to us what kind of content you would create and why are you interested in this product."></textarea>
-            <input class="form-validate form-control form-input medium" ng-model="vm.address" name="address" placeholder="Your shipping address" ng-autocomplete="" details="vm.addressDetails" required>
-            <input class="form-validate form-control form-input medium" ng-model="vm.phone" name="phone" placeholder="Your phone number" required ng-intl-tel-input>
+            <input class="form-validate form-control form-input medium" ng-init="vm.address=navbar.authentication.user.address" ng-model="vm.address" name="address" placeholder="Your shipping address" ng-autocomplete="" details="vm.addressDetails" required>
+            <input class="form-validate form-control form-input medium" ng-init="vm.phone=navbar.authentication.user.phone" ng-model="vm.phone" name="phone" placeholder="Your phone number" required ng-intl-tel-input>
             <div class="sponsorship">
               <div ng-if="vm.campaign.trial.keepProduct">
                 <div class="sponsorship-question-answer">You'll get to keep the product if your request is accepted!</div>
