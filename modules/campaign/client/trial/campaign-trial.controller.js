@@ -97,14 +97,21 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
   }
 
   function submitRequest() {
-    CampaignService.contributor().save({
+    var request = {
       userId: Authentication.user.id,
       campaignId: vm.campaign.id,
-      address: vm.addressDetails.formatted_address,
       phone: vm.phone,
       comment: vm.comment,
       bid: vm.bid
-    }, function(res) {
+    };
+
+    if (vm.addressDetails && vm.addressDetails.formatted_address) {
+      request.address = vm.addressDetails.formatted_address;
+    } else {
+      request.address = vm.address;
+    }
+
+    CampaignService.contributor().save(request, function(res) {
       $state.go('navbar.campaign.trial.connect', { campaignId: vm.campaign.id });
     }, function(err) {
       vm.error = true;

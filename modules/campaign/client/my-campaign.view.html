@@ -7,21 +7,21 @@
       <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/sproutup-assets/no-activities.gif">
     </div>
     <!-- my campaigns list -->
-    <div ng-repeat="item in vm.myCampaigns" class="row product-trial-item" ng-if="vm.myCampaigns.length > 0">
+    <div ng-repeat="item in vm.myCampaigns | orderBy: '-created'" class="row product-trial-item" ng-if="vm.myCampaigns.length > 0">
       <div ng-if="item.campaign.type === 'trial'">
         <div class="product-trial-item--header">
           <a ui-sref="navbar.campaign.trial.view.details({campaignId: item.campaignId})">{{ item.campaign.name }}</a>
         </div>
         <div class="col-sm-12 product-trial-item--detail">
-          <div ng-if="item.state === 0">
-            <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i>Requested on {{ item.created | date:'MMM dd, yyyy' }}</p>
+          <div ng-if="item.state === 0 || item.state > 0">
+            <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i><strong>Requested</strong><span>{{ item.created | date:'MMM dd, yyyy' }}</span></p>
           </div>
-          <div ng-if="item.state === 1">
-            <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i>Approved on {{ item.log[0].created | date:'MMM dd, yyyy' }}</p>
-            <p class="product-trial-item--status current" ng-if="item.trial.shippingState === 1"><i class="fa fa-check-circle"></i>Product Shipped</p>
+          <div ng-if="item.state === 1 || item.state > 1">
+            <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i><strong>Approved</strong><span>{{ item.log[0].created | date:'MMM dd, yyyy' }}</span></p>
+            <p class="product-trial-item--status current" ng-if="item.trial.shippingState === 1"><i class="fa fa-check-circle"></i><strong>Product shipped</strong></p>
           </div>
-          <div ng-if="item.state === 10">
-            <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i>Completed on {{ item.completed[0].created | date:'MMM dd, yyyy' }}</p>
+          <div ng-if="item.state === 2">
+            <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i><strong>Content submitted</strong><span>{{ item.log[1].created | date:'MMM dd, yyyy' }}<span></p>
           </div>
           <p class="product-trial-item--status"><i class="fa fa-link"></i>Your unique referral link:</p>
           <p class="product-trial-item--status-desc"><span>http://goo.gl/zvLnyI</span>Please embed this unique referral link in any of your content. Share this link on social media. We use this link to measure conversions and reward you accordingly.</p>

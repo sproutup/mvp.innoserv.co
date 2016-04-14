@@ -22,7 +22,7 @@
         <!-- username -->
         <label>SproutUp Username</label>
         <input type="text" class="form-control signup-login-input form-validate" placeholder="Choose username" ng-model="profile.user.username" id="username" name="username" ng-model-options="{ debounce: 400 }" ng-pattern="/^[a-zA-Z0-9]+$/" ng-minlength="3" up-slug required>
-        <div ng-messages="profile.basicinfoform.username.$error" ng-show="profile.basicinfoform.username.$touched">
+        <div ng-messages="profile.basicinfoform.username.$error">
           <div class="signup-login-form--error-message" ng-message="required"><i class="fa fa-minus-circle"></i>A user without a username? Silly.</div>
           <div class="signup-login-form--error-message" ng-message="uniqueslug"><i class="fa fa-minus-circle"></i>This username has been taken.</div>
           <div class="signup-login-form--error-message" ng-message="minlength"><i class="fa fa-minus-circle"></i>Your username has to be at least 3 characters long.</div>
