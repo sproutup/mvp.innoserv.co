@@ -1,5 +1,5 @@
 <div ng-init="table.load()">
-  <div ng-repeat="provider in table.providers" class="row row-social-account">
+  <div ng-repeat="provider in table.providers" class="row row-social-account" ng-if="provider.provider !== 'password'">
     <div class="col-sm-8">
       <div class="header" ng-if="provider.provider==='google'"><i class="fa fa-check-circle success"></i>Connected to Google</div>
       <div class="header" ng-if="provider.provider==='facebook'"><i class="fa fa-check-circle success"></i>Connected to Facebook</div>
@@ -14,7 +14,7 @@
       <button class="btn sproutup-btn-sm naked" ng-click="table.removeUserSocialAccount(provider.provider)">Disconnect</button>
     </div>
   </div>
-  <div ng-repeat="provider in table.providers | filter:{status:-1}" class="row row-social-account">
+  <div ng-repeat="provider in table.providers | filter:{status:-1}" class="row row-social-account" ng-if="provider.provider !== 'password'">
     <div class="col-sm-8">
       <div class="header" ng-if="provider.provider==='google'"><i class="fa fa-question-circle error"></i>Reconnect to Google</div>
       <div class="header" ng-if="provider.provider==='facebook'"><i class="fa fa-question-circle error"></i>Reconnect to Facebook</div>
@@ -30,7 +30,7 @@
       <button class="btn sproutup-btn-sm naked" ng-click="table.removeUserSocialAccount(provider.provider)">Disconnect</button>
     </div>
   </div>
-  <div ng-repeat="network in table.networks" class="row row-social-account" ng-hide="table.isConnectedSocialAccount(network.provider)">
+  <div ng-repeat="network in table.networks" class="row row-social-account" ng-hide="table.isConnectedSocialAccount(network.provider)" ng-if="provider.provider !== 'password'">
     <div class="col-sm-8" >
       <div class="header">Connect to {{network.title}}</div>
       <div class="description" ng-if="network.title==='Google'">If you are a YouTuber or have a website, please connect to submit content and access analytics. You can also sign in with Google.</div>

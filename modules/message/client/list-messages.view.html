@@ -14,7 +14,7 @@
               <tbody>
                 <tr>
                   <td class="photo">
-                    <img class="img-center" ng-src="{{channel.last.user.profileImageURL}}">
+                    <img class="img-center" ng-src="{{channel.ref.company.logo.file.url || 'modules/core/client/img/default-avatar.png'}}">
                   </td>
                   <td>
                     <div class="name" ng-bind="channel.ref.company.name"></div>
