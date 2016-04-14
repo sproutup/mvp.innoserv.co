@@ -3,10 +3,13 @@
     <div class="exit-signin-page">
       <button class="btn sproutup-btn-xs" ng-click="back()"><i class="fa fa-times"></i></button>
     </div>
-    <div class="signup-login-header">
+    <div ng-if="err">
+      <h1>{{err}}</h1>
+    </div>
+    <div ng-if="!err" class="signup-login-header">
       <h1>We're glad to see you</h1>
     </div>
-    <div class="signup-login-area">
+    <div ng-if="!err" class="signup-login-area">
       <!-- twitter login -->
       <button analytics-on="click" analytics-event="Sign In" analytics-provider="Twitter" ng-click="callOauthProvider('/api/auth/twitter')" type="submit" class="btn btn-lg btn-twitter"><i class="fa fa-twitter-square"></i>Sign in with Twitter</button>
       <!-- google login -->
@@ -21,6 +24,6 @@
       </div>
       <div ui-view></div>
     </div>
-    <div class="signup-login-footer">We'll never post to Twitter, Facebook or Google Plus without your permission.</div>
+    <div ng-if="!err" class="signup-login-footer">We'll never post to Twitter, Facebook or Google Plus without your permission.</div>
   </div>
 </section>

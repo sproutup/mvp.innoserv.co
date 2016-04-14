@@ -1,12 +1,13 @@
 'use strict';
 
-angular.module('users').controller('AuthenticationController', ['$scope', '$state', '$http', '$location', '$window', 'Authentication',
-  function ($scope, $state, $http, $location, $window, Authentication) {
+angular.module('users').controller('AuthenticationController', ['$scope', '$state', '$stateParams', '$http', '$location', '$window', 'Authentication',
+  function ($scope, $state, $stateParams, $http, $location, $window, Authentication) {
     $scope.authentication = Authentication;
     $scope.credentials = {};
 
     // Get an eventual error defined in the URL query string:
     $scope.error = $location.search().err;
+    $scope.err = $stateParams.err;
 
     var saveTeamObject = function(userId, companyId) {
       var teamObj = {
