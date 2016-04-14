@@ -199,6 +199,8 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
       var Post = PostService.post();
       var item = new Post({
         body: vm.post.body,
+        url: vm.post.url,
+        meta: vm.post.meta,
         groupId: groupId
       });
 

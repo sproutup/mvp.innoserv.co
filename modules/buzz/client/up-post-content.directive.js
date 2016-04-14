@@ -4,7 +4,9 @@ angular
   .module('buzz')
   .directive('upPostContent', upPostContent);
 
-function upPostContent() {
+upPostContent.$inject = ['$http'];
+
+function upPostContent($http) {
   var directive = {
     require: 'ngModel',
     scope: {
@@ -30,7 +32,7 @@ function upPostContent() {
     };
     ngModel.$valid = false;
 
-    scope.selectVideo = selectVideo;
+    scope.selectYouTubeVideo = selectYouTubeVideo;
     scope.removeVideo = removeVideo;
 
     // Check which social networks you can post with
@@ -53,17 +55,23 @@ function upPostContent() {
       });
     };
 
-    function selectVideo(video) {
+    function selectYouTubeVideo(video) {
       scope.selectedVideo = video;
       scope.item.media = 'yt';
       scope.item.ref = video.id.videoId;
       scope.item.title = video.snippet.title;
+      scope.item.url = 'https://www.youtube.com/watch?v=' + video.id.videoId;
+      scope.item.meta = {
+        title: video.snippet.title,
+        description: video.snippet.description
+      };
       scope.vm.contentState = 'write';
       scope.onChange();
     }
 
     function removeVideo() {
       scope.selectedVideo = {};
+      scope.item = {};
       scope.vm.contentState = 'select';
       scope.onChange();
     }
