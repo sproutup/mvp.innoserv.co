@@ -152,19 +152,28 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
    $scope.$on('$destroy', cancelInterval);
 
    var index = 0;
+   var lastIndex = 0;
    function showNext(){
-     vm.next = vm.campaigns[index++ % vm.campaigns.length];
+     // Randomly generate a campaign
+     index = Math.floor((Math.random() * 100) + 1) % vm.campaigns.length;
+     // Make sure that the next campaign is different
+     while(index == lastIndex) {
+       index = Math.floor((Math.random() * 100) + 1) % vm.campaigns.length;
+     }
+     lastIndex = index;
+     //console.log('Campaign #' + index + ' out of ' + vm.campaigns.length + ' campaigns');
+     vm.next = vm.campaigns[index];
    }
 
    function startInterval(){
-     console.log('start interval');
+     //console.log('start interval');
      if (!angular.isDefined(vm.stopPromise)) {
-       vm.stopPromise = $interval(showNext, 5000);
+       vm.stopPromise = $interval(showNext, 4000);
      }
    }
 
    function cancelInterval(){
-     console.log('cancel interval');
+     //console.log('cancel interval');
      if (angular.isDefined(vm.stopPromise)) {
        $interval.cancel(vm.stopPromise);
        vm.stopPromise = undefined;
