@@ -7,6 +7,9 @@ module.exports = {
     keywords: 'dynamodb, mysql, redis, express, angularjs, node.js, bookshelf, passport',
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
   },
+  server: {
+    api: process.env.SERVER_API || 'http://localhost:3333'
+  },
   redis: {
     host: process.env.REDIS_HOST || '127.0.0.1',
     port: process.env.REDIS_PORT || '6379'
