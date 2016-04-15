@@ -26,20 +26,17 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
     $scope.signup = function () {
       $http.post('/api/auth/signup', $scope.credentials).success(function (response) {
         $scope.authentication.user = response;
+        $state.go('navbar.home');
+      }).error(function (response) {
+        $scope.error = response.message;
+      });
+    };
 
-        // If there's a new company, save it, otherwise save a team object
-        if ($scope.newCompany) {
-          $http.post('/api/company', $scope.company).success(function (company) {
-            $state.go('company.navbar.home', { companySlug: company.slug });
-            saveTeamObject($scope.authentication.user.id, company.id);
-          }).error(function (response) {
-            $scope.error = response.message;
-            $state.go('company.navbar.home');
-          });
-        } else {
-          $state.go('navbar.home', { companySlug: $scope.company.slug });
-          saveTeamObject($scope.authentication.user.id, $scope.company.id);
-        }
+    $scope.signupWithEmail = function () {
+      $scope.authentication.emailSentTo = $scope.credentials.email;
+
+      $http.post('/api/auth/join', $scope.credentials).success(function (response) {
+        $scope.signupEmailSent = true;
       }).error(function (response) {
         $scope.error = response.message;
       });

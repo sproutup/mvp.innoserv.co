@@ -1,15 +1,65 @@
-<!-- email login -->
-<form name="loginForm" class="loginForm" ng-submit="signin()" novalidate>
-  <div class="signup-login-form">
-    <div class="signup-login-form-header">If you signed up with <strong>email</strong> and <strong>password</strong> before, please log in here.</div>
-    <div ng-show="true">
-      <div class="signup-login-form--error-message" ng-show="error"><i class="fa fa-minus-circle"></i>Err... seems like invalid email or password</div>
-    </div>
-    <input class="form-control signup-login-input" id="email" name="email" type="email" ng-model="credentials.username" placeholder="Email address">
-    <input class="form-control signup-login-input" id="password" name="password" type="password" ng-model="credentials.password" placeholder="Password">
-    <button ng-disabled="loginForm.$invalid || loginForm.$pristine" class="btn btn-lg signup-login-btn" type="submit">Log in with email</button>
+<div class="exit-signin-page">
+  <button class="btn sproutup-btn-xs" ng-click="back()"><i class="fa fa-times"></i></button>
+</div>
+
+<div ng-show="!emailSignUp && !signupEmailSent">
+  <div class="signup-login-header">
+    <h1>We're glad to see you here!</h1>
   </div>
-</form>
-<div class="signup-login-form-footer">
-  <p><a ui-sref="password.forgot">Forgot password?</a></p>
+  <div class="signup-login-area">
+    <!-- twitter login -->
+    <button analytics-on="click" analytics-event="Sign In" analytics-provider="Twitter" ng-click="callOauthProvider('/api/auth/twitter')" type="submit" class="btn btn-lg btn-twitter"><i class="fa fa-twitter-square"></i>Sign in with Twitter</button>
+    <!-- google login -->
+    <button analytics-on="click" analytics-event="Sign In" analytics-provider="Google" ng-click="callOauthProvider('/api/auth/google')" type="submit" class="btn btn-lg btn-google"><i class="fa fa-google-plus-square"></i>Sign in with Google</button>
+    <!-- facebook login -->
+    <button analytics-on="click" analytics-event="Sign In" analytics-provider="Facebook" ng-click="callOauthProvider('/api/auth/facebook')" type="submit" class="btn btn-lg btn-facebook"><i class="fa fa-facebook-square"></i>Sign in with Facebook</button>
+
+    <!-- email login -->
+    <form name="loginForm" ng-submit="signin()" novalidate>
+      <div class="signup-login-form">
+        <div class="signup-login-form-header">OR</div>
+        <div ng-show="true">
+          <div class="signup-login-form--error-message" ng-show="error"><i class="fa fa-minus-circle"></i>Err... seems like invalid email or password</div>
+        </div>
+        <input class="form-control signup-login-input" id="email" name="email" type="email" ng-model="credentials.username" placeholder="Email address">
+        <input class="form-control signup-login-input" id="password" name="password" type="password" ng-model="credentials.password" placeholder="Password">
+        <button ng-disabled="loginForm.$invalid || loginForm.$pristine" class="btn btn-lg signup-login-btn" type="submit">Sign in in with email</button>
+      </div>
+    </form>
+    <div class="signup-login-form-footer">
+      <p><a ui-sref="password.forgot">Forgot password?</a></p>
+      <p>If you'd like to sign up with an email, please <a href="#" ng-click="emailSignUp = !emailSignUp">click here</a>.</p>
+    </div>
+  </div>
+  <div class="signup-login-footer">By signing in, I agree to SproutUp's <a ui-sref="navbar.terms" target="_blank">Terms of Service</a> and <a ui-sref="navbar.privacy" target="_blank">Privacy Policy</a>. We'll never post to Twitter, Facebook or Google Plus without your permission.</div>
+</div>
+
+<div ng-show="emailSignUp && !signupEmailSent">
+  <div class="signup-login-header">
+    <h1>Enter your email address to create an account</h1>
+  </div>
+  <div class="signup-login-area">
+    <form name="userForm" novalidate autocomplete="off">
+      <fieldset>
+        <div class="signup-login-form" show-errors>
+          <!-- Email -->
+          <input type="email" id="email" name="email" class="form-control form-validate signup-login-input" ng-model="credentials.email" placeholder="Your email" unique-email required>
+          <div ng-show="userForm.email.$submitted || userForm.email.$touched">
+            <div class="signup-login-form--error-message" ng-show="userForm.email.$error.required"><i class="fa fa-minus-circle"></i>An email is required.</div>
+            <div class="signup-login-form--error-message" ng-show="userForm.email.$error.uniqueemail"><i class="fa fa-minus-circle"></i>This email is already taken.</div>
+            <div class="signup-login-form--error-message" ng-show="userForm.email.$error.email"><i class="fa fa-minus-circle"></i>Seems like an invalid email address.</div>
+          </div>
+          <!-- sign up button -->
+          <button ng-disabled="userForm.$invalid" class="btn btn-lg signup-login-btn" ng-click="signupWithEmail()" type="submit">Sign up</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<div ng-show="signupEmailSent">
+  <div class="signup-login-header">
+    <h1>We sent you a link to <span>{{ credentials.email }}</span>.</h1>
+    <h2>Please check your inbox to finish signing up. If you don't see the email, perhaps look into the spam folder.</h2>
+  </div>
 </div>

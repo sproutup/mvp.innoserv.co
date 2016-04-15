@@ -12,7 +12,7 @@
               dropdown="item.type === 'dropdown'">
               <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
           </li>
-          <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin" data-toggle="collapse" data-target="#sproutup-collapse-navbar">SIGN IN</a></li>
+          <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin" data-toggle="collapse" data-target="#sproutup-collapse-navbar">SIGN IN&nbsp;&nbsp;/&nbsp;&nbsp;SIGN UP</a></li>
           <hr>
           <ul class="submenu-in-dropdown" ng-if="navbar.authentication.user.displayName">
             <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="navbar.slug.user.buzz({ slug: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
@@ -37,7 +37,7 @@
           dropdown="item.type === 'dropdown'">
           <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>
-        <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin">SIGN IN</a></li>
+        <li ng-if="!navbar.authentication.user"><a ui-sref="authentication.signin">SIGN IN&nbsp;&nbsp;/&nbsp;&nbsp;SIGN UP</a></li>
         <li><img class="profile-img" ng-if="navbar.authentication.user.id" up-avatar="navbar.authentication.user" width="84" height="84"></li>
         <li uib-dropdown ng-if="navbar.authentication.user">
             <a href="#" uib-dropdown-toggle>{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></a>
