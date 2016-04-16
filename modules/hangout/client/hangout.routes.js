@@ -1,12 +1,9 @@
 'use strict';
 
-angular
-    .module('hangout')
-    .config(config);
-
-function config($stateProvider) {
-  $stateProvider
-    .state('navbar.hangout', {
+angular.module('hangout').config(['$stateProvider',
+  function ($stateProvider) {
+    $stateProvider
+   .state('navbar.hangout', {
       url: '/hangout',
       abstract: true,
       template: '<div ui-view><div>',
@@ -47,4 +44,6 @@ function config($stateProvider) {
         title: 'Hangout With Cool People - SproutUp'
       }
     });
-}
+   }
+]);
+
