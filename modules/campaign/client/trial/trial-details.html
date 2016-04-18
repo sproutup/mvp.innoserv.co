@@ -54,7 +54,7 @@
           <li ng-if="vm.campaign.typeOfContent.indexOf('sc') >= 0"><i class="fa fa-dot-circle-o"></i>Snapchat</li>
           <li></li>
           <li ng-if="vm.campaign.trial.keepProduct"><i class="fa fa-check-circle green"></i>Yes! We will send you free product to review and keep.</li>
-          <li ng-if="vm.campaign.trial.keepProduct==false"><i class="fa fa-dot-circle-o"></i>We will send you <strong><u>loaner</u></strong> product to review and then return to us. NO cost on you.</li>
+          <li ng-if="!vm.campaign.trial.keepProduct"><i class="fa fa-dot-circle-o"></i>We will send you <strong><u>loaner</u></strong> product to review and then return to us. NO cost on you.</li>
         </ul>
       </div>
       <div class="about-campaign-section">
