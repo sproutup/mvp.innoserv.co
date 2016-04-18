@@ -7,7 +7,12 @@ angular
 PostService.$inject = ['$resource'];
 
 function PostService($resource){
+  var model = {
+    post: {}
+  };
+
   var service = {
+    model: model,
     post: post,
     timeline: timeline,
     myTimeline: myTimeline,

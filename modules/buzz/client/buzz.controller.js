@@ -15,6 +15,7 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     var content = [];
     vm.content = [];
     vm.myTrialProducts = [];
+    vm.ContentService = ContentService;
     vm.loadContent = loadContent;
     vm.loadGroupContent = loadGroupContent;
     vm.slug = $stateParams.slug;
@@ -217,9 +218,9 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
         }
         vm.posting = false;
         vm.post = {};
-        vm.selectedVideo = {};
-        vm.state = 'write';
-        vm.contentState = 'select';
+        vm.ContentService.model.selectedVideo = {};
+        vm.state = 'content';
+        vm.ContentService.model.state = 'select';
         vm.content.unshift(res);
         usSpinnerService.stop('spinner-1');
       }, function(err) {

@@ -4,9 +4,9 @@ angular
   .module('buzz')
   .directive('upPostContent', upPostContent);
 
-upPostContent.$inject = ['$http'];
+upPostContent.$inject = ['$http', 'ContentService'];
 
-function upPostContent($http) {
+function upPostContent($http, ContentService) {
   var directive = {
     require: 'ngModel',
     scope: {
@@ -25,11 +25,7 @@ function upPostContent($http) {
   return directive;
 
   function linkFunc(scope, element, attrs, ngModel) {
-    scope.item = {
-      body: '',
-      media: '',
-      ref: ''
-    };
+    scope.ContentService = ContentService;
     ngModel.$valid = false;
 
     scope.selectYouTubeVideo = selectYouTubeVideo;
@@ -46,54 +42,55 @@ function upPostContent($http) {
     }
 
     ngModel.$valid = false;
-    scope.vm.contentState = 'select';
+    scope.ContentService.model.state = 'select';
 
     scope.showYouTubeVideos = function(){
       scope.vm.showYouTubeVideos(function(items){
-        scope.vm.contentState = 'youtube';
+        ContentService.model.state = 'youtube';
         scope.videos = items;
       });
     };
 
     function selectYouTubeVideo(video) {
-      scope.selectedVideo = video;
-      scope.item.media = 'yt';
-      scope.item.ref = video.id.videoId;
-      scope.item.title = video.snippet.title;
-      scope.item.url = 'https://www.youtube.com/watch?v=' + video.id.videoId;
-      scope.item.meta = {
+      ContentService.model.selectedVideo = video;
+      ContentService.model.content.media = 'yt';
+      ContentService.model.content.ref = video.id.videoId;
+      ContentService.model.content.title = video.snippet.title;
+      ContentService.model.content.url = 'https://www.youtube.com/watch?v=' + video.id.videoId;
+      ContentService.model.content.meta = {
         title: video.snippet.title,
         description: video.snippet.description
       };
-      scope.vm.contentState = 'write';
+      ContentService.model.state = 'write';
       scope.onChange();
     }
 
     function removeVideo() {
-      scope.selectedVideo = {};
-      scope.item = {};
-      scope.vm.contentState = 'select';
+      ContentService.model.selectedVideo = {};
+      ContentService.model.content = {};
+      ContentService.model.state = 'select';
       scope.onChange();
     }
 
     scope.onChange = function(){
-      ngModel.$setViewValue(scope.item);
+      ngModel.$setViewValue(scope.ContentService.model.content);
     };
 
     ngModel.$render = function() {
-      scope.item = ngModel.$modelValue;
+      scope.ContentService.model.content = ngModel.$modelValue;
     };
   }
 }
 
-upPostContentController.$inject = ['YouTubeService', 'ProviderService', 'Authentication', '$window'];
+upPostContentController.$inject = ['YouTubeService', 'ProviderService', 'Authentication', '$window', 'ContentService'];
 
-function upPostContentController(YouTubeService, ProviderService, Authentication, $window) {
+function upPostContentController(YouTubeService, ProviderService, Authentication, $window, ContentService) {
   var vm = this;
   vm.user = Authentication.user;
   vm.load = load;
   vm.showYouTubeVideos = showYouTubeVideos;
   vm.callOauthProvider = callOauthProvider;
+  vm.ContentService = ContentService;
 
   function load(){
     vm.providers = ProviderService.provider().query({
@@ -104,16 +101,17 @@ function upPostContentController(YouTubeService, ProviderService, Authentication
       });
       Authentication.user.google = google[0];
     }, function(err) {
+      ContentService.model.state = 'select';
       console.log(err);
     });
   }
 
   function showYouTubeVideos() {
     YouTubeService.videos().get({}, function(res) {
-      vm.contentState = 'youtube';
+      ContentService.model.state = 'youtube';
       vm.videos = res.items;
     }, function(err) {
-      vm.contentState = 'error';
+      ContentService.model.state = 'error';
       console.log('err here', err);
     });
   }

@@ -7,7 +7,15 @@ angular
 ContentService.$inject = ['$resource'];
 
 function ContentService($resource){
+  var model = {
+    content: {},
+    post: {},
+    selectedVideo: {},
+    state: ''
+  };
+
   var service = {
+    model: model,
     content: content
   };
   return service;

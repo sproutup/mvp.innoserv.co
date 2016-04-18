@@ -155,7 +155,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
       vm.post = {};
       vm.selectedVideo = {};
       vm.state = 'write';
-      vm.contentState = 'select';
+      vm.ContentService.model.state = 'select';
       // vm.content.unshift(res);
       usSpinnerService.stop('spinner-1');
     }, function(err) {
