@@ -19,7 +19,7 @@ function upEmbed($q, $timeout, $http) {
       var def = $q.defer();
 
       // Check if we already have meta data, otherwise continue
-      if (scope.item.meta) {
+      if (scope.vm.item.meta) {
         def.resolve();
       } else {
         run();
@@ -38,29 +38,29 @@ function upEmbed($q, $timeout, $http) {
         if (res && res[0]) {
           var index = res[0].indexOf('www');
           if (index === 0) {
-            scope.item.url = 'http://' + res[0];
+            scope.vm.item.url = 'http://' + res[0];
           } else {
-            scope.item.url = res[0];
+            scope.vm.item.url = res[0];
           }
         }
 
         // If we find a URL, query for meta data
-        if (scope.item.url) {
-          $http.post('/api/meta', {url: scope.item.url}).success(function (response) {
+        if (scope.vm.item.url) {
+          $http.post('/api/meta', {url: scope.vm.item.url}).success(function (response) {
             if (response) {
-              scope.item.meta = response;
+              scope.vm.item.meta = response;
               def.resolve();
             } else {
-              scope.item.meta = null;
+              scope.vm.item.meta = null;
               def.reject();
             }
           }).error(function (response) {
-            scope.item.meta = null;
+            scope.vm.item.meta = null;
             def.resolve();
           });
         } else {
-          scope.item.url = null;
-          scope.item.meta = null;
+          scope.vm.item.url = null;
+          scope.vm.item.meta = null;
           def.resolve();
         }
       }

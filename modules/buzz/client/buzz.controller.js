@@ -13,8 +13,9 @@ BuzzController.$inject = ['$stateParams', '$state', 'FeedService', 'ContentServi
 function BuzzController($stateParams, $state, FeedService, ContentService, Authentication, $rootScope, $scope, PostService, $timeout, usSpinnerService, SuggestService, CampaignService, HangoutService) {
     var vm = this;
     var content = [];
-    vm.content = [];
+    vm.FeedService = FeedService;
     vm.myTrialProducts = [];
+    vm.ContentService = ContentService;
     vm.ContentService = ContentService;
     vm.loadContent = loadContent;
     vm.loadGroupContent = loadGroupContent;
@@ -40,6 +41,11 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     vm.post = {
         body: ''
     };
+
+    vm.contentObj = {
+        body: ''
+    };
+
     vm.suggestion = {
         body: ''
     };
@@ -306,11 +312,14 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     }
 
     function loadCallback(content) {
+        if (position === 0) {
+            FeedService.model.posts = [];
+        }
         for (var c = 0; c < content.length; c++) {
             if (content[c].content) {
                 optimizeContentDisplay(content[c]);
             }
-            vm.content.push(content[c]);
+            FeedService.model.posts.push(content[c]);
         }
         if (position === 0) {
             vm.init = true;

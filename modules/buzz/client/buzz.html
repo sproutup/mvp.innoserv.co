@@ -28,7 +28,7 @@
                   <a ng-class="{'active': vm.state === 'suggest'}" href="#" ng-click="vm.state = 'suggest'"><i class="fa fa-binoculars"></i>Suggest something</a>
                 </div>
                 <div class="my-content-new">
-                  <div up-post-write ng-model="vm.post" required ng-if="vm.state === 'write'"></div>
+                  <div up-post-write required ng-if="vm.state === 'write'"></div>
                   <div up-post-suggestion ng-model="vm.suggestion" required ng-if="vm.state === 'suggest'"></div>
                 </div>
                 <div class="remove-my-content-og-content" ng-click="vm.post.meta = vm.post.url = null" ng-if="vm.post.meta && vm.state === 'write'">
@@ -36,18 +36,12 @@
                 </div>
                 <up-meta ng-if="vm.state === 'write' && vm.post.meta" item="vm.post.meta" url="vm.post.url"></up-meta>
                 <up-meta ng-if="vm.state === 'suggest' && vm.suggestion.meta" item="vm.suggestion.meta" url="vm.suggestion.url"></up-meta>
-                <div class="post-new-comment-actions">
-                  <button ng-disabled="form.$invalid || vm.posting" class="btn btn-post content-post-button btn-post-default" ng-click="vm.create()">
-                    <span ng-hide="vm.posting">Post</span>
-                    <span us-spinner spinner-key="spinner-1"></span>
-                  </button>
-                </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <up-content ng-repeat="item in vm.content" content="item" state="navbar.buzz"></up-content>
+      <up-content ng-repeat="item in vm.FeedService.model.posts" content="item" state="navbar.buzz"></up-content>
     </div>
     <div class="col-sm-4 my-content-right-rail">
       <!-- Highlighted campaigns -->
