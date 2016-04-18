@@ -2,9 +2,9 @@
 
 angular
   .module('campaign')
-  .config(config);
+  .config(trialConfig);
 
-function config($stateProvider) {
+function trialConfig($stateProvider) {
   $stateProvider
     .state('navbar.campaign.trial', {
       url: '/trial',

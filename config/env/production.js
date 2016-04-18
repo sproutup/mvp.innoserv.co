@@ -2,7 +2,7 @@
 
 module.exports = {
   secure: false,
-  port: process.env.PORT || 8443,
+  port: process.env.PORT || 7443,
   log: {
     // Can specify one of 'combined', 'common', 'dev', 'short', 'tiny'
     format: 'combined',

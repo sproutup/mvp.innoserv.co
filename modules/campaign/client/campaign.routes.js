@@ -2,9 +2,9 @@
 
 angular
   .module('campaign')
-  .config(config);
+  .config(campaignConfig);
 
-function config($stateProvider) {
+function campaignConfig($stateProvider) {
   $stateProvider
     .state('navbar.discover', {
       url: '/discover',

@@ -2,9 +2,9 @@
 
 angular
   .module('contributor')
-  .config(config);
+  .config(contributorConfig);
 
-function config($stateProvider) {
+function contributorConfig($stateProvider) {
 
   $stateProvider
     .state('navbar.my-activities', {

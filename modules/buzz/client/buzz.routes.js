@@ -2,9 +2,9 @@
 
 angular
   .module('buzz')
-  .config(config);
+  .config(buzzConfig);
 
-function config($stateProvider) {
+function buzzConfig($stateProvider) {
   $stateProvider
     .state('navbar.singleBuzz' ,{
       url: '/buzz/:id',
