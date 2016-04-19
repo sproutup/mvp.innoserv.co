@@ -73,9 +73,9 @@ function upPostContentController(YouTubeService, ProviderService, Authentication
   }
 
   function showYouTubeVideos() {
-    vm.fetching = true;
+    vm.fetchingYouTube = true;
     YouTubeService.videos().get({}, function(res) {
-      vm.fetching = false;
+      vm.fetchingYouTube = false;
       if (res.statusCode) {
         vm.state = 'error';
       } else {
@@ -83,7 +83,7 @@ function upPostContentController(YouTubeService, ProviderService, Authentication
         vm.videos = res.items;
       }
     }, function(err) {
-      vm.fetching = false;
+      vm.fetchingYouTube = false;
       vm.state = 'error';
     });
   }

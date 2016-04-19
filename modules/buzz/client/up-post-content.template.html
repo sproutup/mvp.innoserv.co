@@ -6,8 +6,8 @@
           <tbody>
             <tr ng-if="vm.user.google" ng-click="vm.showYouTubeVideos()">
               <td><a href="#"><img src="modules/core/client/img/settings/youtube.png"></a></td>
-              <td ng-if="!vm.fetching"><a href="#">Choose video from YouTube<span>For YouTubers, please choose the content from your channel.</span></a></td>
-              <td ng-if="vm.fetching">Fetching your YouTube videos...</span></td>
+              <td ng-if="!vm.fetchingYouTube"><a href="#">Choose video from YouTube<span>For YouTubers, please choose the content from your channel.</span></a></td>
+              <td ng-if="vm.fetchingYouTube">Fetching your YouTube videos...</span></td>
             </tr>
             <tr ng-if="!vm.user.google" ng-click="vm.callOauthProvider('/api/auth/google')">
               <td><a href="#"><img src="modules/core/client/img/settings/youtube.png"></a></td>
