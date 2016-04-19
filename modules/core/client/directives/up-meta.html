@@ -3,7 +3,7 @@
   <a ng-href="{{ vm.url }}" target="_blank">
     <div class="my-content-og-content" ng-if="vm.item.title || vm.item.description">
       <p class="my-content-og-headline" ng-if="vm.item.title">{{ vm.item.title }}</p>
-      <p class="my-content-og-text" ng-if="vm.item.description">{{ vm.item.description }}</p>
+      <p class="my-content-og-text" ng-if="vm.item.description">{{ vm.item.description | limitTo: 160 }}{{ vm.item.description.length < 160 ? '' : '...' }}</p>
     </div>
   </a>
 </div>
@@ -13,7 +13,7 @@
     <div class="my-content-og-image" style="background-image: url('{{ vm.item.image }}')"></div>
     <div class="my-content-og-content" ng-if="vm.item.title || vm.item.description">
       <p class="my-content-og-headline" ng-if="vm.item.title">{{ vm.item.title }}</p>
-      <p class="my-content-og-text" ng-if="vm.item.description">{{ vm.item.description }}</p>
+      <p class="my-content-og-text" ng-if="vm.item.description">{{ vm.item.description | limitTo: 160 }}{{ vm.item.description.length < 160 ? '' : '...' }}</p>
     </div>
   </a>
 </div>
@@ -25,7 +25,7 @@
   <div class="my-content-og-content">
     <a ng-href="{{ vm.url }}" target="_blank">
       <p class="my-content-og-headline" ng-if="vm.item.title">{{ vm.item.title }}</p>
-      <p class="my-content-og-text" ng-if="vm.item.description">{{ vm.item.description }}</p>
+      <p class="my-content-og-text" ng-if="vm.item.description">{{ vm.item.description | limitTo: 160 }}{{ vm.item.description.length < 160 ? '' : '...' }}</p>
     </a>
   </div>
 </div>
