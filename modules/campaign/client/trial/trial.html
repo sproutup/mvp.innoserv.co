@@ -9,7 +9,8 @@
           <img class="brand-logo" ng-if="campaign.item.company.logo.file.url" src="{{ campaign.item.company.logo.file.url }}">
           <h1>{{ campaign.item.name }}<span>by <a ui-sref="navbar.company.view({companySlug: campaign.item.company.slug})">{{ campaign.item.company.name }}</a></span></h1>
           <h2>{{ campaign.item.tagline }}</h2>
-          <button ng-if="vm.init && !vm.myContribution && campaign.item.status !== -1" class="btn btn-lg sproutup-btn-md-main" subject-present="vm.goToRequest()">JOIN CAMPAIGN</button>
+          <button ng-if="vm.init && !vm.myContribution && campaign.item.status !== -1" class="btn btn-lg sproutup-btn-md-main" subject-present="vm.goToRequest()">Join Campaign</button>
+          <a ng-show="campaign.item.product.url" class="btn btn-lg sproutup-btn-md-main discount" href="{{ campaign.item.product.url + '/?ref=sproutup' }} " target="_blank">Buy {{ campaign.item.product.name }}</a>
         </div>
       </div>
       <div class="banner-menu">
