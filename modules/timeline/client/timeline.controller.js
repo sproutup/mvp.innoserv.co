@@ -18,7 +18,7 @@
       type: 'purchase',
       user: {
         name: 'Ade LoveLace',
-        avatarUrl: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSm0-SJiNP7t5K0uMv6p_xlh7vxm9Gh9qi-V41tOt8FjeWabRMUpw'
+        avatarUrl: 'http://d30xksqof6w2my.cloudfront.net/eab0dc0d-6822-4900-aabd-105687cddfa5_480.jpg?w=256&h=256'
       },
       text: 'Ade LoveLace bought a Boosted Board 🎉'
     }, {
@@ -26,7 +26,7 @@
       type: 'content',
       user: {
         name: 'Ade LoveLace',
-        avatarUrl: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSm0-SJiNP7t5K0uMv6p_xlh7vxm9Gh9qi-V41tOt8FjeWabRMUpw'
+        avatarUrl: 'http://d30xksqof6w2my.cloudfront.net/eab0dc0d-6822-4900-aabd-105687cddfa5_480.jpg?w=256&h=256'
       },
       text: 'Ade LoveLace began her trial with Boosted Boards'
     }, {

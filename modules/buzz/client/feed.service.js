@@ -7,7 +7,12 @@ angular
 FeedService.$inject = ['$resource', '$q'];
 
 function FeedService($resource, $q){
+  var model = {
+    posts: []
+  };
+
   var service = {
+    model: model,
     buzzAll: buzzAll,
     buzzGroup: buzzGroup,
     buzzSingle: buzzSingle,

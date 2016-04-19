@@ -1,12 +1,13 @@
 <div class="post-new-content-uploader" ng-init="vm.load()" ng-show="vm.providers.$resolved">
-  <div ng-show="vm.ContentService.model.state === 'select'">
+  <div ng-show="vm.state === 'select'">
     <div ng-if="youtube">
       <div class="post-new-content-uploader-method">
         <table>
           <tbody>
-            <tr ng-if="vm.user.google" ng-click="showYouTubeVideos()">
+            <tr ng-if="vm.user.google" ng-click="vm.showYouTubeVideos()">
               <td><a href="#"><img src="modules/core/client/img/settings/youtube.png"></a></td>
-              <td><a href="#">Choose video from YouTube<span>For YouTubers, please choose the content from your channel.</span></a></td>
+              <td ng-if="!vm.fetchingYouTube"><a href="#">Choose video from YouTube<span>For YouTubers, please choose the content from your channel.</span></a></td>
+              <td ng-if="vm.fetchingYouTube">Fetching your YouTube videos...</span></td>
             </tr>
             <tr ng-if="!vm.user.google" ng-click="vm.callOauthProvider('/api/auth/google')">
               <td><a href="#"><img src="modules/core/client/img/settings/youtube.png"></a></td>
@@ -44,14 +45,14 @@
     </div>
   </div>
   <!--content added -->
-  <div ng-show="vm.ContentService.model.state === 'write'">
-    <textarea name="content" ng-model="ContentService.model.content.body" ng-change="onChange()" class="form-control post-new-textarea no-resize" placeholder="Say something about your content..."></textarea>
+  <div ng-show="vm.state === 'write'">
+    <textarea name="content" ng-model="vm.item.body" class="form-control post-new-textarea no-resize" placeholder="Say something about your content..." required></textarea>
     <div class="post-new-content-uploaded-file">
-      <p>{{ ContentService.model.selectedVideo.snippet.title }}<span><a href="#" ng-click="removeVideo()"><i class="fa fa-times-circle"></i></a></span></p>
+      <p>{{ vm.selectedVideo.snippet.title }}<span><a href="#" ng-click="vm.removeVideo()"><i class="fa fa-times-circle"></i></a></span></p>
     </div>
   </div>
   <!-- Select YouTube video -->
-  <div ng-if="vm.ContentService.model.state === 'youtube'">
+  <div ng-if="vm.state === 'youtube'">
     <div class="post-new-content-uploader-method">
       <table>
         <tbody>
@@ -63,11 +64,18 @@
       </table>
     </div>
     <div class="post-new-content-select-file">
-      <a href="#" ng-repeat="video in vm.videos" ng-click="selectYouTubeVideo(video)"><p>{{ video.snippet.title }}</p></a>
+      <a href="#" ng-repeat="video in vm.videos" ng-click="vm.selectYouTubeVideo(video)"><p>{{ video.snippet.title }}</p></a>
     </div>
   </div>
   <!--content added -->
-  <div ng-show="vm.contentService.state==='error'">
-    <div>Oops, something went wrong. <button class="btn btn-sm sproutup-btn-xs ng-click" style="margin-left: 7px" ng-click="vm.contentService.state = 'select'">Back</button>
+  <div ng-show="vm.state==='error'">
+    Oops, something went wrong. <button class="btn btn-sm sproutup-btn-xs ng-click" style="margin-left: 7px" ng-click="vm.state = 'select'">Back</button>
   </div>
+</div>
+<up-meta ng-if="vm.item.meta" item="vm.item.meta" url="vm.item.url"></up-meta>
+<div class="post-new-comment-actions">
+  <button ng-disabled="!vm.item.body || !vm.item.ref" class="btn btn-post content-post-button btn-post-default" ng-click="vm.create()">
+    <span ng-hide="vm.posting">Post</span>
+    <span us-spinner spinner-key="spinner-1"></span>
+  </button>
 </div>

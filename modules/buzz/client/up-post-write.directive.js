@@ -6,29 +6,50 @@ angular
 
 function upPostWrite() {
   var directive = {
-    require: 'ngModel',
+    controller: upPostWriteController,
+    controllerAs: 'vm',
+    bindToController: true,
     scope: {
-      min: '=',
-      max: '=',
-      ngModel: '=',
-      ngDisabled: '='
+      group: '@'
     },
     link: linkFunc,
-    template: '<textarea ng-model="item.body" ng-change="onChange()" up-embed ng-model-options="{ debounce: 250 }" name="content" placeholder="What do you have in mind? A cool product video? Good stuff for others to bite on?" class="form-control post-new-textarea link" required></textarea>'
+    templateUrl: 'modules/buzz/client/up-post-write.template.html'
   };
 
   return directive;
 
-  function linkFunc(scope, element, attrs, ngModel) {
-    ngModel.$valid = false;
+  function linkFunc(scope, element, attrs) {
 
-    scope.onChange = function(){
-      ngModel.$setViewValue(scope.item);
-    };
+  }
+}
 
-    ngModel.$render = function() {
-      console.log('render', scope);
-      scope.item = ngModel.$viewValue;
-    };
+upPostWriteController.$inject = ['PostService', 'Authentication', 'usSpinnerService', 'FeedService'];
+
+function upPostWriteController(PostService, Authentication, usSpinnerService, FeedService) {
+  var vm = this;
+  vm.create = create;
+  vm.item = {
+    body: ''
+  };
+
+  function create() {
+    vm.posting = true;
+    vm.item.userId = Authentication.user.id;
+    var Post = PostService.post();
+    var item = new Post(vm.item);
+    item.groupId = vm.group;
+    usSpinnerService.spin('spinner-1');
+    item.$save(function(res) {
+      vm.posting = false;
+      vm.item = {
+        body: ''
+      };
+      FeedService.model.posts.unshift(res);
+      usSpinnerService.stop('spinner-1');
+    }, function(err) {
+      vm.posting = false;
+      console.log(err);
+      usSpinnerService.stop('spinner-1');
+    });
   }
 }

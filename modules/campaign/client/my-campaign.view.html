@@ -18,7 +18,7 @@
           </div>
           <div ng-if="item.state === 1 || item.state > 1">
             <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i><strong>Approved</strong><span>{{ item.log[0].created | date:'MMM dd, yyyy' }}</span></p>
-            <p class="product-trial-item--status current" ng-if="item.trial.shippingState === 1"><i class="fa fa-check-circle"></i><strong>Product shipped</strong></p>
+            <p class="product-trial-item--status current" ng-if="item.trial.shippingState === 1"><i class="fa fa-check-circle"></i><strong>Product shipped</strong><span>{{ item.trial.shippingDate | date:'MMM dd, yyyy' }}</span></p>
           </div>
           <div ng-if="item.state === 2">
             <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i><strong>Content submitted</strong><span>{{ item.log[1].created | date:'MMM dd, yyyy' }}<span></p>

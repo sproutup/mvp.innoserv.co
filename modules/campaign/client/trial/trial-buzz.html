@@ -22,7 +22,7 @@
                   <a ng-class="{'active': buzzCtrl.state === 'write'}" href="#" ng-click="buzzCtrl.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write something</a>
                 </div>
                 <div class="my-content-new">
-                  <div up-post-write ng-model="buzzCtrl.post" required ng-show="buzzCtrl.state === 'write'"></div>
+                  <div up-post-write group="{{campaign.item.groupId}}" required ng-show="buzzCtrl.state === 'write'"></div>
                 </div>
               </div>
               <div ng-if="vm.myContribution.state && vm.myContribution.state > 0">
@@ -31,32 +31,26 @@
                   <a ng-class="{'active': buzzCtrl.state === 'write'}" href="#" ng-click="buzzCtrl.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write something</a>
                 </div>
                 <div class="my-content-new">
-                  <div up-post-content ng-model="buzzCtrl.post" networks="yt, ig, url" ng-show="buzzCtrl.state === 'content'"></div>
-                  <div up-post-write ng-model="buzzCtrl.post" required ng-show="buzzCtrl.state === 'write'"></div>
+                  <div up-post-content group="{{campaign.item.groupId}}" networks="yt, ig, url" ng-show="buzzCtrl.state === 'content'"></div>
+                  <div up-post-write group="{{campaign.item.groupId}}" required ng-show="buzzCtrl.state === 'write'"></div>
                 </div>
               </div>
               <div class="remove-my-content-og-content" ng-click="buzzCtrl.post.meta = buzzCtrl.post.url = null" ng-if="buzzCtrl.post.meta">
                 <button class="btn sproutup-btn-square aqua"><i class="fa fa-times"></i></button>
               </div>
               <up-meta ng-if="buzzCtrl.post.meta" item="buzzCtrl.post.meta" url="buzzCtrl.post.url"></up-meta>
-              <div class="post-new-comment-actions" ng-if="buzzCtrl.state === 'write'">
-                <button ng-disabled="buzzCtrl.form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.create(vm.campaign.groupId)">
+<!--               <div class="post-new-comment-actions" ng-if="buzzCtrl.state === 'content'">
+                <button ng-disabled="buzzCtrl.form.$invalid || buzzCtrl.posting || !buzzCtrl.ContentService.model.content.ref || !buzzCtrl.ContentService.model.post.body" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.createContent(vm.campaign.groupId)">
                   <span ng-hide="buzzCtrl.posting">Post</span>
                   <span us-spinner spinner-key="spinner-1"></span>
                 </button>
-              </div>
-              <div class="post-new-comment-actions" ng-if="buzzCtrl.state === 'content'">
-                <button ng-disabled="buzzCtrl.form.$invalid || buzzCtrl.posting" class="btn btn-post content-post-button btn-post-default" ng-click="buzzCtrl.createContent(vm.campaign.groupId)">
-                  <span ng-hide="buzzCtrl.posting">Post</span>
-                  <span us-spinner spinner-key="spinner-1"></span>
-                </button>
-              </div>
+              </div> -->
             </form>
           </div>
         </div>
       </div>
       <!-- feed -->
-      <up-content ng-repeat="item in buzzCtrl.content" content="item" state="user.buzz"></up-content>
+      <up-content ng-repeat="item in buzzCtrl.FeedService.model.posts" content="item" state="user.buzz"></up-content>
     </div>
     <div class="col-sm-5 campaign-buzz-column right" hide-if-auth>
       <div class="conversation-wrapper">

@@ -47,7 +47,7 @@
   			urlYoutube: 'https://www.youtube.com/channel/UCctXZhXmG-kf3tlIXgVZUlw',
    			twitterCount: 92920,
   			youtubeCount: 250389,
-  			avatarUrl: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQsltvNfQKqvYfr8UMG28Xwp0PdgLUNwC6jXVTwoQ7PTWsc_2ik-i_oqxpN_A'
+  			avatarUrl: 'http://d30xksqof6w2my.cloudfront.net/eab0dc0d-6822-4900-aabd-105687cddfa5_480.jpg?w=256&h=256'
   		}, {
   			name: 'Christopher Sese-Khalid',
   			urlTwitter: 'https://twitter.com/sproutupco',

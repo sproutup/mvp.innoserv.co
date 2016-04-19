@@ -458,6 +458,15 @@ input:-ms-input-placeholder {
   font-size: 8pt;
 }
 
+.btn.active {
+  outline: none !important;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
 .btn:focus,.btn:active:focus,.btn.active:focus {
   outline: none;
 }
@@ -673,14 +682,30 @@ a.sproutup-btn-lg-main {
   font-weight: 700;
   font-size: 11pt;
   background-color: @sproutup-blue;
+  border: 1px solid @sproutup-blue;
   color: white;
   border-radius: 2px;
-  padding-top: 10px;
   margin-right: 6px;
   margin-bottom: 5px;
   -webkit-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+}
+
+.sproutup-btn-md-main:focus {
+  color: white;
+  background-color: @sproutup-blue;
+  border: 1px solid @sproutup-blue;
+}
+
+.sproutup-btn-md-main:hover {
+  color: white;
+  background-color: @sproutup-blue-hover;
+  border: 1px solid @sproutup-blue-hover;
+}
+
+a.sproutup-btn-md-main {
+  padding-top: 12px;
 }
 
 .sproutup-btn-md-main.naked {
@@ -750,29 +775,23 @@ a.sproutup-btn-lg-main {
   border-radius: 3px !important;
 }
 
-.sproutup-btn-md-main.discount {
+.sproutup-btn-md-main.discount,
+.sproutup-btn-md-main.discount:focus,
+.sproutup-btn-md-main.discount:active {
   background-color: @sproutup-discount;
+  border: 1px solid @sproutup-discount;
+  color: white;
+}
+
+.sproutup-btn-md-main.discount:hover {
+  background-color: @sproutup-discount-hover;
+  border: 1px solid @sproutup-discount-hover;
   color: white;
 }
 
 .sproutup-btn-md-main.discount i {
   padding-right: 10px;
   font-size: 10pt;
-}
-
-.sproutup-btn-md-main.contest {
-  background-color: @sproutup-contest;
-  color: white;
-}
-
-.sproutup-btn-md-main:focus {
-  color: white;
-  background-color: @sproutup-blue;
-}
-
-.sproutup-btn-md-main:hover {
-  color: white;
-  background-color: @sproutup-blue-hover;
 }
 
 .sproutup-btn-md-main.red:hover {
@@ -2270,7 +2289,7 @@ ul.browse-campaign-sidenav li a.active {
 }
 
 .campaign-list-item-banner {
-  height: 335px;
+  height: 360px;
   margin: 0px;
   background-position:center;
   background-repeat:no-repeat;
@@ -2296,7 +2315,7 @@ ul.browse-campaign-sidenav li a.active {
   z-index: 10;
   position: relative;
   font-weight: 700;
-  font-size: 11.5pt;
+  font-size: 12pt;
   color: @main-text-white;
 }
 
@@ -2307,6 +2326,17 @@ ul.browse-campaign-sidenav li a.active {
   z-index: 10;
   position: relative;
   font-weight: 400;
+  font-size: 9.5pt;
+  color: @main-text-white;
+}
+
+.campaign-list-item-banner .campaign-company {
+  margin: 0px;
+  padding: 25px 20px 0px;
+  text-align: left;
+  z-index: 10;
+  position: relative;
+  font-weight: 300;
   font-size: 9pt;
   color: @main-text-white;
 }
