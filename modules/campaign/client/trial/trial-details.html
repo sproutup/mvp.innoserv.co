@@ -18,7 +18,7 @@
     <div class="col-sm-5 about-campaign-column">
       <div ng-if="vm.myContribution">
         <div class="about-campaign-section" ng-if="vm.myContribution.state == 0">
-          <h3>You requested on <strong>{{ vm.myContribution.created | date }}</strong></h3>
+          <h3>You requested to join the campaign on {{ vm.myContribution.created | date }}</h3>
           <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
           <div class="about-campaign-actions">
             <!-- <a ui-sref="navbar.activity.trial.edit({ campaignId: vm.campaign.id, userId: vm.user.id })" class="btn sproutup-btn-sm outline">Edit request</a> -->
@@ -27,8 +27,8 @@
         </div>
 
         <div class="about-campaign-section" ng-if="vm.myContribution.state === 1">
-          <h3 ng-if="vm.myContribution.trial.shippingState === 1"><strong>Hooray! Product is on your way</strong></h3>
-          <h3 ng-if="!vm.myContribution.trial.shippingState">Nice! Your request was approved on <strong>{{ vm.myContribution.approved[0].created | date }}</strong></h3>
+          <h3 ng-if="vm.myContribution.trial.shippingState === 1">Hooray! Product was shipped to you on {{ vm.myContribution.trial.shippingDate | date }}</h3>
+          <h3 ng-if="!vm.myContribution.trial.shippingState">Nice! Your request was approved on {{ vm.myContribution.log[0].created | date }}</h3>
           <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
         </div>
 
