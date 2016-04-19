@@ -55,6 +55,7 @@ function upPostContentController(YouTubeService, ProviderService, Authentication
   vm.ContentService = ContentService;
   vm.selectYouTubeVideo = selectYouTubeVideo;
   vm.removeVideo = removeVideo;
+  // usSpinnerService.spin('spinner-4');
 
   function load(){
     vm.providers = ProviderService.provider().query({
@@ -72,12 +73,18 @@ function upPostContentController(YouTubeService, ProviderService, Authentication
   }
 
   function showYouTubeVideos() {
+    vm.fetching = true;
     YouTubeService.videos().get({}, function(res) {
-      vm.state = 'youtube';
-      vm.videos = res.items;
+      vm.fetching = false;
+      if (res.statusCode) {
+        vm.state = 'error';
+      } else {
+        vm.state = 'youtube';
+        vm.videos = res.items;
+      }
     }, function(err) {
+      vm.fetching = false;
       vm.state = 'error';
-      console.log('err here', err);
     });
   }
 
