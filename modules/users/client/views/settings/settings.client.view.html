@@ -29,6 +29,9 @@
         <a class="list-group-item" ng-repeat="item in vm.menu.items | orderBy: 'position'" ui-sref="{{item.state}}" ng-if="item.shouldRender(navbar.authentication.user);" ng-class="{ current: item.state === vm.state.current.name }">
           {{item.title}}
         </a>
+        <a class="list-group-item" ng-if="user.hasPassword" ui-sref="navbar.settings.password" ng-class="{ current: 'navbar.settings.password' === vm.state.current.name }">
+          Password
+        </a>
       </div>
     </div>
 
