@@ -10,10 +10,10 @@
       <div class="user-profile-networks">
         <ul class="list-inline">
           <li ng-repeat="provider in slug.item.providers">
-            <a ng-href="{{ 'https://twitter.com/' + provider.screen_name }}" ng-if="provider.provider === 'twitter'"><i class="fa fa-twitter"></i></a>
-            <a ng-href="{{ 'https://instagram.com/' + provider.username }}" ng-if="provider.provider === 'instagram'"><i class="fa fa-instagram"></i></a>
-            <a ng-href="{{ 'https://facebook.com/' + provider.id }}" ng-if="provider.provider === 'facebook'"><i class="fa fa-facebook"></i></a>
-            <a ng-href="{{ 'https://plus.google.com/u/0/' + provider.id }}" ng-if="provider.provider === 'google'"><i class="fa fa-google"></i></a>
+            <a ng-href="{{ 'https://twitter.com/' + provider.screen_name }}" ng-if="provider.provider === 'twitter'" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a ng-href="{{ 'https://instagram.com/' + provider.username }}" ng-if="provider.provider === 'instagram'" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a ng-href="{{ 'https://facebook.com/' + provider.id }}" ng-if="provider.provider === 'facebook'" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a ng-href="{{ 'https://plus.google.com/u/0/' + provider.id }}" ng-if="provider.provider === 'google'" target="_blank"><i class="fa fa-google"></i></a>
           </li>
         </ul>
       </div>
