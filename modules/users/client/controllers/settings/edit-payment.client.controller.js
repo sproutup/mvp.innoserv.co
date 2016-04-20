@@ -16,6 +16,7 @@ function EditPaymentController($http, $location, Users, Authentication, $state) 
   vm.back = back;
   vm.completeUserProfile = completeUserProfile;
   vm.user.cashtag = Authentication.user.cashtag;
+  vm.user.paypalme = Authentication.user.paypalme;
 
   // Update a user profile
   function updateUserProfile () {

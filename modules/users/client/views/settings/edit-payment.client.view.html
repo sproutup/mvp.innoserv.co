@@ -6,15 +6,37 @@
     <strong data-ng-bind="error"></strong>
   </div>
   <div class="social-account-wrapper">
+    <!-- paypal.me -->
     <div class="profile-edit--header">
-      <h1>Get paid with Square Cash&trade;</h1>
-      <h2><a class="squarecash" href="https://cash.me/" target="_blank">Learn more about Square Cash</a>. And you may wonder why Square Cash? Because it's fast, easy, free and beautiful! You simply get paid with your <a class="squarecash" href="https://cash.me/cashtags" target="_blank">$Cashtag</a>, like this:</h2>
-      <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/sproutup-assets/squarecash.png">
+      <h1>You've got two ways to get paid. &#x1F64C;</h1>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="payment-method-option">
+            <img class="payment-method-icon img-responsive" src="modules/core/client/img/settings/squarecash.png">
+            <h1>Square Cash&trade;</h1>
+            <h2><a class="squarecash" href="https://cash.me/" target="_blank">Learn more about Square Cash</a>. And you may wonder why Square Cash? Because it's fast, easy, free and beautiful! You simply get paid with your <a class="squarecash" href="https://cash.me/cashtags" target="_blank">$Cashtag</a>.</h2>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="payment-method-option">
+            <img class="payment-method-icon" src="modules/core/client/img/settings/paypal.png">
+            <h1>PayPal.Me&trade;</h1>
+            <h2><a class="paypalme" href="https://www.paypal.me/" target="_blank">Learn more about PayPal.Me</a>. Fast, easy and personal! Nothing changes - grab your own link and it connects to your existing PayPal account.</h2>
+          </div>
+        </div>
+      </div>
     </div>
     <form name="payment.paymentForm" data-ng-submit="payment.updateUserProfile()" novalidate>
-      <label ng-if="!payment.user.cashtag" class="sproutup-form-label">Enter your Square $Cashtag. <a href="https://cash.me/" target="_blank">Get it here</a> if you don't have one.</label>
-      <label ng-if="payment.user.cashtag" class="sproutup-form-label"><a class="squarecash" href="https://cash.me/{{ payment.user.cashtag }}" target="_blank">Click here</a> to make sure it's your Square Cash account.</label>
-      <input id="cashtag" name="cashtag" type="text" class="form-control form-input medium" ng-model="payment.user.cashtag" placeholder="Square $Cashtag">
+      <div class="profile-input-section">
+        <label ng-if="!payment.user.cashtag" class="sproutup-form-label">Enter your Square $Cashtag. <a class="squarecash" href="https://cash.me/" target="_blank">Get it here</a> if you don't have one.</label>
+        <label ng-if="payment.user.cashtag" class="sproutup-form-label">Your Square Cash link: <a class="squarecash" href="https://cash.me/{{ payment.user.cashtag }}" target="_blank">cash.me/{{ payment.user.cashtag }}</a>. Make sure it's correct.</label>
+        <input id="cashtag" name="cashtag" type="text" class="form-control form-input medium" ng-model="payment.user.cashtag" placeholder="Your Square Cashtag">
+      </div>
+      <div class="profile-input-section">
+        <label ng-if="!payment.user.paypalme" class="sproutup-form-label">Enter your PayPal.Me account. <a class="paypalme" href="https://www.paypal.me/" target="_blank">Get a link here</a> if you don't have one.</label>
+        <label ng-if="payment.user.paypalme" class="sproutup-form-label">Your PayPal.Me link: <a class="paypalme" href="https://www.paypal.me/{{ payment.user.paypalme }}" target="_blank">www.paypal.me/{{ payment.user.paypalme }}</a>. Make sure it's correct.</label>
+        <input id="paypalme" name="paypalme" type="text" class="form-control form-input medium" ng-model="payment.user.paypalme" placeholder="Your PayPal.Me account">
+      </div>
       <button ng-disabled="payment.paymentForm.$invalid || payment.paymentForm.$pristine" class="btn sproutup-btn-sm squarecash" type="submit">Save Changes</button>
     </form>
   </div>
