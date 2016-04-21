@@ -11,7 +11,7 @@
       <div class="description" ng-if="provider.provider==='instagram'">We are getting your social reach from Instagram. <strong>We'll never post to Instagram</strong>.</div>
     </div>
     <div class="col-sm-4 action">
-      <button class="btn sproutup-btn-sm naked" ng-click="table.removeUserSocialAccount(provider.provider)">Disconnect</button>
+      <button class="btn sproutup-btn-sm naked" ng-click="table.openDisconnectModal(provider.provider)">Disconnect</button>
     </div>
   </div>
   <div ng-repeat="provider in table.providers | filter:{status:-1}" class="row row-social-account" ng-if="provider.provider !== 'password'">

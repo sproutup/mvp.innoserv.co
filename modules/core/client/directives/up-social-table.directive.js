@@ -21,9 +21,9 @@ function upSocialTable() {
   }
 }
 
-upSocialTableController.$inject = ['$scope', '$http', 'Authentication', 'ProviderService', '$state', '$window'];
+upSocialTableController.$inject = ['$scope', '$http', 'Authentication', 'ProviderService', '$state', '$window', '$uibModal'];
 
-function upSocialTableController($scope, $http, Authentication, ProviderService, $state, $window) {
+function upSocialTableController($scope, $http, Authentication, ProviderService, $state, $window, $modal) {
   var vm = this;
 
   vm.user = Authentication.user;
@@ -63,8 +63,30 @@ function upSocialTableController($scope, $http, Authentication, ProviderService,
     return false;
   };
 
+  vm.openDisconnectModal = function (provider) {
+    var provideName = capitalize(provider);
+    var modalInstance = $modal.open({
+      templateUrl: 'modules/core/client/disconnect-social-network-confirmation.html',
+      controller: 'DeleteController',
+      controllerAs: 'vm',
+      resolve: {
+        message: function() { return 'After you disconnect, you cannot sign in to this account with ' + provideName + ' in the future.'; }
+      }
+    });
+
+    modalInstance.result.then(function () {
+      removeUserSocialAccount(provider);
+    }, function () {
+      console.log('Modal dismissed at: ' + new Date());
+    });
+  };
+
+  function capitalize(s) {
+    return s[0].toUpperCase() + s.slice(1);
+  }
+
   // Remove a user social account
-  vm.removeUserSocialAccount = function (provider) {
+  function removeUserSocialAccount(provider) {
     $scope.success = $scope.error = null;
 
     $http.delete('/api/users/accounts', {
@@ -83,7 +105,7 @@ function upSocialTableController($scope, $http, Authentication, ProviderService,
     }).error(function (response) {
       $scope.error = response.message;
     });
-  };
+  }
 
   vm.callOauthProvider = function (url) {
     url += '?redirect_to=' + encodeURIComponent($window.location.pathname);
