@@ -70,7 +70,7 @@ function upSocialTableController($scope, $http, Authentication, ProviderService,
       controller: 'DeleteController',
       controllerAs: 'vm',
       resolve: {
-        message: function() { return 'After you disconnect, you cannot sign in to this account with ' + provideName + ' in the future.'; }
+        message: function() { return 'After you disconnect, you cannot sign in to this account with ' + provideName + ' in the future. Also, brands won\'t know your ' + provideName + ' reach.'; }
       }
     });
 
