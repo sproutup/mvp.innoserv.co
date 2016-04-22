@@ -76,7 +76,6 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
   // Record previous state
   $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
     console.log('stateChangeSuccess: ', toState.name);
-    console.log('current page title: ', toState.data.title);
     $state.previous = {
       state: fromState,
       params: fromParams,
