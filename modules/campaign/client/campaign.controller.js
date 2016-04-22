@@ -23,12 +23,12 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
 
   function loadChannel(){
     console.log('find channel by ref: ', $state.params.campaignId);
+    var channelKey = $state.params.campaignId + ':' + Authentication.user.id;
     var myChannelRef = MessageService.myChannelRef();
-    var item = new myChannelRef({
-      userId: Authentication.user.id
-    });
+    var item = new myChannelRef();
+
     // Use save to post a request. we are not really saving anything
-    item.$save({refId: $state.params.campaignId}, function (channel) {
+    item.$save({id: channelKey}, function (channel) {
       if(channel.id){
         console.log('channel found: ', channel.id);
         vm.channelId = channel.id;
@@ -42,9 +42,8 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
   function startChannel(){
     console.log('start channel by ref: ', $state.params.campaignId);
     var campaignChannel = MessageService.campaignChannel();
-    var item = new campaignChannel({
-      userId: Authentication.user.id
-    });
+    var item = new campaignChannel();
+
     // Use save to post a request. we are not really saving anything
     item.$save({campaignId: $state.params.campaignId}, function (channel) {
       if(channel.id){

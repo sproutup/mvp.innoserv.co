@@ -49,6 +49,6 @@ function MessageService($resource, $q) {
   }
 
   function myChannelRef () {
-     return $resource('/api/my/channel/ref/:refId', {refId: '@refId'}, { 'update': {method:'PUT'}, 'query': {method:'GET', isArray:true} } );
+     return $resource('/api/my/channel/ref/:id', {id: '@id'}, { 'update': {method:'PUT'}, 'query': {method:'GET', isArray:true} } );
   }
 }

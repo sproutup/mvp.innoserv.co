@@ -1,4 +1,4 @@
-<div class="conversation-wrapper">
+<div class="conversation-wrapper" ng-init="vm.load()">
   <div class="message-header">
     <p ng-hide="vm.empty">Your conversation with <strong>{{vm.conversation.channel.ref.company.name}}</strong> about <strong><a ui-sref="navbar.campaign.trial.view.details({ campaignId: vm.conversation.channel.refId}) ">{{vm.conversation.channel.ref.name}}</a></strong></p>
     <p ng-show="vm.empty">You haven't started a conversation</p>
