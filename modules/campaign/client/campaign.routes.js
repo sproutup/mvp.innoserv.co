@@ -27,21 +27,21 @@ function campaignConfig($stateProvider) {
       url: '',
       templateUrl: 'modules/campaign/client/list-campaign.view.html',
       data: {
-          title: 'Campaign - List'
+          title: 'Campaigns'
       }
     })
     .state('navbar.discover.mine', {
       url: '/my-stuff',
       templateUrl: 'modules/campaign/client/my-campaign.view.html',
       data: {
-          title: 'Campaign - List'
+          title: 'My Stuff'
       }
     })
     .state('navbar.slug.user.activities' ,{
       url: '/activities',
       templateUrl: 'modules/campaign/client/user-activities.html',
       data: {
-          title: 'Activities - SproutUp'
+          title: 'My Activities'
       }
     });
 }

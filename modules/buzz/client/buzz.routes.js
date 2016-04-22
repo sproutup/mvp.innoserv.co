@@ -12,7 +12,7 @@ function buzzConfig($stateProvider) {
       controller: 'BuzzController',
       controllerAs: 'vm',
       data: {
-          title: 'Buzz - SproutUp'
+          title: 'Buzz'
       }
     })
     .state('navbar.home' ,{
@@ -21,7 +21,7 @@ function buzzConfig($stateProvider) {
       controller: 'BuzzController',
       controllerAs: 'vm',
       data: {
-          title: 'Buzz - SproutUp'
+          title: 'Buzz'
       }
     })
     .state('navbar.slug.user.buzz' ,{
@@ -30,7 +30,7 @@ function buzzConfig($stateProvider) {
       controller: 'BuzzController',
       controllerAs: 'buzz',
       data: {
-          title: 'Buzz - SproutUp'
+          title: 'Buzz'
       }
     });
 }

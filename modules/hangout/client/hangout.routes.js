@@ -8,31 +8,25 @@ angular.module('hangout').config(['$stateProvider',
       abstract: true,
       template: '<div ui-view><div>',
       controller: 'HangoutController',
-      controllerAs: 'vm',
-      data: {
-        title: 'Hangout With Cool People - SproutUp'
-      }
+      controllerAs: 'vm'
     })
     .state('navbar.hangout.list', {
       url: '/list',
       abstract: true,
       templateUrl: 'modules/hangout/client/list-hangout.view.html',
-      data: {
-        title: 'Hangout - List'
-      }
     })
     .state('navbar.hangout.list.future', {
       url: '',
       templateUrl: 'modules/hangout/client/list-future-hangout.view.html',
       data: {
-        title: 'Hangout - List'
+        title: 'Upcoming Hangouts'
       }
     })
     .state('navbar.hangout.list.past', {
       url: '/past',
       templateUrl: 'modules/hangout/client/list-past-hangout.view.html',
       data: {
-        title: 'Hangout - List'
+        title: 'Past Hangouts'
       }
     })
     .state('navbar.hangoutPreview' ,{
@@ -46,4 +40,3 @@ angular.module('hangout').config(['$stateProvider',
     });
    }
 ]);
-

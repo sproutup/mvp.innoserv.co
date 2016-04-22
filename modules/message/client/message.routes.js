@@ -14,12 +14,15 @@ angular.module('message').config(['$stateProvider',
         url: '/list',
         templateUrl: 'modules/message/client/list-messages.view.html',
         data: {
-          pageTitle: 'Conversations'
+          title: 'My Messages'
         }
       })
       .state('navbar.conversation.view', {
         url: '/:channelId',
-        templateUrl: 'modules/message/client/view-message.view.html'
+        templateUrl: 'modules/message/client/view-message.view.html',
+        data: {
+          title: 'My Messages'
+        }
       //   resolve: {
       //     articleResolve: getArticle
       //   },

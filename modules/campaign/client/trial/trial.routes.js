@@ -25,7 +25,7 @@ function trialConfig($stateProvider) {
       url: '',
       templateUrl: 'modules/campaign/client/trial/trial-details.html',
       data: {
-        title: 'Campaign - Details'
+        title: 'Campaign'
       }
     })
     .state('navbar.campaign.trial.view.buzz', {
@@ -34,21 +34,21 @@ function trialConfig($stateProvider) {
       controllerAs: 'buzzCtrl',
       templateUrl: 'modules/campaign/client/trial/trial-buzz.html',
       data: {
-        title: 'Campaign - Buzz'
+        title: 'Campaign'
       }
     })
     .state('navbar.campaign.trial.info', {
       url: '/request/info',
       templateUrl: 'modules/campaign/client/trial/info.html',
       data: {
-        title: 'Request to Join Campaign'
+        title: 'Join Campaign'
       }
     })
     .state('navbar.campaign.trial.connect', {
       url: '/request/connect',
       templateUrl: 'modules/campaign/client/trial/social-connection.html',
       data: {
-        title: 'Trial - Social'
+        title: 'Join Campaign'
       }
     });
 }
