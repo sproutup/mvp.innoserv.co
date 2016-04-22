@@ -1,8 +1,8 @@
 'use strict';
 
 angular
-  .module('contributor')
-  .controller('ContributorController', ContributorController);
+.module('contributor')
+.controller('ContributorController', ContributorController);
 
 ContributorController.$inject = ['$scope', 'Authentication', 'ContributorService', '$state', 'CampaignService'];
 
@@ -11,6 +11,7 @@ function ContributorController($scope, Authentication, ContributorService, $stat
   vm.findOne = findOne;
   vm.campaignId = $state.params.campaignId;
   vm.findCampaign = findCampaign;
+  vm.updateRequest = updateRequest;
 
   function findOne() {
     vm.success = false;
@@ -32,4 +33,16 @@ function ContributorController($scope, Authentication, ContributorService, $stat
       vm.campaign = response;
     });
   }
+
+  function updateRequest() {
+    vm.item.$update({
+      campaignId: vm.item.campaignId,
+      userId: vm.item.userId
+    }, function(res) {
+      $state.go('navbar.activity.trial.updated', { campaignId: vm.campaign.id });
+    }, function(err) {
+      vm.error = true;
+    });
+  }
+
 }

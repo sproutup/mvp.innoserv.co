@@ -1,9 +1,9 @@
 <section ng-controller="AuthenticationController">
   <div class="signin-page" style="background-image: url('modules/core/client/img/signin-page-background.jpg')">
+    <div class="exit-signin-page">
+      <button class="btn sproutup-btn-xs" ng-click="back()"><i class="fa fa-times"></i></button>
+    </div>
     <div ng-if="err">
-      <div class="exit-signin-page">
-        <button class="btn sproutup-btn-xs" ng-click="back()"><i class="fa fa-times"></i></button>
-      </div>
       <div class="signup-login-header">
         <h1>Uh oh!</h1>
         <h2 class="col-md-12">{{err}}</h2>

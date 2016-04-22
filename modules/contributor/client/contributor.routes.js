@@ -44,6 +44,13 @@ function contributorConfig($stateProvider) {
         title: 'Edit'
       }
     })
+    .state('navbar.activity.trial.updated', {
+      url: '/updated',
+      templateUrl: 'modules/contributor/client/update-request-confirmation.view.html',
+      data: {
+        title: 'Edit'
+      }
+    })
     .state('navbar.activity.contest', {
       url: '/contest',
       template: '<div ui-view></div>',
