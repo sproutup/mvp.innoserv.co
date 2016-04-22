@@ -64,13 +64,23 @@ function upSocialTableController($scope, $http, Authentication, ProviderService,
   };
 
   vm.openDisconnectModal = function (provider) {
-    var provideName = capitalize(provider);
+    var providerName = capitalize(provider);
+    var disconnectMessage;
+    if (provider === 'facebook') {
+      disconnectMessage = 'After you disconnect, you cannot sign in to this account with ' + providerName + ' in the future. Also, brands won\'t know your ' + providerName + ' reach.';
+    } else if (provider === 'twitter') {
+      disconnectMessage = 'After you disconnect, you cannot sign in to this account with ' + providerName + ' in the future. Also, brands won\'t know your ' + providerName + ' reach.';
+    } else if (provider === 'google') {
+      disconnectMessage = 'After you disconnect with' + providerName + ', you cannot submit YouTube content and access content analytics. And brands won\'t know your YouTube or Google+ reach.';
+    } else if (provider === 'instagram') {
+      disconnectMessage = 'After you disconnect, brands won\'t know your ' + providerName + ' reach.';
+    }
     var modalInstance = $modal.open({
       templateUrl: 'modules/core/client/disconnect-social-network-confirmation.html',
       controller: 'DeleteController',
       controllerAs: 'vm',
       resolve: {
-        message: function() { return 'After you disconnect, you cannot sign in to this account with ' + provideName + ' in the future. Also, brands won\'t know your ' + provideName + ' reach.'; }
+        message: function() { return disconnectMessage; }
       }
     });
 

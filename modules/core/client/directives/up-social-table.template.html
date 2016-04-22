@@ -5,7 +5,7 @@
       <div class="header" ng-if="provider.provider==='facebook'"><i class="fa fa-check-circle success"></i>Connected to Facebook</div>
       <div class="header" ng-if="provider.provider==='twitter'"><i class="fa fa-check-circle success"></i>Connected to Twitter</div>
       <div class="header" ng-if="provider.provider==='instagram'"><i class="fa fa-check-circle success"></i>Connected to Instagram</div>
-      <div class="description" ng-if="provider.provider==='google'">We are getting your social reach from Google. You can now sign in with Google as well. <strong>We'll never post to Google or YouTube</strong>.</div>
+      <div class="description" ng-if="provider.provider==='google'">We are getting your social reach from Google. <strong>We'll never post to Google or YouTube</strong>.</div>
       <div class="description" ng-if="provider.provider==='facebook'">We are getting your social reach from Facebook. You can now sign in with Facebook as well. <strong>We'll never post to Facebook or message your friends without your permission</strong>.</div>
       <div class="description" ng-if="provider.provider==='twitter'">We are getting your social reach from Twitter. You can now sign in with Twitter as well. <strong>We'll never post to Twitter or message your followers without your permission</strong>.</div>
       <div class="description" ng-if="provider.provider==='instagram'">We are getting your social reach from Instagram. <strong>We'll never post to Instagram</strong>.</div>
@@ -33,7 +33,7 @@
   <div ng-repeat="network in table.networks" class="row row-social-account" ng-hide="table.isConnectedSocialAccount(network.provider)" ng-if="provider.provider !== 'password'">
     <div class="col-sm-8" >
       <div class="header">Connect to {{network.title}}</div>
-      <div class="description" ng-if="network.title==='Google'">If you are a YouTuber or have a website, please connect to submit content and access analytics. You can also sign in with Google.</div>
+      <div class="description" ng-if="network.title==='Google'">If you are a YouTuber or have a website, please connect to submit content and access analytics. <strong>We'll never post to Google or YouTube</strong>.</div>
       <div class="description" ng-if="network.title==='Twitter'">You can sign in with Twitter after you connect. <strong>We'll never post to Twitter or message your followers without your permission</strong>.</div>
       <div class="description" ng-if="network.title==='Instagram'">You can share your Instagram content on SproutUp after you connect. <strong>We'll never post to Instagram</strong>.</div>
       <div class="description" ng-if="network.title==='Facebook'">You can sign in with Facebook after you connect. <strong>We'll never post to Facebook or message your friends without your permission</strong>.</div>
