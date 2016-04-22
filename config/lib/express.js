@@ -221,6 +221,11 @@ module.exports.configureSocketIO = function (app) {
 
 module.exports.initHttpProxy = function (app){
   console.log('init http proxy');
+
+  proxy.on('proxyReq', function(proxyReq, req, res, options) {
+    proxyReq.setHeader('x-up-proxy-host', req.get('host'));
+  });
+
   app.use(function(req, res, next){
     if(req.url.match(new RegExp('^\/api\/'))) {
       proxy.proxyRequest(req, res,
