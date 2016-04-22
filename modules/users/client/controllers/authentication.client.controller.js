@@ -43,6 +43,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
     };
 
     $scope.back = function () {
+      //console.log('previous state: ', $state.previous.state.name);
       $state.go($state.previous.state.name || 'navbar.home', $state.previous.params);
     };
 

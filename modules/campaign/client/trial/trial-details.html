@@ -21,8 +21,8 @@
           <h3>You requested to join the campaign on {{ vm.myContribution.created | date }}</h3>
           <p>Your unique referral link <strong>http://goo.gl/zvLnyI</strong></p>
           <div class="about-campaign-actions">
-            <!-- <a ui-sref="navbar.activity.trial.edit({ campaignId: vm.campaign.id, userId: vm.user.id })" class="btn sproutup-btn-sm outline">Edit request</a> -->
-            <button class="btn sproutup-btn-sm outline" ng-click="vm.openCancelModal()">Cancel request</button>
+            <a class="btn sproutup-btn-sm outline" ui-sref="navbar.activity.trial.edit({campaignId: vm.campaign.id})">Edit request</a>
+            <button class="btn sproutup-btn-sm minimal" ng-click="vm.openCancelModal()">Cancel request</button>
           </div>
         </div>
 
@@ -52,7 +52,6 @@
           <li ng-if="vm.campaign.typeOfContent.indexOf('tw') >= 0"><i class="fa fa-dot-circle-o"></i>Twitter</li>
           <li ng-if="vm.campaign.typeOfContent.indexOf('bl') >= 0"><i class="fa fa-dot-circle-o"></i>Blog</li>
           <li ng-if="vm.campaign.typeOfContent.indexOf('sc') >= 0"><i class="fa fa-dot-circle-o"></i>Snapchat</li>
-          <li></li>
           <li ng-if="vm.campaign.trial.keepProduct"><i class="fa fa-check-circle green"></i>Yes! We will send you free product to review and keep.</li>
           <li ng-if="!vm.campaign.trial.keepProduct"><i class="fa fa-dot-circle-o"></i>We will send you <strong><u>loaner</u></strong> product to review and then return to us. NO cost on you.</li>
         </ul>

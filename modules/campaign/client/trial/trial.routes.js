@@ -41,14 +41,7 @@ function trialConfig($stateProvider) {
       url: '/request/info',
       templateUrl: 'modules/campaign/client/trial/info.html',
       data: {
-        title: 'Trial - Info'
-      }
-    })
-    .state('navbar.campaign.trial.edit', {
-      url: '/request/edit/:userId',
-      templateUrl: 'modules/campaign/client/trial/edit.html',
-      data: {
-        title: 'Trial - Info'
+        title: 'Request to Join Campaign'
       }
     })
     .state('navbar.campaign.trial.connect', {
