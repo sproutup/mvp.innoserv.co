@@ -1,6 +1,6 @@
 <div class="my-content-comments" ng-if="vm.commenting">
   <!-- Existing comments -->
-  <div class="row my-content-comment-row" ng-repeat="comment in vm.comments | orderBy: 'createdAt'">
+  <div class="row my-content-comment-row" ng-repeat="comment in vm.comments | orderBy: 'created'">
     <div class="col-sm-1 my-content-user-avatar">
       <a ui-sref="navbar.slug.user.buzz({ slug: comment.user.username })">
         <img class="img-responsive post-comment-user-img-circle" up-avatar="comment.user" width="80" height="80">
