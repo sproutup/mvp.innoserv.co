@@ -63,12 +63,13 @@ function MessageChannelController($scope, Authentication, Socket, MessageService
         Socket.connect();
 
       }
-      // Add an event listener to the 'chatMessage' event
-      Socket.on('chatMessage', function (message) {
-        console.log('msg: ', message);
-        message.inbound = (Authentication.user.id !== message.user.id);
-        vm.messages.push(message);
-      });
+
+      // Add an event listener to the 'chatMessage' event—these are events like on socket connect/disconnect
+      // Socket.on('chatMessage', function (message) {
+        // console.log('msg: ', message);
+        // message.inbound = (Authentication.user.id !== message.user.id);
+        // vm.messages.push(message);
+      // });
 
       // Add an event listener to the 'chatMessage' event
       Socket.on('message', function (message) {
