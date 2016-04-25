@@ -1085,10 +1085,13 @@ a.sproutup-btn-sm {
   background-color: @sproutup-blue;
   color: white;
   border-radius: 0px;
-  padding-top: 5px;
   -webkit-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+}
+
+a.sproutup-btn-xs {
+  padding-top: 7px;
 }
 
 .sproutup-btn-xs:hover {
@@ -1098,6 +1101,18 @@ a.sproutup-btn-sm {
 
 .sproutup-btn-xs i {
   padding-right: 10px;
+}
+
+.sproutup-btn-xs.minimal {
+  color: @main-text-lighter;
+  background-color: @sproutup-veryverylightgrey;
+  border: 1px solid @sproutup-grey;
+}
+
+.sproutup-btn-xs.minimal:hover {
+  color: @main-text-lighter;
+  background-color: white;
+  border: 1px solid @sproutup-grey;
 }
 
 .sproutup-btn-xs.outline {
@@ -1134,14 +1149,14 @@ a.sproutup-btn-sm {
 
 .sproutup-btn-xs.cancel {
   background-color: white;
-  color: @sproutup-red;
-  border: 1px solid @sproutup-red;
+  color: @sproutup-salmon;
+  border: 1px solid @sproutup-salmon;
 }
 
 .sproutup-btn-xs.cancel:hover {
-  background-color: @sproutup-red-hover;
-  color: white;
-  border: 1px solid @sproutup-red-hover;
+  background-color: white;
+  color: @sproutup-salmon;
+  border: 1px solid @sproutup-salmon;
 }
 
 .sproutup-btn-square,
