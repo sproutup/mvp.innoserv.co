@@ -5,9 +5,9 @@ angular
   .module('campaign')
   .controller('CampaignController', CampaignController);
 
-CampaignController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', '$interval', 'MessageService'];
+CampaignController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', '$interval', 'MessageService', '$uibModal'];
 
-function CampaignController(CampaignService, $state, Authentication, $scope, $interval, MessageService) {
+function CampaignController(CampaignService, $state, Authentication, $scope, $interval, MessageService, $modal) {
   var vm = this;
   vm.product = {};
   vm.find = find;
@@ -16,6 +16,7 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
   vm.startChannel = startChannel;
   vm.findMyCampaigns = findMyCampaigns;
   vm.returnMatch = returnMatch;
+  vm.openCancelModal = openCancelModal;
   vm.cancelRequest = cancelRequest;
   vm.editRequest = editRequest;
   vm.startInterval = startInterval;
@@ -64,6 +65,23 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
       }, function(err) {
         console.log(err);
       });
+  }
+
+  function openCancelModal(campaignId) {
+    var modalInstance = $modal.open({
+      templateUrl: 'modules/core/client/cancel-request-confirmation.html',
+      controller: 'DeleteController',
+      controllerAs: 'vm',
+      resolve: {
+        message: function() { return 'Your request will be gone forever and ever.'; }
+      }
+    });
+
+    modalInstance.result.then(function () {
+      cancelRequest(campaignId);
+    }, function () {
+      console.log('Modal dismissed at: ' + new Date());
+    });
   }
 
   function cancelRequest(campaignId) {
