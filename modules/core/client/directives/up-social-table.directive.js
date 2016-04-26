@@ -109,7 +109,7 @@ function upSocialTableController($scope, $http, Authentication, ProviderService,
       $scope.user = Authentication.user = response;
       for (var i = 0; i < vm.providers.length; i++) {
         if(vm.providers[i].provider === provider) {
-          vm.providers.splice(i);
+          vm.providers.splice(vm.providers.indexOf(vm.providers[i]), 1);
         }
       }
     }).error(function (response) {
