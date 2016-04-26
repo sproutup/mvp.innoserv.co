@@ -21,8 +21,6 @@ function upMessageChannel() {
   return directive;
 
   function linkFunc(scope, element, attr, ctrl) {
-    init();
-
     scope.$watch(
       function(scope){
         return scope.vm.channel;
