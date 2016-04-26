@@ -17,7 +17,8 @@
                     <img class="img-center" up-avatar="channel.members[channel.last.user.id].user" width="50" height="50">
                   </td>
                   <td>
-                    <div class="name" ng-bind="channel.last.user.displayName"></div>
+                    <div class="name" ng-if="channel.last.user.id !== navbar.authentication.user.id" ng-bind="channel.last.user.displayName"></div>
+                    <div class="name" ng-if="channel.last.user.id === navbar.authentication.user.id">Me<span><i class="fa fa-share"></i></span></div>
                     <div class="text" ng-bind="(channel.last.body | limitTo: 140) + (channel.last.body.length < 140 ? '' : '...')"></div>
                   </td>
                   <td class="time"><span am-time-ago="channel.last.created"></span></td>
