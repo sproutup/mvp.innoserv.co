@@ -30,10 +30,8 @@
               <div class="form-inline">
                 <span class="dollar-sign">$</span><input type="number" class="form-control form-validate form-input small" ng-model="vm.bid" min="0" max="1000000">
                 <div role="alert">
-                  <div class="message error" ng-show="form.$error.max">
-                    WOW, one million dollars sound too much!</div>
-                  <div class="message error" ng-show="form.$error.min">
-                    No need to pay us for this! ;)</div>
+                  <div class="message error" ng-show="form.$error.max">WOW, that's too much. It'll bankrupt us!</div>
+                  <div class="message error" ng-show="form.$error.min">No need to pay us for this! ;)</div>
                 </div>
               </div>
             </div>
