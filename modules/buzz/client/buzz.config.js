@@ -3,7 +3,7 @@
 angular.module('buzz').run(['Menus',
   function (Menus) {
     Menus.addMenuItem('navbar', {
-      title: 'HOME',
+      title: 'BUZZ',
       state: 'navbar.home',
       roles: ['*'],
       position: 10

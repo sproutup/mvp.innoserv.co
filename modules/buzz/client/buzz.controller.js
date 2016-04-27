@@ -280,7 +280,7 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
     function findCampaigns() {
       vm.campaigns = [];
       CampaignService.campaign().query(function(res) {
-        while (vm.campaigns.length < 2) {
+        while (vm.campaigns.length < 3) {
           var randomnumber = Math.ceil(Math.random() * (res.length - 1));
           var found = false;
           for (var i = 0; i < vm.campaigns.length ; i++) {

@@ -38,6 +38,15 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatc
         url: '/not-found',
         templateUrl: 'modules/core/client/404.view.html'
       })
+      .state('navbar.landing' ,{
+        url: '/',
+        templateUrl: 'modules/core/client/landing.view.html',
+        controller: 'BuzzController',
+        controllerAs: 'vm',
+        data: {
+            title: 'SproutUp'
+        }
+      })
       .state('navbar.team', {
         url: '/team',
         templateUrl: 'modules/core/client/team.view.html'

@@ -1,0 +1,125 @@
+<div class="marketing-container" style="background-image: url('modules/core/client/img/about/about-banner.jpg');">
+  <div class="marketing-header">
+    <h1>Passion. Creativity. Influence.</h1>
+    <h2>Our mission is to help <strong><i>creative minds</i></strong> across the globe build their personal brands. We bring you the opportunities to create content of snackable size or long form. We connect you with your audience and other creators. And, we help you make good money (or earn other kinds of reward).</h2>
+  </div>
+  <div class="marketing-cta">
+    <a class="btn sproutup-btn-lg-main" hide-if-auth ui-sref="authentication.signin">JOIN TODAY</a>
+    <a class="btn sproutup-btn-lg-main" show-if-auth ui-sref="navbar.discover.list">EXPLORE</a>
+  </div>
+</div>
+
+<div class="landing-section a">
+  <div class="row landing-section-wrapper" ng-init="vm.findCampaigns()">
+    <div class="landing-title">Exciting campaigns. Innovative products. Awesome brands.</div>
+    <div class="col-sm-12 browse-campaign-main">
+      <div class="row browse-campaign-section">
+        <div class="col-sm-4 campaign-list-item" ng-repeat="campaign in vm.campaigns">
+          <a ui-sref="navbar.campaign.trial.view.details({ campaignId: campaign.id })">
+            <div class="campaign-list-item-banner" ng-style="{'background-image': 'url({{ campaign.banner.file.url || 'modules/core/client/img/default-product-banner.jpg' }})'}">
+              <p class="campaign-name">{{ campaign.name }}</p>
+              <p class="campaign-description">{{ campaign.tagline }}</p>
+              <p class="campaign-company">By <strong>{{ campaign.company.name }}</strong></p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="landing-section">
+  <div class="row landing-section-wrapper">
+    <div class="landing-title">Great content from great creators.</div>
+    <div class="col-sm-12 browse-campaign-main">
+      <div class="row browse-campaign-section">
+        <div class="col-sm-6 campaign-list-item">
+          <div class="my-content-video embedded">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/N-fgMjStwc0?&autohide=1&showinfo=0&controls=0&iv_load_policy=3&nologo=1" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-sm-6 campaign-list-item">
+          <div class="my-content-video embedded">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/N-fgMjStwc0?&autohide=1&showinfo=0&controls=0&iv_load_policy=3&nologo=1" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-sm-6 campaign-list-item">
+          <div class="my-content-video embedded">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/N-fgMjStwc0?&autohide=1&showinfo=0&controls=0&iv_load_policy=3&nologo=1" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-sm-6 campaign-list-item">
+          <div class="my-content-video embedded">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/N-fgMjStwc0?&autohide=1&showinfo=0&controls=0&iv_load_policy=3&nologo=1" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-sm-6 campaign-list-item">
+          <div class="my-content-video embedded">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/N-fgMjStwc0?&autohide=1&showinfo=0&controls=0&iv_load_policy=3&nologo=1" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-sm-6 campaign-list-item">
+          <div class="my-content-video embedded">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/N-fgMjStwc0?&autohide=1&showinfo=0&controls=0&iv_load_policy=3&nologo=1" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="landing-section a">
+  <div class="row landing-section-wrapper" ng-init="vm.findCampaigns()">
+    <div class="landing-title">Meet our community of product influencers and enthusiasts.</div>
+    <div class="col-sm-12">
+      <div class="row landing-influencer-list-section">
+        <div class="col-sm-2 col-xs-3 landing-creator-photos" uib-popover="Kevin The Tech Ninja" popover-trigger="mouseenter">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/712994933318283264/wYQ9IfWb_400x400.jpg">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/698589176627863553/AmR3qEnk_400x400.jpg">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/554515151575994369/MiDNqbJa_400x400.jpeg">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/544407411193163776/vGSguvLd_400x400.jpeg">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/479487782075629569/y3f1BvvV_400x400.jpeg">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/685282174967255040/b1NN2imU_400x400.jpg">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/672284997533884416/ixOL6pNU_400x400.png">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/690019607298572288/nKJiAuQB_400x400.png">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/720767103712645122/6XEBAXLj_400x400.jpg">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/703731714225512448/L6xzIxC6_400x400.jpg">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/663489187237138432/bjZxqoxa_400x400.jpg">
+        </div>
+        <div class="col-sm-2 col-xs-3 landing-creator-photos">
+          <img class="img-responsive" src="https://pbs.twimg.com/profile_images/707939176721715200/FCnohKyx_400x400.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="landing-section">
+  <div class="row landing-section-wrapper">
+    <div class="landing-title">READY TO SPROUT UP?</div>
+    <div class="landing-cta">
+      <a class="btn sproutup-btn-lg-main" hide-if-auth ui-sref="authentication.signin">YES</a>
+      <a class="btn sproutup-btn-lg-main" show-if-auth ui-sref="navbar.discover.list">EXPLORE</a>
+    </div>
+  </div>
+</div>
