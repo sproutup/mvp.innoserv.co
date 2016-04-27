@@ -2146,6 +2146,20 @@ p[class="hangout-countdown-unit"] {
   width: 100%;
 }
 
+.landing-creator-info {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  /* left: 5%; */
+  /* right: 5%; */
+  text-align: center;
+  color: fff;
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding-top: 45%;
+}
+
 .landing-cta {
   text-align: center;
   margin: 15px 0px 30px;
@@ -2404,6 +2418,10 @@ ul.browse-campaign-sidenav li a.active {
   bottom: 0;
   content: "";
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)); /* Standard syntax */
+}
+
+.campaign-list-item-banner.landing-curated-videos::after {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.01)); /* Standard syntax */
 }
 
 .campaign-list-item-banner .campaign-name {
@@ -4406,12 +4424,13 @@ ul.list-conversation-thread li a {
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  border: 2px solid @sproutup-lightgrey;
+  border: 2px solid @sproutup-grey;
 }
 
 .sproutup-table.landing-videos .name {
   font-weight: 700;
-  padding-bottom: 3px;
+  font-size: 11pt;
+  padding-bottom: 5px;
   color: @main-text-white;
 }
 

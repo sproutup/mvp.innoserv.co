@@ -35,7 +35,7 @@
       <div class="row browse-campaign-section">
         <div class="col-sm-6 campaign-list-item">
           <a href="" ng-click="playVideo = !playVideo">
-            <div ng-if="!playVideo" class="campaign-list-item-banner" style="background-image: url('http://img.youtube.com/vi/N-fgMjStwc0/maxresdefault.jpg');">
+            <div ng-if="!playVideo" class="campaign-list-item-banner landing-curated-videos" style="background-image: url('http://img.youtube.com/vi/N-fgMjStwc0/maxresdefault.jpg');">
               <div class="sproutup-table landing-videos">
                 <table class="table">
                   <tbody>
@@ -60,7 +60,7 @@
           </a>
         </div>
         <div class="col-sm-6 campaign-list-item">
-          <div class="campaign-list-item-banner" style="background-image: url('http://img.youtube.com/vi/orc5fBf14vs/maxresdefault.jpg');">
+          <div class="campaign-list-item-banner landing-curated-videos" style="background-image: url('http://img.youtube.com/vi/orc5fBf14vs/maxresdefault.jpg');">
             <div class="sproutup-table landing-videos">
               <table class="table">
                 <tbody>
@@ -79,7 +79,7 @@
           </div>
         </div>
         <div class="col-sm-6 campaign-list-item">
-          <div class="campaign-list-item-banner" style="background-image: url('http://img.youtube.com/vi/q7cAO177bjo/maxresdefault.jpg');">
+          <div class="campaign-list-item-banner landing-curated-videos" style="background-image: url('http://img.youtube.com/vi/q7cAO177bjo/maxresdefault.jpg');">
             <div class="sproutup-table landing-videos">
               <table class="table">
                 <tbody>
@@ -98,7 +98,7 @@
           </div>
         </div>
         <div class="col-sm-6 campaign-list-item">
-          <div class="campaign-list-item-banner" style="background-image: url('http://img.youtube.com/vi/88TQXeUudvg/maxresdefault.jpg');">
+          <div class="campaign-list-item-banner landing-curated-videos" style="background-image: url('http://img.youtube.com/vi/88TQXeUudvg/maxresdefault.jpg');">
             <div class="sproutup-table landing-videos">
               <table class="table">
                 <tbody>
@@ -117,7 +117,7 @@
           </div>
         </div>
         <div class="col-sm-6 campaign-list-item">
-          <div class="campaign-list-item-banner" style="background-image: url('http://img.youtube.com/vi/J5WkJalZ4lw/0.jpg');">
+          <div class="campaign-list-item-banner landing-curated-videos" style="background-image: url('http://img.youtube.com/vi/J5WkJalZ4lw/0.jpg');">
             <div class="sproutup-table landing-videos">
               <table class="table">
                 <tbody>
@@ -136,7 +136,7 @@
           </div>
         </div>
         <div class="col-sm-6 campaign-list-item">
-          <div class="campaign-list-item-banner" style="background-image: url('http://img.youtube.com/vi/u5XKm86NUlc/0.jpg');">
+          <div class="campaign-list-item-banner landing-curated-videos" style="background-image: url('http://img.youtube.com/vi/u5XKm86NUlc/0.jpg');">
             <div class="sproutup-table landing-videos">
               <table class="table">
                 <tbody>
@@ -160,12 +160,13 @@
 </div>
 
 <div class="landing-section a">
-  <div class="row landing-section-wrapper" ng-init="vm.findCampaigns()">
+  <div class="row landing-section-wrapper">
     <div class="landing-title">Meet our community of product influencers and enthusiasts.</div>
     <div class="col-sm-12">
       <div class="row landing-influencer-list-section">
-        <div class="col-sm-2 col-xs-3 landing-creator-photos" uib-popover="Kevin The Tech Ninja" popover-trigger="mouseenter">
+        <div class="col-sm-2 col-xs-3 landing-creator-photos" ng-mouseover="showName = true" ng-mouseout="showName = false">
           <img class="img-responsive" src="https://pbs.twimg.com/profile_images/712994933318283264/wYQ9IfWb_400x400.jpg">
+          <div ng-show="showName" class="landing-creator-info">Kevin The Tech Ninja</div>
         </div>
         <div class="col-sm-2 col-xs-3 landing-creator-photos">
           <img class="img-responsive" src="https://pbs.twimg.com/profile_images/698589176627863553/AmR3qEnk_400x400.jpg">
