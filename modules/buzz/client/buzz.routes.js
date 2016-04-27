@@ -16,7 +16,7 @@ function buzzConfig($stateProvider) {
       }
     })
     .state('navbar.home' ,{
-      url: '/',
+      url: '/buzz',
       templateUrl: 'modules/buzz/client/buzz.html',
       controller: 'BuzzController',
       controllerAs: 'vm',
