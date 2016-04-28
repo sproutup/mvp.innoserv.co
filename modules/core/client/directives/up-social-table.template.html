@@ -24,13 +24,12 @@
         <div class="header" ng-if="provider.provider==='facebook'"><i class="fa fa-question-circle error"></i>Reconnect to Facebook</div>
         <div class="header" ng-if="provider.provider==='twitter'"><i class="fa fa-question-circle error"></i>Reconnect to Twitter</div>
         <div class="header" ng-if="provider.provider==='instagram'"><i class="fa fa-question-circle error"></i>Reconnect to Instagram</div>
-        <div class="description" ng-if="provider.provider==='google'">Oh no, something went wrong when connecting to Google. Would you mind trying again?</div>
-        <div class="description" ng-if="provider.provider==='facebook'">Oh no, something went wrong when connecting to Facebook. Would you mind trying again?</div>
-        <div class="description" ng-if="provider.provider==='twitter'">Oh no, something went wrong when connecting to Twitter. Would you mind trying again?</div>
-        <div class="description" ng-if="provider.provider==='instagram'">Oh no, something went wrong when connecting to Instagram. Would you mind trying again?</div>
+        <div class="description" ng-if="provider.provider==='google'">Oh no, something went wrong when connecting to Google. Would you mind disconnecting and trying again?</div>
+        <div class="description" ng-if="provider.provider==='facebook'">Oh no, something went wrong when connecting to Facebook. Would you mind disconnecting and trying again?</div>
+        <div class="description" ng-if="provider.provider==='twitter'">Oh no, something went wrong when connecting to Twitter. Would you mind disconnecting and trying again?</div>
+        <div class="description" ng-if="provider.provider==='instagram'">Oh no, something went wrong when connecting to Instagram. Would you mind disconnecting and trying again?</div>
       </div>
       <div class="col-sm-4 action">
-        <button class="btn sproutup-btn-sm salmon" href="#">Reconnect</button>
         <button class="btn sproutup-btn-sm naked" ng-click="table.removeUserSocialAccount(provider.provider)">Disconnect</button>
       </div>
     </div>
@@ -43,10 +42,10 @@
         <div class="description" ng-if="network.title==='Facebook'">You can sign in with Facebook after you connect. <strong>We'll never post to Facebook or message your friends without your permission</strong>.</div>
       </div>
       <div class="col-sm-4 action">
-        <a class="btn sproutup-btn-sm google" ng-click="table.callOauthProvider('/api/auth/' + network.provider)" ng-if="network.provider==='google'"><i class="fa fa-google-plus-square"></i>Connect</a>
-        <a class="btn sproutup-btn-sm twitter" ng-click="table.callOauthProvider('/api/auth/' + network.provider)" ng-if="network.provider==='twitter'"><i class="fa fa-twitter"></i>Connect</a>
-        <a class="btn sproutup-btn-sm facebook" ng-click="table.callOauthProvider('/api/auth/' + network.provider)" ng-if="network.provider==='facebook'"><i class="fa fa-facebook"></i>Connect</a>
-        <a class="btn sproutup-btn-sm instagram" ng-click="table.callOauthProvider('/api/auth/' + network.provider)" ng-if="network.provider==='instagram'"><i class="fa fa-instagram"></i>Connect</a>
+        <a analytics-on="click" analytics-event="Connect Social Networks" analytics-userId="{{ vm.user.id }}" analytics-username="{{ vm.user.username }}" analytics-network="{{ network.provider }}" class="btn sproutup-btn-sm google" ng-click="table.callOauthProvider('/api/auth/' + network.provider)" ng-if="network.provider==='google'"><i class="fa fa-google-plus-square"></i>Connect</a>
+        <a analytics-on="click" analytics-event="Connect Social Networks" analytics-userId="{{ vm.user.id }}" analytics-username="{{ vm.user.username }}" analytics-network="{{ network.provider }}" class="btn sproutup-btn-sm twitter" ng-click="table.callOauthProvider('/api/auth/' + network.provider)" ng-if="network.provider==='twitter'"><i class="fa fa-twitter"></i>Connect</a>
+        <a analytics-on="click" analytics-event="Connect Social Networks" analytics-userId="{{ vm.user.id }}" analytics-username="{{ vm.user.username }}" analytics-network="{{ network.provider }}" class="btn sproutup-btn-sm facebook" ng-click="table.callOauthProvider('/api/auth/' + network.provider)" ng-if="network.provider==='facebook'"><i class="fa fa-facebook"></i>Connect</a>
+        <a analytics-on="click" analytics-event="Connect Social Networks" analytics-userId="{{ vm.user.id }}" analytics-username="{{ vm.user.username }}" analytics-network="{{ network.provider }}" class="btn sproutup-btn-sm instagram" ng-click="table.callOauthProvider('/api/auth/' + network.provider)" ng-if="network.provider==='instagram'"><i class="fa fa-instagram"></i>Connect</a>
       </div>
     </div>
   </div>

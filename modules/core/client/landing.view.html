@@ -4,7 +4,7 @@
     <h2>Our mission is to help <strong><i>creative minds</i></strong> across the globe build their personal brands. We bring you the opportunities to create content of snackable size or long form. We connect you with your audience and other creators. And, we help you make good money (or earn other kinds of reward).</h2>
   </div>
   <div class="marketing-cta">
-    <a class="btn sproutup-btn-lg-main" hide-if-auth ui-sref="authentication.signin">JOIN TODAY</a>
+    <a analytics-on="click" analytics-event="Go to Sign In" class="btn sproutup-btn-lg-main" hide-if-auth ui-sref="authentication.signin">JOIN TODAY</a>
     <a class="btn sproutup-btn-lg-main" show-if-auth ui-sref="navbar.discover.list">EXPLORE</a>
   </div>
 </div>
@@ -35,7 +35,7 @@
     <div class="col-sm-12 browse-campaign-main">
       <div class="row browse-campaign-section">
         <div class="col-sm-6 campaign-list-item">
-          <a href="" ng-click="playVideo = !playVideo">
+          <a href="" ng-click="playVideo = !playVideo" analytics-on="click" analytics-event="View Videos on Landing Page">
             <div ng-if="!playVideo" class="campaign-list-item-banner landing-curated-videos" style="background-image: url('http://img.youtube.com/vi/N-fgMjStwc0/maxresdefault.jpg');">
               <div class="sproutup-table landing-videos">
                 <table class="table">
@@ -211,7 +211,7 @@
   <div class="row landing-section-wrapper">
     <div class="landing-title">READY TO SPROUT UP?</div>
     <div class="landing-cta">
-      <a class="btn sproutup-btn-lg-main" hide-if-auth ui-sref="authentication.signin">YES</a>
+      <a analytics-on="click" analytics-event="Go to Sign In" class="btn sproutup-btn-lg-main" hide-if-auth ui-sref="authentication.signin">YES</a>
       <a class="btn sproutup-btn-lg-main" show-if-auth ui-sref="navbar.discover.list">EXPLORE</a>
     </div>
   </div>

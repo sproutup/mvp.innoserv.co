@@ -86,7 +86,7 @@
     </div>
 
     <div class="settings-page-actions">
-      <button ng-disabled="profile.basicinfoform.$invalid || profile.basicinfoform.$pristine" class="btn btn-lg sproutup-btn-md-main" type="submit">Save Changes</button>
+      <button analytics-on="click" analytics-event="Save Profile Changes" analytics-userId="{{ vm.user.id }}" analytics-username="{{ vm.user.username }}" ng-disabled="profile.basicinfoform.$invalid || profile.basicinfoform.$pristine" class="btn btn-lg sproutup-btn-md-main" type="submit">Save Changes</button>
     </div>
   </form>
 </div>
