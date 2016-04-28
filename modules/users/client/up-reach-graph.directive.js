@@ -34,6 +34,7 @@ function UpReachGraphController($scope, MetricService) {
   }, function(res) {
     vm.data = [];
     vm.labels = [];
+    vm.colours = [];
     vm.total = 0;
 
     for (var key in res) {
@@ -43,8 +44,19 @@ function UpReachGraphController($scope, MetricService) {
         vm.total += res[key].metrics.followers;
         if (res[key].service === 'googleplus') {
           vm.labels.push('Google+');
+          vm.colours.push('#4184F3');
         } else if (res[key].service === 'youtube') {
           vm.labels.push('YouTube');
+          vm.colours.push('#c4302b');
+        } else if (res[key].service === 'facebook') {
+          vm.labels.push('Facebook');
+          vm.colours.push('#3B5998');
+        } else if (res[key].service === 'instagram') {
+          vm.labels.push('Instagram');
+          vm.colours.push('#3f729b');
+        } else if (res[key].service === 'twitter') {
+          vm.labels.push('Twitter');
+          vm.colours.push('#55ACEE');
         } else {
           vm.labels.push(capitalizeFirstLetter(res[key].service));
         }
