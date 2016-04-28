@@ -37,9 +37,7 @@
         </div>
         <div class="col-sm-4 user-profile-rail--misc">
           <div class="buzz-sidebar-item" ng-show="slug.item.metrics">
-            <div class="content">
-              <up-reach-graph user="slug.item"></up-reach-graph>
-            </div>
+            <up-reach-graph user="slug.item"></up-reach-graph>
           </div>
           <div class="buzz-sidebar-item" ng-if="slug.item.id === navbar.authentication.user.id">
             <div class="title">Your Stats <span class="label label-info">coming soon</span></div>
