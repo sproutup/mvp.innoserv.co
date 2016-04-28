@@ -24,7 +24,8 @@ var ApplicationConfiguration = (function () {
     'angulartics.mixpanel',
     'ngIntlTelInput',
     'ngAutocomplete',
-    'infinite-scroll'
+    'infinite-scroll',
+    'ngIntercom'
   ];
 
   // Add a new vertical module
