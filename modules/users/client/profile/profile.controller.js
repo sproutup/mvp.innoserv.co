@@ -1,12 +1,12 @@
- 'use strict';
+'use strict';
 
 angular
   .module('team')
   .controller('ProfileController', ProfileController);
 
-ProfileController.$inject = ['$scope', '$state', '$location', 'Authentication', 'Menus', 'buzz', 'activities'];
+ProfileController.$inject = ['$scope', '$state', '$location', 'Authentication', 'Menus', 'buzz', 'activities', 'MetricService', 'slugitem'];
 
-function ProfileController($scope, $state, $location, Authentication, Menus, buzz, activities) {
+function ProfileController($scope, $state, $location, Authentication, Menus, buzz, activities, MetricService, slugitem) {
   var vm = this;
   vm.buzz = buzz;
   vm.activities = activities;
@@ -16,4 +16,10 @@ function ProfileController($scope, $state, $location, Authentication, Menus, buz
 
   // Get the topbar menu
   vm.menu = Menus.getMenu('user.profile.menu');
+
+  MetricService.metrics().get({
+    userId: slugitem.data.item.id
+  }, function(res) {
+    vm.services = res;
+  });
 }

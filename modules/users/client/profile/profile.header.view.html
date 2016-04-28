@@ -8,12 +8,23 @@
       <div class="user-profile-name">{{slug.item.displayName}}</div>
       <div class="user-profile-bio" ng-if="slug.item.description">{{slug.item.description}}</div>
       <div class="user-profile-networks">
+
         <ul class="list-inline">
-          <li ng-repeat="provider in slug.item.providers">
-            <a ng-href="{{ 'https://twitter.com/' + provider.screen_name }}" ng-if="provider.provider === 'twitter'" target="_blank"><i class="fa fa-twitter"></i></a>
-            <a ng-href="{{ 'https://instagram.com/' + provider.username }}" ng-if="provider.provider === 'instagram'" target="_blank"><i class="fa fa-instagram"></i></a>
-            <a ng-href="{{ 'https://facebook.com/' + provider.id }}" ng-if="provider.provider === 'facebook'" target="_blank"><i class="fa fa-facebook"></i></a>
-            <a ng-href="{{ 'https://plus.google.com/u/0/' + provider.id }}" ng-if="provider.provider === 'google'" target="_blank"><i class="fa fa-google"></i></a>
+            <li>
+              <a ng-href="{{ 'https://twitter.com/' + profile.services.twitter.username }}" ng-if="profile.services.twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a ng-href="{{ 'https://facebook.com/' + profile.services.facebook.identifier }}" ng-if="profile.services.facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a ng-href="{{ profile.services.googleplus.url }}" ng-if="profile.services.googleplus" target="_blank"><i class="fa fa-google"></i></a>
+            </li>
+            <li>
+              <a ng-href="{{ 'https://instagram.com/' + profile.services.instagram.username }}" ng-if="profile.services.instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a ng-href="{{ 'https://youtube.com/' + profile.services.youtube.url }}" ng-if="profile.services.instagram" target="_blank"><i class="fa fa-youtube"></i></a>
+            </li>
           </li>
         </ul>
       </div>
