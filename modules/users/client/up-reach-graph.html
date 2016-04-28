@@ -1,0 +1,7 @@
+<div ng-if="vm.data.length > 0">
+  <div class="title"><span class="stats-highlight">{{ vm.total | number }}</span>Social Reach</div>
+  <div class="subtitle">The social reach is calculated from all social network accounts the user has connected to.</div>
+  <div class="content">
+    <canvas id="doughnut" class="chart chart-doughnut" chart-data="vm.data" chart-labels="vm.labels" chart-legend="true"></canvas>
+  </div>
+</div>

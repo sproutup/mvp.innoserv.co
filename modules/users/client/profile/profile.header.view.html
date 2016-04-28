@@ -36,11 +36,9 @@
          <div ui-view></div>
         </div>
         <div class="col-sm-4 user-profile-rail--misc">
-          <div class="buzz-sidebar-item">
-            <div class="title"><span class="stats-highlight">128k</span>Social Reach</div>
-            <div class="subtitle">The social reach is calculated from all social network accounts the user has connected to.</div>
+          <div class="buzz-sidebar-item" ng-show="slug.item.metrics">
             <div class="content">
-              <img class="img-responsive" src="modules/theme/client/img/mock/social.png">
+              <up-reach-graph user="slug.item"></up-reach-graph>
             </div>
           </div>
           <div class="buzz-sidebar-item" ng-if="slug.item.id === navbar.authentication.user.id">
