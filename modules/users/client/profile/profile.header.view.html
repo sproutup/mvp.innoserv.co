@@ -10,20 +10,20 @@
       <div class="user-profile-networks">
 
         <ul class="list-inline">
-            <li>
-              <a ng-href="{{ 'https://twitter.com/' + profile.services.twitter.username }}" ng-if="profile.services.twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+            <li ng-if="profile.services.twitter">
+              <a ng-href="{{ 'https://twitter.com/' + profile.services.twitter.username }}" target="_blank"><i class="fa fa-twitter"></i></a>
             </li>
-            <li>
-              <a ng-href="{{ 'https://facebook.com/' + profile.services.facebook.identifier }}" ng-if="profile.services.facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+            <li ng-if="profile.services.facebook">
+              <a ng-href="{{ 'https://facebook.com/' + profile.services.facebook.identifier }}" target="_blank"><i class="fa fa-facebook"></i></a>
             </li>
-            <li>
-              <a ng-href="{{ profile.services.googleplus.url }}" ng-if="profile.services.googleplus" target="_blank"><i class="fa fa-google"></i></a>
+            <li ng-if="profile.services.googleplus">
+              <a ng-href="{{ profile.services.googleplus.url }}" target="_blank"><i class="fa fa-google"></i></a>
             </li>
-            <li>
-              <a ng-href="{{ 'https://instagram.com/' + profile.services.instagram.username }}" ng-if="profile.services.instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+            <li ng-if="profile.services.instagram">
+              <a ng-href="{{ 'https://instagram.com/' + profile.services.instagram.username }}" target="_blank"><i class="fa fa-instagram"></i></a>
             </li>
-            <li>
-              <a ng-href="{{ 'https://youtube.com/' + profile.services.youtube.url }}" ng-if="profile.services.instagram" target="_blank"><i class="fa fa-youtube"></i></a>
+            <li ng-if="profile.services.youtube">
+              <a ng-href="{{ 'https://youtube.com/' + profile.services.youtube.url }}"  target="_blank"><i class="fa fa-youtube"></i></a>
             </li>
           </li>
         </ul>
