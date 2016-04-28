@@ -75,7 +75,7 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
     /* jshint ignore:start */
     if (Authentication.user && Authentication.user.id) {
       Intercom('boot', {
-        app_id: 'g60vwitq',
+        app_id: 'nwdbju9h',
         email: Authentication.user.email,
         name: Authentication.user.displayName,
         user_id: Authentication.user.id
