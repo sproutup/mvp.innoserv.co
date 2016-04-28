@@ -36,10 +36,13 @@ function upSocialTableController($scope, $http, Authentication, ProviderService,
   ];
   vm.providers = [];
 
+  vm.providerLoadFinished = false;
+
   vm.load = function(){
     vm.providers = ProviderService.provider().query({
       userId: Authentication.user.id
     }, function() {
+      vm.providerLoadFinished = true;
       console.log('providers found', vm.providers);
     }, function(err) {
       console.log(err);
