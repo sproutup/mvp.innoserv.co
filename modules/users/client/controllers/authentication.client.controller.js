@@ -52,7 +52,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
         $scope.authentication.user = response;
         $state.go($state.previous.state.name || 'navbar.home', $state.previous.params);
         console.log('Update Intercom');
-        Intercom('update', {
+        window.Intercom('update', {
           email: Authentication.user.email,
           name: Authentication.user.displayName,
           user_id: Authentication.user.id,
