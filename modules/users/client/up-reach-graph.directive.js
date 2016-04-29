@@ -44,7 +44,7 @@ function UpReachGraphController($scope, MetricService) {
         vm.total += res[key].metrics.followers;
         if (res[key].service === 'googleplus') {
           vm.labels.push('Google+');
-          vm.colours.push('#4184F3');
+          vm.colours.push('#CDDC39');
         } else if (res[key].service === 'youtube') {
           vm.labels.push('YouTube');
           vm.colours.push('#c4302b');

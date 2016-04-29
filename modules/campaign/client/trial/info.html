@@ -38,7 +38,7 @@
           </div>
           <div class="campaign-join-fintprints">After {{ vm.campaign.company.name }} accepts your request, the product will be shipped to the address you provided above. Please pay attention to your messages as {{ vm.campaign.company.name }} may contact you.</div>
           <div class="campaign-join-action">
-            <button class="btn btn-lg sproutup-btn-lg-main" ng-disabled="form.$invalid" ng-click="vm.submitRequest()">Send my request</button>
+            <button analytics-on="click" analytics-event="Submit Request" analytics-campaign="{{ vm.campaign.name }}" analytics-campaignId="{{ vm.campaign.id }}" analytics-company="{{ vm.campaign.company.name }}" class="btn btn-lg sproutup-btn-lg-main" ng-disabled="form.$invalid" ng-click="vm.submitRequest()">Send my request</button>
           </div>
         </div>
       </div>

@@ -17,11 +17,11 @@
         </div>
         <input class="form-control signup-login-input" id="email" name="email" type="email" ng-model="credentials.username" placeholder="Email address">
         <input class="form-control signup-login-input" id="password" name="password" type="password" ng-model="credentials.password" placeholder="Password">
-        <button ng-disabled="loginForm.$invalid || loginForm.$pristine" class="btn btn-lg signup-login-btn" type="submit">Sign in with email</button>
+        <button analytics-event="Sign In" analytics-provider="Email" ng-disabled="loginForm.$invalid || loginForm.$pristine" class="btn btn-lg signup-login-btn" type="submit">Sign in with email</button>
       </div>
     </form>
     <div class="signup-login-form-footer">
-      <p><a ui-sref="password.forgot">Forgot password?</a></p>
+      <p><a analytics-on="click" analytics-event="Go to Forgot Password" ui-sref="password.forgot">Forgot password?</a></p>
       <p>If you'd like to sign up with an email, please <a href="#" ng-click="emailSignUp = !emailSignUp">click here</a>.</p>
     </div>
   </div>

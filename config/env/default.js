@@ -20,7 +20,7 @@ module.exports = {
     }
   },
   mixpanel: {
-    token: process.env.MIXPANEL_TOKEN || '90327b5fc1f60a0b7b51366fa5b432dc'
+    token: process.env.MIXPANEL_TOKEN || '278b015f9889dc1481a99150f1bdf48a'
   },
   port: process.env.PORT || 9000,
   templateEngine: 'swig',
