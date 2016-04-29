@@ -169,7 +169,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
       controller: 'DeleteController',
       controllerAs: 'vm',
       resolve: {
-        message: function() { return 'Confirm your email in your settings before placing a request.'; }
+        message: function() { return 'Please verify your email before joining a campaign. We\'ve sent you a link to verify when you signed up, but if you lost it, get another link in Account Settings.'; }
       }
     });
   }
