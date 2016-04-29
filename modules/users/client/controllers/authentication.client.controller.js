@@ -51,12 +51,10 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
       $http.post('/api/auth/signin', $scope.credentials).success(function (response) {
         $scope.authentication.user = response;
         $state.go($state.previous.state.name || 'navbar.home', $state.previous.params);
-        console.log('Update Intercom');
         window.Intercom('update', {
           email: Authentication.user.email,
           name: Authentication.user.displayName,
-          user_id: Authentication.user.id,
-          application: 'SproutUp'
+          user_id: Authentication.user.id
         });
       }).error(function (response) {
         $scope.error = response.message;
