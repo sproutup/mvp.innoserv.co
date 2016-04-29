@@ -19,6 +19,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
   vm.createPost = createPost;
   vm.goToRequest = goToRequest;
   vm.state = $state;
+  vm.user = Authentication.user;
 
   function find() {
     vm.campaigns = CampaignService.campaign().query({
