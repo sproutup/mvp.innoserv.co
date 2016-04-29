@@ -89,7 +89,8 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
       Intercom('boot', {
         app_id: 'nwdbju9h',
         email: 'Guest',
-        name: 'Guest'
+        name: 'Guest',
+        application: 'SproutUp'
       });
     }
     /* jshint ignore:end */
