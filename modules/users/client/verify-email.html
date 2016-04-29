@@ -1,0 +1,10 @@
+<div class="modal-header">
+  <h3 class="modal-title">You need to verfiy your email before placing a request.</h3>
+</div>
+<div class="modal-body">
+  {{ vm.message }}
+</div>
+<div class="modal-footer disconnect">
+  <a class="btn sproutup-btn-sm salmon" type="button" ui-sref="navbar.settings.profile" ng-click="vm.confirm()">Go to my settings</a>
+  <button class="btn sproutup-btn-sm minimal" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

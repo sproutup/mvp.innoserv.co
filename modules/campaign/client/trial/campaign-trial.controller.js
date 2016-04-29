@@ -163,6 +163,17 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
     contentItem.$save();
   }
 
+  function openVerifyEmailModal() {
+    var modalInstance = $modal.open({
+      templateUrl: 'modules/users/client/verify-email.html',
+      controller: 'DeleteController',
+      controllerAs: 'vm',
+      resolve: {
+        message: function() { return 'Confirm your email in your settings before placing a request.'; }
+      }
+    });
+  }
+
   function openCancelModal() {
     var modalInstance = $modal.open({
       templateUrl: 'modules/core/client/cancel-request-confirmation.html',
@@ -190,6 +201,11 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
   }
 
   function goToRequest() {
+    if (Authentication.user && !Authentication.user.emailConfirmed) {
+      openVerifyEmailModal();
+      return;
+    }
+
     $state.go('navbar.campaign.trial.info');
   }
 
