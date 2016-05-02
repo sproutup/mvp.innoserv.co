@@ -47,6 +47,10 @@
          <div ui-view></div>
         </div>
         <div class="col-sm-4 user-profile-rail--misc">
+          <div class="buzz-sidebar-item" ng-show="!slug.item.metrics">
+            <div class="title">Social Reach</div>
+            <div class="subtitle">{{ slug.item.displayName }} has not connected to any social networks. As a result, we cannot display a legit social reach.</div>
+          </div>
           <div class="buzz-sidebar-item" ng-show="slug.item.metrics">
             <up-reach-graph user="slug.item"></up-reach-graph>
           </div>
