@@ -18,7 +18,7 @@
     <div class="col-sm-5 about-campaign-column">
       <div ng-if="vm.myContribution">
         <div class="about-campaign-section" ng-if="vm.myContribution.state == 0">
-          <h3>You requested to join the campaign on {{ vm.myContribution.created | date }}</h3>
+          <h3>We got your request on {{ vm.myContribution.created | date }}</h3>
           <p>Your unique referral link is <strong>https://sproutup.co/{{vm.campaign.hashtag}}/{{vm.myContribution.user.username}}</strong></p>
           <div class="about-campaign-actions">
             <a class="btn sproutup-btn-sm outline" ui-sref="navbar.activity.trial.edit({campaignId: vm.campaign.id})">Edit request</a>
