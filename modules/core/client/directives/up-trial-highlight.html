@@ -1,4 +1,4 @@
-<a ui-sref="navbar.campaign.{{ vm.campaign.type }}.view.details({ campaignId: vm.campaign.id })">
+<a ui-sref="navbar.slug.campaign.{{ vm.campaign.type }}.view.details({ slug: vm.campaign.hashtag })">
   <div class="buzz-sidebar-content-item" ng-style="{'background-image': 'url({{ vm.campaign.banner.file.url || 'modules/core/client/img/default-product-banner.jpg' }})'}">
     <p class="campaign-name">{{ vm.campaign.name }}</p>
     <p class="campaign-company">By <strong>{{ vm.campaign.company.name }}</strong></p>
