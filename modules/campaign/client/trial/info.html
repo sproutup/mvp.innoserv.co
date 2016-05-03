@@ -1,5 +1,5 @@
-<form name="form" ng-init="vm.findOne()">
-  <fieldset ng-if="vm.campaignInit">
+<form name="form">
+  <fieldset ng-if="vm.campaign">
     <div class="campaign-banner join" ng-style="{'background-image': 'url({{ vm.campaign.banner.file.url || 'modules/core/client/img/default-product-banner.jpg' }})'}">
       <div class="row campaign-join-wrapper">
         <div class="col-lg-12">

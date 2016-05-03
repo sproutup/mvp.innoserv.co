@@ -15,7 +15,7 @@
     <div class="col-sm-12 browse-campaign-main">
       <div class="row browse-campaign-section">
         <div class="col-sm-4 campaign-list-item" ng-repeat="campaign in vm.campaigns">
-          <a ui-sref="navbar.campaign.trial.view.details({ campaignId: campaign.id })">
+          <a ui-sref="navbar.slug.campaign.trial.view.details({ slug: campaign.hashtag })">
             <div class="campaign-list-item-banner" ng-style="{'background-image': 'url({{ campaign.banner.file.url || 'modules/core/client/img/default-product-banner.jpg' }})'}">
               <p class="campaign-name">{{ campaign.name }}</p>
               <p class="campaign-description">{{ campaign.tagline }}</p>

@@ -72,6 +72,8 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatc
         controllerAs: 'slug',
         template: '<div ui-view></div>',
         resolve: {
+          // After this is resolved, new routes are being found at the same time the slug controller is redirecting
+          // It'd be nice if we could be sent to the correct routes right after this SlugService.find
           slugitem: function($stateParams, SlugService) {
             return SlugService.find($stateParams.slug);
           }

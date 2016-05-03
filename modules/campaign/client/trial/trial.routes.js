@@ -6,8 +6,8 @@ angular
 
 function trialConfig($stateProvider) {
   $stateProvider
-    .state('navbar.campaign.trial', {
-      url: '/trial',
+    .state('navbar.slug.campaign.trial', {
+      url: '',
       abstract: true,
       template: '<div ui-view><div>',
       controller: 'CampaignTrialController',
@@ -16,20 +16,21 @@ function trialConfig($stateProvider) {
         title: ''
       }
     })
-    .state('navbar.campaign.trial.view', {
+    .state('navbar.slug.campaign.trial.view', {
       url: '',
       abstract: true,
       templateUrl: 'modules/campaign/client/trial/trial.html'
     })
-    .state('navbar.campaign.trial.view.details', {
+    .state('navbar.slug.campaign.trial.view.details', {
       url: '',
       templateUrl: 'modules/campaign/client/trial/trial-details.html',
       data: {
         title: 'Campaign'
       }
     })
-    .state('navbar.campaign.trial.view.buzz', {
-      url: '/buzz',
+    // These three routes don't have a '/' in front because we're temporarily using '/' in navbar.slug.campaign
+    .state('navbar.slug.campaign.trial.view.buzz', {
+      url: 'buzz',
       controller: 'BuzzController',
       controllerAs: 'buzzCtrl',
       templateUrl: 'modules/campaign/client/trial/trial-buzz.html',
@@ -37,15 +38,15 @@ function trialConfig($stateProvider) {
         title: 'Campaign'
       }
     })
-    .state('navbar.campaign.trial.info', {
-      url: '/request/info',
+    .state('navbar.slug.campaign.trial.info', {
+      url: 'request/info',
       templateUrl: 'modules/campaign/client/trial/info.html',
       data: {
         title: 'Join Campaign'
       }
     })
-    .state('navbar.campaign.trial.connect', {
-      url: '/request/connect',
+    .state('navbar.slug.campaign.trial.connect', {
+      url: 'request/connect',
       templateUrl: 'modules/campaign/client/trial/social-connection.html',
       data: {
         title: 'Join Campaign'

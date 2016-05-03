@@ -6,8 +6,9 @@ angular.module('users').config(['$stateProvider',
     // Users state routing
     $stateProvider
       .state('navbar.slug.user', {
-      //  abstract: true,
-        url: '',
+        // abstract: true,
+        // using '/' instead of '' is a temporary solution to create different user & campaign routes
+        url: '/',
         templateUrl: 'modules/users/client/profile/profile.header.view.html',
         controller: 'ProfileController',
         controllerAs: 'profile',

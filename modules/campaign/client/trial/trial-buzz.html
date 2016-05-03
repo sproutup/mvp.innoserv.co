@@ -1,5 +1,5 @@
 <div class="buzz-page">
-  <div class="row campaign-buzz-wrapper" infinite-scroll='buzzCtrl.loadGroupContent(campaign.item.groupId)' infinite-scroll-disabled='buzzCtrl.busy' infinite-scroll-distance='2' ng-init="buzzCtrl.loadGroupContent(campaign.item.groupId)">
+  <div class="row campaign-buzz-wrapper" infinite-scroll='buzzCtrl.loadGroupContent(vm.campaign.groupId)' infinite-scroll-disabled='buzzCtrl.busy' infinite-scroll-distance='2' ng-init="buzzCtrl.loadGroupContent(vm.campaign.groupId)">
     <div class="col-sm-7 campaign-buzz-column left">
       <!-- empty state -->
       <div class="col-sm-12 my-content-item empty-state" ng-if="buzzCtrl.content.length == 0" hide-if-auth>
@@ -22,7 +22,7 @@
                   <a ng-class="{'active': buzzCtrl.state === 'write'}" href="#" ng-click="buzzCtrl.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write something</a>
                 </div>
                 <div class="my-content-new">
-                  <div up-post-write group="{{campaign.item.groupId}}" required ng-show="buzzCtrl.state === 'write'"></div>
+                  <div up-post-write group="{{vm.campaign.groupId}}" required ng-show="buzzCtrl.state === 'write'"></div>
                 </div>
               </div>
               <div ng-if="vm.myContribution.state && vm.myContribution.state > 0">
@@ -31,8 +31,8 @@
                   <a ng-class="{'active': buzzCtrl.state === 'write'}" href="#" ng-click="buzzCtrl.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write something</a>
                 </div>
                 <div class="my-content-new">
-                  <div up-post-content group="{{campaign.item.groupId}}" networks="yt, ig, url" ng-show="buzzCtrl.state === 'content'"></div>
-                  <div up-post-write group="{{campaign.item.groupId}}" required ng-show="buzzCtrl.state === 'write'"></div>
+                  <div up-post-content group="{{vm.campaign.groupId}}" networks="yt, ig, url" ng-show="buzzCtrl.state === 'content'"></div>
+                  <div up-post-write group="{{vm.campaign.groupId}}" required ng-show="buzzCtrl.state === 'write'"></div>
                 </div>
               </div>
               <div class="remove-my-content-og-content" ng-click="buzzCtrl.post.meta = buzzCtrl.post.url = null" ng-if="buzzCtrl.post.meta">

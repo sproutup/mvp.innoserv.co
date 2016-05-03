@@ -5,13 +5,12 @@ angular
   .module('campaign')
   .controller('CampaignController', CampaignController);
 
-CampaignController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', '$interval', 'MessageService', '$uibModal'];
+CampaignController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', '$interval', 'MessageService', '$uibModal', 'slugitem'];
 
-function CampaignController(CampaignService, $state, Authentication, $scope, $interval, MessageService, $modal) {
+function CampaignController(CampaignService, $state, Authentication, $scope, $interval, MessageService, $modal, slugitem) {
   var vm = this;
   vm.product = {};
   vm.find = find;
-  vm.findOne = findOne;
   vm.loadChannel = loadChannel;
   vm.startChannel = startChannel;
   vm.findMyCampaigns = findMyCampaigns;
@@ -19,20 +18,27 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
   vm.openCancelModal = openCancelModal;
   vm.cancelRequest = cancelRequest;
   vm.editRequest = editRequest;
-  vm.startInterval = startInterval;
-  vm.state = $state;
   vm.user = Authentication.user;
+  vm.campaign = slugitem.data.item;
+
+  // This is a temporary hack because this route is being caught before we redirect in the slug controller
+  if(slugitem.data.type !== 'Campaign'){
+    if (slugitem.data.type === 'User') {
+      $state.go('navbar.slug.user.buzz');
+    } else {
+      var state = 'navbar.slug' + '.' + slugitem.data.type.toLowerCase();
+      $state.go(state);
+    }
+  }
 
   function loadChannel(){
-    console.log('find channel by ref: ', $state.params.campaignId);
-    var channelKey = $state.params.campaignId + ':' + Authentication.user.id;
+    var channelKey = vm.campaign.id + ':' + Authentication.user.id;
     var myChannelRef = MessageService.myChannelRef();
     var item = new myChannelRef();
 
     // Use save to post a request. we are not really saving anything
     item.$save({id: channelKey}, function (channel) {
-      if(channel.id){
-        console.log('channel found: ', channel.id);
+      if(channel.id) {
         vm.channelId = channel.id;
       }
     }, function (errorResponse) {
@@ -42,12 +48,11 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
   }
 
   function startChannel(){
-    console.log('start channel by ref: ', $state.params.campaignId);
     var campaignChannel = MessageService.campaignChannel();
     var item = new campaignChannel();
 
     // Use save to post a request. we are not really saving anything
-    item.$save({campaignId: $state.params.campaignId}, function (channel) {
+    item.$save({campaignId: vm.campaign.id}, function (channel) {
       if(channel.id){
         console.log('channel created: ', channel.id);
         vm.channelId = channel.id;
@@ -137,26 +142,6 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
         return item.state === 10 || item.state === '10';
       });
     }
-  }
-
-  function findOne(campaignId) {
-    vm.success = false;
-    var _id = null;
-
-    if(campaignId){
-      _id = campaignId;
-    }
-    else{
-      _id = $state.params.campaignId;
-    }
-
-    var campaign = CampaignService.campaign().get({
-      campaignId: _id
-    }, function() {
-      vm.item = campaign;
-    }, function(err) {
-      console.log(err);
-    });
   }
 
   function returnMatch(actual, expected) {

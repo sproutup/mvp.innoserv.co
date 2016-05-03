@@ -10,7 +10,7 @@ function campaignConfig($stateProvider) {
       url: '/discover',
       abstract: true,
       templateUrl: 'modules/campaign/client/discover.view.html',
-      controller: 'CampaignController',
+      controller: 'ListCampaignController',
       controllerAs: 'vm',
       data: {
         title: ''
@@ -20,6 +20,13 @@ function campaignConfig($stateProvider) {
       url: '/campaign/:campaignId',
       abstract: true,
       template: '<div ui-view ng-init="campaign.findOne()"><div>',
+      controller: 'CampaignController',
+      controllerAs: 'campaign'
+    })
+    .state('navbar.slug.campaign', {
+      url: '/',
+      abstract: true,
+      template: '<div ui-view><div>',
       controller: 'CampaignController',
       controllerAs: 'campaign'
     })
@@ -38,7 +45,7 @@ function campaignConfig($stateProvider) {
       }
     })
     .state('navbar.slug.user.activities' ,{
-      url: '/activities',
+      url: 'u/activities',
       templateUrl: 'modules/campaign/client/user-activities.html',
       data: {
           title: 'My Activities'
