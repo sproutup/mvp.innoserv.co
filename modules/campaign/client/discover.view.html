@@ -4,7 +4,7 @@
       <div class="col-sm-12">
         <h1>{{vm.next.name}}</h1>
         <h2>{{vm.next.tagline}}</h2>
-        <button ui-sref="navbar.slug.campaign.trial.view.details({ campaignId: vm.next.id})" class="btn btn-lg sproutup-btn-lg-main">See Details</button>
+        <button analytics-on="click" analytics-event="View Campaign" analytics-campaignName="{{ vm.next.name }}" analytics-campaignHashtag="{{ vm.next.hashtag }}" analytics-campaignId="{{ vm.next.id }}" analytics-company="{{ vm.next.company.name }}" ui-sref="navbar.slug.campaign.trial.view.details({ slug: vm.next.hashtag})" class="btn btn-lg sproutup-btn-lg-main">See Details</button>
       </div>
     </div>
   </div>

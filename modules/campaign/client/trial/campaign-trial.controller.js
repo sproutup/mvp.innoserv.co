@@ -61,24 +61,26 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
   }
 
   function findMyContribution() {
-    CampaignService.campaignSingle().get({
-      campaignId: $state.params.campaignId,
-      userId: Authentication.user.id
-    }, function(res) {
-      vm.init = true;
-      if (res.campaignId) {
-        vm.myContribution = res;
-        if(vm.myContribution.log instanceof Array){
-          for (var i = 0; i < vm.myContribution.log.length; i++) {
-            sortLog(vm.myContribution);
+    if(Authentication.user) {
+      CampaignService.campaignSingle().get({
+        campaignId: vm.campaign.id,
+        userId: Authentication.user.id
+      }, function(res) {
+        vm.init = true;
+        if (res.campaignId) {
+          vm.myContribution = res;
+          if(vm.myContribution.log instanceof Array){
+            for (var i = 0; i < vm.myContribution.log.length; i++) {
+              sortLog(vm.myContribution);
+            }
           }
         }
-      }
-    }, function(err) {
-      vm.init = true;
-      //$state.go('landing.default');
-      console.log(err);
-    });
+      }, function(err) {
+        vm.init = true;
+        //$state.go('landing.default');
+        console.log(err);
+      });
+    }
   }
 
   function sortLog(campaign) {
