@@ -51,5 +51,11 @@ function trialConfig($stateProvider) {
       data: {
         title: 'Join Campaign'
       }
+    })
+    .state('navbar.slug.campaign.referral', {
+      url: ':username',
+      template: '<div>referral</div>',
+      controller: 'ReferralController',
+      controllerAs: 'referral'
     });
 }
