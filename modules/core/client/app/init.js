@@ -88,8 +88,6 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
       // console.log('Intercom with logged-out user');
       Intercom('boot', {
         app_id: 'nwdbju9h',
-        email: 'Guest',
-        name: 'Guest',
         application: 'SproutUp'
       });
     }
