@@ -2,7 +2,7 @@
   <div class="row campaign-buzz-wrapper" infinite-scroll='buzzCtrl.loadGroupContent(vm.campaign.groupId)' infinite-scroll-disabled='buzzCtrl.busy' infinite-scroll-distance='2' ng-init="buzzCtrl.loadGroupContent(vm.campaign.groupId)">
     <div class="col-sm-7 campaign-buzz-column left">
       <!-- empty state -->
-      <div class="col-sm-12 my-content-item empty-state" ng-if="buzzCtrl.content.length == 0" hide-if-auth>
+      <div class="col-sm-12 my-content-item empty-state" ng-if="buzzCtrl.FeedService.model.posts.length === 0" hide-if-auth>
         <p>Bummer! We're still waiting for the first post.</p>
         <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/sproutup-assets/no-content.gif">
       </div>
@@ -46,20 +46,24 @@
       <!-- feed -->
       <up-content ng-repeat="item in buzzCtrl.FeedService.model.posts" content="item" state="user.buzz"></up-content>
     </div>
-    <div class="col-sm-5 campaign-buzz-column right" hide-if-auth>
-      <div class="conversation-wrapper">
-        <div class="message-header">
-          <p><i class="fa fa-commenting"></i>Message</p>
-        </div>
-        <div class="message-body">
-          <div class="empty-state">
-            <p>If you have questions about the campaign or product, feel free to message us. But you need to sign in first.</p>
+    <div ng-if="!navbar.authentication.user">
+      <div class="col-sm-5 campaign-buzz-column right">
+        <div class="conversation-wrapper">
+          <div class="message-header">
+            <p><i class="fa fa-commenting"></i>Message</p>
+          </div>
+          <div class="message-body">
+            <div class="empty-state">
+              <p>If you have questions about the campaign or product, feel free to message us. But you need to <a ui-sref="authentication.signin">sign in</a> first.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-5 campaign-buzz-column right" ng-init="campaign.loadChannel()" show-if-auth>
-      <up-message-channel channel="campaign.channelId" on-start="campaign.startChannel()"/>
+    <div ng-if="navbar.authentication.user">
+      <div class="col-sm-5 campaign-buzz-column right" ng-init="campaign.loadChannel()">
+        <up-message-channel channel="campaign.channelId" on-start="campaign.startChannel()"/>
+      </div>
     </div>
   </div>
 </div>
