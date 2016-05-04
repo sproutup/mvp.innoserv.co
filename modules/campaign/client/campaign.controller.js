@@ -15,8 +15,6 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
   vm.startChannel = startChannel;
   vm.findMyCampaigns = findMyCampaigns;
   vm.returnMatch = returnMatch;
-  vm.openCancelModal = openCancelModal;
-  vm.cancelRequest = cancelRequest;
   vm.editRequest = editRequest;
   vm.user = Authentication.user;
   vm.campaign = slugitem.data.item;
@@ -71,46 +69,6 @@ function CampaignController(CampaignService, $state, Authentication, $scope, $in
       }, function(err) {
         console.log(err);
       });
-  }
-
-  function openCancelModal(campaignId) {
-    var modalInstance = $modal.open({
-      templateUrl: 'modules/core/client/cancel-request-confirmation.html',
-      controller: 'DeleteController',
-      controllerAs: 'vm',
-      resolve: {
-        message: function() { return 'Your request will be gone forever and ever.'; }
-      }
-    });
-
-    modalInstance.result.then(function () {
-      cancelRequest(campaignId);
-    }, function () {
-      console.log('Modal dismissed at: ' + new Date());
-    });
-  }
-
-  function cancelRequest(campaignId) {
-    CampaignService.campaignSingle().delete(
-      { campaignId: campaignId, userId: Authentication.user.id }, function(res){
-        console.log('state changed');
-        var index = -1;
-        for(var i = 0, len = vm.myCampaigns.length; i < len; i++) {
-          if (vm.myCampaigns[i].campaignId === campaignId) {
-            index = i;
-            break;
-          }
-        }
-        if(index > -1){
-          vm.myCampaigns.splice(index, 1);
-        }
-      }
-    );
-//    CampaignService.campaignSingle().update(
-//      { campaignId: campaignId, userId: AuthService.m.user.id }, { state: -1 }, function(res){
-//        console.log('state changed');
-//      }
-//    );
   }
 
   function editRequest(campaignId) {

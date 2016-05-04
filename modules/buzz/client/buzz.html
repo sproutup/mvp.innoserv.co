@@ -14,8 +14,8 @@
             <div class="my-content-item--summary">
               <form name="form" novalidate>
                 <div class="post-new-content-selector" ng-init="vm.state = 'write'">
-                  <a ng-class="{'active': vm.state === 'write'}" href="#" ng-click="vm.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write something</a>
-                  <a ng-class="{'active': vm.state === 'suggest'}" href="#" ng-click="vm.state = 'suggest'"><i class="fa fa-binoculars"></i>Suggest something</a>
+                  <a ng-class="{'active': vm.state === 'write'}" href="#" ng-click="vm.state = 'write'"><i class="fa fa-pencil-square-o"></i>Write Something</a>
+                  <a ng-class="{'active': vm.state === 'suggest'}" href="#" ng-click="vm.state = 'suggest'"><i class="fa fa-binoculars"></i>Suggest Product</a>
                 </div>
                 <div class="my-content-new">
                   <div up-post-write required ng-if="vm.state === 'write'"></div>
@@ -36,8 +36,7 @@
     <div class="col-sm-4 my-content-right-rail">
       <!-- Highlighted campaigns -->
       <div class="buzz-sidebar-item" ng-init="vm.findCampaigns()">
-        <div class="title campaign">Discover and join activities sponsored by awesome brands</div>
-        <div class="subtitle">Tryout and review latest products. Join video and photo contest. And more to unleash your creativity.</div>
+        <div class="title campaign">Featured Campaigns</div>
         <div class="content" ng-repeat="campaign in vm.campaigns">
           <up-trial-highlight campaign="campaign"></up-trial-highlight>
         </div>
@@ -45,8 +44,8 @@
       </div>
       <!-- Highlighted hangouts -->
       <div class="buzz-sidebar-item" ng-init="vm.findHangouts()">
-        <div class="title hangout">Hangout with brilliant minds in tech, content creation, and beyond</div>
-        <div class="subtitle">We invite the most interesting creators, makers and thinkers to live chat with us and the community. You'll surely learn a lot from them!</div>
+        <div class="title hangout">Live Video Chats</div>
+        <div class="subtitle">Hangout with content creators, product makers and tech thinkers.</div>
         <div class="content" ng-repeat="hangout in vm.hangouts">
           <up-hangout-highlight hangout="hangout"></up-hangout-highlight>
         </div>
@@ -54,8 +53,8 @@
       </div>
       <!-- for brands -->
       <div class="buzz-sidebar-item">
-        <div class="title brand">Are you a product creator?</div>
-        <div class="subtitle">Create beautiful campaigns. Collaborate with a community of <strong>influencers</strong> and <strong>enthusiasts</strong>. Generate high quality leads. And grow your business.</div>
+        <div class="title brand">Are you a brand marketer?</div>
+        <div class="subtitle">Looking for beta-testers, tech reviewers, lifestyle trendsetters, or comedic personalities on social media? Launch a campaign on SproutUp in minutes.</div>
         <div class="content">
           <a href="https://dashboard.sproutup.co">
             <img class="img-responsive" src="modules/core/client/img/creator/dashboard.png">

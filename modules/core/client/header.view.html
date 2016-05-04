@@ -14,6 +14,8 @@
           </li>
           <li ng-if="!navbar.authentication.user"><a analytics-on="click" analytics-event="Go to Sign In" ui-sref="authentication.signin" data-toggle="collapse" data-target="#sproutup-collapse-navbar">SIGN IN&nbsp;&nbsp;/&nbsp;&nbsp;SIGN UP</a></li>
           <hr>
+          <li><a analytics-on="click" analytics-event="Go to Dashboard" href="https://dashboard.sproutup.co">START A CAMPAIGN<span class="label label-new-feature">Brands</span></a></li>
+          <hr>
           <ul class="submenu-in-dropdown" ng-if="navbar.authentication.user.displayName">
             <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="navbar.slug.user.buzz({ slug: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
             <li><a analytics-on="click" analytics-event="Enter Account Settings" ui-sref="navbar.settings.profile">Account Settings</a></li>
@@ -30,6 +32,7 @@
     <!-- Desktop/wide view menu -->
     <div class="collapse navbar-collapse" id="sproutup-collapse-navbar">
       <ul class="nav navbar-nav navbar-item navbar-right navbar-wide">
+        <li><a analytics-on="click" analytics-event="Go to Dashboard" href="https://dashboard.sproutup.co">START A CAMPAIGN<span class="label label-new-feature">Brands</span></a></li>
         <li ng-repeat="item in navbar.menu.items | orderBy: 'position'"
           ng-if="item.shouldRender(navbar.authentication.user);"
           ng-switch="item.type"

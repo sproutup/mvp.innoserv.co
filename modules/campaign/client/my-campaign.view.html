@@ -24,7 +24,7 @@
             <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i><strong>Content submitted</strong><span>{{ item.log[1].created | date:'MMM dd, yyyy' }}<span></p>
           </div>
           <p class="product-trial-item--status" ng-if="item.campaign.hashtag"><i class="fa fa-link"></i>Your unique referral link:</p>
-          <p class="product-trial-item--status-desc" ng-if="item.campaign.hashtag"><span>https://sproutup.co/{{item.campaign.hashtag}}/{{vm.user.username}}</span>Please embed this unique referral link in any of your content. Share this link on social media. We use this link to measure conversions and reward you accordingly.</p>
+          <p class="product-trial-item--status-desc" ng-if="item.campaign.hashtag"><span>https://sproutup.co/{{item.campaign.hashtag}}/{{vm.user.username}}</span>Use this referral link with your content. Share it on social media. It’s the way brands give you credit for the traffic and conversion your content drives.</p>
           <div class="product-trial-item--actions">
             <a ng-if="item.state === 0" class="btn sproutup-btn-xs" ui-sref="navbar.activity.trial.edit({campaignId: item.campaignId})">Edit request</a>
             <button ng-if="item.state === 0" ng-click="vm.openCancelModal(item.campaignId)" class="btn btn-md sproutup-btn-xs minimal">Cancel request</button>

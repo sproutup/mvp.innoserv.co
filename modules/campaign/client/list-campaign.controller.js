@@ -14,6 +14,44 @@ function ListCampaignController(CampaignService, $state, Authentication, $scope,
   vm.startInterval = startInterval;
   vm.state = $state;
   vm.user = Authentication.user;
+  vm.openCancelModal = openCancelModal;
+  vm.cancelRequest = cancelRequest;
+
+  function openCancelModal(campaignId) {
+    console.log('Open cancel modal');
+    var modalInstance = $modal.open({
+      templateUrl: 'modules/core/client/cancel-request-confirmation.html',
+      controller: 'DeleteController',
+      controllerAs: 'vm',
+      resolve: {
+        message: function() { return 'Your request will be gone forever and ever.'; }
+      }
+    });
+
+    modalInstance.result.then(function () {
+      cancelRequest(campaignId);
+    }, function () {
+      console.log('Modal dismissed at: ' + new Date());
+    });
+  }
+
+  function cancelRequest(campaignId) {
+    CampaignService.campaignSingle().delete(
+      { campaignId: campaignId, userId: Authentication.user.id }, function(res){
+        console.log('state changed');
+        var index = -1;
+        for(var i = 0, len = vm.myCampaigns.length; i < len; i++) {
+          if (vm.myCampaigns[i].campaignId === campaignId) {
+            index = i;
+            break;
+          }
+        }
+        if(index > -1){
+          vm.myCampaigns.splice(index, 1);
+        }
+      }
+    );
+  }
 
   function find() {
      CampaignService.campaign().query({

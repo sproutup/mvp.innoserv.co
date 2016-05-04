@@ -200,7 +200,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
 
   function cancelRequest() {
     CampaignService.campaignSingle().delete(
-      { campaignId: $state.params.campaignId, userId: Authentication.user.id }, function(res){
+      { campaignId: vm.campaign.id, userId: Authentication.user.id }, function(res){
         console.log('state changed');
         vm.myContribution = null;
       }
