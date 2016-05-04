@@ -43,7 +43,7 @@
       <!-- user name -->
       <div class="row profile-input-row">
         <div class="col-sm-12 profile-input-cell">
-          <input type="text" class="form-control form-validate form-input medium" placeholder="Pick a SproutUp username" ng-model="profile.user.username" id="username" name="username" ng-model-options="{ debounce: 400 }" ng-pattern="/^[a-zA-Z0-9]+$/" ng-minlength="3" up-slug required>
+          <input disabled type="text" class="form-control form-validate form-input medium" placeholder="Pick a SproutUp username" ng-model="profile.user.username" id="username" name="username" ng-model-options="{ debounce: 400 }" ng-pattern="/^[a-zA-Z0-9]+$/" ng-minlength="3" up-slug required>
           <div ng-messages="profile.basicinfoform.username.$error" ng-show="profile.basicinfoform.username.$touched">
             <div class="message error" ng-message="required">A user without a username? Silly.</div>
             <div class="message error" ng-message="uniqueslug">This username has been taken.</div>

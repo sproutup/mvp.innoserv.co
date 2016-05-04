@@ -10,10 +10,13 @@ function ReferralController(CampaignService, $state, Authentication, $scope, slu
   if (slugitem.data && slugitem.data.item && $state.params.username) {
     $analytics.eventTrack('Referral Page View', {
       campaignId: slugitem.data.item.id,
+      campaingHashtag: slugitem.data.item.hashtag,
       username: $state.params.username,
       companyId: slugitem.data.item.companyId,
+      companyName: slugitem.data.item.company.name,
       productId: slugitem.data.item.productId,
-      referralId: slugitem.data.item.id + '_' + $state.params.username
+      productName: slugitem.data.item.product.name,
+      referralId: slugitem.data.item.hashtag + '_' + $state.params.username
     });
   }
 }
