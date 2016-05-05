@@ -12,7 +12,6 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
   vm.findOne = findOne;
   vm.findMyContribution = findMyContribution;
   vm.submitRequest = submitRequest;
-  vm.findContributor = findContributor;
   vm.openCancelModal = openCancelModal;
   vm.cancelRequest = cancelRequest;
   vm.connected = connected;
@@ -42,18 +41,6 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
     }, function(res) {
       vm.campaignInit = true;
       vm.campaign = res;
-    }, function(err) {
-      //$state.go('landing.default');
-      console.log(err);
-    });
-  }
-
-  function findContributor() {
-    CampaignService.campaignSingle().get({
-      campaignId: $state.params.campaignId,
-      userId: $state.params.userId
-    }, function(res) {
-      vm.contributor = res;
     }, function(err) {
       //$state.go('landing.default');
       console.log(err);
