@@ -145,7 +145,7 @@ function upPostContentController(YouTubeService, ProviderService, Authentication
     var contentItem = new Content({
       media: vm.item.media,
       ref: vm.item.ref,
-      campaignId: $state.params.campaignId,
+      campaignId: vm.group,
       title: vm.item.title
     });
 
