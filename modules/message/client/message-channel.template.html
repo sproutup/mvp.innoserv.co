@@ -2,7 +2,8 @@
   <div class="message-header">
     <p>Let's chat.</p>
   </div>
-  <div class="message-body" scroll-glue-bottom="true" >
+  <div class="message-body" scroll-glue-bottom="vm.glued">
+    <div>glued - {{ vm.glued }}</div>
     <div ng-if="vm.empty" class="empty-state">Have questions on the campaign or need help with the product? Chat with us.</div>
     <div ng-if="!vm.empty && vm.messages.length === 0">
       <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/sproutup-assets/no-message.gif">
@@ -10,7 +11,7 @@
     <div ng-if="!vm.empty" ng-repeat="message in vm.messages" ng-class="{inbound: vm.me.id !== message.userId, outbound: vm.me.id === message.userId}" class="message-blurb">
       <div class="sender">
         <span class="name" ng-show="vm.me.id === message.userId">Me</span>
-        <span class="name" ng-show="vm.me.id !== message.userId">{{ message.user.displayName }}</span>
+        <span class="name" ng-show="vm.me.id !== message.userId">{{vm.conversation.channel.members[message.userId].user.displayName}}</span>
         <span class="time">{{message.created | fromNow}}</span>
       </div>
       <div class="content" ng-bind="message.body"></div>

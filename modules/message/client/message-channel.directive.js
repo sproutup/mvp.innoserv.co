@@ -54,6 +54,7 @@ function MessageChannelController($scope, Authentication, Socket, MessageService
     vm.messages = [];
     vm.conversation = {};
     vm.me = Authentication.user;
+    vm.glued = true;
 
     function init() {
       // Make sure the Socket is connected
@@ -73,6 +74,7 @@ function MessageChannelController($scope, Authentication, Socket, MessageService
       Socket.on('message', function (message) {
         console.log('msg: ', message);
         vm.messages.push(message.item);
+        vm.glued = true;
       });
 
       // Remove the event listener when the controller instance is destroyed
