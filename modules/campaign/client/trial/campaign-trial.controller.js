@@ -15,7 +15,6 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
   vm.openCancelModal = openCancelModal;
   vm.cancelRequest = cancelRequest;
   vm.connected = connected;
-  vm.createPost = createPost;
   vm.goToRequest = goToRequest;
   vm.state = $state;
   vm.user = Authentication.user;
@@ -106,53 +105,6 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
 
   function connected() {
     $state.go('navbar.activity.trial.confirmation', { campaignId: vm.campaign.id });
-  }
-
-  // TODO — Put create post and create content into services
-  function createPost() {
-    vm.posting = true;
-    var Post = PostService.post();
-    var item = new Post({
-      userId: Authentication.user.id, // Remove this after we add it server side
-      body: vm.post.body,
-      groupId: $scope.vm.campaign.groupId
-    });
-
-    // Add youtube link to the body
-    if (vm.post.ref && vm.post.media === 'yt') {
-      item.body = 'https://www.youtube.com/watch?v=' + vm.post.ref + '\n' + vm.post.body;
-    }
-
-    usSpinnerService.spin('spinner-1');
-
-    item.$save(function(res) {
-      vm.posting = false;
-      vm.post = {};
-      vm.selectedVideo = {};
-      vm.state = 'write';
-      vm.ContentService.model.state = 'select';
-      // vm.content.unshift(res);
-      usSpinnerService.stop('spinner-1');
-    }, function(err) {
-      vm.posting = false;
-      usSpinnerService.stop('spinner-1');
-    });
-
-    if (vm.post.media) {
-      saveContent();
-    }
-  }
-
-  function saveContent() {
-    var Content = ContentService.content();
-    var contentItem = new Content({
-      media: vm.post.media,
-      ref: vm.post.ref,
-      campaignId: $state.params.campaignId,
-      title: vm.post.title
-    });
-
-    contentItem.$save();
   }
 
   function openVerifyEmailModal() {
