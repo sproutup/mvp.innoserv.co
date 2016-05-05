@@ -21,12 +21,12 @@ OptionSettings:
   aws:elb:loadbalancer:
     LoadBalancerHTTPSPort: '443'
     LoadBalancerHTTPPort: '80'
-    SSLCertificateId: arn:aws:iam::772918356582:server-certificate/sproutup_digicert
+    SSLCertificateId: arn:aws:iam::772918356582:server-certificate/sproutup_digicert_5_5_2016
   aws:elasticbeanstalk:environment:
     EnvironmentType: LoadBalanced
   aws:elasticbeanstalk:application:environment:
     PORT: 3000
     NODE_ENV: production
-    SERVER_API: http://api-master-sproutup-co.us-west-2.elasticbeanstalk.com
+    SERVER_API: https://api.sproutup.co
     REDIS_PORT: 6379
     REDIS_HOST: redis-cluster.2yq2tv.0001.usw2.cache.amazonaws.com
