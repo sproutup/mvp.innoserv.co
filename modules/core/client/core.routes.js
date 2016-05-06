@@ -59,6 +59,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatc
         url: '/terms',
         templateUrl: 'modules/core/client/terms.view.html'
       })
+      .state('navbar.how', {
+        url: '/how',
+        templateUrl: 'modules/core/client/how.view.html'
+      })
       .state('navbar.i', {
         url: '/i',
         abstract: true,

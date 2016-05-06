@@ -2112,13 +2112,13 @@ p[class="hangout-countdown-unit"] {
 .landing-section.a {
   margin: 0px;
   padding: 0px;
-  background-color: @sproutup-lightgrey;
+  background-color: @sproutup-lightergrey;
 }
 
 .landing-section-wrapper {
   max-width: 1250px;
   margin: 0px auto;
-  padding: 45px 20px 60px;
+  padding: 40px 20px 50px;
 }
 
 .landing-title {
@@ -2172,7 +2172,16 @@ p[class="hangout-countdown-unit"] {
   color: white;
   width: 100%;
   height: 100%;
-  padding-top: 45%;
+  padding: 30% 10px;
+}
+
+.landing-creator-info .name {
+  font-size: 11pt;
+  padding-bottom: 20px;
+}
+
+.landing-creator-info .info {
+  font-size: 9pt;
 }
 
 .landing-cta {
@@ -2435,8 +2444,12 @@ ul.browse-campaign-sidenav li a.active {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)); /* Standard syntax */
 }
 
+.campaign-list-item-banner.landing-curated-videos {
+  max-height: 360px;
+}
+
 .campaign-list-item-banner.landing-curated-videos::after {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.01)); /* Standard syntax */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.01)); /* Standard syntax */
 }
 
 .campaign-list-item-banner .campaign-name {
@@ -4432,7 +4445,7 @@ ul.list-conversation-thread li a {
 
 .sproutup-table.landing-videos .table {
   margin: 0px;
-  padding: 15px 10px;
+  padding: 15px;
 }
 
 .sproutup-table.landing-videos .table tbody tr td {
@@ -4454,15 +4467,15 @@ ul.list-conversation-thread li a {
 
 .sproutup-table.landing-videos .name {
   font-weight: 700;
-  font-size: 11pt;
-  padding-bottom: 5px;
+  font-size: 14pt;
+  padding-bottom: 10px;
   color: @main-text-white;
 }
 
 .sproutup-table.landing-videos .text {
   font-weight: 300;
-  font-size: 9.5pt;
-  line-height: 1.5;
+  font-size: 10pt;
+  line-height: 1.6;
   color: @main-text-white;
 }
 
