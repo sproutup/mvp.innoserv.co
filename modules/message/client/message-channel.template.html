@@ -1,9 +1,8 @@
 <div class="conversation-wrapper" ng-init="vm.load()">
   <div class="message-header">
-    <p>Let's chat.</p>
+    <p><i class="fa fa-commenting"></i>Let's chat.</p>
   </div>
   <div class="message-body" scroll-glue-bottom="vm.glued">
-    <div>glued - {{ vm.glued }}</div>
     <div ng-if="vm.empty" class="empty-state">Have questions on the campaign or need help with the product? Chat with us.</div>
     <div ng-if="!vm.empty && vm.messages.length === 0">
       <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/sproutup-assets/no-message.gif">
