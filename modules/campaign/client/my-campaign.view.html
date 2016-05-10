@@ -10,7 +10,7 @@
     <div ng-repeat="item in vm.myCampaigns | orderBy: '-created'" class="row product-trial-item" ng-if="vm.myCampaigns.length > 0">
       <div ng-if="item.campaign.type === 'trial'">
         <div class="product-trial-item--header">
-          <a ui-sref="navbar.slug.campaign.trial.view.details({slug: item.campaign.hashtag})">{{ item.campaign.name }}</a>
+          <a ui-sref="navbar.slug.campaign.trial.view.details({slug: item.campaign.hashtag})">{{ item.campaign.name }}<span ng-show="item.campaign.status === -1" class="label label-ended-campaign">Ended</span></a>
         </div>
         <div class="col-sm-12 product-trial-item--detail">
           <div ng-if="item.state === 0 || item.state > 0">
