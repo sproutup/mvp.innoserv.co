@@ -428,24 +428,26 @@ function BuzzController($stateParams, $state, FeedService, ContentService, Authe
         vm.selectedProduct = p.id;
     }
 
-    // twttr.events.bind('tweet', function(event) {
-    //     if ($rootScope.sharing === true || !AuthService.m.isLoggedIn) {
-    //         return;
-    //     }
-    //     $rootScope.sharing = true;
-    //     if (event.target.id === '3000') {
-    //         var AddPoints = PointsService.addPoints();
-    //         AddPoints.save({
-    //             activity_id: event.target.id,
-    //             product_id: event.target.attributes.product.value
-    //         }, function() {
-    //             AuthService.refreshPoints();
-    //             $timeout(function() {
-    //                 $rootScope.sharing = false;
-    //             }, 1000);
-    //         });
-    //     }
-    // });
+    // if (twttr && twttr.events) {
+    //     twttr.events.bind('tweet', function(event) {
+    //         if ($rootScope.sharing === true || !AuthService.m.isLoggedIn) {
+    //             return;
+    //         }
+    //         $rootScope.sharing = true;
+    //         if (event.target.id === '3000') {
+    //             var AddPoints = PointsService.addPoints();
+    //             AddPoints.save({
+    //                 activity_id: event.target.id,
+    //                 product_id: event.target.attributes.product.value
+    //             }, function() {
+    //                 AuthService.refreshPoints();
+    //                 $timeout(function() {
+    //                     $rootScope.sharing = false;
+    //                 }, 1000);
+    //             });
+    //         }
+    //     });
+    // }
 
 }
 
