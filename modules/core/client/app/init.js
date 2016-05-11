@@ -6,8 +6,6 @@ angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfig
 angular.module(ApplicationConfiguration.applicationModuleName).config(['$analyticsProvider',
   function ($analyticsProvider) {
     $analyticsProvider.virtualPageviews(true);
-    $analyticsProvider.firstPageview(true);
-    $analyticsProvider.withBase(true);
   }
 ]);
 
