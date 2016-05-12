@@ -107,7 +107,7 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
   $rootScope.$on('$stateChangeError',
   function(event, toState, toParams, fromState, fromParams, error){
     console.log('stateChangeError: ', toState.name, error);
-    $state.go('navbar.not-found');
+    // $state.go('navbar.not-found');
   });
 });
 
