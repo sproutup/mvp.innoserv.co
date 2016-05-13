@@ -4,9 +4,9 @@ angular
   .module('campaign')
   .controller('CampaignTrialController', CampaignTrialController);
 
-CampaignTrialController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', 'PostService', 'usSpinnerService', 'ContentService', '$rootScope', '$uibModal', 'slugitem'];
+CampaignTrialController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', 'PostService', 'usSpinnerService', 'ContentService', '$rootScope', '$uibModal'];
 
-function CampaignTrialController(CampaignService, $state, Authentication, $scope, PostService, usSpinnerService, ContentService, $rootScope, $modal, slugitem) {
+function CampaignTrialController(CampaignService, $state, Authentication, $scope, PostService, usSpinnerService, ContentService, $rootScope, $modal) {
   var vm = this;
   vm.find = find;
   vm.findOne = findOne;
@@ -18,10 +18,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
   vm.goToRequest = goToRequest;
   vm.state = $state;
   vm.user = Authentication.user;
-  // Temporary check because this route is being caught before we redirect in the slug controller
-  if (slugitem.data.type === 'Campaign') {
-    vm.campaign = slugitem.data.item;
-  }
+//  vm.campaign = slugitem;
 
   function find() {
     vm.campaigns = CampaignService.campaign().query({
@@ -97,7 +94,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
     }
 
     CampaignService.contributor().save(request, function(res) {
-      $state.go('navbar.slug.campaign.trial.connect', { slug: vm.campaign.hashtag });
+      $state.go('navbar.campaign.trial.connect', { slug: vm.campaign.hashtag });
     }, function(err) {
       vm.error = true;
     });
@@ -150,7 +147,7 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
       return;
     }
 
-    $state.go('navbar.slug.campaign.trial.info');
+    $state.go('navbar.campaign.trial.info');
   }
 
 }

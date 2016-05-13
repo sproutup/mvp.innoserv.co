@@ -10,7 +10,7 @@ angular.module('buzz').run(['Menus',
     });
     Menus.addMenuItem('user.profile.menu', {
       title: 'Buzz',
-      state: 'navbar.slug.user.buzz',
+      state: 'navbar.user.buzz',
       roles: ['*'],
       position: 10
     });

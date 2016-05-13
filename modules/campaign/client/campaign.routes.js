@@ -24,11 +24,32 @@ function campaignConfig($stateProvider) {
       controllerAs: 'campaign'
     })
     .state('navbar.slug.campaign', {
-      url: '/',
-      abstract: true,
+//      url: '',
+      url: '/campaign/:campaignId',
+//      abstract: true,
+//      template: '<div ui-view><h1>{{campaign.campaign.name}}</h1><div>',
+//      template: '<div ui-view ng-init="campaign.init()"><div>',
+      template: '<div ui-view ng-init="campaign.findOne()"><div>',
+      controller: 'CampaignController',
+      controllerAs: 'campaign',
+      resolve: {
+        slugitem: function($stateParams, SlugService) {
+          console.log('navbar.slug.campaign -> resolve');
+          return SlugService.getCurrent();
+        }
+      }
+    })
+    .state('navbar.slug.campaign.referral', {
+      url: '/{user:slugItem}',
       template: '<div ui-view><div>',
       controller: 'CampaignController',
-      controllerAs: 'campaign'
+      controllerAs: 'campaign',
+      resolve: {
+        useritem: function($stateParams, SlugService) {
+          console.log('resolve referral');
+          return SlugService.find($stateParams.user);
+        }
+      }
     })
     .state('navbar.discover.list', {
       url: '',
@@ -44,8 +65,8 @@ function campaignConfig($stateProvider) {
           title: 'My Stuff'
       }
     })
-    .state('navbar.slug.user.activities' ,{
-      url: 'u/activities',
+    .state('navbar.user.activities' ,{
+      url: '/activities',
       templateUrl: 'modules/campaign/client/user-activities.html',
       data: {
           title: 'My Activities'

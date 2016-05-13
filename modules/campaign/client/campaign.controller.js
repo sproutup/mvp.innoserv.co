@@ -5,28 +5,59 @@ angular
   .module('campaign')
   .controller('CampaignController', CampaignController);
 
-CampaignController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', '$interval', 'MessageService', '$uibModal', 'slugitem'];
+CampaignController.$inject = ['CampaignService', '$state', 'Authentication', '$scope', '$interval', 'MessageService', '$uibModal'];
 
-function CampaignController(CampaignService, $state, Authentication, $scope, $interval, MessageService, $modal, slugitem) {
+function CampaignController(CampaignService, $state, Authentication, $scope, $interval, MessageService, $modal) {
   var vm = this;
   vm.product = {};
   vm.find = find;
+  vm.findOne = findOne;
   vm.loadChannel = loadChannel;
   vm.startChannel = startChannel;
   vm.findMyCampaigns = findMyCampaigns;
   vm.returnMatch = returnMatch;
   vm.editRequest = editRequest;
   vm.user = Authentication.user;
-  vm.campaign = slugitem.data.item;
+//  vm.campaign = slugitem;
+//  vm.init = init;
+
+//  function init(){
+//    console.log('campaign: ', $state.current.name);
+//    if($state.current.name === 'navbar.slug.campaign') {
+//      console.log('slug type: ', slugitem.hashtag);
+////      $state.go('navbar.landing');
+//      $state.go('navbar.campaign.' + slugitem.type + '.view.details', {id: slugitem.id});
+//    }
+//  }
 
   // This is a temporary hack because this route is being caught before we redirect in the slug controller
-  if(slugitem.data.type !== 'Campaign'){
-    if (slugitem.data.type === 'User') {
-      $state.go('navbar.slug.user.buzz');
-    } else {
-      var state = 'navbar.slug' + '.' + slugitem.data.type.toLowerCase();
-      $state.go(state);
+//  if(slugitem.data.type !== 'Campaign'){
+//    if (slugitem.data.type === 'User') {
+//      $state.go('navbar.slug.user.buzz');
+//    } else {
+//      var state = 'navbar.slug' + '.' + slugitem.data.type.toLowerCase();
+//      $state.go(state);
+//    }
+//  }
+
+  function findOne(campaignId) {
+    vm.success = false;
+    var _id = null;
+
+    if(campaignId){
+      _id = campaignId;
     }
+    else{
+      _id = $state.params.campaignId;
+    }
+
+    var campaign = CampaignService.campaign().get({
+      campaignId: _id
+    }, function() {
+      vm.campaign = campaign;
+    }, function(err) {
+      console.log(err);
+    });
   }
 
   function loadChannel(){

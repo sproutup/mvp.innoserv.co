@@ -6,24 +6,30 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatc
 
     var patt = new RegExp('^[a-zA-Z0-9]+$');
 
-    $urlMatcherFactoryProvider.type('slugItem', {
-      decode: function(val) {
-        return val.toLowerCase();
-      },
-      encode: function(val) {
-        return val;
-      },
-      equals: function(a, b) {
-        return this.is(a) && a === b;
-      },
-      is: function(val) {
-        return patt.test(val);
-      },
-      pattern: /(?!theme$|discover$|hangout$|conversation$|settings$|authentication$|welcome$)[a-zA-Z0-9]+/
-    });
+//    $urlMatcherFactoryProvider.type('slugItem', {
+//      decode: function(val) {
+//        return val ? val.toLowerCase() : val;
+//      },
+//      encode: function(val) {
+//        return val;
+//      },
+//      equals: function(a, b) {
+//        return this.is(a) && a === b;
+//      },
+//      is: function(val) {
+//        console.log('matcher.is: ', val);
+//        return true;
+////        return patt.test(val);
+//
+// //       console.log('match: ', true);
+////        return true;
+//      },
+//      pattern: /^(?!theme|discover|hangout|conversation|settings|authentication|welcome)[a-zA-Z0-9]+/
+////      pattern: /^[a-zA-Z0-9]+/
+//    });
 
     // Redirect to 404 when route not found
-    $urlRouterProvider.otherwise('/not-found');
+//    $urlRouterProvider.otherwise('/not-found');
 
     // Home state routing
     $stateProvider
@@ -69,16 +75,17 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatc
         template: '<ui-view />'
       })
       .state('navbar.slug', {
-        //url: '/{slug: ^(?!theme$|discover$|hangout$|conversation$|settings$|authentication$).*}',
-        url: '/{slug:slugItem}',
+        url: '/{slug: ^(?!theme|discover|hangout|conversation|settings|authentication)[a-zA-Z0-9]+}',
+        //url: '/{slug:slugItem}',
         //url: '/:slug',
         controller: 'SlugController',
         controllerAs: 'slug',
-        template: '<div ui-view></div>',
+        template: '<div ui-view><div class="buzz-page" style="padding-top:150px"><h1>id: {{slug.slug.data.item.id}}</h1></div></div>',
         resolve: {
           // After this is resolved, new routes are being found at the same time the slug controller is redirecting
           // It'd be nice if we could be sent to the correct routes right after this SlugService.find
           slugitem: function($stateParams, SlugService) {
+            console.log('navbar.slug -> resolve');
             return SlugService.find($stateParams.slug);
           }
         }

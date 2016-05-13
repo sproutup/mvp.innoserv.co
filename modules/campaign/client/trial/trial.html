@@ -1,4 +1,5 @@
 <!-- trial campaign -->
+<div ng-init="vm.findOne()">
 <div ng-if="vm.campaign">
   <div class="campaign-banner" ng-style="{'background-image': 'url({{ vm.campaign.banner.file.url || 'modules/core/client/img/default-product-banner.jpg' }})'}">
     <div class="row campaign-info-wrapper">
@@ -15,14 +16,15 @@
     </div>
     <div class="banner-menu">
       <div class="banner-menu--content">
-        <div class="banner-menu--col" ng-class="{ 'active': vm.state.current.name === 'navbar.slug.campaign.trial.view.details' }">
-          <a ui-sref="navbar.slug.campaign.trial.view.details">Campaign</a>
+        <div class="banner-menu--col" ng-class="{ 'active': vm.state.current.name === 'navbar.campaign.trial.view.details' }">
+          <a ui-sref="navbar.campaign.trial.view.details">Campaign</a>
         </div>
-        <div class="banner-menu--col" ng-class="{ 'active': vm.state.current.name === 'navbar.slug.campaign.trial.view.buzz' }">
-          <a ui-sref="navbar.slug.campaign.trial.view.buzz">Buzz</a>
+        <div class="banner-menu--col" ng-class="{ 'active': vm.state.current.name === 'navbar.campaign.trial.view.buzz' }">
+          <a ui-sref="navbar.campaign.trial.view.buzz">Buzz</a>
         </div>
       </div>
     </div>
   </div>
   <div ui-view ng-init="vm.findMyContribution()"></div>
+</div>
 </div>

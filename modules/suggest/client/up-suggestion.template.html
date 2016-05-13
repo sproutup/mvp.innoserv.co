@@ -3,7 +3,7 @@
     <p class="my-content-user">
       <a class="suggested-product-item-name" ng-href="{{ suggestion.url }}" target="_blank">{{ suggestion.body }}</a>
       <span class="activity">suggested by</span>
-      <a ui-sref="navbar.slug.user.buzz({ slug: suggestion.user.username })">{{ suggestion.user.displayName }}</a>
+      <a ui-sref="navbar.user.buzz({ slug: suggestion.user.username })">{{ suggestion.user.displayName }}</a>
     </p>
     <p ng-show="{{ suggestion.meta.description.length > 0 }}" class="suggested-product-item-description">{{ suggestion.meta.description | limitTo: 120 }}{{ suggestion.meta.description.length < 120 ? '' : '...' }}</p>
     <div class="my-content-actions">

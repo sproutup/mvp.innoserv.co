@@ -11,7 +11,7 @@ angular.module('campaign').run(['Menus',
     });
     Menus.addMenuItem('user.profile.menu', {
       title: 'Activities',
-      state: 'navbar.slug.user.activities',
+      state: 'navbar.user.activities',
       roles: ['*'],
       position: 10
     });

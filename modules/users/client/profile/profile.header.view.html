@@ -5,8 +5,8 @@
   <div class="row user-profile-wrapper">
     <div class="col-sm-3 user-profile-rail left">
       <img class="img-responsive user-profile-photo" up-avatar="slug.item" width="200" height="200">
-      <div class="user-profile-name">{{slug.item.displayName}}</div>
-      <div class="user-profile-bio" ng-if="slug.item.description">{{slug.item.description}}</div>
+      <div class="user-profile-name">{{profile.slugitem.displayName}}</div>
+      <div class="user-profile-bio" ng-if="slug.item.description">{{profile.slugitem.description}}</div>
       <div class="user-profile-networks">
 
         <ul class="list-inline">
@@ -47,14 +47,14 @@
          <div ui-view></div>
         </div>
         <div class="col-sm-4 user-profile-rail--misc">
-          <div class="buzz-sidebar-item" ng-show="!slug.item.metrics">
+          <div class="buzz-sidebar-item" ng-show="!profile.slugitem.metrics">
             <div class="title">Social Reach</div>
-            <div class="subtitle">{{ slug.item.displayName }} has not connected to any social networks. As a result, we cannot display a legit social reach.</div>
+            <div class="subtitle">{{ profile.slugitem.displayName }} has not connected to any social networks. As a result, we cannot display a legit social reach.</div>
           </div>
-          <div class="buzz-sidebar-item" ng-show="slug.item.metrics">
-            <up-reach-graph user="slug.item"></up-reach-graph>
+          <div class="buzz-sidebar-item" ng-show="profile.slugitem.metrics">
+            <up-reach-graph user="profile.slugitem"></up-reach-graph>
           </div>
-          <div class="buzz-sidebar-item" ng-if="slug.item.id === navbar.authentication.user.id">
+          <div class="buzz-sidebar-item" ng-if="profile.slugitem.id === navbar.authentication.user.id">
             <div class="title">Your Stats <span class="label label-info">coming soon</span></div>
             <div class="subtitle"><span class="stats-highlight">Impressions</span> your content have earned to date.</div>
             <div class="content">
@@ -67,7 +67,7 @@
             </div>
             <div class="link"> <a href="#">View analytics details <i class="fa fa-angle-right"> </i> </a> </div>
           </div>
-          <div class="buzz-sidebar-item" ng-if="slug.item.id === navbar.authentication.user.id">
+          <div class="buzz-sidebar-item" ng-if="profile.slugitem.id === navbar.authentication.user.id">
             <div class="title">Your Earnings <span class="label label-info">coming soon</span></div>
             <div class="subtitle">You have earned <span class="stats-highlight">$amount</span> so far. Keep up with good work!</div>
             <div class="link"><a href="#">View earning details<i class="fa fa-angle-right"></i></a></div>

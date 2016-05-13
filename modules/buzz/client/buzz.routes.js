@@ -24,9 +24,8 @@ function buzzConfig($stateProvider) {
           title: 'Buzz'
       }
     })
-    .state('navbar.slug.user.buzz' ,{
-      // 'u' in front is a temporary solution to create different user & campaign routes
-      url: 'u/buzz',
+    .state('navbar.user.buzz' ,{
+      url: '/buzz',
       templateUrl: 'modules/buzz/client/user-buzz.html',
       controller: 'BuzzController',
       controllerAs: 'buzz',

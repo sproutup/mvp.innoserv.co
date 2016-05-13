@@ -92,7 +92,7 @@ function TrialController($q, $rootScope, $stateParams, $scope, $state, $log, aut
               vm.trialSuccess = true;
               authService.addTrial(data);
           }
-          $state.go('navbar.slug.campaign.trial.confirmation');
+          $state.go('navbar.campaign.trial.confirmation');
       }, function(err) {
           // handle err here
       });

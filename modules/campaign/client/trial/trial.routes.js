@@ -6,7 +6,7 @@ angular
 
 function trialConfig($stateProvider) {
   $stateProvider
-    .state('navbar.slug.campaign.trial', {
+    .state('navbar.campaign.trial', {
       url: '',
       abstract: true,
       template: '<div ui-view><div>',
@@ -16,21 +16,20 @@ function trialConfig($stateProvider) {
         title: ''
       }
     })
-    .state('navbar.slug.campaign.trial.view', {
+    .state('navbar.campaign.trial.view', {
       url: '',
       abstract: true,
       templateUrl: 'modules/campaign/client/trial/trial.html'
     })
-    .state('navbar.slug.campaign.trial.view.details', {
+    .state('navbar.campaign.trial.view.details', {
       url: '',
       templateUrl: 'modules/campaign/client/trial/trial-details.html',
       data: {
         title: 'Campaign'
       }
     })
-    // These three routes don't have a '/' in front because we're temporarily using '/' in navbar.slug.campaign
-    .state('navbar.slug.campaign.trial.view.buzz', {
-      url: 'buzz',
+    .state('navbar.campaign.trial.view.buzz', {
+      url: '/buzz',
       controller: 'BuzzController',
       controllerAs: 'buzzCtrl',
       templateUrl: 'modules/campaign/client/trial/trial-buzz.html',
@@ -38,24 +37,24 @@ function trialConfig($stateProvider) {
         title: 'Campaign'
       }
     })
-    .state('navbar.slug.campaign.trial.info', {
-      url: 'request/info',
+    .state('navbar.campaign.trial.info', {
+      url: '/request/info',
       templateUrl: 'modules/campaign/client/trial/info.html',
       data: {
         title: 'Join Campaign'
       }
     })
-    .state('navbar.slug.campaign.trial.connect', {
-      url: 'request/connect',
+    .state('navbar.campaign.trial.connect', {
+      url: '/request/connect',
       templateUrl: 'modules/campaign/client/trial/social-connection.html',
       data: {
         title: 'Join Campaign'
       }
-    })
-    .state('navbar.slug.campaign.referral', {
-      url: ':username',
-      template: '<div>referral</div>',
-      controller: 'ReferralController',
-      controllerAs: 'referral'
     });
+//    .state('navbar.slug.campaignxx.referral', {
+//      url: '/{username: slugItem}',
+//      template: '<div>referral</div>',
+//      controller: 'ReferralController',
+//      controllerAs: 'referral'
+//    });
 }

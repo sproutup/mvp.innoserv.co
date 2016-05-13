@@ -6,7 +6,7 @@ angular
 
 function config($stateProvider) {
   $stateProvider
-    .state('navbar.slug.campaign.contest', {
+    .state('navbar.campaign.contest', {
       url: '/contest',
       abstract: true,
       template: '<div ui-view><div>',
@@ -16,7 +16,7 @@ function config($stateProvider) {
         title: ''
       }
     })
-    .state('navbar.slug.campaign.contest.view', {
+    .state('navbar.campaign.contest.view', {
       url: '',
       templateUrl: 'assets/app/contest/contest.html',
       data: {

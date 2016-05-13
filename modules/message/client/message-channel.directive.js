@@ -120,7 +120,7 @@ function MessageChannelController($scope, Authentication, Socket, MessageService
         vm.empty = false;
       }, function (errorResponse) {
         console.log(errorResponse);
-        vm.error = errorResponse.data.message;
+        vm.error = 'error';
       });
     }
 
