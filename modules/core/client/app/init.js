@@ -5,9 +5,7 @@ angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfig
 
 angular.module(ApplicationConfiguration.applicationModuleName).config(['$analyticsProvider',
   function ($analyticsProvider) {
-    $analyticsProvider.virtualPageviews(false);
-    $analyticsProvider.firstPageview(true);
-    $analyticsProvider.withBase(true);
+    $analyticsProvider.virtualPageviews(true);
   }
 ]);
 
@@ -129,6 +127,7 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
   $rootScope.$on('$stateChangeError',
   function(event, toState, toParams, fromState, fromParams, error){
     console.log('stateChangeError: ', toState.name, error);
+    // $state.go('navbar.not-found');
   });
 });
 
