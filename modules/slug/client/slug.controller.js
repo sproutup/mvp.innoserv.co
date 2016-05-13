@@ -14,14 +14,14 @@ function SlugController($state, SlugService, slugitem) {
 
   console.log('slug init: ', slugitem.data.type);
   vm.item = slugitem.data.item;
-  if($state.current.name === 'navbar.slug'){
+  if($state.current.name === 'navbar.slug' || $state.current.name === 'navbar.slug.referral'){
     var state;
     switch(slugitem.data.type){
       case 'Campaign':
         $state.go('navbar.campaign.' + slugitem.data.item.type + '.view.details', {campaignId: slugitem.data.item.id});
         break;
       case 'User':
-        state = 'navbar.slug.user';
+        $state.go('navbar.user.buzz', {slug: slugitem.data.item.username});
         break;
     }
     console.log('slug state.go: ', state);

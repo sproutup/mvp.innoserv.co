@@ -25,11 +25,33 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
   }
 ]);
 
-angular.module(ApplicationConfiguration.applicationModuleName).config(function ($urlRouterProvider) {
+angular.module(ApplicationConfiguration.applicationModuleName).config(function ($urlRouterProvider,$urlMatcherFactoryProvider) {
   // if the path doesn't match any of the urls you configured
   // otherwise will take care of routing the user to the
   // specified url
 //  $urlRouterProvider.otherwise('/index');
+    $urlMatcherFactoryProvider.type('slugItem', {
+      decode: function(val) {
+        return val ? val.toLowerCase() : val;
+      },
+      encode: function(val) {
+        return val;
+      },
+      equals: function(a, b) {
+        return this.is(a) && a === b;
+      },
+      is: function(val) {
+        console.log('matcher.is: ', val);
+        return true;
+//        return patt.test(val);
+
+ //       console.log('match: ', true);
+//        return true;
+      },
+      pattern: /^(?!theme|discover|hangout|conversation|settings|authentication|welcome)[a-zA-Z0-9]+/
+//      pattern: /^[a-zA-Z0-9]+/
+    });
+
 
   // Example of using function rule as param
 //  $urlRouterProvider.otherwise(function ($injector, $location) {
