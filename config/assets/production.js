@@ -38,7 +38,7 @@ module.exports = {
         'public/lib/ng-intl-tel-input/dist/ng-intl-tel-input.min.js',
         'public/lib/ngAutocomplete/src/ngAutocomplete.js',
         'public/lib/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
-        '//static.intercomcdn.com/intercom.v1.js'
+        'public/lib/angular-intercom/angular-intercom.min.js'
       ]
     },
     css: 'public/dist/application.min.css',
