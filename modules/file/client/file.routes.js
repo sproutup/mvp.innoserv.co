@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('file').config(['$stateProvider',
+angular.module('file.routes').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
       .state('company.navbar.file', {

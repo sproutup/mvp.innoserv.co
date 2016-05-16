@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('contributor')
+  .module('contributor.routes')
   .config(contributorConfig);
 
 function contributorConfig($stateProvider) {

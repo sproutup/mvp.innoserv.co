@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('content').config(['$stateProvider',
+angular.module('content.routes').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
       .state('user.content', {

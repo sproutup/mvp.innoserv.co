@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('theme')
+  .module('theme.routes')
   .config(['$stateProvider',
     function config($stateProvider) {
       $stateProvider

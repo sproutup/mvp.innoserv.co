@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('buzz')
+  .module('buzz.routes')
   .config(buzzConfig);
 
 function buzzConfig($stateProvider) {

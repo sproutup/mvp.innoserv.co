@@ -1,7 +1,7 @@
 'use strict';
 
 // Setting up route
-angular.module('landing').config(['$stateProvider',
+angular.module('landing.routes').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
       .state('company.landing', {
