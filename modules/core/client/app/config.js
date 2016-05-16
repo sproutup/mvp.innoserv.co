@@ -25,8 +25,7 @@ var ApplicationConfiguration = (function () {
     'angulartics.intercom',
     'ngIntlTelInput',
     'ngAutocomplete',
-    'infinite-scroll',
-    'ngIntercom'
+    'infinite-scroll'
   ];
 
   // Add a new vertical module

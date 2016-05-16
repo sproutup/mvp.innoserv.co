@@ -29,8 +29,7 @@
     "angulartics-mixpanel": "",
     "ng-intl-tel-input": "",
     "ngAutocomplete": "1.0.0",
-    "ngInfiniteScroll": "1.2.2",
-    "angular-intercom": "2.1.1"
+    "ngInfiniteScroll": "1.2.2"
   },
   "resolutions": {
     "angular": "1.5.0"
