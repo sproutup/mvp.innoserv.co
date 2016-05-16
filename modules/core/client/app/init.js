@@ -97,7 +97,7 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
       // console.log('Start Intercom');
       // console.log('Intercom with logged-in user: ', Authentication.user.displayName);
       Intercom('boot', {
-        app_id: 'nwdbju9h',
+        app_id: 'g60vwitq',
         email: Authentication.user.email,
         name: Authentication.user.displayName,
         user_id: Authentication.user.id,
@@ -107,7 +107,7 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
       // console.log('Start Intercom');
       // console.log('Intercom with logged-out user');
       Intercom('boot', {
-        app_id: 'nwdbju9h',
+        app_id: 'g60vwitq',
         application: 'SproutUp'
       });
     }
