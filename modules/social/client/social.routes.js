@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('social').config(['$stateProvider',
+angular.module('social.routes').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
       .state('user.social', {

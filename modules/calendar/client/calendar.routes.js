@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('calendar').config(['$stateProvider',
+angular.module('calendar.routes').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
       .state('company.navbar.calendar', {

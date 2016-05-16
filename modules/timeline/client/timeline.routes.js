@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('timeline').config(['$stateProvider',
+angular.module('timeline.routes').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
       .state('user.timeline', {

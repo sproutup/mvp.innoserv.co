@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('community').config(['$stateProvider',
+angular.module('community.routes').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
       .state('user.community', {

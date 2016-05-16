@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('team').config(['$stateProvider',
+angular.module('team.routes').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
       .state('company.navbar.settings.team', {

@@ -1,7 +1,7 @@
 'use strict';
 
 // Setting up route
-angular.module('engagement').config(['$stateProvider',
+angular.module('engagement.routes').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
       .state('user.engagement', {

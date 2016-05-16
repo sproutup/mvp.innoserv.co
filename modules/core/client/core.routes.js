@@ -1,7 +1,7 @@
 'use strict';
 
 // Setting up route
-angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatcherFactoryProvider',
+angular.module('core.routes').config(['$stateProvider', '$urlRouterProvider', '$urlMatcherFactoryProvider',
   function ($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider) {
 
     var patt = new RegExp('^[a-zA-Z0-9]+$');
@@ -52,70 +52,6 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatc
         abstract: true,
         template: '<ui-view />'
       })
-      .state('navbar.discover', {
-        url: '/discover',
-        abstract: true,
-        templateUrl: 'modules/campaign/client/discover.view.html',
-        controller: 'ListCampaignController',
-        controllerAs: 'vm',
-        data: {
-          title: ''
-        }
-      })
-      .state('navbar.discover.list', {
-        url: '',
-        templateUrl: 'modules/campaign/client/list-campaign.view.html',
-        data: {
-          title: 'Campaigns'
-        }
-      })
-      .state('navbar.hangout', {
-        url: '/hangout',
-        abstract: true,
-        template: '<div ui-view><div>',
-        controller: 'HangoutController',
-        controllerAs: 'vm'
-      })
-      .state('navbar.hangout.list', {
-        url: '/list',
-        abstract: true,
-        templateUrl: 'modules/hangout/client/list-hangout.view.html',
-      })
-      .state('navbar.hangout.list.future', {
-        url: '',
-        templateUrl: 'modules/hangout/client/list-future-hangout.view.html',
-        data: {
-          title: 'Upcoming Hangouts'
-        }
-      })
-      .state('navbar.conversation', {
-        url: '/conversation',
-        abstract: true,
-        template: '<div ui-view></div>',
-        controller: 'MessageController',
-        controllerAs: 'messageCtrl'
-      })
-      .state('navbar.conversation.list', {
-        url: '/list',
-        templateUrl: 'modules/message/client/list-messages.view.html',
-        data: {
-          title: 'My Messages'
-        }
-      })
-      .state('navbar.conversation.view', {
-        url: '/:channelId',
-        templateUrl: 'modules/message/client/view-message.view.html',
-        data: {
-          title: 'My Messages'
-        }
-      })
-      .state('navbar.campaign', {
-        url: '/campaign/:campaignId',
-        abstract: true,
-        template: '<div ui-view ng-init="campaign.findOne()"><div>',
-        controller: 'CampaignController',
-        controllerAs: 'campaign'
-      })
       .state('navbar.slug', {
         //url: '/{slug: ^(?!theme|discover|hangout|conversation|settings|authentication)[a-zA-Z0-9]+}',
         //url: '/{slug:slugItem}',
@@ -132,38 +68,6 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$urlMatc
           }
         }
       })
-      .state('navbar.campaign.trial', {
-        url: '',
-        abstract: true,
-        template: '<div ui-view><div>',
-        controller: 'CampaignTrialController',
-        controllerAs: 'vm',
-        data: {
-          title: ''
-        }
-    })
-    .state('navbar.campaign.trial.view', {
-      url: '',
-      abstract: true,
-      templateUrl: 'modules/campaign/client/trial/trial.html'
-    })
-    .state('navbar.campaign.trial.view.details', {
-      url: '',
-      templateUrl: 'modules/campaign/client/trial/trial-details.html',
-      data: {
-        title: 'Campaign'
-      }
-    })
-    .state('navbar.campaign.trial.view.buzz', {
-      url: '/buzz',
-      controller: 'BuzzController',
-      controllerAs: 'buzzCtrl',
-      templateUrl: 'modules/campaign/client/trial/trial-buzz.html',
-      data: {
-        title: 'Campaign'
-      }
-    })
-
       .state('navbar.slug.referral', {
         //url: '/{slug: ^(?!theme|discover|hangout|conversation|settings|authentication)[a-zA-Z0-9]+}',
         //url: '/{user:slugItem}',
