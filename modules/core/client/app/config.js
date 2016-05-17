@@ -26,7 +26,8 @@ var ApplicationConfiguration = (function () {
     'ngIntlTelInput',
     'ngAutocomplete',
     'infinite-scroll',
-    'ngIntercom'
+    'ngIntercom',
+    'ngLodash'
   ];
 
   // Add a new vertical module

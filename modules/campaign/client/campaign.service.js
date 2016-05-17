@@ -4,9 +4,9 @@ angular
   .module('campaign')
   .factory('CampaignService', CampaignService);
 
-CampaignService.$inject = ['$resource', '$q'];
+CampaignService.$inject = ['$resource', '$q', 'lodash'];
 
-function CampaignService($resource, $q){
+function CampaignService($resource, $q, _){
   var user = {};
 
   var service = {
@@ -16,7 +16,8 @@ function CampaignService($resource, $q){
     getUserActivities: getUserActivities,
     listByCompany: listByCompany,
     contributor: contributor,
-    listMyContributions: listMyContributions
+    listMyContributions: listMyContributions,
+    pickRandoms: pickRandoms
   };
 
   activate();
@@ -64,5 +65,13 @@ function CampaignService($resource, $q){
 
   function listMyContributions () {
     return $resource('/api/user/:userId/campaign', { userId:'@id' }, { 'update': {method:'PUT'}, 'query': {method:'GET', isArray:true} } );
+  }
+
+  function pickRandoms(number, array) {
+    if (number > array.length) {
+      return array;
+    }
+
+    return _.shuffle(array).slice(0, number);
   }
 }
