@@ -26,7 +26,6 @@ var ApplicationConfiguration = (function () {
     'ngIntlTelInput',
     'ngAutocomplete',
     'infinite-scroll',
-    'ngIntercom',
     'ngLodash'
   ];
 

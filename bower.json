@@ -30,7 +30,6 @@
     "ng-intl-tel-input": "",
     "ngAutocomplete": "1.0.0",
     "ngInfiniteScroll": "1.2.2",
-    "angular-intercom": "2.1.1",
     "ng-lodash": "0.5.0"
   },
   "resolutions": {

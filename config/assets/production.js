@@ -38,7 +38,6 @@ module.exports = {
         'public/lib/ng-intl-tel-input/dist/ng-intl-tel-input.min.js',
         'public/lib/ngAutocomplete/src/ngAutocomplete.js',
         'public/lib/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
-        'public/lib/angular-intercom/angular-intercom.min.js',
         'public/lib/ng-lodash/build/ng-lodash.min.js'
       ]
     },
