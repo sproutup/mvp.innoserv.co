@@ -2,9 +2,9 @@
 
 module.exports = {
   app: {
-    title: 'mvp.sproutup.co',
-    description: 'MVP Server',
-    keywords: 'dynamodb, mysql, redis, express, angularjs, node.js, bookshelf, passport',
+    title: 'SproutUp – Bring Products into the Spotlight',
+    description: 'Join marketing campaigns on the newest products. Tell incredible stories with your content. Exercise your influence to amplify brand reach.',
+    keywords: 'influencer, marketing, content creator, YouTubers, campaigns',
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
   },
   server: {
@@ -42,5 +42,5 @@ module.exports = {
   // for obsecurity reasons
   sessionKey: 'sessionId',
   sessionCollection: 'sessions',
-  logo: 'modules/core/img/brand/logo.png',
+  logo: 'modules/core/client/img/about/about-banner.jpg',
   favicon: 'modules/core/client/img/logo-square.png'};
