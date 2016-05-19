@@ -19,7 +19,7 @@
       <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/sproutup-assets/no-activities.gif">
     </div>
   </div>
-  <div class="col-md-4 col-sm-6 campaign-list-item" ng-repeat="campaign in company.company.campaigns" ng-if="campaign.type === 'trial' && campaign.status == 1">
+  <div class="col-md-4 col-sm-6 campaign-list-item" ng-repeat="campaign in company.company.campaigns" ng-if="campaign.type === 'trial' && campaign.status == 10">
     <!-- link for trial -->
     <a ng-if="campaign.type === 'trial'" ui-sref="navbar.slug({ slug: campaign.hashtag })">
       <div class="campaign-list-item-banner" ng-style="{'background-image': 'url({{ campaign.banner.file.url || 'modules/core/client/img/default-product-banner.jpg' }})'}">

@@ -93,24 +93,20 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
     }
 
     /* jshint ignore:start */
-//    if (Authentication.user && Authentication.user.id) {
-//      // console.log('Start Intercom');
-//      // console.log('Intercom with logged-in user: ', Authentication.user.displayName);
-//      window.Intercom('boot', {
-//        app_id: 'g60vwitq',
-//        email: Authentication.user.email,
-//        name: Authentication.user.displayName,
-//        user_id: Authentication.user.id,
-//        application: 'SproutUp'
-//      });
-//    } else {
-//      // console.log('Start Intercom');
-//      // console.log('Intercom with logged-out user');
-//      window.Intercom('boot', {
-//        app_id: 'g60vwitq',
-//        application: 'SproutUp'
-//      });
-//    }
+    if (Authentication.user && Authentication.user.id) {
+      window.Intercom('boot', {
+        app_id: 'g60vwitq',
+        email: Authentication.user.email,
+        name: Authentication.user.displayName,
+        user_id: Authentication.user.id,
+        application: 'SproutUp'
+      });
+    } else {
+      window.Intercom('boot', {
+        app_id: 'g60vwitq',
+        application: 'SproutUp'
+      });
+    }
     /* jshint ignore:end */
   });
 
