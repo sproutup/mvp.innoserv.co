@@ -28,6 +28,7 @@ angular.module('users').controller('ChangePasswordController', ['$scope', '$http
         $scope.newPassword = null;
         $scope.setPasswordForm.newPassword.$touched = null;
         $scope.setPasswordForm.$submitted = null;
+        $scope.user = Authentication.user = response;
       }).error(function (response) {
         $scope.error = response.message;
       });
