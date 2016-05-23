@@ -18,9 +18,6 @@ function SlugController($state, SlugService, slugitem, $analytics) {
     var state;
     switch(slugitem.data.type){
       case 'Campaign':
-        if ($state.current.name === 'navbar.slug.referral') {
-          trackReferral();
-        }
         $state.go('navbar.campaign.' + slugitem.data.item.type + '.view.details', {campaignId: slugitem.data.item.id});
         break;
       case 'User':
@@ -42,18 +39,5 @@ function SlugController($state, SlugService, slugitem, $analytics) {
       console.log('slug redirect: ', state);
       $state.go(state);
     }
-  }
-
-  function trackReferral() {
-    $analytics.eventTrack('Referral Page View', {
-      campaignId: slugitem.data.item.id,
-      campaingHashtag: slugitem.data.item.hashtag,
-      username: $state.params.userslug,
-      companyId: slugitem.data.item.companyId,
-      companyName: slugitem.data.item.company.name,
-      productId: slugitem.data.item.productId,
-      productName: slugitem.data.item.product.name,
-      referralId: slugitem.data.item.hashtag + '_' + $state.params.userslug
-    });
   }
 }

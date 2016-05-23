@@ -73,8 +73,7 @@ angular.module('core.routes').config(['$stateProvider', '$urlRouterProvider', '$
         //url: '/{user:slugItem}',
         url: '/:userslug',
         template: '<div ui-view><div>',
-        controller: 'CampaignController',
-        controllerAs: 'campaign',
+        controller: 'ReferralController',
         resolve: {
           useritem: function($stateParams, SlugService) {
             console.log('resolve userslug');
