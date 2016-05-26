@@ -18,7 +18,6 @@ function CampaignTrialController(CampaignService, $state, Authentication, $scope
   vm.goToRequest = goToRequest;
   vm.state = $state;
   vm.user = Authentication.user;
-//  vm.campaign = slugitem;
 
   function find() {
     vm.campaigns = CampaignService.campaign().query({
