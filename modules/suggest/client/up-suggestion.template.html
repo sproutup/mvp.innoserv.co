@@ -1,7 +1,7 @@
 <div class="my-content-body">
   <div class="suggested-product-item" ng-style="{ 'background-image': 'url({{ suggestion.meta.image || 'modules/core/client/img/default-banner-suggested-product.jpg' }})' }">
     <p class="my-content-user">
-      <a class="suggested-product-item-name" ng-href="{{ suggestion.url }}" target="_blank">{{ suggestion.body }}</a>
+      <a class="suggested-product-item-name" ng-href="{{ suggestion.url }}?ref=sproutup" target="_blank">{{ suggestion.body }}</a>
       <span class="activity">suggested by</span>
       <a ui-sref="navbar.user.buzz({ slug: suggestion.user.username })">{{ suggestion.user.displayName }}</a>
     </p>

@@ -6,6 +6,7 @@
         <button class="navbar-toggle" uib-dropdown-toggle>Menu</button>
         <ul style="right: 13px; left: initial" uib-dropdown-menu class="navbar-toggleMenu nav navbar-nav navbar-item navbar-right" role="menu">
           <li ng-repeat="item in navbar.menu.items | orderBy: 'position'"
+              ng-if="item.shouldRender(navbar.authentication.user);"
               ng-switch="item.type"
               ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }"
               class="{{item.class}} nav-item-wrapper nav-item-main"
