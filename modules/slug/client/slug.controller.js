@@ -18,13 +18,16 @@ function SlugController($state, SlugService, slugitem, $analytics) {
     var state;
     switch(slugitem.data.type){
       case 'Campaign':
-        $state.go('navbar.campaign.' + slugitem.data.item.type + '.view.details', {campaignId: slugitem.data.item.id});
+        setTimeout(function() {
+          $state.go('navbar.campaign.' + slugitem.data.item.type + '.view.details', {campaignId: slugitem.data.item.id}, { location: 'replace' });
+        }, 0);
         break;
       case 'User':
-        $state.go('navbar.user.buzz', {slug: slugitem.data.item.username});
+        setTimeout(function() {
+          $state.go('navbar.user.buzz', {slug: slugitem.data.item.username}, { location: 'replace' });
+        }, 0);
         break;
     }
-    console.log('slug state.go: ', state);
   }
 
   function slug() {
