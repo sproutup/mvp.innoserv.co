@@ -16,6 +16,7 @@ function ListCampaignController(CampaignService, $state, Authentication, $scope,
   vm.user = Authentication.user;
   vm.openCancelModal = openCancelModal;
   vm.cancelRequest = cancelRequest;
+  vm.filterActive = filterActive;
 
   function openCancelModal(campaignId) {
     console.log('Open cancel modal');
@@ -121,5 +122,12 @@ function ListCampaignController(CampaignService, $state, Authentication, $scope,
        vm.stopPromise = undefined;
      }
    }
+
+  function filterActive() {
+    vm.query = {
+      type: 'trial',
+      status: 10
+    };
+  }
 
 }
