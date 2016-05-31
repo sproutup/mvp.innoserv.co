@@ -1,7 +1,8 @@
 <!-- campaigns -->
 <div class="col-sm-12 browse-campaign-main" ng-init="vm.filterActive()">
   <div class="row browse-campaign-section">
-    <input ng-model="vm.query.$" class="form-control form-input" placeholder="Search campaigns"/>
+    <input ng-model="vm.query.$" class="search-main-input" placeholder="Search camapigns">
+    <span class="fa fa-search"></span>
     <!-- <h4><span>Try products</span>&#x1F680;<a href="#" class="btn btn-sm browse-all-button">More to try</a></h4> -->
     <div class="col-md-4 col-sm-6 campaign-list-item" ng-repeat="item in vm.campaigns | orderBy: '-started' | filter: vm.query as filteredItems">
       <a analytics-on="click" analytics-event="View Campaign" analytics-campaignName="{{ item.name }}" analytics-campaignHashtag="{{ item.hashtag }}" analytics-campaignId="{{ item.id }}" analytics-company="{{ item.company.name }}" ui-sref="navbar.slug({ slug: item.hashtag })">
