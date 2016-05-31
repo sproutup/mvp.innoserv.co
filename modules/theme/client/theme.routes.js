@@ -10,7 +10,10 @@ angular
           abstract: true,
           template: '<ui-view/>',
           controller: '',
-          controllerAs: ''
+          controllerAs: '',
+          data: {
+            roles: ['admin']
+          }
         })
         .state('navbar.theme.index' ,{
             url: '',
