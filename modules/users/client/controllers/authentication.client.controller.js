@@ -24,6 +24,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
     };
 
     $scope.signup = function () {
+      $scope.credentials.token = $state.params.token;
       $http.post('/api/auth/signup', $scope.credentials).success(function (response) {
         $scope.authentication.user = response;
         $state.go('navbar.home');
