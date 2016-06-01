@@ -5,10 +5,10 @@
   <div ng-show="table.providerLoadFinished === true">
     <div ng-repeat="provider in table.providers" class="row row-social-account" ng-if="provider.provider !== 'password'">
       <div class="col-sm-8">
-        <div class="header" ng-if="provider.provider==='google'"><i class="fa fa-check-circle success"></i>Connected to Google</div>
-        <div class="header" ng-if="provider.provider==='facebook'"><i class="fa fa-check-circle success"></i>Connected to Facebook</div>
-        <div class="header" ng-if="provider.provider==='twitter'"><i class="fa fa-check-circle success"></i>Connected to Twitter</div>
-        <div class="header" ng-if="provider.provider==='instagram'"><i class="fa fa-check-circle success"></i>Connected to Instagram</div>
+        <div class="header" ng-if="provider.provider==='google'"><i class="fa fa-check-circle success"></i>Connected to Google<a href="{{ provider.data.url }}" target="_blank">{{ provider.data.displayName }}</a></div>
+        <div class="header" ng-if="provider.provider==='facebook'"><i class="fa fa-check-circle success"></i>Connected to Facebook<a href="https://www.facebook.com/{{ provider.data.id }}" target="_blank">{{ provider.data.name }}</a></div>
+        <div class="header" ng-if="provider.provider==='twitter'"><i class="fa fa-check-circle success"></i>Connected to Twitter<a href="https://twitter.com/{{ provider.data.screen_name }}" target="_blank">@{{ provider.data.screen_name }}</a></div>
+        <div class="header" ng-if="provider.provider==='instagram'"><i class="fa fa-check-circle success"></i>Connected to Instagram<a href="https://instagram.com/{{ provider.data.username }}" target="_blank">@{{ provider.data.username }}</a></div>
         <div class="description" ng-if="provider.provider==='google'">We are getting your social reach from Google. <strong>We'll never post to Google or YouTube</strong>.</div>
         <div class="description" ng-if="provider.provider==='facebook'">We are getting your social reach from Facebook. You can now sign in with Facebook as well. <strong>We'll never post to Facebook or message your friends without your permission</strong>.</div>
         <div class="description" ng-if="provider.provider==='twitter'">We are getting your social reach from Twitter. You can now sign in with Twitter as well. <strong>We'll never post to Twitter or message your followers without your permission</strong>.</div>
