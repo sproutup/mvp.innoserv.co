@@ -18,14 +18,14 @@
           <li><a analytics-on="click" analytics-event="Go to Dashboard" href="https://dashboard.sproutup.co">START A CAMPAIGN<span class="label label-new-feature">Brands</span></a></li>
           <hr>
           <ul class="submenu-in-dropdown" ng-if="navbar.authentication.user.displayName">
-            <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="navbar.user.buzz({ slug: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
-            <li><a analytics-on="click" analytics-event="Enter Account Settings" ui-sref="navbar.settings.profile">Account Settings</a></li>
+            <li><a analytics-on="click" analytics-event="View My Profile" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}" ui-sref="navbar.user.buzz({ slug: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
+            <li><a analytics-on="click" analytics-event="Enter Account Settings" ui-sref="navbar.settings.profile" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}" >Account Settings</a></li>
             <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out">Sign Out</a></li>
           </ul>
         </ul>
       </div>
 
-      <a analytics-on="click" analytics-event="Enter Landing Page" class="navbar-brand" ui-sref="navbar.landing">
+      <a analytics-on="click" analytics-event="Enter Landing Page" class="navbar-brand" ui-sref="navbar.landing" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}">
         <img class="logo" src="modules/core/client/img/logo.png">
       </a>
     </div>
@@ -39,22 +39,22 @@
           ng-switch="item.type"
           ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" nav-item-wrapper nav-item-main
           dropdown="item.type === 'dropdown'">
-          <a ui-sref="{{item.state}}" analytics-on="click" analytics-event="View {{ item.title }}">{{item.title}}</a>
+          <a ui-sref="{{item.state}}" analytics-on="click" analytics-event="View {{ item.title }}" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}">{{item.title}}</a>
         </li>
         <li ng-if="!navbar.authentication.user"><a analytics-on="click" analytics-event="Go to Sign In" ui-sref="authentication.signin">SIGN IN&nbsp;&nbsp;/&nbsp;&nbsp;SIGN UP</a></li>
         <li><img class="profile-img" ng-if="navbar.authentication.user.id" up-avatar="navbar.authentication.user" width="84" height="84"></li>
         <li uib-dropdown ng-if="navbar.authentication.user">
             <a href="#" uib-dropdown-toggle>{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></a>
             <ul uib-dropdown-menu class="navbar-wide" role="menu">
-                <li><a analytics-on="click" analytics-event="View My Profile" ui-sref="navbar.user.buzz({ slug: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
-                <li><a analytics-on="click" analytics-event="View My Campaigns" ui-sref="navbar.discover.mine">My Stuff</a></li>
-                <li><a analytics-on="click" analytics-event="View Account Settings" ui-sref="navbar.settings.profile">Account Settings</a></li>
-                <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out">Sign Out</a></li>
+                <li><a analytics-on="click" analytics-event="View My Profile" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}" ui-sref="navbar.user.buzz({ slug: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
+                <li><a analytics-on="click" analytics-event="View My Campaigns" ui-sref="navbar.discover.mine" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}">My Stuff</a></li>
+                <li><a analytics-on="click" analytics-event="View Account Settings" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}" ui-sref="navbar.settings.profile">Account Settings</a></li>
+                <li><a href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}">Sign Out</a></li>
             </ul>
             <ul uib-dropdown-menu class="navbar-toggleMenu" role="menu">
-                <li><a class="navbar-skinny" analytics-on="click" analytics-event="View My Profile" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })" data-toggle="collapse" data-target="#sproutup-collapse-navbar">{{auth.m.user.name}}<span>(View Profile)</span></a></li>
-                <li><a class="navbar-skinny" analytics-on="click" analytics-event="Enter Account Settings" ui-sref="user.settings.profile" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Account Settings</a></li>
-                <li><a class="navbar-skinny" href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Sign Out</a></li>
+                <li><a class="navbar-skinny" analytics-on="click" analytics-event="View My Profile" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}" ui-sref="user.profile.buzz({ nickname: navbar.authentication.user.username })" data-toggle="collapse" data-target="#sproutup-collapse-navbar">{{auth.m.user.name}}<span>(View Profile)</span></a></li>
+                <li><a class="navbar-skinny" analytics-on="click" analytics-event="Enter Account Settings" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}" ui-sref="user.settings.profile" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Account Settings</a></li>
+                <li><a class="navbar-skinny" href="/api/auth/signout" target="_self" analytics-on="click" analytics-event="Sign Out" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}" data-toggle="collapse" data-target="#sproutup-collapse-navbar">Sign Out</a></li>
             </ul>
         </li>
       </ul>

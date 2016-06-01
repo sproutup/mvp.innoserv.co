@@ -40,7 +40,7 @@
           </div>
           <div class="campaign-join-fintprints">{{ vm.campaign.company.name }} will review and approve your request if there is a good match. So keep an eye out for messages. By placing a request, I agree to SproutUp <a ui-sref="navbar.privacy" target="_blank">Privacy Policy</a> and <a ui-sref="navbar.terms" target="_blank">Terms and Conditions</a>.</div>
           <div class="campaign-join-action">
-            <button analytics-on="click" analytics-event="Submit Request" analytics-campaignName="{{ vm.campaign.name }}" analytics-campaignHashtag="{{ vm.campaign.hashtag }}" analytics-campaignId="{{ vm.campaign.id }}" analytics-company="{{ vm.campaign.company.name }}" class="btn btn-lg sproutup-btn-lg-main" ng-disabled="form.$invalid" ng-click="vm.submitRequest()">Send my request</button>
+            <button analytics-on="click" analytics-event="Submit Request" analytics-campaignName="{{ vm.campaign.name }}" analytics-campaignHashtag="{{ vm.campaign.hashtag }}" analytics-campaignId="{{ vm.campaign.id }}" analytics-company="{{ vm.campaign.company.name }}" class="btn btn-lg sproutup-btn-lg-main" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}" ng-disabled="form.$invalid" ng-click="vm.submitRequest()">Send my request</button>
           </div>
         </div>
       </div>

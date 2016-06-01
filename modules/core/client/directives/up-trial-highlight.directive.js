@@ -24,7 +24,10 @@ function upTrialHighlight() {
     }
 }
 
-function UpTrialHighlightController() {
+UpTrialHighlightController.$inject = ['Authentication'];
+
+function UpTrialHighlightController(Authentication) {
   var vm = this;
+  vm.user = Authentication.user;
 
 }

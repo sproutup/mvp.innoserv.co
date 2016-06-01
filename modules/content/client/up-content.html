@@ -10,7 +10,7 @@
   <div class="col-sm-10 my-content-body">
     <div class="my-content-item--summary" ng-if="vm.content.type !== 1">
       <p class="my-content-user">
-        <a analytics-on="click" analytics-event="View User Profile" analytics-userId="{{ vm.content.user.id }}" analytics-userName="{{ vm.content.user.username }}" class="content-user-link" ui-sref="navbar.user.buzz({ slug: vm.content.user.username })">{{ vm.content.user.displayName }}</a>
+        <a analytics-on="click" analytics-event="View User Profile" analytics-userId="{{ vm.content.user.id }}" analytics-username="{{ vm.content.user.username }}" class="content-user-link" ui-sref="navbar.user.buzz({ slug: vm.content.user.username })">{{ vm.content.user.displayName }}</a>
         <!-- <span ng-if="vm.content.groupId" class="activity">posted a content for</span>
         <a ng-if="vm.content.groupId" href="">{{ vm.content.groupId }}</a> -->
       </p>
