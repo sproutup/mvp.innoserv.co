@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus',
-  function ($scope, $state, Authentication, Menus) {
+angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', '$window',
+  function ($scope, $state, Authentication, Menus, $window) {
     var vm = this;
     vm.toggleCollapsibleMenu = toggleCollapsibleMenu;
     // Expose view variables
@@ -20,5 +20,13 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $scope.$on('$stateChangeSuccess', function () {
       vm.isCollapsed = false;
     });
+
+    $scope.signout = function() {
+      window.mixpanel.cookie.clear();
+      window.mixpanel.init('GARBAGE');
+      setTimeout(function() {
+        $window.location.pathname = '/api/auth/signout';
+      }, 0);
+    };
   }
 ]);

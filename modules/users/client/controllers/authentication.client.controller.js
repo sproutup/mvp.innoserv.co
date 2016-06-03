@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('AuthenticationController', ['$scope', '$state', '$stateParams', '$http', '$location', '$window', 'Authentication',
-  function ($scope, $state, $stateParams, $http, $location, $window, Authentication) {
+angular.module('users').controller('AuthenticationController', ['$scope', '$state', '$stateParams', '$http', '$location', '$window', 'Authentication', '$analytics',
+  function ($scope, $state, $stateParams, $http, $location, $window, Authentication, $analytics) {
     $scope.authentication = Authentication;
     $scope.credentials = {};
 
@@ -27,6 +27,8 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
       $scope.credentials.token = $state.params.token;
       $http.post('/api/auth/signup', $scope.credentials).success(function (response) {
         $scope.authentication.user = response;
+        $analytics.setAlias($scope.authentication.user.id);
+        $analytics.setUserPropertiesOnce({ name: $scope.authentication.user.displayName });
         $state.go('navbar.home');
       }).error(function (response) {
         $scope.error = response.message;
@@ -57,6 +59,8 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
           name: Authentication.user.displayName,
           user_id: Authentication.user.id
         });
+        $analytics.setUsername($scope.authentication.user.id);
+        $analytics.setUserPropertiesOnce({ name: $scope.authentication.user.displayName });
       }).error(function (response) {
         $scope.error = response.message;
       });
