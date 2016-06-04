@@ -26,10 +26,11 @@ function upContent() {
     }
 }
 
-UpContentController.$inject = ['$scope'];
+UpContentController.$inject = ['$scope', 'Authentication', 'FeedService'];
 
-function UpContentController($scope) {
+function UpContentController($scope, Authentication, FeedService) {
     var vm = this;
+    vm.user = Authentication.user;
     vm.likes = vm.content.likes;
     vm.comments = vm.content.comment;
 

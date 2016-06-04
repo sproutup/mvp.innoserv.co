@@ -1,5 +1,5 @@
 <!-- content blurb -->
-<div class="col-sm-12 my-content-item">
+<div class="col-sm-12 my-content-item" ng-hide="vm.content.visibility === 'false'">
   <!-- user photo -->
   <div class="col-sm-2 my-content-user-avatar">
     <a analytics-on="click" analytics-event="View User Profile" analytics-user="{{ vm.content.user.displayName }}" analytics-userId="{{ vm.content.user.id }}" analytics-userName="{{ vm.content.user.username }}" ui-sref="navbar.user.buzz({ slug: vm.content.user.username })">
@@ -24,6 +24,7 @@
         <up-like likes="vm.content.likes" up-id="vm.content.id" up-type="models.post" state="{{ vm.state }}" params="vm.params"></up-like>
         <a href="#" ng-click="vm.commentToggle()">COMMENTS ({{ vm.content.comment.length || 0 }})</a>
         <span class="analytics-total" ng-if="vm.content.analytics.total > 0">{{ vm.content.analytics.total | humanizeNumber }} views</span>
+        <a href="#" class="moderation" ng-if="vm.user.roles.indexOf('admin') > -1">HIDE POST</a>
       </div>
     </div>
     <up-suggestion ng-if="vm.content.type === 1" suggestion="vm.content"></up-suggestion>
