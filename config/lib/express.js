@@ -226,6 +226,15 @@ module.exports.initHttpProxy = function (app){
     proxyReq.setHeader('x-up-proxy-host', req.get('host'));
   });
 
+  // Listen for the `error` event on `proxy`
+  proxy.on('error', function (err, req, res) {
+      res.writeHead(500, {
+      'Content-Type': 'text/plain'
+    });
+    console.log('Something went wrong. And we are reporting a custom error message.');
+    res.end('Something went wrong. And we are reporting a custom error message.');
+  });
+
   app.use(function(req, res, next){
     if(req.url.match(new RegExp('^\/api\/'))) {
       proxy.proxyRequest(req, res,
