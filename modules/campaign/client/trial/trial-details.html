@@ -19,7 +19,7 @@
       <div ng-if="vm.myContribution">
         <div class="about-campaign-section" ng-if="vm.myContribution.state == 0">
           <h3>We got your request on {{ vm.myContribution.created | date }}</h3>
-          <p>Your unique referral link is <strong>https://sproutup.co/{{vm.campaign.hashtag}}/{{vm.myContribution.user.username}}</strong></p>
+          <p>Your unique referral link is <strong>sproutup.co/{{vm.campaign.hashtag}}/{{vm.myContribution.user.username}}</strong></p>
           <div class="about-campaign-actions">
             <a class="btn sproutup-btn-sm outline" ui-sref="navbar.activity.trial.edit({campaignId: vm.campaign.id})">Edit request</a>
             <button class="btn sproutup-btn-sm minimal" ng-click="vm.openCancelModal()">Cancel request</button>
@@ -29,12 +29,12 @@
         <div class="about-campaign-section" ng-if="vm.myContribution.state === 1">
           <h3 ng-if="vm.myContribution.trial.shippingState === 1">Hooray! Product was shipped to you on {{ vm.myContribution.trial.shippingDate | date }}</h3>
           <h3 ng-if="!vm.myContribution.trial.shippingState">Nice! Your request was approved on {{ vm.myContribution.log[0].created | date }}</h3>
-          <p>Your unique referral link <strong>https://sproutup.co/{{vm.campaign.hashtag}}/{{vm.myContribution.user.username}}</strong></strong></p>
+          <p>Your unique referral link <strong>sproutup.co/{{vm.campaign.hashtag}}/{{vm.myContribution.user.username}}</strong></strong></p>
         </div>
 
         <div class="about-campaign-section" ng-if="vm.myContribution.state === 2">
           <h3>You submitted content on <strong>{{ vm.myContribution.log[1].created | date }}</strong></h3>
-          <p>Your unique referral link <strong>https://sproutup.co/{{vm.campaign.hashtag}}/{{vm.myContribution.user.username}}</strong></strong></p>
+          <p>Your unique referral link <strong>sproutup.co/{{vm.campaign.hashtag}}/{{vm.myContribution.user.username}}</strong></strong></p>
         </div>
       </div>
       <div class="about-campaign-section" ng-if="vm.campaign.instructions">
