@@ -32,7 +32,7 @@ module.exports = {
         'public/lib/angulartics/dist/angulartics.min.js',
         'public/lib/angulartics/src/angulartics-intercom.js',
         'public/lib/angulartics-mixpanel/dist/angulartics-mixpanel.min.js',
-        'public/lib/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
+        'public/lib/angulartics-google-analytics/dist/angulartics-ga.min.js',
         'public/lib/intl-tel-input/build/js/intlTelInput.min.js',
         'public/lib/intl-tel-input/lib/libphonenumber/build/utils.js',
         'public/lib/ng-intl-tel-input/dist/ng-intl-tel-input.min.js',
