@@ -251,6 +251,11 @@ module.exports.initHttpProxy = function (app){
 //  });
 };
 
+module.exports.initPreRender = function (app){
+  console.log('init prerender.io');
+
+  app.use(require('prerender-node'));
+};
 
 /**
  * Initialize the Express application
@@ -264,6 +269,9 @@ module.exports.init = function (db) {
 
   // Inititalize http proxy
   this.initHttpProxy(app);
+
+  // Inititalize http proxy
+  this.initPreRender(app);
 
   // Initialize Express middleware
   this.initMiddleware(app);
