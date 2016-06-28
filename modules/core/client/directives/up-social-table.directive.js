@@ -74,7 +74,7 @@ function upSocialTableController($scope, $http, Authentication, ProviderService,
     } else if (provider === 'twitter') {
       disconnectMessage = 'After you disconnect, you cannot sign in to this account with ' + providerName + ' in the future. Also, brands won\'t know your ' + providerName + ' reach.';
     } else if (provider === 'google') {
-      disconnectMessage = 'After you disconnect with' + providerName + ', you cannot submit YouTube content and access content analytics. And brands won\'t know your YouTube or Google+ reach.';
+      disconnectMessage = 'After you disconnect with ' + providerName + ', you cannot submit YouTube content and access content analytics. And brands won\'t know your YouTube or Google+ reach.';
     } else if (provider === 'instagram') {
       disconnectMessage = 'After you disconnect, brands won\'t know your ' + providerName + ' reach.';
     }
