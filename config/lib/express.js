@@ -263,14 +263,14 @@ module.exports.init = function (db) {
   // Initialize express app
   var app = express();
 
+  // Inititalize http proxy
+  this.initPreRender(app);
+
   // Initialize local variables
   this.initLocalVariables(app);
 
   // Inititalize http proxy
   this.initHttpProxy(app);
-
-  // Inititalize http proxy
-  this.initPreRender(app);
 
   // Initialize Express middleware
   this.initMiddleware(app);
