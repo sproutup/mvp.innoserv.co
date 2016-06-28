@@ -40,6 +40,7 @@ module.exports = {
         'public/lib/ngAutocomplete/src/ngAutocomplete.js',
         'public/lib/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
         'public/lib/ng-lodash/build/ng-lodash.js',
+        'public/lib/angular-update-meta/dist/update-meta.min.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

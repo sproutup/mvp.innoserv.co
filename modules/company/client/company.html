@@ -4,6 +4,12 @@
     <div class="col-lg-12">
       <img class="brand-logo" ng-if="company.company.logo.file.url" src="{{ company.company.logo.file.url }}">
       <h1>{{ company.company.name }}<span>{{ company.company.tagline }}</span></h1>
+      <update-title title="{{company.company.name}}"></update-title>
+      <update-meta name="description" content="{{company.company.tagline}}"></update-meta>
+      <update-meta property="og:title" content="{{company.company.name}}"></update-title>
+      <update-meta property="og:description" content="{{company.company.tagline}}"></update-meta>
+      <update-meta property="twitter:title" content="{{company.company.name}}"></update-title>
+      <update-meta property="twitter:description" content="{{company.company.tagline}}"></update-meta>
       <ul class="list-inline company-profile-social-buttons">
         <p>FIND MORE ON</p>
         <li><a href="{{ company.company.url }}" target="_blank"><i class="fa fa-home"></i></a></li>

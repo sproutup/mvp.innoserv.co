@@ -26,7 +26,8 @@ var ApplicationConfiguration = (function () {
     'ngIntlTelInput',
     'ngAutocomplete',
     'infinite-scroll',
-    'ngLodash'
+    'ngLodash',
+    'updateMeta'
   ];
 
   // Add a new vertical module

@@ -10,6 +10,12 @@
         <img class="brand-logo" ng-if="vm.campaign.company.logo.file.url" src="{{ vm.campaign.company.logo.file.url }}">
         <h1>{{ vm.campaign.name }}<span>by <a ui-sref="navbar.company.view({companySlug: vm.campaign.company.slug})">{{ vm.campaign.company.name }}</a></span></h1>
         <h2>{{ vm.campaign.tagline }}</h2>
+        <update-title title="{{vm.campaign.name}}"></update-title>
+        <update-meta name="description" content="{{vm.campaign.tagline}}"></update-meta>
+        <update-meta property="og:title" content="{{vm.campaign.name}}"></update-title>
+        <update-meta property="og:description" content="{{vm.campaign.tagline}}"></update-meta>
+        <update-meta property="twitter:title" content="{{vm.campaign.name}}"></update-title>
+        <update-meta property="twitter:description" content="{{vm.campaign.tagline}}"></update-meta>
         <button analytics-on="click" analytics-event="Join Campaign" analytics-campaignName="{{ vm.campaign.name }}" analytics-campaignHashtag="{{ vm.campaign.hashtag }}" analytics-campaignId="{{ vm.campaign.id }}" analytics-company="{{ vm.campaign.company.name }}" analytics-userId="{{ vm.user.id }}" analytics-username="{{ vm.user.username }}" ng-if="vm.init && !vm.myContribution && vm.campaign.status !== -1" class="btn btn-lg sproutup-btn-md-main" subject-present="vm.goToRequest()">Join Campaign</button>
         <a analytics-on="click" analytics-event="Click Product Link" analytics-campaignName="{{ vm.campaign.name }}" analytics-campaignHashtag="{{ vm.campaign.hashtag }}" analytics-campaignId="{{ vm.campaign.id }}" analytics-userId="{{ vm.user.id }}" analytics-username="{{ vm.user.username }}" analytics-company="{{ vm.campaign.company.name }}" analytics-product="{{ vm.campaign.product.name }}" ng-show="vm.campaign.product.url" class="btn btn-lg sproutup-btn-md-main discount" href="{{ vm.campaign.product.url + '/?ref=sproutup' }} " target="_blank">Buy {{ vm.campaign.product.name }}</a>
       </div>

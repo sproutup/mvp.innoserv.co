@@ -7,6 +7,13 @@
       <img class="img-responsive user-profile-photo" up-avatar="profile.slugitem" width="200" height="200">
       <div class="user-profile-name">{{profile.slugitem.displayName}}</div>
       <div class="user-profile-bio" ng-if="profile.slugitem.description">{{profile.slugitem.description}}</div>
+      <update-title title="{{profile.slugitem.displayName}}"></update-title>
+      <update-meta name="description" content="{{profile.slugitem.description}}"></update-meta>
+      <update-meta property="og:title" content="{{profile.slugitem.displayName}}"></update-title>
+      <update-meta property="og:description" content="{{profile.slugitem.description}}"></update-meta>
+      <update-meta property="twitter:title" content="{{profile.slugitem.displayName}}"></update-title>
+      <update-meta property="twitter:description" content="{{profile.slugitem.description}}"></update-meta>
+
       <div class="user-profile-networks">
 
         <ul class="list-inline">
