@@ -12,6 +12,15 @@ var debug = require('debug')('up:debug:sitemap:ctrl');
 var request = require('request-promise');
 
 /**
+ * Render the main application page
+ */
+exports.renderRobots = function (req, res) {
+  res.set('Content-Type', 'text/plain');
+  res.send('User-agent: * \nDisallow:');
+};
+
+
+/**
  * Sitemap
  */
 exports.renderSitemap = function (req, res) {
