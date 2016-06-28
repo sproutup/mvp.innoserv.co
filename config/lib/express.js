@@ -253,8 +253,7 @@ module.exports.initHttpProxy = function (app){
 
 module.exports.initPreRender = function (app){
   console.log('init prerender.io');
-
-  app.use(require('prerender-node'));
+  app.use(require('prerender-node').set('prerenderToken', '0n3RjtAPc3diflPFYpBO'));
 };
 
 /**
