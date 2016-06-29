@@ -16,6 +16,32 @@
         <div class="col-sm-12 product-trial-item--detail">
           <div ng-if="item.state === 0 || item.state > 0">
             <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i><strong>Requested</strong><span>{{ item.created | date:'MMM dd, yyyy' }}</span></p>
+            <div class="pitch-and-bid">
+              <div class="row">
+                <div class="col-sm-2">
+                  <p><span class="label label-info">My pitch</span></p>
+                </div>
+                <div class="col-sm-10">
+                  <p>{{ item.comment }}</p>
+                </div>
+              </div>
+              <div class="row" ng-hide="!item.bid || item.bid === 0">
+                <div class="col-sm-2">
+                  <p><span class="label label-info">My asking price</span></p>
+                </div>
+                <div class="col-sm-10">
+                  <p>{{ item.bid | currency }}. If you are approved, you will earn <strong>{{ item.bid * 0.9 | currency}}</strong>. See <a ui-sref="navbar.how" target="_blank">how payment works</a>.</p>
+                </div>
+              </div>
+              <div class="row" ng-if="item.state === 0">
+                <div class="col-sm-2">
+                  <p><span class="label label-info">What's next</span></p>
+                </div>
+                <div class="col-sm-10">
+                  <p>Your request will be reviewed by {{ item.campaign.company.name}}. If you are approved, you will receive an email notification immediately. If you don't hear from us, it means you are not approved yet.</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div ng-if="item.state === 1 || item.state > 1">
             <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i><strong>Approved</strong><span>{{ item.log[0].created | date:'MMM dd, yyyy' }}</span></p>
@@ -24,8 +50,10 @@
           <div ng-if="item.state === 2">
             <p class="product-trial-item--status current"><i class="fa fa-check-circle"></i><strong>Content submitted</strong><span>{{ item.log[1].created | date:'MMM dd, yyyy' }}<span></p>
           </div>
+          <hr>
           <p class="product-trial-item--status" ng-if="item.campaign.hashtag"><i class="fa fa-link"></i>Your unique referral link:</p>
           <p class="product-trial-item--status-desc" ng-if="item.campaign.hashtag"><span>www.sproutup.co/{{item.campaign.hashtag}}/{{vm.user.username}}</span>Use this referral link with your content. Share it on social media. It’s the way brands give you credit for the traffic and conversion your content drives.</p>
+          <hr>
           <div class="product-trial-item--actions">
             <a ng-if="item.state === 0" class="btn sproutup-btn-xs" ui-sref="navbar.activity.trial.edit({campaignId: item.campaignId})">Edit request</a>
             <button ng-if="item.state === 0" ng-click="vm.openCancelModal(item.campaignId)" class="btn btn-md sproutup-btn-xs minimal">Cancel request</button>
