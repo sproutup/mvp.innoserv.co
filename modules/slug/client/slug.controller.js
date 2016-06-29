@@ -19,7 +19,7 @@ function SlugController($state, SlugService, slugitem, $analytics) {
     switch(slugitem.data.type){
       case 'Campaign':
         setTimeout(function() {
-          $state.go('navbar.campaign.' + slugitem.data.item.type + '.view.details', {campaignId: slugitem.data.item.id}, { location: 'replace' });
+          $state.go('navbar.campaign.' + slugitem.data.item.type + '.view.details', {campaignId: slugitem.data.item.id}, { location: false });
         }, 0);
         break;
       case 'User':
