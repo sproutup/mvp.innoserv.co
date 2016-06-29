@@ -6,7 +6,7 @@ angular.module('buzz').run(['Menus',
       title: 'BUZZ',
       state: 'navbar.home',
       roles: ['*'],
-      position: 10
+      position: 20
     });
     Menus.addMenuItem('user.profile.menu', {
       title: 'Buzz',
