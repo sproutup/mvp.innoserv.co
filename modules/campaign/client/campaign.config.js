@@ -7,7 +7,7 @@ angular.module('campaign').run(['Menus',
       state: 'navbar.discover.list',
       class: 'campaign',
       roles: ['*'],
-      position: 20
+      position: 10
     });
     Menus.addMenuItem('user.profile.menu', {
       title: 'Activities',
