@@ -2,3 +2,4 @@
 
 // Use Applicaion configuration module to register a new module
 ApplicationConfiguration.registerModule('product');
+ApplicationConfiguration.registerModule('product.routes', ['ui.router']);

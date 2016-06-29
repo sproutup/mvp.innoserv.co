@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('product').config(['$stateProvider',
+angular.module('product.routes').config(['$stateProvider',
   function ($stateProvider) {
     $stateProvider
       .state('company.navbar.product', {
@@ -26,6 +26,12 @@ angular.module('product').config(['$stateProvider',
       .state('company.navbar.product.edit', {
         url: '/:productId/edit',
         templateUrl: 'modules/product/client/edit-product.html'
+      })
+      .state('oldproductlink', {
+        url: '/product/:productId',
+        onEnter: ['$state', function($state){
+          $state.go('navbar.discover.list');
+        }]
       });
   }
 ]);
