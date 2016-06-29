@@ -6,7 +6,7 @@
           <h1>Great pick!</h1>
           <h3>Now, help {{ vm.campaign.company.name }} know about your request</h3>
           <div class="campaign-join-form" ng-init="vm.item = {}">
-            <textarea class="form-validate form-control form-input-textarea" ng-model="vm.comment" name="comment" placeholder="Impress the brand why they should select you (you have a unique content idea, you’ve got awesome fans, there’s a cool reason you’re interested in this product...)" required></textarea>
+            <textarea uib-popover="Explain what specific thing you will do for this campaign and how your audience fits with the brand and its product." popover-trigger="mouseenter" class="form-validate form-control form-input-textarea" ng-model="vm.comment" name="comment" placeholder="Explain what specific thing you will do for this campaign and how your audience fits with the brand and its product." required></textarea>
             <div ng-messages="form.comment.$error" ng-show="form.comment.$touched">
               <div class="message error" ng-message="required">Sorry, you can't request without a pitch.</div>
             </div>
