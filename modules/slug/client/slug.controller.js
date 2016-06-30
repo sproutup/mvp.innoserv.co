@@ -24,7 +24,7 @@ function SlugController($state, SlugService, slugitem, $analytics) {
         break;
       case 'User':
         setTimeout(function() {
-          $state.go('navbar.user.buzz', {slug: slugitem.data.item.username}, { location: 'replace' });
+          $state.go('navbar.user.buzz', {slug: slugitem.data.item.username}, { location: false });
         }, 0);
         break;
     }
