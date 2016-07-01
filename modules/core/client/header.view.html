@@ -48,7 +48,7 @@
             <a href="#" uib-dropdown-toggle>{{navbar.authentication.user.displayName}}<i class="fa fa-angle-down login-angle-down"></i></a>
             <ul uib-dropdown-menu class="navbar-wide" role="menu">
                 <li><a analytics-on="click" analytics-event="View My Profile" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}" ui-sref="navbar.user.buzz({ slug: navbar.authentication.user.username })">{{navbar.authentication.user.displayName}}<span>(View Profile)</span></a></li>
-                <li><a analytics-on="click" analytics-event="View My Campaigns" ui-sref="navbar.discover.mine" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}">My Stuff</a></li>
+                <li><a analytics-on="click" analytics-event="View My Campaigns" ui-sref="navbar.discover.mine" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}">My Requests</a></li>
                 <li><a analytics-on="click" analytics-event="View Account Settings" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}" ui-sref="navbar.settings.profile">Account Settings</a></li>
                 <li><a href="" ng-click="signout()" target="_self" analytics-on="click" analytics-event="Sign Out" analytics-userId="{{ navbar.authentication.user.id }}" analytics-username="{{ navbar.authentication.user.username }}">Sign Out</a></li>
             </ul>
