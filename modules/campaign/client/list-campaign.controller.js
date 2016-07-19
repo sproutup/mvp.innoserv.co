@@ -100,7 +100,7 @@ function ListCampaignController(CampaignService, $state, Authentication, $scope,
      // Randomly generate a campaign
      index = Math.floor((Math.random() * 100) + 1) % vm.campaigns.length;
      // Make sure that the next campaign is different
-     while(index === lastIndex) {
+     while(vm.campaigns.length > 1 && index === lastIndex) {
        index = Math.floor((Math.random() * 100) + 1) % vm.campaigns.length;
      }
      lastIndex = index;
